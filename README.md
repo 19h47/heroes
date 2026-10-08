@@ -4,6 +4,12 @@ Character generator for _AD&D_ 1st edition, a DOS program by critterhaven softwa
 
 This repository keeps the original program and a faithful web port of it, checked sheet by sheet against the real program running in DOSBox.
 
+## Why this port
+
+I used HEROES for real, on the family PC, at the end of the 1990s. I was finishing middle school and playing a lot of Dungeons & Dragons, and I made a great many characters with it. I have always kept a copy, but as the years went by it became harder and harder to run, and I am on a Mac now.
+
+So I took it apart. With the help of an AI coding assistant, the two compiled QuickBASIC programs were unpacked, disassembled and decompiled, and every table, rule and random draw was carried over to JavaScript. The port does not imitate HEROES: it replays it. Given the same settings and the same random state, it makes the same characters as the original, which `.re/` checks against sessions of the real program captured in DOSBox. It now runs in any browser, at [19h47.github.io/heroes](https://19h47.github.io/heroes/).
+
 ## The repository
 
 | Folder       | Contents                                                                                      |
