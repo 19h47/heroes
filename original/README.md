@@ -5,14 +5,14 @@ These are the files of HEROES, the _AD&D_ 1st edition character generator, a DOS
 
 `HEROES.DAT` is in the state left by its last use (2024); the web port takes it as its default settings.
 
-| File                            | Role                                     |
-| ------------------------------- | ---------------------------------------- |
-| `Heroes.exe`                    | The generator (main program)             |
-| `HEROES.CP`                     | The control panel (second program)       |
-| `HEROES.DAT`                    | The current settings                     |
-| `HEROES1.DAT` to `HEROES12.DAT` | Twelve saved data sets                   |
-| `HEROES.TRT`                    | The personality traits database (coded)  |
-| `HEROES.CLR`                    | The screen colours                       |
+| File                            | Role                                    |
+| ------------------------------- | --------------------------------------- |
+| `Heroes.exe`                    | The generator (main program)            |
+| `HEROES.CP`                     | The control panel (second program)      |
+| `HEROES.DAT`                    | The current settings                    |
+| `HEROES1.DAT` to `HEROES12.DAT` | Twelve saved data sets                  |
+| `HEROES.TRT`                    | The personality traits database (coded) |
+| `HEROES.CLR`                    | The screen colours                      |
 
 ## `Heroes.exe` — the generator
 
@@ -37,20 +37,20 @@ key: the next character therefore depends on the time spent before pressing it.
 Second QuickBASIC program (70 KB, 1995), started with the C key. It shows the settings of `HEROES.DAT` and
 changes them, one key per setting:
 
-| Key       | Setting                                                                |
-| --------- | ---------------------------------------------------------------------- |
-| N         | Create names?                                                          |
-| F         | Proportion of female characters                                        |
-| G         | Good / Evil limit                                                      |
-| X         | Experience points range (editor)                                       |
-| C         | Ability score generation method                                        |
-| 1         | Reroll 1's?                                                            |
-| T         | Use traits?                                                            |
-| R         | Race population (editor)                                               |
-| B         | Proportion of sub-races                                                |
-| S         | Social class population (editor, Space = curve)                        |
-| D         | Label the data set and save it to `HEROESn.DAT` (F2 to F12)            |
-| F1 to F12 | Load `HEROES1.DAT` to `HEROES12.DAT`                                   |
+| Key       | Setting                                                     |
+| --------- | ----------------------------------------------------------- |
+| N         | Create names?                                               |
+| F         | Proportion of female characters                             |
+| G         | Good / Evil limit                                           |
+| X         | Experience points range (editor)                            |
+| C         | Ability score generation method                             |
+| 1         | Reroll 1's?                                                 |
+| T         | Use traits?                                                 |
+| R         | Race population (editor)                                    |
+| B         | Proportion of sub-races                                     |
+| S         | Social class population (editor, Space = curve)             |
+| D         | Label the data set and save it to `HEROESn.DAT` (F2 to F12) |
+| F1 to F12 | Load `HEROES1.DAT` to `HEROES12.DAT`                        |
 
 Four hidden keys, not in the menu: **!** (superheroes, no racial level limits), **@** (favour one ability
 score, and so the classes that depend on it), **#** (force the sub-race, see below) and **$** or Backspace
@@ -58,23 +58,20 @@ score, and so the classes that depend on it), **#** (force the sub-race, see bel
 
 ### The hidden # key: forced sub-race
 
-Each press of **#** adds 1 to record 3 of `HEROES.DAT`, from 0 to 20, then back to 0; the panel shows the value
-in its lower right corner, above "! Superheroes", and nothing at 0. The value chooses *which* sub-race a character gets, not *how often*:
-that stays the job of **B** (Breeds & Sub-Races). Monsters and giants are the exception, since every one of them
-is a sub-race of its family.
+Each press of **#** adds 1 to record 3 of `HEROES.DAT`, from 0 to 20, then back to 0; the panel shows the value in its lower right corner, above "! Superheroes", and nothing at 0. The value chooses _which_ sub-race a character gets, not _how often_: that stays the job of **B** (Breeds & Sub-Races). Monsters and giants are the exception, since every one of them is a sub-race of its family.
 
-| Value   | Sub-race forced in each family                                                                                                |
-| ------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| 0       | None: drawn at random (shipped setting)                                                                                       |
-| 1       | Mongol, Drow, Duergar (Gray Dwarf), Svirfneblin (Deep Gnome), Hairfoot Halfling, Centaur, Quarter-Ogre                         |
-| 2       | Nubian, High Elf, Mountain Dwarf, Coast Gnome, Stout Halfling, Tabaxi, Half-Ogre                                               |
-| 3       | Norseman, Mountain Elf, Black Dwarf, High Gnome, Tallfellow Halfling, Brownie, Half-Hill-Giant                                 |
-| 4       | Human Quarter-Orc, White Elf, Gnomish Quarterling, Kenku, Half-Mountain-Giant                                                  |
-| 5       | Human Quarter-Dwarf, Sylvan Elf, Half-Goblin                                                                                  |
-| 6       | Indian, Gray Elf                                                                                                              |
-| 7       | Human Quarter-Elf                                                                                                             |
-| 8 to 18 | None: drawn at random                                                                                                         |
-| 19      | None: drawn at random; every human who could be a fighter becomes an **anti-paladin**                                         |
+| Value   | Sub-race forced in each family                                                                                                                                          |
+| ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0       | None: drawn at random (shipped setting)                                                                                                                                 |
+| 1       | Mongol, Drow, Duergar (Gray Dwarf), Svirfneblin (Deep Gnome), Hairfoot Halfling, Centaur, Quarter-Ogre                                                                  |
+| 2       | Nubian, High Elf, Mountain Dwarf, Coast Gnome, Stout Halfling, Tabaxi, Half-Ogre                                                                                        |
+| 3       | Norseman, Mountain Elf, Black Dwarf, High Gnome, Tallfellow Halfling, Brownie, Half-Hill-Giant                                                                          |
+| 4       | Human Quarter-Orc, White Elf, Gnomish Quarterling, Kenku, Half-Mountain-Giant                                                                                           |
+| 5       | Human Quarter-Dwarf, Sylvan Elf, Half-Goblin                                                                                                                            |
+| 6       | Indian, Gray Elf                                                                                                                                                        |
+| 7       | Human Quarter-Elf                                                                                                                                                       |
+| 8 to 18 | None: drawn at random                                                                                                                                                   |
+| 19      | None: drawn at random; every human who could be a fighter becomes an **anti-paladin**                                                                                   |
 | 20      | None: drawn at random; every human who could be a fighter becomes a **paladin** (still an anti-paladin half the time, unless the Good / Evil limit is Good or Non-Evil) |
 
 - A family that has fewer sub-races than the value draws one at random: at 4, dwarves and halflings, which have
@@ -92,25 +89,25 @@ is a sub-race of its family.
 
 148 bytes: 37 single-precision floating-point numbers (4 bytes each), in this order:
 
-| No.      | Contents                                                                                  |
-| -------- | ----------------------------------------------------------------------------------------- |
-| 1        | Superheroes (1 = yes)                                                                     |
-| 2        | Favoured ability score (0 = none, 1 to 4 = Strength, Intelligence, Wisdom, Dexterity)     |
-| 3        | Forced sub-race (0 = random, up to 20)                                                    |
-| 4        | Reroll 1's (1 = no, 2 = yes)                                                              |
-| 5        | Generation method (1 to 4)                                                                |
-| 6        | Good / Evil limit (1 to 4)                                                                |
-| 7        | Create names (1 = yes)                                                                    |
-| 8        | Percentage of female characters                                                           |
-| 9        | Percentage of sub-races                                                                   |
-| 10 to 12 | Minimum XP, then its mantissa and exponent (the panel edits the last two)                 |
-| 13 to 15 | Maximum XP, mantissa, exponent                                                            |
-| 16 to 25 | Race weights (9 used)                                                                     |
-| 26 to 32 | Social class weights (from Lord to Slave)                                                 |
-| 33       | The four letters `OKAY`, which mark a valid file                                          |
-| 34       | Use traits (1 = yes)                                                                      |
-| 35       | Output: 1 = printer, 2 = `.HRO` file, 3 = `.HTM` file                                     |
-| 36–37    | Data set label (8 characters, e.g. `--NONE--`)                                            |
+| No.      | Contents                                                                              |
+| -------- | ------------------------------------------------------------------------------------- |
+| 1        | Superheroes (1 = yes)                                                                 |
+| 2        | Favoured ability score (0 = none, 1 to 4 = Strength, Intelligence, Wisdom, Dexterity) |
+| 3        | Forced sub-race (0 = random, up to 20)                                                |
+| 4        | Reroll 1's (1 = no, 2 = yes)                                                          |
+| 5        | Generation method (1 to 4)                                                            |
+| 6        | Good / Evil limit (1 to 4)                                                            |
+| 7        | Create names (1 = yes)                                                                |
+| 8        | Percentage of female characters                                                       |
+| 9        | Percentage of sub-races                                                               |
+| 10 to 12 | Minimum XP, then its mantissa and exponent (the panel edits the last two)             |
+| 13 to 15 | Maximum XP, mantissa, exponent                                                        |
+| 16 to 25 | Race weights (9 used)                                                                 |
+| 26 to 32 | Social class weights (from Lord to Slave)                                             |
+| 33       | The four letters `OKAY`, which mark a valid file                                      |
+| 34       | Use traits (1 = yes)                                                                  |
+| 35       | Output: 1 = printer, 2 = `.HRO` file, 3 = `.HTM` file                                 |
+| 36–37    | Data set label (8 characters, e.g. `--NONE--`)                                        |
 
 ## `HEROES1.DAT` to `HEROES12.DAT` — the data sets
 
@@ -188,12 +185,12 @@ compiled into `Heroes.exe`. Neither the race nor the sex influences the name its
 4. A name shorter than 5 or longer than 25 characters is made again entirely, number of words included.
 5. **Titles**, added depending on the character:
 
-   | Title                  | Who gets it                                           |
-   | ---------------------- | ----------------------------------------------------- |
-   | `Sir` / `Dame`         | paladins                                              |
-   | `Master` / `Mistress`  | single-class magic-users above level 8                |
-   | `Mr.` / `Ms.`          | brownies                                              |
-   | `Agent`                | tabaxi assassins                                      |
+   | Title                    | Who gets it                                            |
+   | ------------------------ | ------------------------------------------------------ |
+   | `Sir` / `Dame`           | paladins                                               |
+   | `Master` / `Mistress`    | single-class magic-users above level 8                 |
+   | `Mr.` / `Ms.`            | brownies                                               |
+   | `Agent`                  | tabaxi assassins                                       |
    | `the Elder` (at the end) | white elves with more than a million experience points |
 
 Example from a sheet of the real program: "Inis Yamarf".
