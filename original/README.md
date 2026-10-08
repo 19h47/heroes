@@ -53,9 +53,40 @@ changes them, one key per setting:
 | F1 to F12 | Load `HEROES1.DAT` to `HEROES12.DAT`                                   |
 
 Four hidden keys, not in the menu: **!** (superheroes, no racial level limits), **@** (favour one ability
-score, and so the classes that depend on it), **#** (force the sub-race, from 1 to 20; above 18, fighters get
-the minimum ability scores and the alignment of a paladin, and 19 makes them anti-paladins) and **$** or
-Backspace (output file type). **Esc** saves `HEROES.DAT` and starts `Heroes.exe` again.
+score, and so the classes that depend on it), **#** (force the sub-race, see below) and **$** or Backspace
+(output file type). **Esc** saves `HEROES.DAT` and starts `Heroes.exe` again.
+
+### The hidden # key: forced sub-race
+
+Each press of **#** adds 1 to record 3 of `HEROES.DAT`, from 0 to 20, then back to 0; the panel shows the value
+in its lower right corner, above "! Superheroes", and nothing at 0. The value chooses *which* sub-race a character gets, not *how often*:
+that stays the job of **B** (Breeds & Sub-Races). Monsters and giants are the exception, since every one of them
+is a sub-race of its family.
+
+| Value   | Sub-race forced in each family                                                                                                |
+| ------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| 0       | None: drawn at random (shipped setting)                                                                                       |
+| 1       | Mongol, Drow, Duergar (Gray Dwarf), Svirfneblin (Deep Gnome), Hairfoot Halfling, Centaur, Quarter-Ogre                         |
+| 2       | Nubian, High Elf, Mountain Dwarf, Coast Gnome, Stout Halfling, Tabaxi, Half-Ogre                                               |
+| 3       | Norseman, Mountain Elf, Black Dwarf, High Gnome, Tallfellow Halfling, Brownie, Half-Hill-Giant                                 |
+| 4       | Human Quarter-Orc, White Elf, Gnomish Quarterling, Kenku, Half-Mountain-Giant                                                  |
+| 5       | Human Quarter-Dwarf, Sylvan Elf, Half-Goblin                                                                                  |
+| 6       | Indian, Gray Elf                                                                                                              |
+| 7       | Human Quarter-Elf                                                                                                             |
+| 8 to 18 | None: drawn at random                                                                                                         |
+| 19      | None: drawn at random; every human who could be a fighter becomes an **anti-paladin**                                         |
+| 20      | None: drawn at random; every human who could be a fighter becomes a **paladin** (still an anti-paladin half the time, unless the Good / Evil limit is Good or Non-Evil) |
+
+- A family that has fewer sub-races than the value draws one at random: at 4, dwarves and halflings, which have
+  three, are random. Half-elves have a single sub-race, Three-Quarter-Elf, which the key does not change, and
+  half-orcs have none.
+- The variants inside a sub-race stay random: the coat of a centaur, the Kenku colours, the Half-Goblin kinds.
+- At 19 and 20, the human gets at least the ability scores a paladin needs (Str 11, Int 8, Wis 12, Con 8, Cha 16)
+  and a Lawful Good alignment, before the paladin rules apply; an anti-paladin then turns Chaotic Evil.
+- Any value other than 0 also changes the random sequence: the program draws `value + 2` random numbers at
+  start-up and before each character, so the same moment gives a different character.
+- With an even value, a burst (**~**) stops by itself on a rare character: a paladin, a barbarian, a
+  ranger-cleric, or a character whose first traits include "Vampiric" or one starting with "True".
 
 ## `HEROES.DAT` — the current settings
 
