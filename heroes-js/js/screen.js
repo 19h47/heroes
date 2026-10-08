@@ -212,7 +212,7 @@ window.Heroes = window.Heroes || {};
 	const PALETTE = ['#000', '#00a', '#0a0', '#0aa', '#a00', '#a0a', '#a50', '#aaa', '#555', '#55f', '#5f5', '#5ff', '#f55', '#f5f', '#ff5', '#fff'];
 	H.PALETTE = PALETTE;
 	const escape = (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' })[ch] || ch;
-	H.screenHtml = (cells) => cells.map((line) => {
+	H.screenLines = (cells) => cells.map((line) => {
 		let out = '';
 		let run = '';
 		let current = -1;
@@ -229,5 +229,5 @@ window.Heroes = window.Heroes || {};
 		});
 		flush();
 		return out;
-	}).join('\n');
+	});
 })();

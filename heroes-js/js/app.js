@@ -91,6 +91,20 @@
 
 	// ------------------------------------------------------------ Screen
 
+	// The screen is redrawn on every frame for the spinner and the clock; only the rows that changed are
+	// replaced, usually just the spinner's.
+	let shown = [];
+	const paintLines = (lines) => {
+		if (shown.length !== lines.length) {
+			screen.replaceChildren(...lines.map(() => document.createElement('div')));
+			shown = [];
+		}
+		lines.forEach((html, i) => {
+			if (shown[i] !== html) screen.children[i].innerHTML = html;
+		});
+		shown = lines;
+	};
+
 	const draw = () => {
 		let cells;
 		if (mode === 'exit') cells = H.renderExitScreen(letter, colors);
@@ -106,7 +120,11 @@
 				spin: spin + Math.round((performance.now() - idleFrom) * DRAWS_PER_MS),
 			});
 		}
-		screen.innerHTML = cells ? H.screenHtml(cells) : 'C:\\>_';
+		if (cells) paintLines(H.screenLines(cells));
+		else {
+			screen.textContent = 'C:\\>_';
+			shown = [];
+		}
 		screen.classList.toggle('dos', !cells);
 		const seed = current ? current.seed.toString(16).padStart(6, '0') : '------';
 		status.textContent = `RND state ${seed} · data set ${settings.label}`;
