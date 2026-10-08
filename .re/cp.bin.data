@@ -1,0 +1,7 @@
+D0135  1,"Lord / Lady",3,"High Noble",9,"Noble",27,"Low Noble",9,"Commoner",3,"Peasant",0,"Slave"
+D017e  "Best 3 of 4d6","Best 3 of 6d6","Linear 5-18  ","Linear 10-18 "
+D01c8  "Limit To GOOD Characters    ","No Limitation               ","Limit To EVIL Characters    ","Limit to NON-EVIL characters"
+D022f  99,"Human",33,"Half-Elf",20,"Elf",33,"Dwarf",15,"Gnome",20,"Halfling",1,"Monster",20,"Half-Orc",5,"Giant"
+D0284  0,"None          ",10,"Some          ",25,"One Quarter   ",33,"One Third     ",50,"One Half      ",67,"Two Thirds    ",75,"Three Quarters",90,"Most          ",100,"All           "
+D0285  0,10,25,33,50,67,75,90,100,0
+D2f65  0, 1, 1.5, 1.8, 2.3, 2.55, 0

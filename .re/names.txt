@@ -1,0 +1,26 @@
+# Variable names recovered from the HEROES.DAT loader and usage
+v1da8 = optRec1
+v1ca8 = optClassFocus
+v1cac = optRec3
+v1d20 = optRec4
+v1e28 = optRec5
+v1e2c = optAlignLimit
+v1cd8 = optNames
+v1e4c = optFemalePct
+v1e50 = optBreedPct
+v1e30 = optXPmin
+v1e34 = optRec11
+v1e38 = optRec12
+v1e3c = optXPmax
+v1e40 = optRec14
+v1e44 = optRec15
+v1e5c = optRec34
+v1c84 = optOutput
+v1d44 = XP
+v1e48 = XP$
+v1d10 = AgeCat
+v1cdc = Name$
+v1c90 = T$
+v1c8c = I
+v1eaa = K6E6
+v1e58 = CharNo

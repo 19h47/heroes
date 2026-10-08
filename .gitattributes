@@ -1,0 +1,8 @@
+*.exe binary
+*.EXE binary
+*.CP binary
+*.TRT binary
+*.CLR binary
+*.COM binary
+*.DAT binary
+*.bin binary

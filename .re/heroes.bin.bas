@@ -1,0 +1,8587 @@
+00000  ; asm bound bp, dword ptr [si + 0x48]
+00003  ; asm inc bp
+00005  ; asm dec di
+00006  ; asm inc bp
+00008  ; asm and byte ptr [bx + si], ah
+0000d  ; asm pop bp
+0000e  ; asm xchg sp, ax
+00010  ; asm stosb byte ptr es:[di], al
+00011  ; asm and al, byte ptr [bx + si]
+00013  ; asm add byte ptr [bx + si], al
+00015  ; asm add byte ptr [bx + si], al
+00017  ; asm add byte ptr [bx + si], dh
+00019  ; asm add byte ptr [si + 0x1e], ah
+0001c  ; asm add byte ptr [bx + si], al
+0001e  ; asm add byte ptr [bx + si], al
+00020  ; asm mov al, 0x22
+00022  ; asm or byte ptr [bx + si], al
+00024  ; asm add byte ptr [bx + si], al
+00026  ; asm add byte ptr [bx + si], al
+00028  ; asm add byte ptr [bx + si], al
+0002a  ; asm add byte ptr [bx + si], al
+0002c  ; asm add byte ptr [bp + si], al
+0002e  ; asm loopne 0x40
+00030  GOTO L00060
+00033  DEFFN ?dx, ?bx
+0005b  ENDFN 
+L00060:
+00068  CLEAR? 3000, 1
+00075  v1e24 = "{250}{249}:{240}=-+*{254}O"
+00082  v1e14 = "FBPRMICDTA"
+0008d  v1e9e = 1
+00099  v1ea2 = 1
+000a5  v1ce0 = 14
+000b1  v1ce4 = 0
+000bd  v1ce8 = 6
+000c9  v1ea6 = 199
+000d5  optRec5 = 1
+000e1  optFemalePct = 10
+000ed  optNames = 1
+000f9  optBreedPct = 33
+00105  optAlignLimit = 2
+00111  optRec4 = 1
+0011d  optXPmin = 1000
+00129  optRec11 = 1
+00135  optRec12 = 3
+00141  optXPmax = 1e+06
+0014d  optRec14 = 1
+00159  optRec15 = 6
+00165  K6E6 = 6e+06
+00171  v1c98 = 22
+0017d  v1c9c = 3
+00189  v1ca0 = 47
+00195  v1ca4 = 78
+001a1  optRec34 = 1
+001aa  GOSUB L0a72d
+001b2  SCREEN? 0
+001d1  COLOR 1, 0, 1, CINT(v1ce4), 4
+001da  CURSOR 65535
+001e3  CALL SUB_0_ab8a(@I)
+0020f  LOCATE 1, CINT((v1c98 + 2)), 1, CINT(v1c9c), 4
+00218  PRINT; "   Initializing; please wait ... "
+00222  ON ERROR GOTO 40010
+0022b  RESTORE D0278
+00235  FOR I = 1 TO 5
+L00238:
+0024f  READ @a1a34(CINT(I)), 0
+L0025e:
+00276  NEXT I
+0027e  FOR I = 1 TO 7
+L00282:
+0029a  READ$ @a1a4c(CINT(I))
+002b6  READ @a1a6c(CINT(I)), 0
+L002c5:
+002dd  NEXT I
+002e5  FOR I = 1 TO 4
+L002e8:
+002ff  READ @a1aa0(CINT(I)), 0
+L0030e:
+00326  NEXT I
+0032e  FOR I = 1 TO 4
+L00332:
+00349  READ @a1a8c(CINT(I)), 0
+L00358:
+00370  NEXT I
+00378  FOR I = 1 TO 9
+L0037c:
+00394  READ$ @a19dc(CINT(I))
+003b0  READ @a1a08(CINT(I)), 0
+L003bf:
+003d7  NEXT I
+003df  FOR I = 1 TO 9
+L003e2:
+003e9  READ$ @v1eae
+00405  READ @a1af0(CINT(v1eae)), 0
+L00414:
+0042c  NEXT I
+00439  CALL SUB_0_af83(@I)
+0044f  IF optRec34 = 1 GOTO L00454
+00451  GOTO L0045c
+L00454:
+00457  GOSUB L0a0d0
+L0045c:
+00476  COLOR 1, 0, 1, CINT(v1ce0), 4
+0047b  GOTO L00822
+00484  v1d24 = 1
+L0048a:
+0048e  CALL SUB_0_aa8e(@I)
+00497  CALL SUB_0_b30a(@I)
+004a0  CALL SUB_0_ab8a(@I)
+004ad  T$ = @v233e
+L004b2:
+004bf  IF @T$ = @v233e GOTO L004c4
+004c1  GOTO L0057a
+L004c4:
+004f0  LOCATE 1, CINT((v1c98 + 2)), 1, CINT((v1c9c + 3)), 4
+004fb  PRINT; INKEY$()
+00503  GOSUB L09b93
+0051b  v1eb2 = RND(1)
+0052b  T$ = FN60A2()
+00564  IF ((v1e54 = 1) AND (@T$ = @v233e)) GOTO L00569
+00566  GOTO L00576
+L00569:
+00571  T$ = "~"
+L00576:
+00576  GOTO L004b2
+L0057a:
+0059c  IF CONCAT(CHR$(CHR$(0), 120)) = @T$ GOTO L005a1
+0059e  GOTO L005df
+L005a1:
+005ac  v1ce0 = (v1ce0 + 1)
+005c3  IF v1ce0 > 15 GOTO L005c8
+005c5  GOTO L005d4
+L005c8:
+005ce  v1ce0 = 0
+L005d4:
+005d7  GOSUB L0a839
+005dc  GOTO L0048a
+L005df:
+00601  IF CONCAT(CHR$(CHR$(0), 121)) = @T$ GOTO L00606
+00603  GOTO L00644
+L00606:
+00611  v1ce4 = (v1ce4 + 1)
+00628  IF v1ce4 > 15 GOTO L0062d
+0062a  GOTO L00639
+L0062d:
+00633  v1ce4 = 0
+L00639:
+0063c  GOSUB L0a839
+00641  GOTO L0048a
+L00644:
+00666  IF CONCAT(CHR$(CHR$(0), 122)) = @T$ GOTO L0066b
+00668  GOTO L006a9
+L0066b:
+00676  v1ce8 = (v1ce8 + 1)
+0068d  IF v1ce8 > 15 GOTO L00692
+0068f  GOTO L0069e
+L00692:
+00698  v1ce8 = 0
+L0069e:
+006a1  GOSUB L0a839
+006a6  GOTO L0048a
+L006a9:
+006cb  IF CONCAT(CHR$(CHR$(0), 129)) = @T$ GOTO L006d0
+006cd  GOTO L006ff
+L006d0:
+006d6  v1ce0 = 14
+006e2  v1ce4 = 0
+006ee  v1ce8 = 6
+006f7  GOSUB L0a839
+006fc  GOTO L0048a
+L006ff:
+0070d  T$ = UCASE$(@T$)
+00725  IF CHR$(27) = @T$ GOTO L0072a
+00727  GOTO L00736
+L0072a:
+0072e  CALL SUB_0_a902(@I)
+00733  GOTO L0045c
+L00736:
+00743  IF @T$ = "C" GOTO L00748
+00745  GOTO L00751
+L00748:
+0074c  CHAIN "heroes.cp"
+L00751:
+0075e  IF @T$ = "~" GOTO L00763
+00760  GOTO L00772
+L00763:
+00769  v1e54 = 1
+0076f  GOTO L0045c
+L00772:
+0077f  IF @T$ = "P" GOTO L00784
+00781  GOTO L00806
+L00784:
+00795  IF optOutput = 1 GOTO L0079a
+00797  GOTO L007c2
+L0079a:
+0079e  CALL SUB_e3b_203c(@I)
+007b4  IF v1d28 = 0 GOTO L007b9
+007b6  GOTO L007bf
+L007b9:
+007b9  GOTO L0048a
+007bc  GOTO L007c2
+L007bf:
+007bf  GOTO L0045c
+L007c2:
+007d3  IF optOutput = 2 GOTO L007d8
+007d5  GOTO L007e4
+L007d8:
+007dc  CALL SUB_e3b_0063(@I)
+007e1  GOTO L0045c
+L007e4:
+007f5  IF optOutput = 3 GOTO L007fa
+007f7  GOTO L00806
+L007fa:
+007fe  CALL SUB_e3b_3c30(@I)
+00803  GOTO L0045c
+L00806:
+0080e  T$ = "Any other key"
+00819  v1e54 = 0
+0081f  GOTO L0045c
+L00822:
+00826  CALL SUB_0_bbe1(@I)
+0083c  IF CharNo = 0 GOTO L00841
+0083e  GOTO L008c9
+L00841:
+0087e  v1eb6 = (*si * *si)
+00889  FOR I = 1 TO v1eb6
+L0088c:
+0089f  v1eb2 = RND(1)
+L008af:
+008c7  NEXT I
+L008c9:
+008f0  LOCATE 1, CINT((v1c98 + 2)), 1, CINT(v1c9c), 4
+00917  COLOR 1, CINT(v1ce4), 1, CINT(v1ce8), 4
+0092d  IF v1e54 = 0 GOTO L00932
+0092f  GOTO L00954
+L00932:
+00936  PRINT; " Generating Character ... "
+00946  FN5FDC CINT(v1ca0)
+0094f  PRINT; @v233e
+L00954:
+0096e  v1eba = FNR(((optXPmax - optXPmin) + 1))
+00984  XP = ((v1eba + -1) + optXPmin)
+0099b  IF optXPmax = 0 GOTO L009a0
+0099d  GOTO L009ac
+L009a0:
+009a6  XP = 0
+L009ac:
+009d2  XP$ = LTRIM$?(MID$(STR$(XP), 2, 32767))
+009e6  I = LEN(@XP$)
+009fd  IF I > 3 GOTO L00a02
+009ff  GOTO L00a47
+L00a02:
+00a42  XP$ = CONCAT(RIGHT$(CONCAT(MID$(@XP$, 1, CINT((I + -3))), ","), @XP$, 3))
+L00a47:
+00a58  IF I > 6 GOTO L00a5d
+00a5a  GOTO L00aa2
+L00a5d:
+00a9d  XP$ = CONCAT(RIGHT$(CONCAT(MID$(@XP$, 1, CINT((I + -6))), ","), @XP$, 7))
+L00aa2:
+00aa6  RESTORE D0aab
+00ab2  I = 0
+00abe  AgeCat = 0
+L00ac4:
+00ad4  v1ebe = FNR(20)
+00b02  IF (((v1ebe + 90) / (100 * K6E6)) * XP) > I GOTO L00b07
+00b04  GOTO L00b26
+L00b07:
+00b0e  READ$ @I
+00b1e  AgeCat = (AgeCat + 1)
+00b24  GOTO L00ac4
+L00b26:
+00b37  IF AgeCat = 0 GOTO L00b3c
+00b39  GOTO L00b48
+L00b3c:
+00b42  AgeCat = 1
+L00b48:
+00b59  IF AgeCat = 6 GOTO L00b5e
+00b5b  GOTO L00b6a
+L00b5e:
+00b64  AgeCat = 5
+L00b6a:
+00b72  Name$ = @v233e
+00b7f  v1ec2 = @v233e
+00b94  v1ec6 = FNR(2)
+00ba0  v1eca = v1ec6
+00bae  T$ = @v233e
+00bd1  IF RND(1) < 0.1 GOTO L00bd6
+00bd3  GOTO L00be7
+L00bd6:
+00be1  v1eca = (v1eca + 1)
+L00be7:
+00bf8  IF optNames = 0 GOTO L00bfd
+00bfa  GOTO L00c00
+L00bfd:
+00bfd  GOTO L0141f
+L00c00:
+00c06  v1ece = v1eca
+00c11  FOR v1f12 = 1 TO v1ece
+L00c14:
+00c24  v1ed2 = FNR(10)
+00c47  v1ed6 = MID$("aaaeeeiiou", CINT(v1ed2), 1)
+00c52  v1eda = 0
+L00c58:
+00c60  v1ec2 = @v233e
+00c6b  v1ede = 0
+00c86  v1ee2 = FNR((4 - v1eca))
+00c92  v1ee6 = v1ee2
+00c9e  v1eea = v1ee6
+00ca9  FOR v1eee = 1 TO v1eea
+L00cac:
+00cef  IF ((v1eee > 1) AND (RND(1) < 0.02)) GOTO L00cf4
+00cf1  GOTO L00d0b
+L00cf4:
+00d06  v1ec2 = CONCAT(@v1ec2, "-")
+L00d0b:
+00d11  v1ef2 = 0
+00d58  IF ((RND(1) < 0.2) AND (v1eee = 1)) GOTO L00d5d
+00d5a  GOTO L00d60
+L00d5d:
+00d5d  GOTO L00e7f
+L00d60:
+00d71  IF v1eda = 1 GOTO L00d76
+00d73  GOTO L00d79
+L00d76:
+00d76  GOTO L00e7f
+L00d79:
+00d7f  v1ef2 = 1
+00d8d  v1ef6 = "bcdffgghjkkllmmnnprssttvwxyzz"
+00d98  v1efa = 1
+00dbc  IF RND(1) < 0.3 GOTO L00dc1
+00dbe  GOTO L00dda
+L00dc1:
+00dc9  v1ef6 = "brblchclcrdrfrflgrglkrkhklprphplqushslstspskthtr"
+00dd4  v1efa = 2
+L00dda:
+00df8  IF RND(1) < 0.02 GOTO L00dfd
+00dfa  GOTO L00e16
+L00dfd:
+00e05  v1ef6 = "strskl"
+00e10  v1efa = 3
+L00e16:
+00e34  v1efe = FNR((LEN(@v1ef6) / v1efa))
+00e7a  v1ec2 = CONCAT(MID$(@v1ec2, @v1ef6, CINT(((v1efe * v1efa) - (v1efa + -1))), CINT(v1efa)))
+L00e7f:
+00ec0  IF ((RND(1) < 0.9) OR (v1ede > 0)) GOTO L00ec5
+00ec2  GOTO L00edf
+L00ec5:
+00ed7  v1ec2 = CONCAT(@v1ec2, @v1ed6)
+00edc  GOTO L00fb2
+L00edf:
+00f20  IF ((RND(1) < 0.1) AND (v1eee > 1)) GOTO L00f25
+00f22  GOTO L00f3f
+L00f25:
+00f37  v1ec2 = CONCAT(@v1ec2, "y")
+00f3c  GOTO L00fb2
+L00f3f:
+00f47  T$ = "aiauawayeaeeeieueweyiaieoiooouowoy"
+00f6a  v1f02 = FNR((LEN(@T$) / 2))
+00fa1  v1ec2 = CONCAT(MID$(@v1ec2, @T$, CINT(((v1f02 * 2) + -1)), 2))
+00fac  v1ede = v1eee
+L00fb2:
+00fb8  v1eda = 0
+0101c  IF (((v1eee < v1ee6) AND (RND(1) < 0.1)) AND (v1ef2 = 1)) GOTO L01021
+0101e  GOTO L01024
+L01021:
+01021  GOTO L01206
+L01024:
+01067  IF ((v1eee = v1ee6) AND (RND(1) < 0.3)) GOTO L0106c
+01069  GOTO L0106f
+L0106c:
+0106c  GOTO L01206
+L0106f:
+01075  v1eda = 1
+01083  v1f06 = "dfgklmnrstxz"
+0108e  v1f0a = 1
+010b2  IF RND(1) < 0.25 GOTO L010b7
+010b4  GOTO L010d0
+L010b7:
+010bf  v1f06 = "ngshstchskth"
+010ca  v1f0a = 2
+L010d0:
+010ee  IF RND(1) < 0.12 GOTO L010f3
+010f0  GOTO L0110c
+L010f3:
+010fb  v1f06 = "ddffggkkllmmnnpprrssttzzntndns"
+01106  v1f0a = 2
+L0110c:
+0112a  IF RND(1) < 0.09 GOTO L0112f
+0112c  GOTO L01148
+L0112f:
+01137  v1f06 = "rcrdrfrgrkrlrmrnrsrt"
+01142  v1f0a = 2
+L01148:
+01166  IF RND(1) < 0.05 GOTO L0116b
+01168  GOTO L01184
+L0116b:
+01173  v1f06 = "rshrstrchrskrth"
+0117e  v1f0a = 3
+L01184:
+011a2  v1f0e = FNR((LEN(@v1f06) / v1f0a))
+011de  T$ = MID$(@v1f06, CINT(((v1f0e * v1f0a) - (v1f0a + -1))), CINT(v1f0a))
+011f5  v1ec2 = CONCAT(@v1ec2, @T$)
+01200  v1eda = 1
+L01206:
+L01210:
+01228  NEXT v1eee
+0122a  GOTO L00cac
+L0122d:
+01239  IF LEN(@v1ec2) < 4 GOTO L0123e
+0123b  GOTO L01241
+L0123e:
+0123e  GOTO L00c58
+L01241:
+01252  IF v1f12 > 1 GOTO L01257
+01254  GOTO L0126e
+L01257:
+01269  Name$ = CONCAT(@Name$, " ")
+L0126e:
+01280  Name$ = CONCAT(@Name$, @v1ec2)
+L0128f:
+012a7  NEXT v1f12
+012a9  GOTO L00c14
+L012ac:
+012b2  I = 1
+012bb  GOSUB L013d6
+012cf  v1f16 = LEN(@Name$)
+012da  FOR I = 2 TO v1f16
+L012de:
+01305  IF MID$(@Name$, CINT((I + -1)), 1) = " " GOTO L0130a
+01307  GOTO L01312
+L0130a:
+0130d  GOSUB L013d6
+L01312:
+0136b  IF ((MID$(@Name$, CINT((I + -1)), 1) = "-") AND (RND(1) < 0.8)) GOTO L01370
+0136d  GOTO L01378
+L01370:
+01373  GOSUB L013d6
+L01378:
+L01382:
+0139a  NEXT I
+0139c  GOTO L012de
+L0139f:
+013cb  IF ((LEN(@Name$) < 5) OR (LEN(@Name$) > 0x19)) GOTO L013d0
+013cd  GOTO L013d3
+L013d0:
+013d0  GOTO L00b6a
+L013d3:
+013d3  GOTO L0141f
+L013d6:
+01415  FN5230 CHR$((ASC(MID$(@Name$, 0, @Name$, CINT(I), 1)) + -32)), 1, CINT(I)
+0141a  RETURN? 
+L0141f:
+01425  v1eb2 = 0
+01430  FOR I = 1 TO 7
+L01434:
+0144f  v1eb2 = (a1a4c(CINT(I)) + v1eb2)
+L0145f:
+01477  NEXT I
+0148a  IF v1eb2 = 0 GOTO L0148f
+0148c  GOTO L0149b
+L0148f:
+01495  v1eb2 = 1
+L0149b:
+014ab  v1f1a = FNR(v1eb2)
+014b7  v1f1e = v1f1a
+014c3  I = 1
+014ce  FOR I = 1 TO 7
+L014d2:
+014f3  IF a1a4c(CINT(I)) >= v1f1e GOTO L014f8
+014f5  GOTO L014fb
+L014f8:
+014f8  GOTO L01540
+L014fb:
+01516  v1f1e = (v1f1e - a1a4c(CINT(I)))
+L01526:
+0153e  NEXT I
+L01540:
+01557  v1cf8 = @a1a6c(CINT(I))
+01562  v1f1e = I
+0156d  FOR I = 1 TO 6
+L01570:
+01586  a0030(CINT(I)) = 0
+L01596:
+015ae  NEXT I
+015b6  v1cec = 0
+015c4  v1d5c = @v233e
+015cf  v1f22 = optRec5
+015e6  IF 1 = v1f22 GOTO L015eb
+015e8  GOTO L015fd
+L015eb:
+015f1  v1f26 = 4
+015f7  GOTO L01675
+015fa  GOTO L01675
+L015fd:
+0160e  IF 2 = v1f22 GOTO L01613
+01610  GOTO L01625
+L01613:
+01619  v1f26 = 6
+0161f  GOTO L01675
+01622  GOTO L01675
+L01625:
+01636  IF 3 = v1f22 GOTO L0163b
+01638  GOTO L0164d
+L0163b:
+01641  v1f26 = 5
+01647  GOTO L0183f
+0164a  GOTO L01675
+L0164d:
+0165e  IF 4 = v1f22 GOTO L01663
+01660  GOTO L01675
+L01663:
+01669  v1f26 = 10
+0166f  GOTO L0183f
+01672  GOTO L01675
+L01675:
+0167a  FOR v1eb2 = 1 TO 6
+L0167e:
+01684  v1f2a = v1f26
+0168f  FOR I = 1 TO v1f2a
+L01692:
+016a7  v1f2e = FNR((6 - optRec4))
+016c8  a004c(CINT(I)) = (v1f2e + optRec4)
+L016d8:
+016f0  NEXT I
+016f8  v1f32 = 0
+01703  FOR v1f3a = 6 TO 1 STEP (v1f3a + -1)
+L01706:
+0170c  v1f36 = v1f26
+01717  FOR v1cd4 = 1 TO v1f36
+L0171a:
+0173b  IF a004c(CINT(v1cd4)) = v1f3a GOTO L01740
+0173d  GOTO L017ae
+L01740:
+0177b  a0030(CINT(v1eb2)) = (a0030(CINT(v1eb2)) + a004c(CINT(v1cd4)))
+0178c  v1f32 = (v1f32 + 1)
+017a8  a004c(CINT(v1cd4)) = 0
+L017ae:
+017bf  IF v1f32 = 3 GOTO L017c4
+017c1  GOTO L017c7
+L017c4:
+017c4  GOTO L01815
+L017c7:
+L017d1:
+017e9  NEXT v1cd4
+017eb  GOTO L0171a
+L017ee:
+L017f8:
+01810  NEXT v1f3a
+01812  GOTO L01706
+L01815:
+L0181f:
+01837  NEXT v1eb2
+01839  GOTO L0167e
+L0183c:
+0183c  GOTO L018ad
+L0183f:
+01844  FOR I = 1 TO 6
+L01848:
+0185d  v1f3e = FNR((19 - v1f26))
+01883  a0030(CINT(I)) = ((v1f26 + -1) + v1f3e)
+L01893:
+018ab  NEXT I
+L018ad:
+018b1  CALL SUB_0_bbe1(@I)
+018bc  v1eb2 = 0
+018c7  FOR I = 1 TO 9
+L018ca:
+018e5  v1eb2 = (a19dc(CINT(I)) + v1eb2)
+L018f5:
+0190d  NEXT I
+01920  IF v1eb2 = 0 GOTO L01925
+01922  GOTO L01931
+L01925:
+0192b  v1eb2 = 1
+L01931:
+01941  v1f42 = FNR(v1eb2)
+0194d  v1e1c = v1f42
+01959  I = 1
+01964  FOR I = 1 TO 9
+L01968:
+01989  IF a19dc(CINT(I)) >= v1e1c GOTO L0198e
+0198b  GOTO L01991
+L0198e:
+0198e  GOTO L019d6
+L01991:
+019ac  v1e1c = (v1e1c - a19dc(CINT(I)))
+L019bc:
+019d4  NEXT I
+L019d6:
+019dc  v1e1c = I
+019f9  v1cfc = @a1a08(CINT(v1e1c))
+01a0a  ON CINT(v1e1c) GOTO L01a22, L023f6, L02802, L02dec, L0321e, L03594, L03868, L041ba, L0449f
+L01a22:
+01a26  RESTORE D1a2b
+01a2f  GOSUB L09b11
+01a44  v1f46 = FNR(3)
+01a50  v1f4a = v1f46
+01a66  v1f4e = FNR(3)
+01a72  v1d30 = v1f4e
+01a7e  v1f52 = 69
+01a8a  v1f56 = 160
+01aa0  v1f5a = FNR(100)
+01ab7  IF v1f5a <= optBreedPct GOTO L01abc
+01ab9  GOTO L01ac4
+L01abc:
+01abf  GOSUB L02179
+L01ac4:
+01ac7  GOSUB L09e7c
+01b0b  IF ((optRec3 > 18) AND (MID$(@v1d04, 1, 1) = "F")) GOTO L01b10
+01b0d  GOTO L01be2
+L01b10:
+01b21  IF v0034 < 11 GOTO L01b26
+01b23  GOTO L01b32
+L01b26:
+01b2c  v0034 = 11
+L01b32:
+01b43  IF v0038 < 8 GOTO L01b48
+01b45  GOTO L01b54
+L01b48:
+01b4e  v0038 = 8
+L01b54:
+01b65  IF v003c < 12 GOTO L01b6a
+01b67  GOTO L01b76
+L01b6a:
+01b70  v003c = 12
+L01b76:
+01b87  IF v0044 < 8 GOTO L01b8c
+01b89  GOTO L01b98
+L01b8c:
+01b92  v0044 = 8
+L01b98:
+01ba9  IF v0048 < 16 GOTO L01bae
+01bab  GOTO L01bba
+L01bae:
+01bb4  v0048 = 16
+L01bba:
+01bc0  v1f4a = 1
+01bcc  v1d30 = 1
+01bda  v1d04 = "P---"
+01bdf  GOTO L01fd8
+L01be2:
+01c00  IF RND(1) > 0.5 GOTO L01c05
+01c02  GOTO L01c08
+L01c05:
+01c05  GOTO L01fd8
+L01c08:
+01cb5  IF ((((((RND(1) > 0.5) AND (v1f4a = 1)) AND (v0034 > 14)) AND (v003c > 14)) AND (v0040 > 14)) AND (v0044 > 10)) GOTO L01cba
+01cb7  GOTO L01cc7
+L01cba:
+01cc2  v1d04 = "M---"
+L01cc7:
+01d99  IF ((((((((@v1d04 = "F---") AND (v1f4a = 1)) AND (v1d30 = 1)) AND (v0034 > 11)) AND (v0038 > 8)) AND (v003c > 12)) AND (v0044 > 8)) AND (v0048 > 16)) GOTO L01d9e
+01d9b  GOTO L01dab
+L01d9e:
+01da6  v1d04 = "P---"
+L01dab:
+01e47  IF ((((((@v1d04 = "F---") AND (v1d30 = 1)) AND (v0034 > 12)) AND (v0038 > 12)) AND (v003c > 13)) AND (v0044 > 13)) GOTO L01e4c
+01e49  GOTO L01e59
+L01e4c:
+01e54  v1d04 = "R---"
+L01e59:
+01ef5  IF ((((((@v1d04 = "F---") AND (v1f4a > 1)) AND (v0034 > 14)) AND (v0044 > 14)) AND (v0040 > 13)) AND (v003c < 17)) GOTO L01efa
+01ef7  GOTO L01f07
+L01efa:
+01f02  v1d04 = "B---"
+L01f07:
+01f14  IF @v1d04 = "-M--" GOTO L01f19
+01f16  GOTO L01f26
+L01f19:
+01f21  v1d04 = "-I--"
+L01f26:
+01fa7  IF (((((@v1d04 = "--C-") AND (optAlignLimit <> 1)) AND (optAlignLimit <> 3)) AND (v003c > 11)) AND (v0048 > 14)) GOTO L01fac
+01fa9  GOTO L01fb9
+L01fac:
+01fb4  v1d04 = "--D-"
+L01fb9:
+01fc6  IF @v1d04 = "---T" GOTO L01fcb
+01fc8  GOTO L01fd8
+L01fcb:
+01fd3  v1d04 = "---A"
+L01fd8:
+01fde  v1eb2 = 0
+01fe9  FOR I = 1 TO 4
+L01fec:
+0200e  IF MID$(@v1d04, CINT(I), 1) <> "-" GOTO L02013
+02010  GOTO L02024
+L02013:
+0201e  v1eb2 = (v1eb2 + 1)
+L02024:
+L0202e:
+02046  NEXT I
+02059  IF v1eb2 = 1 GOTO L0205e
+0205b  GOTO L02061
+L0205e:
+0205e  GOTO L04930
+L02061:
+02072  IF optClassFocus > 0 GOTO L02077
+02074  GOTO L020cd
+L02077:
+02099  IF MID$(@v1d04, CINT(optClassFocus), 1) <> "-" GOTO L0209e
+0209b  GOTO L020cd
+L0209e:
+020c5  v1d04 = MID$("F----M----C----T", CINT(((optClassFocus * 4) + -3)), 4)
+020ca  GOTO L04930
+L020cd:
+020e5  IF MID$(@v1d04, 1, 1) <> "-" GOTO L020ea
+020e7  GOTO L02106
+L020ea:
+020fe  FN5230 @v1d04, 0, "---", 3, 2
+02103  GOTO L04930
+L02106:
+02121  IF MID$(@v1d04, 2, 1) <> "-" GOTO L02126
+02123  GOTO L02136
+L02126:
+0212e  v1d04 = "-M--"
+02133  GOTO L04930
+L02136:
+02154  IF RND(1) < 0.5 GOTO L02159
+02156  GOTO L02169
+L02159:
+02161  v1d04 = "--C-"
+02166  GOTO L02176
+L02169:
+02171  v1d04 = "---T"
+L02176:
+02176  GOTO L04930
+L02179:
+0217f  I = optRec3
+021b9  IF ((I < 1) OR (I > 7)) GOTO L021be
+021bb  GOTO L021e0
+L021be:
+021ce  v1f5e = FNR(7)
+021da  I = v1f5e
+L021e0:
+021ec  ON CINT(I) GOTO L02200, L0222a, L0226f, L022b4, L022f9, L0234a, L023b6
+L02200:
+02206  v1e1c = 1.1
+02214  v1cfc = "Mongol"
+0221f  v1f4a = 3
+02225  RETURN? 
+L0222a:
+02230  v1e1c = 1.2
+0223e  v1cfc = "Nubian"
+02253  v1f62 = FNR(3)
+02264  v0048 = (v1f62 + 2)
+0226a  RETURN? 
+L0226f:
+02275  v1e1c = 1.3
+02283  v1cfc = "Norseman"
+02298  v1f66 = FNR(2)
+022a9  v0038 = (19 - v1f66)
+022af  RETURN? 
+L022b4:
+022ba  v1e1c = 1.4
+022c8  v1cfc = "Human Quarter-Orc"
+022dd  v1f6a = FNR(6)
+022ee  v0048 = (v0048 - v1f6a)
+022f4  RETURN? 
+L022f9:
+022ff  v1e1c = 1.5
+0230d  v1cfc = "Human Quarter-Dwarf"
+02322  v1f6e = FNR(2)
+02333  v0044 = (v0044 + v1f6e)
+0233f  v1f52 = 59
+02345  RETURN? 
+L0234a:
+02350  v1e1c = 1.6
+0235e  v1cfc = "Indian"
+02373  v1f72 = FNR(6)
+02384  v0044 = (v1f72 + 3)
+0239a  v1f76 = FNR(3)
+023ab  v0048 = (13 + v1f76)
+023b1  RETURN? 
+L023b6:
+023bc  v1e1c = 1.7
+023ca  v1cfc = "Human Quarter-Elf"
+023da  v0038 = (v0038 + 2)
+023eb  v0048 = (v0048 + 3)
+023f1  RETURN? 
+L023f6:
+023fa  RESTORE D23ff
+02403  GOSUB L09b11
+02418  v1f7a = FNR(3)
+02429  v0048 = (v0048 + v1f7a)
+02440  IF v0048 < 10 GOTO L02445
+02442  GOTO L02454
+L02445:
+0244b  v0048 = 10
+02451  GOTO L02476
+L02454:
+02465  IF v0048 > 18 GOTO L0246a
+02467  GOTO L02476
+L0246a:
+02470  v0048 = 18
+L02476:
+02486  v1f7e = FNR(3)
+02497  v0038 = (v0038 + v1f7e)
+024ae  IF v0038 < 10 GOTO L024b3
+024b0  GOTO L024c2
+L024b3:
+024b9  v0038 = 10
+024bf  GOTO L024e4
+L024c2:
+024d3  IF v0038 > 18 GOTO L024d8
+024d5  GOTO L024e4
+L024d8:
+024de  v0038 = 18
+L024e4:
+024f4  v1f82 = FNR(3)
+02500  v1f4a = v1f82
+02516  v1f86 = FNR(3)
+02522  v1d30 = v1f86
+0252e  v1f52 = 60
+0253a  v1f56 = 130
+02550  v1f8a = FNR(100)
+02567  IF v1f8a <= optBreedPct GOTO L0256c
+02569  GOTO L02585
+L0256c:
+02572  v1e1c = 2.1
+02580  v1cfc = "Three-Quarter-Elf"
+L02585:
+02588  GOSUB L09e7c
+025ab  IF RND(1) > 0.3 GOTO L025b0
+025ad  GOTO L02672
+L025b0:
+02657  IF ((((((MID$(@v1d04, 1, 1) = "F") AND (v1d30 = 1)) AND (v0034 > 12)) AND (v0038 > 12)) AND (v003c > 13)) AND (v0044 > 13)) GOTO L0265c
+02659  GOTO L02672
+L0265c:
+0266d  FN5230 @v1d04, 0, "R", 1, 1
+L02672:
+02690  IF RND(1) > 0.3 GOTO L02695
+02692  GOTO L02728
+L02695:
+02716  IF (((((@v1d04 = "--C-") AND (optAlignLimit <> 1)) AND (optAlignLimit <> 3)) AND (v003c > 11)) AND (v0048 > 14)) GOTO L0271b
+02718  GOTO L02728
+L0271b:
+02723  v1d04 = "--D-"
+L02728:
+02746  IF RND(1) > 0.3 GOTO L0274b
+02748  GOTO L0276a
+L0274b:
+02758  IF @v1d04 = "---T" GOTO L0275d
+0275a  GOTO L0276a
+L0275d:
+02765  v1d04 = "---A"
+L0276a:
+02772  T$ = "F---R----M----C---D----T---AF-C-R-C--MC-FM--F--T-M-TFMC-FM-T"
+0278b  v1f8e = (LEN(@T$) / 4)
+02796  FOR I = 1 TO v1f8e
+L0279a:
+027c6  IF MID$(@T$, CINT(((I * 4) + -3)), 4) = @v1d04 GOTO L027cb
+027c8  GOTO L027ce
+L027cb:
+027cb  GOTO L04930
+L027ce:
+L027d8:
+027f0  NEXT I
+027fa  v1d04 = "F---"
+027ff  GOTO L04930
+L02802:
+02806  RESTORE D280b
+0280f  GOSUB L09b11
+02824  v1f92 = FNR(3)
+02835  v0040 = (v0040 + v1f92)
+0284c  IF v0040 < 7 GOTO L02851
+0284e  GOTO L0285d
+L02851:
+02857  v0040 = 7
+L0285d:
+0286d  v1f96 = FNR(2)
+0287e  v0044 = (v0044 - v1f96)
+02895  IF v0044 < 6 GOTO L0289a
+02897  GOTO L028a6
+L0289a:
+028a0  v0044 = 6
+L028a6:
+028b6  v1f9a = FNR(4)
+028c7  v0048 = (v0048 + v1f9a)
+028de  IF v0048 < 12 GOTO L028e3
+028e0  GOTO L028ef
+L028e3:
+028e9  v0048 = 12
+L028ef:
+028ff  v1f9e = FNR(2)
+02910  v1f4a = (v1f9e + 1)
+02926  v1fa2 = FNR(2)
+02932  v1d30 = v1fa2
+0293e  v1f52 = 55
+0294a  v1f56 = 100
+02960  v1fa6 = FNR(100)
+02977  IF v1fa6 <= optBreedPct GOTO L0297c
+02979  GOTO L02984
+L0297c:
+0297f  GOSUB L02b68
+L02984:
+029b8  IF ((v0038 > 18) AND (v1e1c <> 3.4)) GOTO L029bd
+029ba  GOTO L029c9
+L029bd:
+029c3  v0038 = 18
+L029c9:
+029da  IF v0040 > 19 GOTO L029df
+029dc  GOTO L029eb
+L029df:
+029e5  v0040 = 19
+L029eb:
+029fc  IF v0044 > 18 GOTO L02a01
+029fe  GOTO L02a0d
+L02a01:
+02a07  v0044 = 18
+L02a0d:
+02a1e  IF v0048 > 18 GOTO L02a23
+02a20  GOTO L02a2f
+L02a23:
+02a29  v0048 = 18
+L02a2f:
+02a32  GOSUB L09e7c
+02a78  IF ((RND(1) < 0.3) AND (@v1d04 = "---T")) GOTO L02a7d
+02a7a  GOTO L02a8a
+L02a7d:
+02a85  v1d04 = "---A"
+L02a8a:
+02a9e  FN5230 @v1d04, 0, "-", 1, 3
+02adb  loce% = ((@v1d04 = "F---") OR (@v1d04 = "-M--"))
+02af6  loc10% = (loce OR (@v1d04 = "---T"))
+02b11  loc12% = (loc10 OR (@v1d04 = "---A"))
+02b24  IF (loc12 OR (@v1d04 = "--C-")) GOTO L02b29
+02b26  GOTO L02b2c
+L02b29:
+02b29  GOTO L04930
+L02b2c:
+02b47  IF MID$(@v1d04, 4, 1) = "A" GOTO L02b4c
+02b49  GOTO L02b65
+L02b4c:
+02b60  FN5230 @v1d04, 0, "T", 1, 4
+L02b65:
+02b65  GOTO L04930
+L02b68:
+02b6e  I = optRec3
+02ba8  IF ((I < 1) OR (I > 6)) GOTO L02bad
+02baa  GOTO L02bcf
+L02bad:
+02bbd  v1faa = FNR(6)
+02bc9  I = v1faa
+L02bcf:
+02bdb  ON CINT(I) GOTO L02bed, L02c5c, L02c98, L02cc7, L02d81, L02dbc
+L02bed:
+02bf1  RESTORE D2bf6
+02bfa  GOSUB L09b11
+02c05  v1e1c = 3.1
+02c13  v1cfc = "Drow"
+02c28  v1fae = FNR(4)
+02c39  v0038 = (v0038 + v1fae)
+02c45  v1f4a = 3
+02c51  v1d30 = 3
+02c57  RETURN? 
+L02c5c:
+02c60  RESTORE D2c65
+02c69  GOSUB L09b11
+02c74  v1e1c = 3.2
+02c82  v1cfc = "High Elf"
+02c8d  v1f4a = 1
+02c93  RETURN? 
+L02c98:
+02c9e  v1e1c = 3.3
+02cac  v1cfc = "Mountain Elf"
+02cbc  v0044 = (v0044 + 3)
+02cc2  RETURN? 
+L02cc7:
+02ccd  v1e1c = 3.4
+02cdb  v1cfc = "White Elf"
+02ce6  v0038 = 25
+02cf2  v003c = 25
+02cfe  v1f4a = 1
+02d0a  v1d30 = 1
+02d2d  IF FN829(XP, 6, 10) < ? GOTO L02d32
+02d2f  GOTO L02d7c
+L02d32:
+02d44  Name$ = CONCAT(@Name$, " the Elder")
+02d4f  AgeCat = 5
+02d65  v1fb2 = FNR(5000)
+02d76  v1d0c = (v1fb2 + 2000)
+L02d7c:
+02d7c  RETURN? 
+L02d81:
+02d87  v1e1c = 3.5
+02d95  v1cfc = "Sylvan Elf"
+02da5  v0040 = (v0040 + 2)
+02db1  v1f4a = 3
+02db7  RETURN? 
+L02dbc:
+02dc0  RESTORE D2dc5
+02dc9  GOSUB L09b11
+02dd4  v1e1c = 3.4
+02de2  v1cfc = "Gray Elf"
+02de7  RETURN? 
+L02dec:
+02df0  RESTORE D2df5
+02df9  GOSUB L09b11
+02e0e  v1fb6 = FNR(5)
+02e1f  v0044 = (v0044 + v1fb6)
+02e36  IF v0044 < 12 GOTO L02e3b
+02e38  GOTO L02e4a
+L02e3b:
+02e41  v0044 = 12
+02e47  GOTO L02e6c
+L02e4a:
+02e5b  IF v0044 > 19 GOTO L02e60
+02e5d  GOTO L02e6c
+L02e60:
+02e66  v0044 = 19
+L02e6c:
+02e7c  v1fba = FNR(3)
+02e8d  v0048 = (v0048 - v1fba)
+02ea4  IF v0048 < 3 GOTO L02ea9
+02ea6  GOTO L02eb5
+L02ea9:
+02eaf  v0048 = 3
+L02eb5:
+02ebb  v1f4a = 2
+02ec7  v1d30 = 2
+02eeb  IF RND(1) < 0.2 GOTO L02ef0
+02eed  GOTO L02f34
+L02ef0:
+02f00  v1fbe = FNR(3)
+02f0c  v1f4a = v1fbe
+02f22  v1fc2 = FNR(3)
+02f2e  v1d30 = v1fc2
+L02f34:
+02f45  IF optAlignLimit = 1 GOTO L02f4a
+02f47  GOTO L02f8e
+L02f4a:
+02f50  v1d30 = 1
+02f67  IF optAlignLimit = 4 GOTO L02f6c
+02f69  GOTO L02f8e
+L02f6c:
+02f7c  v1fc6 = FNR(2)
+02f88  v1d30 = v1fc6
+L02f8e:
+02f94  v1f52 = 48
+02fa0  v1f56 = 150
+02fb6  v1fca = FNR(100)
+02fcd  IF v1fca <= optBreedPct GOTO L02fd2
+02fcf  GOTO L02fda
+L02fd2:
+02fd5  GOSUB L030b7
+L02fda:
+02fdd  GOSUB L09e7c
+02ff6  FN5230 @v1d04, 0, "-", 1, 2
+03016  IF MID$(@v1d04, 3, 1) <> "-" GOTO L0301b
+03018  GOTO L03028
+L0301b:
+03023  v1d04 = "--C-"
+L03028:
+03077  IF ((RND(1) < 0.3) AND (MID$(@v1d04, 4, 1) = "T")) GOTO L0307c
+03079  GOTO L03095
+L0307c:
+03090  FN5230 @v1d04, 0, "A", 1, 4
+L03095:
+030a2  IF @v1d04 = "F--A" GOTO L030a7
+030a4  GOTO L030b4
+L030a7:
+030af  v1d04 = "F--T"
+L030b4:
+030b4  GOTO L04930
+L030b7:
+030bd  I = optRec3
+030f7  IF ((I < 1) OR (I > 3)) GOTO L030fc
+030f9  GOTO L0311e
+L030fc:
+0310c  v1fce = FNR(3)
+03118  I = v1fce
+L0311e:
+0312a  ON CINT(I) GOTO L03136, L03182, L031d9
+L03136:
+0313c  v1e1c = 4.1
+0314a  v1cfc = "Duergar (Gray Dwarf)"
+0315f  v1fd2 = FNR(3)
+0316b  v1f4a = v1fd2
+03177  v1d30 = 3
+0317d  RETURN? 
+L03182:
+03186  RESTORE D318b
+0318f  GOSUB L09b11
+0319a  v1e1c = 4.2
+031a8  v1cfc = "Mountain Dwarf"
+031bd  v1fd6 = FNR(3)
+031ce  v0044 = (17 + v1fd6)
+031d4  RETURN? 
+L031d9:
+031df  v1e1c = 4.3
+031ed  v1cfc = "Black Dwarf"
+03202  v1fda = FNR(3)
+03213  v0038 = (16 + v1fda)
+03219  RETURN? 
+L0321e:
+03222  RESTORE D3227
+0322b  GOSUB L09b11
+03240  v1fde = FNR(4)
+03251  v003c = (v003c + v1fde)
+03268  IF v003c > 18 GOTO L0326d
+0326a  GOTO L03279
+L0326d:
+03273  v003c = 18
+L03279:
+03289  v1fe2 = FNR(3)
+03295  v1f4a = v1fe2
+032ab  v1fe6 = FNR(2)
+032b7  v1d30 = v1fe6
+032c3  v1f52 = 42
+032cf  v1f56 = 80
+032e5  v1fea = FNR(100)
+032fc  IF v1fea <= optBreedPct GOTO L03301
+032fe  GOTO L03309
+L03301:
+03304  GOSUB L03437
+L03309:
+0330c  GOSUB L09e7c
+0332c  IF MID$(@v1d04, 2, 1) = "M" GOTO L03331
+0332e  GOTO L0334a
+L03331:
+03345  FN5230 @v1d04, 0, "I", 1, 2
+L0334a:
+03365  IF MID$(@v1d04, 3, 1) = "C" GOTO L0336a
+03367  GOTO L0337a
+L0336a:
+03372  v1d04 = "--C-"
+03377  GOTO L04930
+L0337a:
+0338a  v1fee = FNR(3)
+033b7  T$ = MID$("FI--F--T-I-T", CINT(((v1fee * 4) + -3)), 4)
+033f4  loce% = ((@v1d04 = "FI-A") OR (@v1d04 = "FI-T"))
+0340f  loc10% = (loce OR (@v1d04 = "F--A"))
+03422  IF (loc10 OR (@v1d04 = "-I-A")) GOTO L03427
+03424  GOTO L03434
+L03427:
+0342f  v1d04 = @T$
+L03434:
+03434  GOTO L04930
+L03437:
+0343d  I = optRec3
+03477  IF ((I < 1) OR (I > 4)) GOTO L0347c
+03479  GOTO L0349e
+L0347c:
+0348c  v1ff2 = FNR(4)
+03498  I = v1ff2
+L0349e:
+034aa  ON CINT(I) GOTO L034b8, L034d6, L03520, L03576
+L034b8:
+034be  v1e1c = 5.1
+034cc  v1cfc = "Svirfneblin (Deep Gnome)"
+034d1  RETURN? 
+L034d6:
+034dc  v1e1c = 5.2
+034ea  v1cfc = "Coast Gnome"
+034ff  v1ff6 = FNR(2)
+03515  v0048 = ((v0048 + 2) + v1ff6)
+0351b  RETURN? 
+L03520:
+03526  v1e1c = 5.3
+03534  v1cfc = "High Gnome"
+03549  v1ffa = FNR(4)
+0355f  v0038 = ((v0038 + 4) + v1ffa)
+0356b  v1f4a = 1
+03571  RETURN? 
+L03576:
+0357c  v1e1c = 5.4
+0358a  v1cfc = "Gnomish Quarterling"
+0358f  RETURN? 
+L03594:
+03598  RESTORE D359d
+035a1  GOSUB L09b11
+035b6  v1ffe = FNR(2)
+035c7  v0034 = (v0034 - v1ffe)
+035de  IF v0034 < 6 GOTO L035e3
+035e0  GOTO L035ef
+L035e3:
+035e9  v0034 = 6
+L035ef:
+035ff  v2002 = FNR(5)
+03610  v0040 = (v0040 + v2002)
+03627  IF v0040 > 19 GOTO L0362c
+03629  GOTO L03638
+L0362c:
+03632  v0040 = 19
+L03638:
+0363e  v1f52 = 36
+0364a  v1f56 = 60
+03660  v2006 = FNR(2)
+0366c  v1f4a = v2006
+03682  v200a = FNR(2)
+0368e  v1d30 = v200a
+036a4  v200e = FNR(100)
+036bb  IF v200e <= optBreedPct GOTO L036c0
+036bd  GOTO L0373f
+L036c0:
+036c6  I = optRec3
+03700  IF ((I < 1) OR (I > 3)) GOTO L03705
+03702  GOTO L03727
+L03705:
+03715  v2012 = FNR(3)
+03721  I = v2012
+L03727:
+03733  ON CINT(I) GOSUB L037ea, L03808, L03832
+L0373f:
+03742  GOSUB L09e7c
+0375b  FN5230 @v1d04, 0, "-", 1, 2
+037b9  IF (((MID$(@v1d04, 3, 1) = "C") AND (v003c > 11)) AND (v0048 > 14)) GOTO L037be
+037bb  GOTO L037ce
+L037be:
+037c6  v1d04 = "--D-"
+037cb  GOTO L037e7
+L037ce:
+037e2  FN5230 @v1d04, 0, "-", 1, 3
+L037e7:
+037e7  GOTO L04930
+L037ea:
+037f0  v1e1c = 6.1
+037fe  v1cfc = "Hairfoot Halfling"
+03803  RETURN? 
+L03808:
+0380e  v1e1c = 6.2
+0381c  v1cfc = "Stout Halfling"
+03827  v1f56 = 65
+0382d  RETURN? 
+L03832:
+03838  v1e1c = 6.3
+03846  v1cfc = "Tallfellow Halfling"
+03851  v1f52 = 48
+0385d  v1f56 = 70
+03863  RETURN? 
+L03868:
+0386e  I = optRec3
+038a8  IF ((I < 1) OR (I > 5)) GOTO L038ad
+038aa  GOTO L038cf
+L038ad:
+038bd  v2016 = FNR(5)
+038c9  I = v2016
+L038cf:
+038db  ON CINT(I) GOTO L03c4c, L03e29, L040cf, L03afc, L038eb
+L038eb:
+038ef  RESTORE D393d
+038fc  v1cfc = "Half-Goblin"
+03907  v1e1c = 7.5
+03913  v1f52 = 45
+0391f  v1f56 = 100
+0392b  v1f4a = 3
+03937  v1d30 = 2
+03941  GOSUB L09b11
+03956  v201a = FNR(6)
+03967  v0038 = (v201a + 3)
+0397d  v201e = FNR(4)
+0398e  v0048 = (v201e + 3)
+039a4  v2022 = FNR(100)
+039bb  IF v2022 < optBreedPct GOTO L039c0
+039bd  GOTO L03ab9
+L039c0:
+039d0  v2026 = FNR(4)
+039dc  I = v2026
+039f3  IF I = 1 GOTO L039f8
+039f5  GOTO L03a05
+L039f8:
+03a00  v1cfc = "Semi-Goblin"
+L03a05:
+03a16  IF I = 2 GOTO L03a1b
+03a18  GOTO L03a28
+L03a1b:
+03a23  v1cfc = "Goblin Half-Elf"
+L03a28:
+03a39  IF I = 3 GOTO L03a3e
+03a3b  GOTO L03a4b
+L03a3e:
+03a46  v1cfc = "Pseudo-Goblin"
+L03a4b:
+03a5c  IF I = 4 GOTO L03a61
+03a5e  GOTO L03ab9
+L03a61:
+03a69  v1cfc = "Mutant Half-Goblin"
+03a7e  v202a = FNR(6)
+03a8f  v0034 = (v0034 + v202a)
+03a9b  v0038 = 3
+03aa7  v003c = 3
+03ab3  v0048 = 3
+L03ab9:
+03abc  GOSUB L09e7c
+03ad5  FN5230 @v1d04, 0, "-", 1, 2
+03ae7  IF @v1d04 = "----" GOTO L03aec
+03ae9  GOTO L03af9
+L03aec:
+03af4  v1d04 = "F---"
+L03af9:
+03af9  GOTO L04930
+L03afc:
+03b00  RESTORE D3b4e
+03b0d  v1cfc = "Kenku"
+03b18  v1e1c = 7.4
+03b24  v1f52 = 60
+03b30  v1f56 = 100
+03b3c  v1f4a = 2
+03b48  v1d30 = 2
+03b52  GOSUB L09b11
+03b5a  GOSUB L09e7c
+03b67  v1d04 = "F---"
+03b7d  IF v0038 > 13 GOTO L03b82
+03b7f  GOTO L03bb2
+L03b82:
+03b8a  v1d04 = "FM--"
+03ba0  IF v0038 > v0034 GOTO L03ba5
+03ba2  GOTO L03bb2
+L03ba5:
+03bad  v1d04 = "-M--"
+L03bb2:
+03bc2  v202e = FNR(100)
+03bd9  IF v202e < optBreedPct GOTO L03bde
+03bdb  GOTO L03c2a
+L03bde:
+03bee  v2032 = FNR(4)
+03c25  v1cfc = CONCAT(MID$("Black White Supra Juste ", CINT(((v2032 * 6) + -5)), 6), @v1cfc)
+L03c2a:
+03c37  IF @v1cfc = "Juste Kenku" GOTO L03c3c
+03c39  GOTO L03c49
+L03c3c:
+03c44  v1d04 = "--C-"
+L03c49:
+03c49  GOTO L04930
+L03c4c:
+03c50  RESTORE D3ccf
+03c5d  v1cfc = "Centaur"
+03c68  v1e1c = 7.1
+03c74  v1f52 = 72
+03c80  v1f56 = 300
+03c96  v2036 = FNR(2)
+03ca7  v1f4a = (v2036 + 1)
+03cbd  v203a = FNR(2)
+03cc9  v1d30 = v203a
+03cd3  GOSUB L09b11
+03ce8  v203e = FNR(5)
+03cf9  v0034 = (v0034 + v203e)
+03d10  IF v0034 < 10 GOTO L03d15
+03d12  GOTO L03d21
+L03d15:
+03d1b  v0034 = 10
+L03d21:
+03d24  GOSUB L09e7c
+03d31  v1d04 = "F---"
+03d54  IF RND(1) < 0.2 GOTO L03d59
+03d56  GOTO L03d66
+L03d59:
+03d61  v1d04 = "R---"
+L03d66:
+03d76  v2042 = FNR(100)
+03d8d  IF v2042 < optBreedPct GOTO L03d92
+03d8f  GOTO L03d9a
+L03d92:
+03d95  GOSUB L03d9d
+L03d9a:
+03d9a  GOTO L04930
+L03d9d:
+03da1  RESTORE D3da6
+03db7  v2046 = FNR(6)
+03dc3  v204a = v2046
+03dce  FOR I = 1 TO v204a
+L03dd2:
+03dda  READ @T$, 0
+L03de9:
+03e01  NEXT I
+03e1f  v1cfc = CONCAT(CONCAT(@T$, " "), @v1cfc)
+03e24  RETURN? 
+L03e29:
+03e2d  RESTORE D3e91
+03e3a  v1cfc = "Tabaxi"
+03e45  v1e1c = 7.2
+03e51  v1f52 = 69
+03e5d  v1f56 = 150
+03e69  v1f4a = 3
+03e7f  v204e = FNR(3)
+03e8b  v1d30 = v204e
+03e95  GOSUB L09b11
+03eaa  v2052 = FNR(5)
+03ebb  v0040 = (v0040 + v2052)
+03ed2  IF v0040 < 10 GOTO L03ed7
+03ed4  GOTO L03ee3
+L03ed7:
+03edd  v0040 = 10
+L03ee3:
+03ee6  GOSUB L09e7c
+03f09  IF RND(1) < 0.3 GOTO L03f0e
+03f0b  GOTO L03f11
+L03f0e:
+03f0e  GOTO L04930
+L03f11:
+03fb8  IF ((((((MID$(@v1d04, 1, 1) = "F") AND (v1d30 = 1)) AND (v0034 > 12)) AND (v0038 > 12)) AND (v003c > 13)) AND (v0044 > 13)) GOTO L03fbd
+03fba  GOTO L03fd3
+L03fbd:
+03fce  FN5230 @v1d04, 0, "R", 1, 1
+L03fd3:
+04054  IF (((((@v1d04 = "--C-") AND (optAlignLimit <> 1)) AND (optAlignLimit <> 3)) AND (v003c > 11)) AND (v0048 > 14)) GOTO L04059
+04056  GOTO L04066
+L04059:
+04061  v1d04 = "--D-"
+L04066:
+04081  IF MID$(@v1d04, 4, 1) = "T" GOTO L04086
+04083  GOTO L040cc
+L04086:
+0409a  FN5230 @v1d04, 0, "A", 1, 4
+040b0  IF optNames = 1 GOTO L040b5
+040b2  GOTO L040cc
+L040b5:
+040c7  Name$ = CONCAT("Agent ", @Name$)
+L040cc:
+040cc  GOTO L04930
+L040cf:
+040d3  RESTORE D4109
+040e0  v1cfc = "Brownie"
+040eb  v1e1c = 7.3
+040f7  v1f52 = 20
+04103  v1f56 = 35
+0410d  GOSUB L09b11
+04118  v1f4a = 1
+04124  v1d30 = 1
+04130  v0040 = 18
+04139  GOSUB L09e7c
+04146  v1d04 = "FM-T"
+04169  IF RND(1) < 0.2 GOTO L0416e
+0416b  GOTO L041b7
+L0416e:
+04176  v1d04 = "--CT"
+04199  IF RND(1) < 0.2 GOTO L0419e
+0419b  GOTO L041b7
+L0419e:
+041a6  v1d04 = "-MCA"
+041b1  v1d30 = 3
+L041b7:
+041b7  GOTO L04930
+L041ba:
+041be  RESTORE D41c3
+041c7  GOSUB L09b11
+041dc  v2056 = FNR(3)
+041f2  v0048 = ((v0048 - v2056) + -3)
+04209  IF v0048 < 3 GOTO L0420e
+0420b  GOTO L0421a
+L0420e:
+04214  v0048 = 3
+L0421a:
+0422a  v205a = FNR(2)
+04240  v0044 = ((v0044 + v205a) + 2)
+04257  IF v0044 < 12 GOTO L0425c
+04259  GOTO L0426b
+L0425c:
+04262  v0044 = 12
+04268  GOTO L0428d
+L0426b:
+0427c  IF v0044 > 19 GOTO L04281
+0427e  GOTO L0428d
+L04281:
+04287  v0044 = 19
+L0428d:
+0429d  v205e = FNR(2)
+042b3  v0034 = ((v0034 + v205e) + 2)
+042ca  IF v0034 < 13 GOTO L042cf
+042cc  GOTO L042de
+L042cf:
+042d5  v0034 = 13
+042db  GOTO L04300
+L042de:
+042ef  IF v0034 > 18 GOTO L042f4
+042f1  GOTO L04300
+L042f4:
+042fa  v0034 = 18
+L04300:
+04310  v2062 = FNR(2)
+04321  v1f4a = (v2062 + 1)
+04337  v2066 = FNR(2)
+04348  v1d30 = (v2066 + 1)
+04354  v1f52 = 60
+04360  v1f56 = 145
+04369  GOSUB L09e7c
+04382  FN5230 @v1d04, 0, "-", 1, 2
+043d6  IF ((RND(1) < 0.6) AND (MID$(@v1d04, 4, 1) = "T")) GOTO L043db
+043d8  GOTO L043f4
+L043db:
+043ef  FN5230 @v1d04, 0, "A", 1, 4
+L043f4:
+04401  IF @v1d04 = "F-CT" GOTO L04406
+04403  GOTO L04448
+L04406:
+04416  v206a = FNR(3)
+04443  v1d04 = MID$("F-C-F--T--CT", CINT(((v206a * 4) + -3)), 4)
+L04448:
+04455  IF @v1d04 = "F-CA" GOTO L0445a
+04457  GOTO L0449c
+L0445a:
+0446a  v206e = FNR(2)
+04497  v1d04 = MID$("F--A--CA", CINT(((v206e * 4) + -3)), 4)
+L0449c:
+0449c  GOTO L04930
+L0449f:
+044a5  I = optRec3
+044df  IF ((I < 1) OR (I > 4)) GOTO L044e4
+044e1  GOTO L04506
+L044e4:
+044f4  v2072 = FNR(4)
+04500  I = v2072
+L04506:
+04512  ON CINT(I) GOTO L04520, L0465f, L04778, L04896
+L04520:
+04524  RESTORE D4542
+04531  v1cfc = "Quarter-Ogre"
+0453c  v1e1c = 9.1
+04546  GOSUB L09b11
+0455b  v2076 = FNR(3)
+0456c  v0034 = (16 + v2076)
+04582  v207a = FNR(2)
+04593  v0038 = (v0038 - v207a)
+045aa  IF v0038 < 3 GOTO L045af
+045ac  GOTO L045bb
+L045af:
+045b5  v0038 = 3
+L045bb:
+045c1  v1f52 = 75
+045cd  v1f56 = 200
+045e3  v207e = FNR(3)
+045ef  v1f4a = v207e
+04605  v2082 = FNR(3)
+04611  v1d30 = v2082
+0461a  GOSUB L09e7c
+04627  v1d04 = "F---"
+0464a  IF RND(1) < 0.2 GOTO L0464f
+0464c  GOTO L0465c
+L0464f:
+04657  v1d04 = "F--T"
+L0465c:
+0465c  GOTO L04930
+L0465f:
+04663  RESTORE D4681
+04670  v1cfc = "Half-Ogre"
+0467b  v1e1c = 9.2
+04685  GOSUB L09b11
+0469a  v2086 = FNR(3)
+046ab  v0034 = (18 + v2086)
+046c1  v208a = FNR(2)
+046d7  v0038 = ((v0038 - v208a) + -1)
+046ee  IF v0038 < 3 GOTO L046f3
+046f0  GOTO L046ff
+L046f3:
+046f9  v0038 = 3
+L046ff:
+04705  v1f52 = 90
+04711  v1f56 = 275
+04727  v208e = FNR(2)
+04738  v1f4a = (v208e + 1)
+0474e  v2092 = FNR(3)
+0475a  v1d30 = v2092
+04763  GOSUB L09e7c
+04770  v1d04 = "F---"
+04775  GOTO L04930
+L04778:
+0477c  RESTORE D479a
+04789  v1cfc = "Half-Hill-Giant"
+04794  v1e1c = 9.3
+0479e  GOSUB L09b11
+047b3  v2096 = FNR(3)
+047c4  v0034 = (19 + v2096)
+047da  v209a = FNR(2)
+047f0  v0038 = ((v0038 - v209a) + -2)
+04807  IF v0038 < 3 GOTO L0480c
+04809  GOTO L04818
+L0480c:
+04812  v0038 = 3
+L04818:
+04828  v209e = FNR(2)
+04839  v1f4a = (v209e + 1)
+0484f  v20a2 = FNR(2)
+04860  v1d30 = (v20a2 + 1)
+0486c  v1f52 = 120
+04878  v1f56 = 325
+04881  GOSUB L09e7c
+0488e  v1d04 = "F---"
+04893  GOTO L04930
+L04896:
+0489a  RESTORE D48b8
+048a7  v1cfc = "Half-Mountain-Giant"
+048b2  v1e1c = 9.4
+048bc  GOSUB L09b11
+048d1  v20a6 = FNR(4)
+048e2  v0034 = (21 + v20a6)
+048ee  v1f4a = 3
+048fa  v1d30 = 2
+04906  v1f52 = 150
+04912  v1f56 = 550
+0491b  GOSUB L09e7c
+04928  v1d04 = "F---"
+0492d  GOTO L04930
+L04930:
+04941  IF optAlignLimit = 1 GOTO L04946
+04943  GOTO L04952
+L04946:
+0494c  v1d30 = 1
+L04952:
+04963  IF optAlignLimit = 3 GOTO L04968
+04965  GOTO L04974
+L04968:
+0496e  v1d30 = 3
+L04974:
+049a8  IF ((optAlignLimit = 4) AND (v1d30 = 3)) GOTO L049ad
+049aa  GOTO L049cf
+L049ad:
+049bd  v20aa = FNR(2)
+049c9  v1d30 = v20aa
+L049cf:
+049d5  v20ae = 4
+049e0  FOR I = 1 TO 4
+L049e4:
+04a06  IF MID$(@v1d04, CINT(I), 1) = "-" GOTO L04a0b
+04a08  GOTO L04a1c
+L04a0b:
+04a16  v20ae = (v20ae + -1)
+L04a1c:
+L04a26:
+04a3e  NEXT I
+04a51  IF v20ae = 4 GOTO L04a56
+04a53  GOTO L04a8c
+L04a56:
+04a66  v20b2 = FNR(4)
+04a87  FN5230 @v1d04, 0, "-", 1, CINT(v20b2)
+L04a8c:
+04a99  IF @v1d04 = "----" GOTO L04a9e
+04a9b  GOTO L04ab7
+L04a9e:
+04aa6  v1d04 = "F---"
+04ab1  v20ae = 1
+L04ab7:
+04ae7  IF ((@v1d04 = "F---") AND (v0034 < 9)) GOTO L04aec
+04ae9  GOTO L04af8
+L04aec:
+04af2  v0034 = 9
+L04af8:
+04afe  v1dac = 0
+04b38  IF ((v1e9e = 0) OR (optRec34 = 0)) GOTO L04b3d
+04b3a  GOTO L04b40
+L04b3d:
+04b3d  GOTO L04edf
+L04b40:
+04b56  IF (v1db0 * 0.75) < v20b6 GOTO L04b5b
+04b58  GOTO L04b63
+L04b5b:
+04b5e  GOSUB L0a0d0
+L04b63:
+04b68  FOR I = 1 TO 20
+L04b6c:
+04b83  a0068(CINT(I)) = @v233e
+L04b92:
+04baa  NEXT I
+04bbc  v20ba = FNR(3)
+04bcd  v1dac = (v20ba + 1)
+04bd9  v20be = v1dac
+04be4  FOR v1eb2 = 1 TO v20be
+L04be8:
+04bf0  T$ = "USED"
+04c05  v20c2 = FNR(v1db0)
+04c11  v20c6 = v20c2
+L04c18:
+04c25  IF @T$ = "USED" GOTO L04c2a
+04c27  GOTO L04cda
+L04c2a:
+04c35  v20c6 = (v20c6 + 1)
+04c4c  IF v20c6 > v1db0 GOTO L04c51
+04c4e  GOTO L04c5d
+L04c51:
+04c57  v20c6 = 1
+L04c5d:
+04c74  T$ = @a00bc(CINT(v20c6))
+04c90  IF LEFT$(@T$, 1) = "^" GOTO L04c95
+04c92  GOTO L04cd6
+L04c95:
+04ca6  IF v1e1c = 7.4 GOTO L04cab
+04ca8  GOTO L04cbb
+L04cab:
+04cb3  T$ = "USED"
+04cb8  GOTO L04cd6
+L04cbb:
+04cd1  T$ = MID$(@T$, 2, 32767)
+L04cd6:
+04cd6  GOTO L04c18
+L04cda:
+04cf1  IF LEFT$(@T$, 1) <> "*" GOTO L04cf6
+04cf3  GOTO L04cf9
+L04cf6:
+04cf6  GOTO L04d3d
+L04cf9:
+04d17  IF RND(1) < 0.03 GOTO L04d1c
+04d19  GOTO L04d3a
+L04d1c:
+04d32  T$ = MID$(@T$, 2, 32767)
+04d37  GOTO L04d3d
+L04d3a:
+04d3a  GOTO L04be8
+L04d3d:
+04d54  IF LEFT$(@T$, 1) = "+" GOTO L04d59
+04d56  GOTO L04de6
+L04d59:
+04d77  IF RND(1) < 0.4 GOTO L04d7c
+04d79  GOTO L04dcb
+L04d7c:
+04dc3  T$ = CONCAT(MID$(CONCAT(CHR$((ASC(MID$("Great ", @T$, 2, 1)) + 32))), @T$, 3, 32767))
+04dc8  GOTO L04de6
+L04dcb:
+04de1  T$ = MID$(@T$, 2, 32767)
+L04de6:
+04dfd  a0068(CINT(v1eb2)) = @T$
+04e07  FOR I = 1 TO 6
+L04e0a:
+04e2c  ; asm imul si
+04e3a  ; asm add ax, si
+04e58  a0030(CINT(I)) = (a0030(CINT(I)) + a03e0(CINT(I)))
+L04e68:
+04e80  NEXT I
+04e99  a00bc(CINT(v20c6)) = "USED"
+04ea9  v20b6 = (v20b6 + 1)
+L04eb9:
+04ed1  NEXT v1eb2
+04ed3  GOTO L04be8
+L04ed6:
+04eda  CALL SUB_0_aeb5(@I)
+L04edf:
+04eef  v20ca = FNR(10)
+04f11  v1f52 = INT((((95 + v20ca) * v1f52) / 100))
+04f27  v20ce = FNR(10)
+04f49  v1f56 = INT((((95 + v20ce) * v1f56) / 100))
+04f54  FOR I = 1 TO 4
+L04f58:
+04f74  IF @a0068(CINT(I)) = "Underweight" GOTO L04f79
+04f76  GOTO L04fb1
+L04f79:
+04f89  v20d2 = FNR(15)
+04fab  v1f56 = INT((((60 + v20d2) * v1f56) / 100))
+L04fb1:
+04fcd  IF @a0068(CINT(I)) = "Overweight" GOTO L04fd2
+04fcf  GOTO L0500a
+L04fd2:
+04fe2  v20d6 = FNR(15)
+05004  v1f56 = INT((((125 + v20d6) * v1f56) / 100))
+L0500a:
+05026  IF @a0068(CINT(I)) = "Tall" GOTO L0502b
+05028  GOTO L05063
+L0502b:
+0503b  v20da = FNR(15)
+0505d  v1f52 = INT((((125 + v20da) * v1f52) / 100))
+L05063:
+0507f  IF @a0068(CINT(I)) = "Short" GOTO L05084
+05081  GOTO L050bc
+L05084:
+05094  v20de = FNR(15)
+050b6  v1f52 = INT((((60 + v20de) * v1f52) / 100))
+L050bc:
+L050c6:
+050de  NEXT I
+050e0  GOTO L04f58
+L050e3:
+050f5  v20e2 = INT((v1f52 / 12))
+0511a  v20e6 = INT(((v1f52 - (v20e2 * 12)) + 0.5))
+051a4  v1d08 = CONCAT(CONCAT(STR$(CONCAT(CONCAT(CHR$(CONCAT(MID$(STR$(CONCAT(MID$(STR$(v20e2), 2, 32767), "'"), v20e6), 2, 32767)), 34)), ","), v1f56)), " lbs")
+051b1  v1d14 = "Right-Handed"
+051d4  IF RND(1) < 0.2 GOTO L051d9
+051d6  GOTO L051e6
+L051d9:
+051e1  v1d14 = "Left-Handed"
+L051e6:
+051f6  v20ea = FNR(100)
+05217  IF ((v0040 * 3) + -45) > v20ea GOTO L0521c
+05219  GOTO L05229
+L0521c:
+05224  v1d14 = "Ambidextrous"
+L05229:
+0522f  v1cf0 = 2
+0523d  v1cf4 = "Male"
+05252  v20ee = FNR(100)
+05269  IF v20ee <= optFemalePct GOTO L0526e
+0526b  GOTO L0530f
+L0526e:
+05274  v1cf0 = 1
+05282  v1cf4 = "Female"
+05299  v1f52 = INT((v1f52 * 0.8))
+052b1  v1f56 = INT((v1f56 * 0.8))
+052c7  v20f2 = FNR(2)
+052dd  v0034 = ((v0034 - v20f2) + -1)
+052f3  v20f6 = FNR(2)
+05309  v0048 = ((v0048 + v20f6) + 1)
+L0530f:
+05343  IF ((v1e1c = 7.3) AND (optNames = 1)) GOTO L05348
+05345  GOTO L0538f
+L05348:
+05359  IF v1cf0 = 1 GOTO L0535e
+0535b  GOTO L05378
+L0535e:
+05370  Name$ = CONCAT("Ms. ", @Name$)
+05375  GOTO L0538f
+L05378:
+0538a  Name$ = CONCAT("Mr. ", @Name$)
+L0538f:
+053bf  IF ((@v1d04 = "P---") AND (optNames = 1)) GOTO L053c4
+053c1  GOTO L0540b
+L053c4:
+053d5  IF v1cf0 = 1 GOTO L053da
+053d7  GOTO L053f4
+L053da:
+053ec  Name$ = CONCAT("Dame ", @Name$)
+053f1  GOTO L0540b
+L053f4:
+05406  Name$ = CONCAT("Sir ", @Name$)
+L0540b:
+0541c  IF v1f1e = 1 GOTO L05421
+0541e  GOTO L05454
+L05421:
+05432  IF v1cf0 = 1 GOTO L05437
+05434  GOTO L05447
+L05437:
+0543f  v1cf8 = "Lady"
+05444  GOTO L05454
+L05447:
+0544f  v1cf8 = "Lord"
+L05454:
+05459  FOR I = 1 TO 4
+L0545c:
+0549f  IF ((v1cf0 = 2) AND (@a0068(CINT(I)) = "Beautiful (K+3)")) GOTO L054a4
+054a1  GOTO L054c0
+L054a4:
+054bb  a0068(CINT(I)) = "Handsome (K+3)"
+L054c0:
+05503  IF ((v1cf0 = 1) AND (@a0068(CINT(I)) = "Impotent")) GOTO L05508
+05505  GOTO L05524
+L05508:
+0551f  a0068(CINT(I)) = "Frigid"
+L05524:
+05567  IF ((v1cf0 = 2) AND (@a0068(CINT(I)) = "Nymphomaniac")) GOTO L0556c
+05569  GOTO L05588
+L0556c:
+05583  a0068(CINT(I)) = "Satyr"
+L05588:
+L05592:
+055aa  NEXT I
+055ac  GOTO L0545c
+L055af:
+055e3  IF ((v1cf0 = 1) AND (@v1cfc = "Norseman")) GOTO L055e8
+055e5  GOTO L055f5
+L055e8:
+055f0  v1cfc = "Norsewoman"
+L055f5:
+055fd  v20fa = @v233e
+0560a  v1d34 = @v233e
+05617  v1d38 = @v233e
+05622  v1d3c = 0
+0562e  v1d40 = 0
+0563a  v20fe = 0
+05646  v2102 = 0
+05652  v2106 = 0
+0565e  v210a = 0
+05669  FOR I = 1 TO 4
+L0566c:
+05682  a1ab4(CINT(I)) = 0
+L05692:
+056aa  NEXT I
+056b1  FOR v210e = 1 TO 4
+L056b4:
+056d1  v20fa = MID$(@v1d04, CINT(v210e), 1)
+056e3  IF @v20fa <> "-" GOTO L056e8
+056e5  GOTO L05700
+L056e8:
+056eb  GOSUB L05727
+056f3  GOSUB L060ee
+056fb  GOSUB L06332
+L05700:
+L0570a:
+05722  NEXT v210e
+05724  GOTO L06646
+L05727:
+05734  IF @v1d34 <> @v233e GOTO L05739
+05736  GOTO L05750
+L05739:
+0574b  v1d34 = CONCAT(@v1d34, "/")
+L05750:
+0575d  IF @v1d04 = "M---" GOTO L05762
+0575f  GOTO L05765
+L05762:
+05762  GOTO L05c0c
+L05765:
+05774  v2112 = LEN(@v1e14)
+0577f  FOR I = 1 TO v2112
+L05782:
+057a4  IF MID$(@v1e14, CINT(I), 1) = @v20fa GOTO L057a9
+057a6  GOTO L057cf
+L057a9:
+057b5  ON CINT(I) GOTO L057fc, L058bd, L05944, L05aa0, L05c64, L05d1d, L05dd5, L05e8d, L05f5d, L0600f
+L057cf:
+L057d9:
+057f1  NEXT I
+057f7  FN32CB 100
+L057fc:
+057ff  GOSUB L05b33
+05808  RESTORE D5822
+05812  FOR I = 1 TO 9
+L05816:
+0581d  READ$ @v1eb2
+0583b  IF INT(v1e1c) = I GOTO L05840
+0583d  GOTO L0584c
+L05840:
+05846  v1d3c = v1eb2
+L0584c:
+L05856:
+0586e  NEXT I
+05877  v20fe = 10
+05883  v2102 = 6
+0588f  v2106 = 9
+0589b  v210a = 3
+058b3  v1d34 = CONCAT(@v1d34, "Fighter")
+058b8  RETURN? 
+L058bd:
+058c0  GOSUB L05b33
+058c9  RESTORE D58ce
+058d5  v1d3c = 99
+058e1  v20fe = 12
+058ed  v2102 = 7
+058f9  v2106 = 8
+05905  v210a = 4
+0591b  v2116 = FNR(2)
+0592c  v1f4a = (v2116 + 1)
+0593a  v1d34 = "Barbarian"
+0593f  RETURN? 
+L05944:
+05947  GOSUB L05b33
+05950  RESTORE D5991
+0595b  v20fe = 10
+05967  v2102 = 6
+05973  v2106 = 9
+0597f  v210a = 3
+0598b  v1d3c = 99
+0599a  v1d34 = "Paladin"
+059a5  v1f4a = 1
+059b1  v1d30 = 1
+05a13  IF (((RND(1) < 0.5) AND (optAlignLimit <> 1)) AND (optAlignLimit <> 4)) GOTO L05a18
+05a15  GOTO L05a3d
+L05a18:
+05a1e  v1f4a = 3
+05a2a  v1d30 = 3
+05a38  v1d34 = "Anti-Paladin"
+L05a3d:
+05a71  IF ((optAlignLimit = 3) OR (optRec3 = 19)) GOTO L05a76
+05a73  GOTO L05a9b
+L05a76:
+05a7c  v1f4a = 3
+05a88  v1d30 = 3
+05a96  v1d34 = "Anti-Paladin"
+L05a9b:
+05a9b  RETURN? 
+L05aa0:
+05aa3  GOSUB L05b33
+05aac  RESTORE D5ab1
+05ab8  v1d3c = 99
+05ad6  IF INT(v1e1c) = 2 GOTO L05adb
+05ad8  GOTO L05ae7
+L05adb:
+05ae1  v1d3c = 8
+L05ae7:
+05aed  v20fe = 8
+05af9  v2102 = 9
+05b05  v2106 = 11
+05b11  v210a = 2
+05b29  v1d34 = CONCAT(@v1d34, "Ranger")
+05b2e  RETURN? 
+L05b33:
+05b44  IF v0034 <> 18 GOTO L05b49
+05b46  GOTO L05b4e
+L05b49:
+05b49  RETURN? 
+L05b4e:
+05b5e  v211a = FNR(100)
+05b6a  v1cec = v211a
+05ba4  v1d5c = CONCAT(CONCAT(MID$(STR$("(", v1cec), 2, 32767)), ")")
+05bba  IF v1cec = 100 GOTO L05bbf
+05bbc  GOTO L05bcc
+L05bbf:
+05bc7  v1d5c = "(00)"
+L05bcc:
+05bdd  IF v1cec < 10 GOTO L05be2
+05bdf  GOTO L05c07
+L05be2:
+05c02  v1d5c = CONCAT(MID$("(0", @v1d5c, 2, 32767))
+L05c07:
+05c07  RETURN? 
+L05c0c:
+05c10  RESTORE D5c15
+05c1c  v1d3c = 99
+05c28  v20fe = 4
+05c34  v2102 = 5
+05c40  v2106 = 17
+05c4c  v210a = 0
+05c5a  v1d34 = "Monk"
+05c5f  RETURN? 
+L05c64:
+05c68  RESTORE D5c82
+05c72  FOR I = 1 TO 9
+L05c76:
+05c7d  READ$ @v1eb2
+05c9b  IF INT(v1e1c) = I GOTO L05ca0
+05c9d  GOTO L05cac
+L05ca0:
+05ca6  v1d3c = v1eb2
+L05cac:
+L05cb6:
+05cce  NEXT I
+05cd7  v20fe = 4
+05ce3  v2102 = 3
+05cef  v2106 = 11
+05cfb  v210a = 1
+05d13  v1d34 = CONCAT(@v1d34, "Magic-User")
+05d18  RETURN? 
+L05d1d:
+05d21  RESTORE D5d3a
+05d2b  FOR I = 1 TO 9
+L05d2e:
+05d35  READ$ @v1eb2
+05d53  IF INT(v1e1c) = I GOTO L05d58
+05d55  GOTO L05d64
+L05d58:
+05d5e  v1d3c = v1eb2
+L05d64:
+L05d6e:
+05d86  NEXT I
+05d8f  v20fe = 4
+05d9b  v2102 = 3
+05da7  v2106 = 10
+05db3  v210a = 1
+05dcb  v1d34 = CONCAT(@v1d34, "Illusionist")
+05dd0  RETURN? 
+L05dd5:
+05dd9  RESTORE D5df2
+05de3  FOR I = 1 TO 9
+L05de6:
+05ded  READ$ @v1eb2
+05e0b  IF INT(v1e1c) = I GOTO L05e10
+05e0d  GOTO L05e1c
+L05e10:
+05e16  v1d3c = v1eb2
+L05e1c:
+L05e26:
+05e3e  NEXT I
+05e47  v20fe = 8
+05e53  v2102 = 5
+05e5f  v2106 = 9
+05e6b  v210a = 2
+05e83  v1d34 = CONCAT(@v1d34, "Cleric")
+05e88  RETURN? 
+L05e8d:
+05e91  RESTORE D5eaa
+05e9b  FOR I = 1 TO 9
+L05e9e:
+05ea5  READ$ @v1eb2
+05ec3  IF INT(v1e1c) = I GOTO L05ec8
+05ec5  GOTO L05ed4
+L05ec8:
+05ece  v1d3c = v1eb2
+L05ed4:
+L05ede:
+05ef6  NEXT I
+05eff  v20fe = 8
+05f0b  v2102 = 5
+05f17  v2106 = 14
+05f23  v210a = 0
+05f2f  v1f4a = 2
+05f3b  v1d30 = 2
+05f53  v1d34 = CONCAT(@v1d34, "Druid")
+05f58  RETURN? 
+L05f5d:
+05f61  RESTORE D5f9b
+05f6c  v1d3c = 99
+05f8a  IF INT(v1e1c) = 8 GOTO L05f8f
+05f8c  GOTO L05f9b
+L05f8f:
+05f95  v1d3c = 8
+L05f9b:
+05fac  v211e = FNR(2)
+05fbd  v1f4a = (v211e + 1)
+05fc9  v20fe = 6
+05fd5  v2102 = 4
+05fe1  v2106 = 10
+05fed  v210a = 2
+06005  v1d34 = CONCAT(@v1d34, "Thief")
+0600a  RETURN? 
+L0600f:
+06013  RESTORE D602c
+0601d  FOR I = 1 TO 9
+L06020:
+06027  READ$ @v1eb2
+06045  IF INT(v1e1c) = I GOTO L0604a
+06047  GOTO L06056
+L0604a:
+06050  v1d3c = v1eb2
+L06056:
+L06060:
+06078  NEXT I
+0608b  v2122 = FNR(2)
+0609c  v1f4a = (v2122 + 1)
+060a8  v20fe = 6
+060b4  v2102 = 4
+060c0  v2106 = 15
+060cc  v210a = 0
+060e4  v1d34 = CONCAT(@v1d34, "Assassin")
+060e9  RETURN? 
+L060ee:
+060f4  v2126 = XP
+0610b  IF v20ae > 1 GOTO L06110
+0610d  GOTO L06128
+L06110:
+06122  v2126 = INT((v2126 / v20ae))
+L06128:
+06139  IF v2126 = 0 GOTO L0613e
+0613b  GOTO L0614a
+L0613e:
+06144  v2126 = 1
+L0614a:
+06150  I = 0
+L06156:
+0616c  IF (I * 1000) < v2126 GOTO L06171
+0616e  GOTO L06206
+L06171:
+06178  READ$ @I
+061a8  a1ab4(CINT(v210e)) = (a1ab4(CINT(v210e)) + 1)
+061f2  IF ((optRec1 <> 1) AND (a1ab4(CINT(v210e)) >= v1d3c)) GOTO L061f7
+061f4  GOTO L06203
+L061f7:
+061fd  I = 6000
+L06203:
+06203  GOTO L06156
+L06206:
+06213  IF @v1d38 <> @v233e GOTO L06218
+06215  GOTO L0622f
+L06218:
+0622a  v1d38 = CONCAT(@v1d38, "/")
+L0622f:
+0626a  v1d38 = CONCAT(MID$(STR$(@v1d38, [bx + 2], a1ab4(CINT(v210e))), 2, 32767))
+062ce  IF (((a1ab4(CINT(v210e)) > 8) AND (@v1d04 = "M---")) AND (optNames = 1)) GOTO L062d3
+062d0  GOTO L0632d
+L062d3:
+062e4  IF v1cf0 = 2 GOTO L062e9
+062e6  GOTO L06300
+L062e9:
+062fb  Name$ = CONCAT("Master ", @Name$)
+L06300:
+06311  IF v1cf0 = 1 GOTO L06316
+06313  GOTO L0632d
+L06316:
+06328  Name$ = CONCAT("Mistress ", @Name$)
+L0632d:
+0632d  RETURN? 
+L06332:
+06338  v1d90 = 0
+06342  RESTORE D6347
+0634e  v212a = v0044
+06359  FOR I = 3 TO v212a
+L0635c:
+06363  READ$ @v1d90
+L06372:
+0638a  NEXT I
+063cb  IF ((v1d90 > 2) AND (MID$(@v1d04, 1, 1) = "-")) GOTO L063d0
+063cd  GOTO L063dc
+L063d0:
+063d6  v1d90 = 2
+L063dc:
+063f2  v212e = a1ab4(CINT(v210e))
+06409  IF v212e > v2106 GOTO L0640e
+0640b  GOTO L0641a
+L0640e:
+06414  v212e = v2106
+L0641a:
+06420  v2132 = v212e
+0642b  FOR v213a = 1 TO v2132
+L0642e:
+0643e  v2136 = FNR(v20fe)
+0644a  v1cd4 = v2136
+06484  IF ((v213a = 1) AND (v1cd4 < v2102)) GOTO L06489
+06486  GOTO L06495
+L06489:
+0648f  v1cd4 = v2102
+L06495:
+064de  IF ((v213a = 1) AND (MID$(@v1d04, CINT(v210e), 1) = "R")) GOTO L064e3
+064e0  GOTO L0650f
+L064e3:
+064f3  v213e = FNR(v20fe)
+06509  v1cd4 = ((v1cd4 + v213e) + v1d90)
+L0650f:
+06543  IF ((v213a = 1) AND (@v1d04 = "M---")) GOTO L06548
+06545  GOTO L06574
+L06548:
+06558  v2142 = FNR(v20fe)
+0656e  v1cd4 = ((v1cd4 + v2142) + v1d90)
+L06574:
+0658b  v1cd4 = INT(((v1cd4 / v20ae) + 0.5))
+065a2  IF v1cd4 < 1 GOTO L065a7
+065a4  GOTO L065b3
+L065a7:
+065ad  v1cd4 = 1
+L065b3:
+065c3  v1d40 = ((v1d40 + v1cd4) + v1d90)
+L065d3:
+065eb  NEXT v213a
+065ed  GOTO L0642e
+L065f0:
+06611  IF a1ab4(CINT(v210e)) > v2106 GOTO L06616
+06613  GOTO L06641
+L06616:
+0663b  v1d40 = (((a1ab4(CINT(v210e)) - v2106) * v210a) + v1d40)
+L06641:
+06641  RETURN? 
+L06646:
+0664e  v1d2c = @v233e
+0665b  v2146 = @v233e
+06668  v214a = @v233e
+06675  v214e = @v233e
+06687  IF @v1d04 = "M---" GOTO L0668c
+06689  GOTO L0668f
+L0668c:
+0668c  GOTO L06872
+L0668f:
+066a7  IF MID$(@v1d04, 1, 1) = "P" GOTO L066ac
+066a9  GOTO L066af
+L066ac:
+066ac  GOTO L06872
+L066af:
+066ca  IF MID$(@v1d04, 3, 1) = "D" GOTO L066cf
+066cc  GOTO L066d2
+L066cf:
+066cf  GOTO L06872
+L066d2:
+066f0  IF RND(1) < 0.8 GOTO L066f5
+066f2  GOTO L066f8
+L066f5:
+066f5  GOTO L06872
+L066f8:
+06739  IF ((RND(1) < 0.5) AND (v1f4a = 2)) GOTO L0673e
+0673b  GOTO L06779
+L0673e:
+0674e  v2152 = FNR(2)
+06771  v214e = MID$("LC", CINT(v2152), 1)
+06776  GOTO L06786
+L06779:
+06781  v214e = "N"
+L06786:
+067c5  IF ((@v214e = @v233e) OR (RND(1) < 0.3)) GOTO L067ca
+067c7  GOTO L06828
+L067ca:
+067db  IF v1d30 = 2 GOTO L067e0
+067dd  GOTO L0681b
+L067e0:
+067f0  v2156 = FNR(2)
+06813  v214a = MID$("GE", CINT(v2156), 1)
+06818  GOTO L06828
+L0681b:
+06823  v214a = "N"
+L06828:
+0684e  v2146 = CONCAT(CONCAT(CONCAT(" (", @v214e), @v214a), ")")
+06860  IF @v2146 = " (NN)" GOTO L06865
+06862  GOTO L06872
+L06865:
+0686d  v2146 = " (N)"
+L06872:
+0687e  ON CINT(v1f4a) GOTO L0688a, L0689a, L068aa
+L0688a:
+06892  v1d2c = "Lawful "
+06897  GOTO L068b7
+L0689a:
+068a2  v1d2c = "Neutral "
+068a7  GOTO L068b7
+L068aa:
+068b2  v1d2c = "Chaotic "
+L068b7:
+068c3  ON CINT(v1d30) GOTO L068cf, L068e9, L06903
+L068cf:
+068e1  v1d2c = CONCAT(@v1d2c, "Good")
+068e6  GOTO L0691a
+L068e9:
+068fb  v1d2c = CONCAT(@v1d2c, "Neutral")
+06900  GOTO L0691a
+L06903:
+06915  v1d2c = CONCAT(@v1d2c, "Evil")
+L0691a:
+06927  IF @v1d2c = "Neutral Neutral" GOTO L0692c
+06929  GOTO L06939
+L0692c:
+06934  v1d2c = "True Neutral"
+L06939:
+0694b  v1d2c = CONCAT(@v1d2c, @v2146)
+06954  CALL SUB_0_aeb5(@I)
+0695d  RESTORE D69d7
+06968  v215a = v0034
+06973  FOR I = 3 TO v215a
+L06976:
+0697d  READ$ @v1d60
+06989  READ$ @v1d64
+06995  READ$ @v1d68
+069a2  READ @v1d6c, 0
+069ae  READ$ @v1d70
+L069bd:
+069d5  NEXT I
+069ec  IF v1cec = 0 GOTO L069f1
+069ee  GOTO L069f4
+L069f1:
+069f1  GOTO L06a6d
+L069f4:
+069f8  RESTORE D6a6c
+06a03  I = 0
+L06a0a:
+06a1b  IF v1cec > I GOTO L06a20
+06a1d  GOTO L06a6c
+L06a20:
+06a27  READ$ @I
+06a33  READ$ @v1d60
+06a3f  READ$ @v1d64
+06a4b  READ$ @v1d68
+06a58  READ @v1d6c, 0
+06a64  READ$ @v1d70
+06a69  GOTO L06a0a
+L06a6c:
+L06a6d:
+06a71  RESTORE D6ade
+06a7c  v215e = v0038
+06a87  FOR I = 3 TO v215e
+L06a8a:
+06a91  READ$ @v1d74
+06a9d  READ$ @v1d78
+06aa9  READ$ @v1d7c
+06ab5  READ$ @v1d80
+L06ac4:
+06adc  NEXT I
+06afb  IF MID$(@v1d04, 2, 1) = "-" GOTO L06b00
+06afd  GOTO L06b24
+L06b00:
+06b06  v1d78 = 0
+06b12  v1d7c = 0
+06b1e  v1d80 = 0
+L06b24:
+06b28  RESTORE D6b8b
+06b33  v2162 = v003c
+06b3e  FOR I = 3 TO v2162
+L06b42:
+06b49  READ$ @v1d84
+06b56  READ @v1d8c, 0
+06b62  READ$ @v1d88
+L06b71:
+06b89  NEXT I
+06bac  IF MID$(@v1d04, 3, 1) <> "C" GOTO L06bb1
+06bae  GOTO L06bca
+L06bb1:
+06bb9  v1d8c = @v233e
+06bc4  v1d88 = 0
+L06bca:
+06bce  RESTORE D6c24
+06bd9  v2166 = v0040
+06be4  FOR I = 3 TO v2166
+L06be8:
+06bef  READ$ @v1db4
+06bfb  READ$ @v1db8
+L06c0a:
+06c22  NEXT I
+06c29  RESTORE D6c8a
+06c34  v216a = v0044
+06c3f  FOR I = 3 TO v216a
+L06c42:
+06c49  READ$ @v1dbc
+06c55  READ$ @v1dc0
+06c61  READ$ @v1dc4
+L06c70:
+06c88  NEXT I
+06c90  RESTORE D6cf2
+06c9b  v216e = v0048
+06ca6  FOR I = 3 TO v216e
+L06caa:
+06cb1  READ$ @v1dc8
+06cbd  READ$ @v1dcc
+06cc9  READ$ @v1dd0
+L06cd8:
+06cf0  NEXT I
+06cf9  FOR I = 1 TO 9
+L06cfc:
+06d13  a1ac8(CINT(I)) = @v233e
+L06d22:
+06d3a  NEXT I
+06d42  v1cb8 = 0
+06d4e  v1cbc = 0
+06d5f  v1cc0 = (v0048 * 5)
+06d6a  FOR I = 1 TO 4
+L06d6e:
+06d8f  IF a1ab4(CINT(I)) > v1cb8 GOTO L06d94
+06d91  GOTO L06db0
+L06d94:
+06daa  v1cb8 = a1ab4(CINT(I))
+L06db0:
+L06dba:
+06dd2  NEXT I
+06de5  IF v1cb8 > 20 GOTO L06dea
+06de7  GOTO L06df6
+L06dea:
+06df0  v1cb8 = 20
+L06df6:
+06e07  IF v1cb8 < 1 GOTO L06e0c
+06e09  GOTO L06e18
+L06e0c:
+06e12  v1cb8 = 1
+L06e18:
+06e1e  v1cb4 = 0
+06e2e  FOR v217e = (v1cb8 + -1) TO 0 STEP (v217e + -1)
+L06e32:
+06e38  v2172 = 0
+06e44  v1cb0 = 0
+06e52  v1cc4 = @v233e
+06e5d  v2176 = 1.5
+06e69  v217a = 2
+06ea9  v1cc8 = (? / FN829((? - FN829(FN829(?, v2176, 7.5), v2176, v1f1e)), v2176, 7.5))
+06ed3  v1ccc = FN829(?, v217a, ((v1cb8 - v217e) / (v1cb8 + 0.1)))
+06ef6  v1cd0 = (((v1cc0 * v1cc8) * v1ccc) + (8 - v1f1e))
+06f0c  v2182 = FNR(100)
+06f18  v1cd4 = v2182
+06f2f  IF v1cd4 > v1cd0 GOTO L06f34
+06f31  GOTO L06f37
+L06f34:
+06f34  GOTO L0740a
+L06f37:
+06f5a  v1cb0 = INT(((FN829(?, 1.2, v1cd0) + 5) / 20))
+06f71  IF v1cb0 = 0 GOTO L06f76
+06f73  GOTO L06f79
+L06f76:
+06f76  GOTO L0740a
+L06f79:
+06f8f  IF (v1cbc + v1cb0) > v1dc8 GOTO L06f94
+06f91  GOTO L06fa5
+L06f94:
+06f9f  v1cb0 = (v1dc8 - v1cbc)
+L06fa5:
+06fa8  GOSUB L07183
+06ff9  IF ((RND(1) < 0.5) AND (MID$(@v1d04, 1, 1) = "-")) GOTO L06ffe
+06ffb  GOTO L0700a
+L06ffe:
+07004  I = 1
+L0700a:
+07015  v1cb4 = (v1cb4 + 1)
+07021  v2172 = 1
+07032  v1cbc = (v1cbc + v1cb0)
+07049  IF v217e > 1 GOTO L0704e
+0704b  GOTO L0707a
+L0704e:
+0705e  v2186 = FNR(2)
+07074  v217e = ((v217e - v2186) + 1)
+L0707a:
+0708b  IF v217e = 0 GOTO L07090
+0708d  GOTO L070c0
+L07090:
+07098  v1cc4 = "Men@Arm"
+070ae  IF v1cb0 = 1 GOTO L070b3
+070b0  GOTO L070c0
+L070b3:
+070bb  v1cc4 = "Man@Arms"
+L070c0:
+070d1  IF v1cb0 > 1 GOTO L070d6
+070d3  GOTO L0710c
+L070d6:
+070e8  v1cc4 = CONCAT(@v1cc4, "s")
+070fa  IF @v1cc4 = "Thiefs" GOTO L070ff
+070fc  GOTO L0710c
+L070ff:
+07107  v1cc4 = "Thvs"
+L0710c:
+0717b  a1ac8(CINT(v1cb4)) = CONCAT(MID$(STR$(CONCAT(CONCAT(CONCAT(MID$(STR$(v1cb0), 2, 32767), " "), @v1cc4), " Lv"), v217e), 2, 32767))
+07180  GOTO L0740a
+L07183:
+0718b  T$ = "-"
+L07190:
+0719d  IF @T$ = "-" GOTO L071a2
+0719f  GOTO L071dc
+L071a2:
+071b2  v218a = FNR(4)
+071d5  T$ = MID$(@v1d04, CINT(v218a), 1)
+071da  GOTO L07190
+L071dc:
+071e2  I = 1
+L071e8:
+0720a  IF MID$(@v1e14, CINT(I), 1) <> @T$ GOTO L0720f
+0720c  GOTO L07222
+L0720f:
+0721a  I = (I + 1)
+07220  GOTO L071e8
+L07222:
+0722a  T$ = "FghtrBrbrnPaldnRngr MgUsrIllsnClrc DruidThiefAssn "
+0724d  IF RND(1) < 0.2 GOTO L07252
+0724f  GOTO L07274
+L07252:
+07262  v218e = FNR(10)
+0726e  I = v218e
+L07274:
+07281  IF @v1d04 = "M---" GOTO L07286
+07283  GOTO L072a8
+L07286:
+07296  v2192 = FNR(8)
+072a2  I = v2192
+L072a8:
+072dc  IF ((I > 8) AND (v1f4a = 1)) GOTO L072e1
+072de  GOTO L07303
+L072e1:
+072f1  v2196 = FNR(8)
+072fd  I = v2196
+L07303:
+07330  v1cc4 = LTRIM$?(MID$(@T$, CINT(((I * 5) + -4)), 5))
+07365  IF ((@v1d04 <> "P---") AND (@v1cc4 = "Paldn")) GOTO L0736a
+07367  GOTO L07377
+L0736a:
+07372  v1cc4 = "Ftr"
+L07377:
+073a7  IF ((@v1d34 = "Anti-Paladin") AND (@v1cc4 = "Paldn")) GOTO L073ac
+073a9  GOTO L073b9
+L073ac:
+073b4  v1cc4 = "AntPal"
+L073b9:
+073ca  IF v219a > 1 GOTO L073cf
+073cc  GOTO L07405
+L073cf:
+073e1  v1cc4 = CONCAT(@v1cc4, "s")
+073f3  IF @v1cc4 = "Thiefs" GOTO L073f8
+073f5  GOTO L07405
+L073f8:
+07400  v1cc4 = "Thvs"
+L07405:
+07405  RETURN? 
+L0740a:
+0743e  IF ((v1cbc >= v1dc8) OR (v1cb4 >= 9)) GOTO L07443
+07440  GOTO L07446
+L07443:
+07443  GOTO L074f8
+L07446:
+07487  IF ((RND(1) < 0.7) AND (v2172 = 1)) GOTO L0748c
+07489  GOTO L0749d
+L0748c:
+07497  v217e = (v217e + -1)
+L0749d:
+074bb  IF RND(1) < 0.3 GOTO L074c0
+074bd  GOTO L074d1
+L074c0:
+074cb  v217e = (v217e + -1)
+L074d1:
+L074db:
+074f3  NEXT v217e
+074f5  GOTO L06e32
+L074f8:
+07500  v1d4c = @v233e
+0750d  v1d50 = @v233e
+07522  v219e = FNR(10)
+07549  v217e = INT(((((8 - v1f1e) + v219e) * v1cb8) / 13))
+07560  IF v217e < 1 GOTO L07565
+07562  GOTO L07571
+L07565:
+0756b  v217e = 1
+L07571:
+07583  v21a2 = INT((v217e * 0.4))
+0758f  v21a6 = 0
+075a6  IF v217e > 11 GOTO L075ab
+075a8  GOTO L075b7
+L075ab:
+075b1  v217e = 11
+L075b7:
+075c4  IF @v1d04 = "M---" GOTO L075c9
+075c6  GOTO L075f0
+L075c9:
+075cf  v217e = 0
+075db  v21a2 = 0
+075e7  v21a6 = 0
+075ed  GOTO L079bc
+L075f0:
+07608  IF INT(v1e1c) = 9 GOTO L0760d
+0760a  GOTO L07628
+L0760d:
+07613  v21a2 = 0
+0761f  v21a6 = 0
+07625  GOTO L07a0d
+L07628:
+07640  IF INT(v1e1c) = 4 GOTO L07645
+07642  GOTO L07651
+L07645:
+0764b  v21a2 = 0
+L07651:
+07681  IF ((@v1d04 = "B---") AND (v1ab8 < 5)) GOTO L07686
+07683  GOTO L07692
+L07686:
+0768c  v21a2 = 0
+L07692:
+076ad  IF MID$(@v1d04, 2, 1) <> "-" GOTO L076b2
+076af  GOTO L076b5
+L076b2:
+076b2  GOTO L0788a
+L076b5:
+07701  IF ((MID$(@v1d04, 4, 1) <> "-") OR (MID$(@v1d04, 3, 1) = "D")) GOTO L07706
+07703  GOTO L07709
+L07706:
+07706  GOTO L07a8e
+L07709:
+0770f  v21aa = 0
+0772d  IF MID$(@v1d04, 1, 1) <> "-" GOTO L07732
+0772f  GOTO L07785
+L07732:
+07747  v21ae = FNR((10 - v1f1e))
+07753  v21aa = v21ae
+0776f  IF (v217e + v21aa) > 11 GOTO L07774
+07771  GOTO L07785
+L07774:
+0777f  v21aa = (11 - v217e)
+L07785:
+07789  RESTORE D778e
+0779b  v21b2 = (v217e + v21aa)
+077a6  FOR I = 1 TO v21b2
+L077aa:
+077b1  READ$ @v1d48
+077be  READ @v1d4c, 0
+L077cd:
+077e5  NEXT I
+077f7  v21b6 = FNR(8)
+0780e  IF v21b6 > v217e GOTO L07813
+07810  GOTO L07816
+L07813:
+07813  GOTO L07bea
+L07816:
+0781a  RESTORE D781f
+0783c  v21ba = INT((((7 * v217e) / 12) + 1))
+07847  FOR I = 1 TO v21ba
+L0784a:
+07851  READ$ @v21be
+0785e  READ @v1d50, 0
+L0786d:
+07885  NEXT I
+07887  GOTO L07bea
+L0788a:
+078a4  v1d48 = (12 - INT((v217e * 0.8)))
+078bb  IF v1d48 < 1 GOTO L078c0
+078bd  GOTO L078cc
+L078c0:
+078c6  v1d48 = 1
+L078cc:
+078dd  IF v1d48 > 9 GOTO L078e2
+078df  GOTO L0790a
+L078e2:
+078e8  v1d48 = 10
+078f6  v1d4c = @v233e
+07901  v21a2 = 0
+07907  GOTO L07bea
+L0790a:
+07941  v1d4c = CONCAT(LTRIM$?(MID$("Bracers-", "I   II  III IV  V   VI  VII VIIIIX  ", CINT(((v1d48 * 4) + -3)), 4)))
+07958  v21a6 = INT((v21a2 / 2))
+07964  v21a2 = 0
+0797b  IF v21a6 > 0 GOTO L07980
+0797d  GOTO L079b9
+L07980:
+079b4  v1d50 = CONCAT(CONCAT(MID$(STR$("+", v21a6), 2, 32767)), " Ring of Protection")
+L079b9:
+079b9  GOTO L07bea
+L079bc:
+079c0  RESTORE D79c5
+079cc  v21c2 = v1ab8
+079d7  FOR I = 1 TO v21c2
+L079da:
+079e1  READ$ @v1d48
+L079f0:
+07a08  NEXT I
+07a0a  GOTO L07bea
+L07a0d:
+07a11  RESTORE D7a16
+07a33  v1eb2 = INT((((5 * v217e) / 12) + 1))
+07a3f  v21c6 = v1eb2
+07a4a  FOR I = 1 TO v21c6
+L07a4e:
+07a55  READ$ @v1d48
+07a62  READ @v1d4c, 0
+L07a71:
+07a89  NEXT I
+07a8b  GOTO L07bea
+L07a8e:
+07a99  I = (v217e + -14)
+07ab0  IF I < 0 GOTO L07ab5
+07ab2  GOTO L07ac1
+L07ab5:
+07abb  I = 0
+L07ac1:
+07acc  v21a2 = (v21a2 + I)
+07add  v217e = (v217e - I)
+07b27  IF ((INT(v1e1c) = 4) OR (INT(v1e1c) = 9)) GOTO L07b2c
+07b29  GOTO L07b38
+L07b2c:
+07b32  v21a2 = 0
+L07b38:
+07b3c  RESTORE D778e
+07b51  v21ca = FNR(3)
+07b5d  v21ce = v21ca
+07b68  FOR I = 1 TO v21ce
+L07b6c:
+07b73  READ$ @v1d48
+07b80  READ @v1d4c, 0
+L07b8f:
+07ba7  NEXT I
+07bb9  v21d2 = FNR(3)
+07bd5  IF (v217e + v21d2) > 10 GOTO L07bda
+07bd7  GOTO L07be7
+L07bda:
+07be2  v1d50 = "Small Wooden Shield"
+L07be7:
+07be7  GOTO L07bea
+L07bea:
+07bfb  IF v21a2 > 0 GOTO L07c00
+07bfd  GOTO L07c43
+L07c00:
+07c3e  v1d4c = CONCAT(CONCAT(CONCAT(MID$(STR$("+", v21a2), 2, 32767)), " "), @v1d4c)
+L07c43:
+07c53  v1d48 = ((v1d48 - v21a2) - v21a6)
+07c66  IF @v1d04 = "M---" GOTO L07c6b
+07c68  GOTO L07c77
+L07c6b:
+07c71  v1db8 = 0
+L07c77:
+07c82  v1d48 = (v1d48 + v1db8)
+07c99  IF v1d48 > 10 GOTO L07c9e
+07c9b  GOTO L07caa
+L07c9e:
+07ca4  v1d48 = 10
+L07caa:
+07cb2  v1d54 = @v233e
+07cc7  v21d6 = FNR(2)
+07cdd  v21da = FNR(2)
+07d17  v1e18 = INT((((7 - v1f1e) / (1 + v21d6)) + (v1cb8 / (3 + v21da))))
+07d2e  IF v1e18 < 0 GOTO L07d33
+07d30  GOTO L07d3f
+L07d33:
+07d39  v1e18 = 0
+L07d3f:
+07d57  IF INT(v1e1c) = 4 GOTO L07d5c
+07d59  GOTO L07d68
+L07d5c:
+07d62  v1e18 = 0
+L07d68:
+07d98  IF ((@v1d04 = "B---") AND (v1ab8 < 4)) GOTO L07d9d
+07d9a  GOTO L07da9
+L07d9d:
+07da3  v1e18 = 0
+L07da9:
+07dba  IF v1f52 < 60 GOTO L07dbf
+07dbc  GOTO L07dcb
+L07dbf:
+07dc5  v21be = 1
+L07dcb:
+07ddc  IF v1e1c = 7.3 GOTO L07de1
+07dde  GOTO L07df1
+L07de1:
+07de9  v1d54 = "Brownie Sword"
+07dee  GOTO L081b9
+L07df1:
+07e02  IF v1e1c = 7.4 GOTO L07e07
+07e04  GOTO L07e44
+L07e07:
+07e1f  IF MID$(@v1d04, 1, 1) = "F" GOTO L07e24
+07e21  GOTO L07e34
+L07e24:
+07e2c  v1d54 = "Samurai Sword"
+07e31  GOTO L07e41
+L07e34:
+07e3c  v1d54 = "Quarterstaff"
+L07e41:
+07e41  GOTO L081b9
+L07e44:
+07e55  IF v1e1c = 7.1 GOTO L07e5a
+07e57  GOTO L07e5d
+L07e5a:
+07e5a  GOTO L08145
+L07e5d:
+07e75  IF INT(v1e1c) = 9 GOTO L07e7a
+07e77  GOTO L07e7d
+L07e7a:
+07e7a  GOTO L08137
+L07e7d:
+07e8a  IF @v1d04 = "M---" GOTO L07e8f
+07e8c  GOTO L07e92
+L07e8f:
+07e8f  GOTO L080ca
+L07e92:
+07ee1  loce% = ((MID$(@v1d04, 1, 1) <> "-") AND (INT(v1e1c) = 3))
+07f00  IF (loce AND (RND(1) < 0.3)) GOTO L07f05
+07f02  GOTO L07f08
+L07f05:
+07f05  GOTO L08096
+L07f08:
+07f20  IF MID$(@v1d04, 1, 1) <> "-" GOTO L07f25
+07f22  GOTO L07f28
+L07f25:
+07f25  GOTO L07fda
+L07f28:
+07f43  IF MID$(@v1d04, 4, 1) = "T" GOTO L07f48
+07f45  GOTO L07f4b
+L07f48:
+07f48  GOTO L0812a
+L07f4b:
+07f66  IF MID$(@v1d04, 4, 1) = "A" GOTO L07f6b
+07f68  GOTO L07f6e
+L07f6b:
+07f6b  GOTO L07fda
+L07f6e:
+07f89  IF MID$(@v1d04, 3, 1) = "C" GOTO L07f8e
+07f8b  GOTO L07f91
+L07f8e:
+07f8e  GOTO L080d7
+L07f91:
+07fac  IF MID$(@v1d04, 3, 1) = "D" GOTO L07fb1
+07fae  GOTO L07fb4
+L07fb1:
+07fb1  GOTO L08110
+L07fb4:
+07fcf  IF MID$(@v1d04, 2, 1) <> "-" GOTO L07fd4
+07fd1  GOTO L07fd7
+L07fd4:
+07fd4  GOTO L0811d
+L07fd7:
+07fd7  GOTO L081b9
+L07fda:
+07ff8  IF RND(1) < 0.3 GOTO L07ffd
+07ffa  GOTO L08000
+L07ffd:
+07ffd  GOTO L08088
+L08000:
+08011  IF v21be = 1 GOTO L08016
+08013  GOTO L08042
+L08016:
+08026  v21de = FNR(2)
+08038  ON CINT(v21de) GOTO L080a3, L080b0
+L08042:
+08053  IF v21be = 0 GOTO L08058
+08055  GOTO L08088
+L08058:
+08068  v21e2 = FNR(4)
+0807a  ON CINT(v21e2) GOTO L08096, L080a3, L080b0, L080bd
+L08088:
+0808c  RESTORE D8094
+08091  GOTO L08152
+L08096:
+0809a  RESTORE D80a2
+0809f  GOTO L08152
+L080a3:
+080a7  RESTORE D80af
+080ac  GOTO L08152
+L080b0:
+080b4  RESTORE D80bc
+080b9  GOTO L08152
+L080bd:
+080c1  RESTORE D80c9
+080c6  GOTO L08152
+L080ca:
+080ce  RESTORE D80d6
+080d3  GOTO L08152
+L080d7:
+080db  RESTORE D80e0
+080ff  IF RND(1) < 0.3 GOTO L08104
+08101  GOTO L0810d
+L08104:
+08108  RESTORE D80af
+L0810d:
+0810d  GOTO L08152
+L08110:
+08114  RESTORE D811c
+08119  GOTO L08152
+L0811d:
+08121  RESTORE D8129
+08126  GOTO L08152
+L0812a:
+0812e  RESTORE D8136
+08133  GOTO L08152
+L08137:
+0813b  RESTORE D8143
+08140  GOTO L08152
+L08145:
+08149  RESTORE D8151
+0814e  GOTO L08152
+L08152:
+08159  READ$ @v21e6
+0816e  v21ea = FNR(v21e6)
+0817a  v21ee = v21ea
+08185  FOR I = 1 TO v21ee
+L08188:
+08190  READ @v1d54, 0
+L0819f:
+081b7  NEXT I
+L081b9:
+081d0  IF LEFT$(@v1d54, 1) = "0" GOTO L081d5
+081d2  GOTO L081fc
+L081d5:
+081eb  v1d54 = MID$(@v1d54, 2, 32767)
+081f6  v1e18 = 0
+L081fc:
+08213  IF LEFT$(@v1d54, 1) = "#" GOTO L08218
+08215  GOTO L082cc
+L08218:
+0822e  v1d54 = MID$(@v1d54, 2, 32767)
+08243  v21f2 = FNR(20)
+08261  v21f6 = ((v21f2 - (8 - v1f1e)) + v1cb8)
+08278  IF v21f6 < 2 GOTO L0827d
+0827a  GOTO L08289
+L0827d:
+08283  v21f6 = 2
+L08289:
+082c7  v1d54 = CONCAT(CONCAT(MID$(STR$(CONCAT(@v1d54, " ("), v21f6), 2, 32767)), ")")
+L082cc:
+082dd  IF v1e18 > 0 GOTO L082e2
+082df  GOTO L08325
+L082e2:
+08320  v1d54 = CONCAT(CONCAT(CONCAT(MID$(STR$("+", v1e18), 2, 32767)), " "), @v1d54)
+L08325:
+0832d  v1d58 = @v233e
+0834d  IF MID$(@v1d04, 4, 1) = "-" GOTO L08352
+0834f  GOTO L08355
+L08352:
+08352  GOTO L08594
+L08355:
+0836a  v217e = (((12 - v1f1e) * v1ac4) / 100)
+08381  IF v217e > 1 GOTO L08386
+08383  GOTO L08392
+L08386:
+0838c  v217e = 1
+L08392:
+08396  RESTORE D83a7
+083a2  READ$ @v1eb2
+083b9  v21fa = FNR(2)
+083d6  v1eae = (INT((v217e * v1eb2)) + v21fa)
+083ed  IF v1eae > v1eb2 GOTO L083f2
+083ef  GOTO L0841e
+L083f2:
+08402  v21fe = FNR(2)
+08418  v1eae = ((v1eb2 + -2) + v21fe)
+L0841e:
+08424  v2202 = v1eae
+0842f  FOR I = 1 TO v2202
+L08432:
+0843a  READ @v1d58, 0
+L08449:
+08461  NEXT I
+08481  IF RND(1) < 0.3 GOTO L08486
+08483  GOTO L08489
+L08486:
+08486  GOTO L08594
+L08489:
+L0848a:
+08497  IF @T$ <> "END" GOTO L0849c
+08499  GOTO L084ac
+L0849c:
+084a4  READ @T$, 0
+084a9  GOTO L0848a
+L084ac:
+084b3  READ$ @v1eb2
+084c9  v2206 = FNR(3)
+084e6  v1eae = (INT((v217e * v1eb2)) + v2206)
+084fd  IF v1eae > v1eb2 GOTO L08502
+084ff  GOTO L0852e
+L08502:
+08512  v220a = FNR(2)
+08528  v1eae = ((v1eb2 + -2) + v220a)
+L0852e:
+08534  v220e = v1eae
+0853f  FOR I = 1 TO v220e
+L08542:
+0854a  READ @T$, 0
+L08559:
+08571  NEXT I
+0858f  v1d58 = CONCAT(CONCAT(@T$, " "), @v1d58)
+L08594:
+085ab  IF RIGHT$(@v1d58, 1) = "*" GOTO L085b0
+085ad  GOTO L085d5
+L085b0:
+085be  ; asm dec ax
+085d0  v1d58 = CONCAT(LEFT$(LEN("Small ", @v1d58, @v1d58)))
+L085d5:
+085dd  v1d00 = @v233e
+085fd  IF MID$(@v1d04, 3, 1) <> "C" GOTO L08602
+085ff  GOTO L08605
+L08602:
+08602  GOTO L08d7a
+L08605:
+0861a  v217e = (((12 - v1f1e) * v1ac0) / 100)
+08631  IF v217e > 1 GOTO L08636
+08633  GOTO L08642
+L08636:
+0863c  v217e = 1
+L08642:
+08646  RESTORE D8657
+08652  READ$ @v1eb2
+0866a  v2212 = FNR(4)
+0868f  v1eae = (INT((v217e * v1eb2)) + (v2212 + -1))
+086a6  IF v1eae > v1eb2 GOTO L086ab
+086a8  GOTO L086d7
+L086ab:
+086bb  v2216 = FNR(12)
+086d1  v1eae = ((v1eb2 + -12) + v2216)
+L086d7:
+086dd  v221a = v1eae
+086e8  FOR I = 1 TO v221a
+L086ec:
+086f4  READ @v1d00, 0
+L08703:
+0871b  NEXT I
+08723  v221e = 0
+L0872a:
+08744  IF LEN(@v1d00) > v221e GOTO L08749
+08746  GOTO L08c40
+L08749:
+08751  T$ = @v233e
+08761  v221e = (v221e + 1)
+08789  IF MID$(@v1d00, CINT(v221e), 1) = "*" GOTO L0878e
+0878b  GOTO L0895c
+L0878e:
+08796  T$ = @v233e
+087a1  v2222 = 0
+087ea  IF ((v1d30 = 1) AND (RND(1) < 0.6)) GOTO L087ef
+087ec  GOTO L08808
+L087ef:
+087f7  T$ = "Holy "
+08802  v2222 = 1
+L08808:
+0884b  IF ((v1d30 = 1) AND (RND(1) < 0.3)) GOTO L08850
+0884d  GOTO L08869
+L08850:
+08858  T$ = "Blessed "
+08863  v2222 = 1
+L08869:
+088ac  IF ((v1d30 = 3) AND (RND(1) < 0.85)) GOTO L088b1
+088ae  GOTO L088ff
+L088b1:
+088c1  v2226 = FNR(2)
+088ee  T$ = MID$("Cursed Unholy ", CINT(((v2226 * 7) + -6)), 7)
+088f9  v2222 = 1
+L088ff:
+0894b  v1d00 = CONCAT(MID$(CONCAT(LEFT$(@v1d00, CINT((v221e + -1))), @T$), @v1d00, CINT((v221e + 1)), 32767))
+08956  v221e = 1
+L0895c:
+0897e  IF MID$(@v1d00, CINT(v221e), 2) = "CC" GOTO L08983
+08980  GOTO L08a5c
+L08983:
+08987  RESTORE D0430
+08993  READ$ @v1eb2
+089a8  v222a = FNR(v1eb2)
+089b4  v1eae = v222a
+089c0  v222e = v1eae
+089cb  FOR I = 1 TO v222e
+L089ce:
+089d6  READ @T$, 0
+L089e5:
+089fd  NEXT I
+08a4b  v1d00 = CONCAT(MID$(CONCAT(LEFT$(@v1d00, CINT((v221e + -1))), @T$), @v1d00, CINT((v221e + 2)), 32767))
+08a56  v221e = 1
+L08a5c:
+08a7e  IF MID$(@v1d00, CINT(v221e), 2) = "MM" GOTO L08a83
+08a80  GOTO L08c3c
+L08a83:
+08a87  RESTORE D0431
+08aaa  IF RND(1) < 0.4 GOTO L08aaf
+08aac  GOTO L08ab8
+L08aaf:
+08ab3  RESTORE D0433
+L08ab8:
+08ad6  IF RND(1) < 0.3 GOTO L08adb
+08ad8  GOTO L08ae4
+L08adb:
+08adf  RESTORE D0432
+L08ae4:
+08afb  IF RIGHT$(@v1d00, 4) = "Bell" GOTO L08b00
+08afd  GOTO L08b09
+L08b00:
+08b04  RESTORE D0431
+L08b09:
+08b10  READ$ @v1eb2
+08b25  v2232 = FNR(40)
+08b51  v1eae = INT((((((v2232 + 60) * v1eb2) * v217e) / 100) + 1))
+08b68  IF v1eae > v1eb2 GOTO L08b6d
+08b6a  GOTO L08b99
+L08b6d:
+08b7d  v2236 = FNR(3)
+08b93  v1eae = ((1 - v2236) + v1eb2)
+L08b99:
+08b9f  v223a = v1eae
+08baa  FOR I = 1 TO v223a
+L08bae:
+08bb6  READ @T$, 0
+L08bc5:
+08bdd  NEXT I
+08c2b  v1d00 = CONCAT(MID$(CONCAT(LEFT$(@v1d00, CINT((v221e + -1))), @T$), @v1d00, CINT((v221e + 2)), 32767))
+08c36  v221e = 1
+L08c3c:
+08c3c  GOTO L0872a
+L08c40:
+08c81  IF ((RND(1) < 0.7) OR (v2222 = 1)) GOTO L08c86
+08c83  GOTO L08c89
+L08c86:
+08c86  GOTO L08d7a
+L08c89:
+08c8d  RESTORE D0434
+08c99  READ$ @v1eb2
+08cae  v223e = FNR(3)
+08ccb  v1eae = (INT((v217e * v1eb2)) + v223e)
+08ce2  IF v1eae > v1eb2 GOTO L08ce7
+08ce4  GOTO L08d13
+L08ce7:
+08cf7  v2242 = FNR(2)
+08d0d  v1eae = ((v1eb2 + -2) + v2242)
+L08d13:
+08d19  v2246 = v1eae
+08d24  FOR I = 1 TO v2246
+L08d28:
+08d30  READ @T$, 0
+L08d3f:
+08d57  NEXT I
+08d75  v1d00 = CONCAT(CONCAT(@T$, " "), @v1d00)
+L08d7a:
+08d80  v1de4 = 0
+08d8c  v1de8 = 0
+08d98  v1dec = 0
+08da4  v1df0 = 0
+08db0  v1df4 = 0
+08dbc  v1df8 = 0
+08dc8  v1dfc = 0
+08dd4  v1e00 = 0
+08e18  IF ((MID$(@v1d04, 4, 1) <> "-") OR (@v1d04 = "M---")) GOTO L08e1d
+08e1a  GOTO L08ff8
+L08e1d:
+08e21  RESTORE D8e26
+08e30  v217e = v1ac4
+08e43  IF @v1d04 = "M---" GOTO L08e48
+08e45  GOTO L08e54
+L08e48:
+08e4e  v217e = v1ab8
+L08e54:
+08e65  IF v217e > 17 GOTO L08e6a
+08e67  GOTO L08e76
+L08e6a:
+08e70  v217e = 17
+L08e76:
+08e7c  v224a = v217e
+08e87  FOR I = 1 TO v224a
+L08e8a:
+08e91  READ$ @v1de4
+08e9d  READ$ @v1de8
+08ea9  READ$ @v1dec
+08eb5  READ$ @v1df0
+08ec1  READ$ @v1df4
+08ecd  READ$ @v1df8
+08ed9  READ$ @v1dfc
+08ee5  READ$ @v1e00
+L08ef4:
+08f0c  NEXT I
+08f0e  GOTO L08e8a
+L08f11:
+08f22  IF v0040 > 18 GOTO L08f27
+08f24  GOTO L08fce
+L08f27:
+08f3c  v1de4 = (((v0040 * 5) + -80) + v1de4)
+08f57  v1de8 = (((v0040 * 5) + -75) + v1de8)
+08f72  v1dec = (((v0040 * 5) + -85) + v1dec)
+08fa6  I = *si
+08fb7  v1df0 = (v1df0 + I)
+08fc8  v1df4 = (v1df4 + I)
+L08fce:
+08fdb  IF @v1d04 = "M---" GOTO L08fe0
+08fdd  GOTO L08ff8
+L08fe0:
+08fe6  v1de4 = 0
+08ff2  v1e00 = 0
+L08ff8:
+08ffe  v1d94 = 99
+0900a  v1d98 = 99
+09016  v1d9c = 99
+09022  v1da0 = 99
+0902e  v1da4 = 99
+09072  IF ((MID$(@v1d04, 3, 1) <> "-") OR (v1e1c = 7.3)) GOTO L09077
+09074  GOTO L0910d
+L09077:
+0907b  RESTORE D9104
+09097  v217e = INT(((v1ac0 + 2) / 3))
+090ae  IF v217e > 7 GOTO L090b3
+090b0  GOTO L090bf
+L090b3:
+090b9  v217e = 7
+L090bf:
+090f3  IF ((v1e1c = 7.3) AND (v217e < 3)) GOTO L090f8
+090f5  GOTO L09104
+L090f8:
+090fe  v217e = 3
+L09104:
+09108  GOSUB L092f8
+L0910d:
+09148  IF ((MID$(@v1d04, 1, 1) <> "-") AND (@v1d04 <> "M---")) GOTO L0914d
+0914a  GOTO L0919f
+L0914d:
+09151  RESTORE D9195
+0916d  v217e = INT(((v1ab8 + 1) / 2))
+09184  IF v217e > 10 GOTO L09189
+09186  GOTO L09195
+L09189:
+0918f  v217e = 10
+L09195:
+0919a  GOSUB L092f8
+L0919f:
+091ba  IF MID$(@v1d04, 2, 1) <> "-" GOTO L091bf
+091bc  GOTO L09210
+L091bf:
+091c3  RESTORE D9207
+091df  v217e = INT(((v1abc + 4) / 5))
+091f6  IF v217e > 5 GOTO L091fb
+091f8  GOTO L09207
+L091fb:
+09201  v217e = 5
+L09207:
+0920b  GOSUB L092f8
+L09210:
+0924e  IF ((MID$(@v1d04, 4, 1) <> "-") OR (@v1d04 = "M---")) GOTO L09253
+09250  GOTO L092f5
+L09253:
+09257  RESTORE D92ec
+09273  v217e = INT(((v1ac4 + 3) / 4))
+0928a  IF v217e > 6 GOTO L0928f
+0928c  GOTO L0929b
+L0928f:
+09295  v217e = 6
+L0929b:
+092a8  IF @v1d04 = "M---" GOTO L092ad
+092aa  GOTO L092ec
+L092ad:
+092c4  v217e = INT(((v1ab8 + 3) / 4))
+092db  IF v217e > 6 GOTO L092e0
+092dd  GOTO L092ec
+L092e0:
+092e6  v217e = 6
+L092ec:
+092f0  GOSUB L092f8
+L092f5:
+092f5  GOTO L0941b
+L092f8:
+092fe  v224e = v217e
+09309  FOR I = 1 TO v224e
+L0930c:
+09313  READ$ @v2252
+0931f  READ$ @v1ee6
+0932b  READ$ @v2256
+09337  READ$ @v225a
+09343  READ$ @v225e
+L09352:
+0936a  NEXT I
+0937d  IF v2252 < v1d94 GOTO L09382
+0937f  GOTO L0938e
+L09382:
+09388  v1d94 = v2252
+L0938e:
+0939f  IF v1ee6 < v1d98 GOTO L093a4
+093a1  GOTO L093b0
+L093a4:
+093aa  v1d98 = v1ee6
+L093b0:
+093c1  IF v2256 < v1d9c GOTO L093c6
+093c3  GOTO L093d2
+L093c6:
+093cc  v1d9c = v2256
+L093d2:
+093e3  IF v225a < v1da0 GOTO L093e8
+093e5  GOTO L093f4
+L093e8:
+093ee  v1da0 = v225a
+L093f4:
+09405  IF v225e < v1da4 GOTO L0940a
+09407  GOTO L09416
+L0940a:
+09410  v1da4 = v225e
+L09416:
+09416  RETURN? 
+L0941b:
+09421  v1d1c = 99
+09442  IF MID$(@v1d04, 2, 1) <> "-" GOTO L09447
+09444  GOTO L094dc
+L09447:
+0945e  v217e = INT(((v1abc + 4) / 5))
+09475  IF v217e > 5 GOTO L0947a
+09477  GOTO L09486
+L0947a:
+09480  v217e = 5
+L09486:
+094b4  I = *si
+094cb  IF I < v1d1c GOTO L094d0
+094cd  GOTO L094dc
+L094d0:
+094d6  v1d1c = I
+L094dc:
+094f7  IF MID$(@v1d04, 4, 1) <> "-" GOTO L094fc
+094f9  GOTO L09591
+L094fc:
+09513  v217e = INT(((v1ac4 + 3) / 4))
+0952a  IF v217e > 6 GOTO L0952f
+0952c  GOTO L0953b
+L0952f:
+09535  v217e = 6
+L0953b:
+09569  I = *si
+09580  IF I < v1d1c GOTO L09585
+09582  GOTO L09591
+L09585:
+0958b  v1d1c = I
+L09591:
+095ac  IF MID$(@v1d04, 3, 1) <> "-" GOTO L095b1
+095ae  GOTO L09646
+L095b1:
+095c8  v217e = INT(((v1ac0 + 2) / 3))
+095df  IF v217e > 7 GOTO L095e4
+095e1  GOTO L095f0
+L095e4:
+095ea  v217e = 7
+L095f0:
+0961e  I = *si
+09635  IF I < v1d1c GOTO L0963a
+09637  GOTO L09646
+L0963a:
+09640  v1d1c = I
+L09646:
+0965e  IF MID$(@v1d04, 1, 1) <> "-" GOTO L09663
+09660  GOTO L096f8
+L09663:
+0967a  v217e = INT(((v1ab8 + 1) / 2))
+09691  IF v217e > 9 GOTO L09696
+09693  GOTO L096a2
+L09696:
+0969c  v217e = 9
+L096a2:
+096d0  I = *si
+096e7  IF I < v1d1c GOTO L096ec
+096e9  GOTO L096f8
+L096ec:
+096f2  v1d1c = I
+L096f8:
+096fc  CALL SUB_e3b_6195(@I)
+09715  IF @v1d04 = "M---" GOTO L0971a
+09717  GOTO L0980c
+L0971a:
+0972b  IF v1ab8 > 1 GOTO L09730
+0972d  GOTO L09781
+L09730:
+09742  I = INT((v1ab8 / 2))
+0977c  v1dd4 = CONCAT(CONCAT(MID$(STR$("+", I), 2, 32767)), " damage bonus with weapon")
+L09781:
+09785  RESTORE D9701
+09790  v2262 = v1ab8
+0979b  FOR I = 1 TO v2262
+L0979e:
+097a5  READ$ @v1e04
+097b2  READ @v1e08, 0
+097bf  READ @v1e0c, 0
+097cc  READ @v1e10, 0
+L097db:
+097f3  NEXT I
+09807  v1e08 = CONCAT("Attacks per round: ", @v1e08)
+L0980c:
+09811  FOR I = 1 TO 4
+L09814:
+09830  IF @a0068(CINT(I)) = "Blind" GOTO L09835
+09832  GOTO L09841
+L09835:
+0983b  v1dd8 = 0
+L09841:
+09867  IF LEFT$(@a0068(CINT(I)), 9) = "True Hero" GOTO L0986c
+09869  GOTO L0996b
+L0986c:
+098a0  IF ((v1d30 < 3) AND (v1cf0 = 1)) GOTO L098a5
+098a2  GOTO L098c1
+L098a5:
+098bc  a0068(CINT(I)) = "True Heroine (SIWDCK+4) -- Beloved by everyone! All faults overlooked!"
+L098c1:
+098f5  IF ((v1d30 = 3) AND (v1cf0 = 2)) GOTO L098fa
+098f7  GOTO L09916
+L098fa:
+09911  a0068(CINT(I)) = "True Villain (SIWDCK+4) -- Feared by many! Hated by all!"
+L09916:
+0994a  IF ((v1d30 = 3) AND (v1cf0 = 1)) GOTO L0994f
+0994c  GOTO L0996b
+L0994f:
+09966  a0068(CINT(I)) = "True Villainess (SIWDCK+4) -- Feared by many! Hated by all!"
+L0996b:
+L09975:
+0998d  NEXT I
+0998f  GOTO L09814
+L09992:
+09996  CALL SUB_e3b_5a93(@I)
+099fd  IF (((v1e54 = 1) AND (optRec3 > 0)) AND ((optRec3 / 2) = INT((optRec3 / 2)))) GOTO L09a02
+099ff  GOTO L09af1
+L09a02:
+09a3a  loce% = ((@v1d04 = "P---") OR (@v1d04 = "B---"))
+09a4d  IF (loce OR (@v1d04 = "R-C-")) GOTO L09a52
+09a4f  GOTO L09a5e
+L09a52:
+09a58  v1e54 = 0
+L09a5e:
+09a63  FOR I = 1 TO 4
+L09a66:
+09a82  IF @a0068(CINT(I)) = "Vampiric" GOTO L09a87
+09a84  GOTO L09a93
+L09a87:
+09a8d  v1e54 = 0
+L09a93:
+09ab9  IF LEFT$(@a0068(CINT(I)), 4) = "True" GOTO L09abe
+09abb  GOTO L09aca
+L09abe:
+09ac4  v1e54 = 0
+L09aca:
+L09ad4:
+09aec  NEXT I
+09aee  GOTO L09a66
+L09af1:
+09afc  CharNo = (CharNo + 1)
+09b08  v1d24 = 1
+09b0e  GOTO L1048a
+L09b11:
+09b17  v2266 = AgeCat
+09b22  FOR I = 1 TO v2266
+L09b26:
+09b2d  READ$ @v226a
+L09b3c:
+09b54  NEXT I
+09b5d  READ$ @v226e
+09b77  v2272 = FNR((v226e - v226a))
+09b88  v1d0c = (v226a + v2272)
+09b8e  RETURN? 
+L09b93:
+09b9e  v1e20 = (v1e20 + 1)
+09bbe  IF LEN(@v1e24) < v1e20 GOTO L09bc3
+09bc0  GOTO L09bcf
+L09bc3:
+09bc9  v1e20 = 1
+L09bcf:
+09bf1  COLOR 1, CINT(v1ce4), 1, CINT(v1ce8), 4
+09c22  LOCATE 1, CINT((v1c98 + 2)), 1, CINT((v1c9c + 1)), 4
+09c40  PRINT; MID$(@v1e24, CINT(v1e20), 1)
+09c45  RETURN? 
+09c50  I = 0
+09c7d  LOCATE 1, CINT((v1c98 + 2)), 1, CINT(v1c9c), 4
+09ca4  COLOR 1, CINT(v1ce4), 1, CINT(v1ce8), 4
+09cb1  IF ERR() = 0x19 GOTO L09cb6
+09cb3  GOTO L09cd7
+L09cb6:
+09cbc  I = 1
+09cc6  PRINT; " Check Printer;"
+09cd1  v1d28 = 0
+L09cd7:
+09cdf  IF ERR() = 0x1b GOTO L09ce4
+09ce1  GOTO L09d05
+L09ce4:
+09cea  I = 1
+09cf4  PRINT; " Printer Out of Paper;"
+09cff  v1d28 = 0
+L09d05:
+09d0d  IF ERR() = 0x35 GOTO L09d12
+09d0f  GOTO L09d33
+L09d12:
+09d18  I = 1
+09d22  PRINT; " Control Panel Missing;"
+09d2d  v1d28 = 0
+L09d33:
+09d3b  IF ERR() = 0x44 GOTO L09d40
+09d3d  GOTO L09d61
+L09d40:
+09d46  I = 1
+09d50  PRINT; " Printer LPT1 Missing;"
+09d5b  v1d28 = 0
+L09d61:
+09d69  IF ERR() = 0x65 GOTO L09d6e
+09d6b  GOTO L09d8f
+L09d6e:
+09d74  I = 1
+09d7e  PRINT; " Traits Missing;"
+09d89  v1e9e = 0
+L09d8f:
+09d97  IF ERR() = 0x66 GOTO L09d9c
+09d99  GOTO L09dbd
+L09d9c:
+09da2  I = 1
+09dac  PRINT; " Traits Corrupt;"
+09db7  v1e9e = 0
+L09dbd:
+09dc5  IF ERR() = 0x67 GOTO L09dca
+09dc7  GOTO L09deb
+L09dca:
+09dd0  I = 1
+09dda  PRINT; " Trait Too Long;"
+09de5  v1e9e = 0
+L09deb:
+09df3  IF ERR() = 0x68 GOTO L09df8
+09df5  GOTO L09e19
+L09df8:
+09dfe  I = 1
+09e08  PRINT; " Insufficient Traits;"
+09e13  v1e9e = 0
+L09e19:
+09e2a  IF I = 0 GOTO L09e2f
+09e2c  GOTO L09e4c
+L09e2f:
+09e33  PRINT; " Unknown Error"
+09e3e  PRINT#; ERR()
+09e47  PRINT; ";"
+L09e4c:
+09e50  PRINT; " Press Any Key "
+09e60  FN5FDC CINT(v1ca0)
+09e69  PRINT; @v233e
+09e72  CALL SUB_0_bc4b(@T$)
+09e77  FN52FB 
+L09e7c:
+09e84  v1d04 = "----"
+09e8f  v1f3a = 0
+09e9a  FOR I = 30 TO 3 STEP (I + -1)
+L09e9e:
+09ea3  FOR v1eb2 = 1 TO 4
+L09ea6:
+09eea  IF ((a0030(CINT(v1eb2)) >= I) AND (v1f3a = 0)) GOTO L09eef
+09eec  GOTO L09f0b
+L09eef:
+09f05  v1f3a = a0030(CINT(v1eb2))
+L09f0b:
+L09f15:
+09f2d  NEXT v1eb2
+09f2f  GOTO L09ea6
+L09f32:
+L09f3c:
+09f54  NEXT I
+09f56  GOTO L09e9e
+L09f59:
+09f6a  IF optClassFocus > 0 GOTO L09f6f
+09f6c  GOTO L09fc5
+L09f6f:
+09f8a  a0030(CINT(optClassFocus)) = (v1f3a + 1)
+09fc0  FN5230 MID$(@v1d04, 0, "FMCT", CINT(optClassFocus), 1), 1, CINT(optClassFocus)
+L09fc5:
+09fca  FOR I = 1 TO 4
+L09fce:
+09fde  v2276 = FNR(2)
+0a032  IF ((a0030(CINT(I)) >= ((v1f3a - v2276) + 1)) OR (v227a = I)) GOTO L0a037
+0a034  GOTO L0a06c
+L0a037:
+0a067  FN5230 MID$(@v1d04, 0, "FMCT", CINT(I), 1), 1, CINT(I)
+L0a06c:
+L0a076:
+0a08e  NEXT I
+0a090  GOTO L09fce
+L0a093:
+0a0a4  IF v1f4a = 1 GOTO L0a0a9
+0a0a6  GOTO L0a0c2
+L0a0a9:
+0a0bd  FN5230 @v1d04, 0, "-", 1, 4
+L0a0c2:
+0a0c6  CALL SUB_0_aeb5(@I)
+0a0cb  RETURN? 
+L0a0d0:
+0a0e1  IF v1e9e = 0 GOTO L0a0e6
+0a0e3  GOTO L0a0eb
+L0a0e6:
+0a0e6  RETURN? 
+L0a0eb:
+0a112  LOCATE 1, CINT((v1c98 + 2)), 1, CINT(v1c9c), 4
+0a139  COLOR 1, CINT(v1ce4), 1, CINT(v1ce8), 4
+0a142  PRINT; "   Restoring traits ..."
+0a152  FN5FDC CINT(v1ca0)
+0a15b  PRINT; @v233e
+0a168  FN173D 2, 1
+0a17d  OPEN "r", 2, "HEROES.TRT", 10
+0a186  CLOSE? 2
+0a193  LINE INPUT# 10, @v227e
+0a1a2  CHANNEL 2, 1
+0a1b4  IF @v227e <> "HEROES.TRT" GOTO L0a1b9
+0a1b6  GOTO L0a1d3
+L0a1b9:
+0a1bf  v1e9e = 0
+0a1c9  FN32CB 101
+0a1ce  RETURN? 
+L0a1d3:
+0a1db  FN173D 2, 1
+0a1f0  OPEN "r", 2, "HEROES.TRT", 1
+0a1f9  CLOSE? 2
+0a206  LINE INPUT# 1, @T$
+0a211  v2282 = 12
+0a21d  v1db0 = 0
+L0a223:
+0a226  GOSUB L09b93
+0a236  v2282 = (v2282 + 1)
+0a23f  GOSUB L0a6db
+0a24c  v228a = @v2286
+0a25e  IF @v228a = "9" GOTO L0a263
+0a260  GOTO L0a2f1
+L0a263:
+0a26e  v1db0 = (v1db0 + 1)
+0a279  FOR I = 1 TO 6
+L0a27c:
+0a28e  ; asm imul si
+0a29c  ; asm add ax, si
+0a2a5  a03e0(CINT(I)) = 0
+L0a2b5:
+0a2cd  NEXT I
+0a2e6  a00bc(CINT(v1db0)) = @v233e
+0a2eb  GOTO L0a427
+0a2ee  GOTO L0a427
+L0a2f1:
+0a2fe  IF @v228a <> "0" GOTO L0a303
+0a300  GOTO L0a35d
+L0a303:
+0a310  IF @v228a <> "1" GOTO L0a315
+0a312  GOTO L0a35d
+L0a315:
+0a322  IF @v228a <> "2" GOTO L0a327
+0a324  GOTO L0a35d
+L0a327:
+0a334  IF @v228a <> "3" GOTO L0a339
+0a336  GOTO L0a35d
+L0a339:
+0a346  IF @v228a <> "4" GOTO L0a34b
+0a348  GOTO L0a35d
+L0a34b:
+0a358  IF @v228a = "5" GOTO L0a35d
+0a35a  GOTO L0a40d
+L0a35d:
+0a368  v1db0 = (v1db0 + 1)
+0a373  FOR I = 1 TO 6
+L0a376:
+0a379  GOSUB L0a6db
+0a399  ; asm imul si
+0a3a7  ; asm add ax, si
+0a3b0  a03e0(CINT(I)) = *si
+L0a3c0:
+0a3d8  NEXT I
+0a3e5  v2282 = (v2282 + 5)
+0a402  a00bc(CINT(v1db0)) = @v233e
+0a407  GOTO L0a427
+0a40a  GOTO L0a427
+L0a40d:
+0a413  v1e9e = 0
+0a41d  FN32CB 102
+0a422  RETURN? 
+L0a427:
+0a432  v2282 = (v2282 + 1)
+0a43b  GOSUB L0a6db
+0a448  v228e = @v2286
+0a45a  IF @v228e = "\" GOTO L0a45f
+0a45c  GOTO L0a528
+L0a45f:
+0a47d  IF RND(1) < 0.5 GOTO L0a482
+0a47f  GOTO L0a485
+L0a482:
+0a482  GOTO L0a64d
+L0a485:
+0a49c  a00bc(CINT(v1db0)) = @v233e
+0a4a6  FOR I = 1 TO 6
+L0a4aa:
+0a4b7  ; asm imul si
+0a4c5  ; asm add ax, di
+0a4e1  ; asm imul si
+0a4ef  ; asm add ax, si
+0a4f8  a03e0(CINT(I)) = (a03e0(CINT(I)) * -1)
+L0a508:
+0a520  NEXT I
+0a522  GOTO L0a427
+0a525  GOTO L0a64d
+L0a528:
+0a535  IF @v228e = "|" GOTO L0a53a
+0a537  GOTO L0a5db
+L0a53a:
+0a556  IF @a00bc(CINT(v1db0)) = "END" GOTO L0a55b
+0a558  GOTO L0a55e
+L0a55b:
+0a55b  GOTO L0a68e
+L0a55e:
+0a568  v1e70 = FN60A2()
+0a5a3  IF ((CHR$(27) = @v1e70) AND (v1db0 > 20)) GOTO L0a5a8
+0a5a5  GOTO L0a5ab
+L0a5a8:
+0a5a8  GOTO L0a68e
+L0a5ab:
+0a5bc  IF v1db0 >= v1ea6 GOTO L0a5c1
+0a5be  GOTO L0a5c4
+L0a5c1:
+0a5c1  GOTO L0a68e
+L0a5c4:
+0a5cf  v2282 = (v2282 + 2)
+0a5d5  GOTO L0a223
+0a5d8  GOTO L0a64d
+L0a5db:
+0a60b  a00bc(CINT(v1db0)) = CONCAT(@a00bc(CINT(v1db0)), @v2286)
+0a62b  IF LEN(@a00bc(CINT(v1db0))) > 0x4b GOTO L0a630
+0a62d  GOTO L0a64a
+L0a630:
+0a636  v1e9e = 0
+0a640  FN32CB 103
+0a645  RETURN? 
+L0a64a:
+0a64a  GOTO L0a427
+L0a64d:
+0a658  v2282 = (v2282 + 1)
+0a661  GOSUB L0a6db
+0a673  IF @v2286 <> "|" GOTO L0a678
+0a675  GOTO L0a67a
+L0a678:
+0a678  GOTO L0a64d
+L0a67a:
+0a685  v2282 = (v2282 + 2)
+0a68b  GOTO L0a223
+L0a68e:
+0a694  v20b6 = 0
+0a6a5  v1db0 = (v1db0 + -1)
+0a6bc  IF v1db0 < 10 GOTO L0a6c1
+0a6be  GOTO L0a6d6
+L0a6c1:
+0a6c5  FN32CB 104
+0a6d0  v1e9e = 0
+L0a6d6:
+0a6d6  RETURN? 
+L0a6db:
+0a6eb  CHANNEL 2, ?dx, CLNG(v2282)
+0a6f8  v2286 = @T$
+0a709  IF ASC(@T$) > 0x1d GOTO L0a70e
+0a70b  GOTO L0a728
+L0a70e:
+0a717  ; asm dec ax
+0a723  v2286 = CHR$(ASC(@T$))
+L0a728:
+0a728  RETURN? 
+L0a72d:
+0a732  FN173D 1, 1
+0a747  OPEN "r", 1, "HEROES.CLR", 2
+0a750  CLOSE? 1
+0a75d  LINE INPUT# 2, @T$
+0a76c  CHANNEL 1, 1
+0a780  v1ce0 = FN5732(@T$)
+0a797  IF v1ce0 = 0 GOTO L0a79c
+0a799  GOTO L0a7a8
+L0a79c:
+0a7a2  v1ce0 = 14
+L0a7a8:
+0a7b2  CHANNEL 1, 2
+0a7c6  v1ce4 = FN5732(@T$)
+0a7dd  IF v1ce4 = 0 GOTO L0a7e2
+0a7df  GOTO L0a7ee
+L0a7e2:
+0a7e8  v1ce4 = 0
+L0a7ee:
+0a7f8  CHANNEL 1, 3
+0a80c  v1ce8 = FN5732(@T$)
+0a823  IF v1ce8 = 0 GOTO L0a828
+0a825  GOTO L0a834
+L0a828:
+0a82e  v1ce8 = 6
+L0a834:
+0a834  RETURN? 
+L0a839:
+0a83e  FN173D 1, 1
+0a853  OPEN "r", 1, "HEROES.CLR", 2
+0a85c  CLOSE? 1
+0a869  LINE INPUT# 2, @T$
+0a887  GET/PUT? FN576E(CINT(v1ce0)), @T$, 0
+0a896  CHANNEL2 1, 1
+0a8b4  GET/PUT? FN576E(CINT(v1ce4)), @T$, 0
+0a8c3  CHANNEL2 1, 2
+0a8e1  GET/PUT? FN576E(CINT(v1ce8)), @T$, 0
+0a8f0  CHANNEL2 1, 3
+0a8f5  RETURN? 
+0a8fa  FN3EA9 
+0a8ff  GOTO L0aa8b
+0a905  SUBENTRY 
+0a90e  CURSOR 65535
+0a916  CALL SUB_0_aa8e([bp + 6])
+0a92b  loce = FNR(26)
+0a949  loc12 = CHR$(CINT((loce + 64)))
+0a962  LOCATE 1, 10, 1, 26, 4
+0a96b  PRINT; " Press `"
+0a974  PRINT; @loc12
+0a97d  PRINT "' To Confirm Exit"
+0a996  LOCATE 1, 11, 1, 26, 4
+0a99f  PRINT "Or Any Other Key To Continue"
+0a9b8  LOCATE 1, 21, 1, 3, 4
+0a9c1  PRINT "The HEROES Character Generator v.040798"
+0a9da  LOCATE 1, 22, 1, 3, 4
+0a9e3  PRINT "http://www.geocities.com/Area51/Vault/1642"
+0a9fc  LOCATE 1, 23, 1, 3, 4
+0aa05  PRINT "by t{148}ff, gzweb@qnis.net"
+0aa12  v1e70 = @v233e
+L0aa18:
+0aa25  IF @v1e70 = @v233e GOTO L0aa2a
+0aa27  GOTO L0aa42
+L0aa2a:
+0aa3a  v1e70 = UCASE$(FN60A2())
+0aa3f  GOTO L0aa18
+L0aa42:
+0aa4f  IF @v1e70 = @loc12 GOTO L0aa54
+0aa51  GOTO L0aa7a
+L0aa54:
+0aa67  COLOR 1, 15, 1, 0, 4
+0aa70  CURSOR 65535
+0aa75  FN3EA9 
+L0aa7a:
+0aa7e  FN5204 @loc12
+0aa83  SUBEXIT 
+0aa88  RET 2
+L0aa8b:
+0aa8b  GOTO L0ab87
+0aa91  SUBENTRY 
+0aab8  COLOR 1, CINT(v1ce8), 1, CINT(v1ce4), 4
+0aac1  CURSOR 65535
+0aad1  LOCATE 1, 1, 1, 1, 4
+0aada  PRINT; "{201}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{187}"
+0aae4  FOR *si = 2 TO 23
+L0aae8:
+0ab01  LOCATE 1, CINT(*si), 1, 1, 4
+0ab0a  PRINT; "{186}"
+0ab2b  LOCATE 1, CINT(*si), 1, 80, 4
+0ab34  PRINT; "{186}"
+L0ab44:
+0ab5e  NEXT *si
+0ab71  LOCATE 1, 24, 1, 1, 4
+0ab7a  PRINT; "{200}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{205}{188}"
+0ab7f  SUBEXIT 
+0ab84  RET 2
+L0ab87:
+0ab87  GOTO L0ae6a
+0ab8d  SUBENTRY 
+0abb4  LOCATE 1, CINT(v1c98), 1, CINT(v1c9c), 4
+0abdb  COLOR 1, CINT(v1ce0), 1, CINT(v1ce8), 4
+0abe4  PRINT; " HEROES {254} Adventure Characters "
+0ac0b  COLOR 1, CINT(v1ce4), 1, CINT(v1ce8), 4
+0ac21  IF v1e54 = 1 GOTO L0ac26
+0ac23  GOTO L0ac2f
+L0ac26:
+0ac2a  PRINT; "Burst"
+L0ac2f:
+0ac3a  FN5FDC CINT(v1ca0)
+0ac43  PRINT; @v233e
+0ac4c  PRINT; "             C = Control Panel "
+0ac5c  FN5FDC CINT(v1ca4)
+0ac65  PRINT; @v233e
+0ac91  LOCATE 1, CINT((v1c98 + 1)), 1, CINT(v1c9c), 4
+0acb2  T$ = CONCAT(CONCAT("`", @Name$), "'")
+0acc4  IF @T$ = "`'" GOTO L0acc9
+0acc6  GOTO L0acd6
+L0acc9:
+0acd1  T$ = "Character"
+L0acd6:
+0ace7  IF optOutput = 3 GOTO L0acec
+0ace9  GOTO L0ad03
+L0acec:
+0acfe  T$ = CONCAT("Make HTML File for ", @T$)
+L0ad03:
+0ad14  IF optOutput = 2 GOTO L0ad19
+0ad16  GOTO L0ad30
+L0ad19:
+0ad2b  T$ = CONCAT("Make .HRO Textfile for ", @T$)
+L0ad30:
+0ad41  IF optOutput = 1 GOTO L0ad46
+0ad43  GOTO L0ad5d
+L0ad46:
+0ad58  T$ = CONCAT("Print ", @T$)
+L0ad5d:
+0ad6e  IF v1d24 = 1 GOTO L0ad73
+0ad70  GOTO L0ad85
+L0ad73:
+0ad77  PRINT; " P = "
+0ad80  PRINT; @T$
+L0ad85:
+0ad90  FN5FDC CINT(v1ca4)
+0ad99  PRINT; @v233e
+0adbe  LOCATE 1, CINT((v1c98 + 1)), 1, 57, 4
+0adc7  PRINT; " Esc = Exit "
+0add7  FN5FDC CINT(v1ca4)
+0ade0  PRINT; @v233e
+0ae0c  LOCATE 1, CINT((v1c98 + 2)), 1, CINT(v1c9c), 4
+0ae15  PRINT; "            Character #"
+0ae22  PRINTN; CharNo
+0ae32  FN5FDC CINT(v1ca0)
+0ae3b  PRINT; @v233e
+0ae44  PRINT; " Any Other Key = New Character"
+0ae54  FN5FDC CINT(v1ca4)
+0ae5d  PRINT; @v233e
+0ae62  SUBEXIT 
+0ae67  RET 2
+L0ae6a:
+0ae6a  GOTO L0aeb2
+0ae70  SUBENTRY 
+0ae7a  FN173D 1, 1
+0ae8f  OPEN "r", 1, "HEROES.DAT", 4
+0ae98  CLOSE? 1
+0aea5  LINE INPUT# 4, @T$
+0aeaa  SUBEXIT 
+0aeaf  RET 2
+L0aeb2:
+0aeb2  GOTO L0af80
+0aeb8  SUBENTRY 
+0aec2  FOR *si = 1 TO 6
+L0aec6:
+0aee8  IF a0030(CINT(*si)) < 3 GOTO L0aeed
+0aeea  GOTO L0af0a
+L0aeed:
+0af04  a0030(CINT(*si)) = 3
+L0af0a:
+0af2c  IF a0030(CINT(*si)) > 25 GOTO L0af31
+0af2e  GOTO L0af4e
+L0af31:
+0af48  a0030(CINT(*si)) = 25
+L0af4e:
+L0af59:
+0af73  NEXT *si
+0af75  GOTO L0aec6
+L0af78:
+0af78  SUBEXIT 
+0af7d  RET 2
+L0af80:
+0af80  GOTO L0b307
+0af86  SUBENTRY 
+0af8e  CALL SUB_0_ae6d([bp + 6])
+0af99  v1c88 = 1
+0afa9  CHANNEL 1, 33
+0afbb  IF @T$ <> "OKAY" GOTO L0afc0
+0afbd  GOTO L0afcf
+L0afc0:
+0afc6  v1c88 = 0
+0afcc  GOTO L0b2ff
+L0afcf:
+0afd9  CHANNEL 1, 1
+0afed  optRec1 = CVS(@T$)
+0affd  CHANNEL 1, 2
+0b011  optClassFocus = CVS(@T$)
+0b021  CHANNEL 1, 3
+0b035  optRec3 = CVS(@T$)
+0b045  CHANNEL 1, 4
+0b059  optRec4 = CVS(@T$)
+0b069  CHANNEL 1, 5
+0b07d  optRec5 = CVS(@T$)
+0b08d  CHANNEL 1, 6
+0b0a1  optAlignLimit = CVS(@T$)
+0b0b1  CHANNEL 1, 7
+0b0c5  optNames = CVS(@T$)
+0b0d5  CHANNEL 1, 8
+0b0e9  optFemalePct = CVS(@T$)
+0b0f9  CHANNEL 1, 9
+0b10d  optBreedPct = CVS(@T$)
+0b11d  CHANNEL 1, 10
+0b131  optXPmin = CVS(@T$)
+0b141  CHANNEL 1, 11
+0b155  optRec11 = CVS(@T$)
+0b165  CHANNEL 1, 12
+0b179  optRec12 = CVS(@T$)
+0b189  CHANNEL 1, 13
+0b19d  optXPmax = CVS(@T$)
+0b1ad  CHANNEL 1, 14
+0b1c1  optRec14 = CVS(@T$)
+0b1d1  CHANNEL 1, 15
+0b1e5  optRec15 = CVS(@T$)
+0b1f0  FOR *si = 1 TO 10
+L0b1f4:
+0b20a  CHANNEL 1, ?dx, CLNG((*si + 15))
+0b22f  a19dc(CINT(CVS(@T$))) = CVS(@T$)
+0b247  IF CVS(@T$) < 8 GOTO L0b24c
+0b249  GOTO L0b28d
+L0b24c:
+0b262  CHANNEL 1, ?dx, CLNG((*si + 25))
+0b287  a1a4c(CINT(CVS(@T$))) = CVS(@T$)
+L0b28d:
+L0b298:
+0b2b2  NEXT *si
+0b2b4  GOTO L0b1f4
+L0b2b7:
+0b2c1  CHANNEL 1, 34
+0b2d5  optRec34 = CVS(@T$)
+0b2e5  CHANNEL 1, 35
+0b2f9  optOutput = CVS(@T$)
+L0b2ff:
+0b2ff  SUBEXIT 
+0b304  RET 2
+L0b307:
+0b307  GOTO L0bbde
+0b30d  SUBENTRY 
+0b334  COLOR 1, CINT(v1ce0), 1, CINT(v1ce4), 4
+0b34a  IF optNames = 1 GOTO L0b34f
+0b34c  GOTO L0b41e
+L0b34f:
+0b363  LOCATE 1, 2, 1, 3, 4
+0b38a  COLOR 1, CINT(v1ce8), 1, CINT(v1ce4), 4
+0b393  PRINT @Name$
+0b3ac  LOCATE 1, 3, 1, 3, 4
+0b3d3  COLOR 1, CINT(v1ce8), 1, CINT(v1ce4), 4
+0b3f2  PRINT STRING$?(CHR$(LEN(@Name$), 196))
+0b419  COLOR 1, CINT(v1ce0), 1, CINT(v1ce4), 4
+L0b41e:
+0b423  FOR *si = 1 TO 6
+L0b426:
+0b447  LOCATE 1, CINT((*si + 9)), 1, 3, 4
+0b46e  COLOR 1, CINT(v1ce8), 1, CINT(v1ce4), 4
+0b497  PRINT; MID$("Strength    IntelligenceWisdom      Dexterity   ConstitutionCharisma    ", CINT(((*si * 12) + -11)), 12)
+0b4a0  PRINT; " "
+0b4c7  COLOR 1, CINT(v1ce0), 1, CINT(v1ce4), 4
+0b4d0  PRINT USING "##"
+0b4ef  PRINTN; [bx + 2], a0030(CINT(*si))
+0b4f4  PRINTN. 
+0b50b  IF *si = 1 GOTO L0b510
+0b50d  GOTO L0b519
+L0b510:
+0b514  PRINT @v1d5c
+L0b519:
+L0b524:
+0b53e  NEXT *si
+0b540  GOTO L0b426
+L0b543:
+0b555  T$ = CONCAT(@v1cf4, " ")
+0b567  IF @v1cf8 = "Lady" GOTO L0b56c
+0b569  GOTO L0b579
+L0b56c:
+0b574  T$ = @v233e
+L0b579:
+0b58d  LOCATE 1, 4, 1, 3, 4
+0b596  PRINT; @T$
+0b59f  PRINT @v1cf8
+0b5b8  LOCATE 1, 5, 1, 3, 4
+0b5c1  PRINT @v1cfc
+0b5da  LOCATE 1, 6, 1, 3, 4
+0b5e3  PRINT @v1d08
+0b5fc  LOCATE 1, 7, 1, 3, 4
+0b61d  PRINT; MID$(STR$(v1d0c), 2, 32767)
+0b626  PRINT; " Yrs Old ("
+0b63e  PRINT; @a1a34(CINT(AgeCat))
+0b647  PRINT ")"
+0b660  LOCATE 1, 8, 1, 3, 4
+0b669  PRINT @v1d14
+0b682  LOCATE 1, 4, 1, 30, 4
+0b68b  PRINT @v1d2c
+0b6a4  LOCATE 1, 5, 1, 30, 4
+0b6ad  PRINT @v1d34
+0b6c6  LOCATE 1, 6, 1, 30, 4
+0b6cf  PRINT; "Level "
+0b6d8  PRINT @v1d38
+0b6f1  LOCATE 1, 7, 1, 30, 4
+0b712  PRINT; MID$(STR$(v1d40), 2, 32767)
+0b71b  PRINT " Hit Points"
+0b734  LOCATE 1, 8, 1, 30, 4
+0b73d  PRINT; "X.P.: "
+0b746  PRINT @XP$
+0b751  loce = v1dac
+0b75b  FOR *si = 1 TO loce
+L0b75e:
+0b780  COLOR 1, CINT(v1ce0), 1, CINT(v1ce4), 4
+0b7a6  LOCATE 1, CINT((21 - *si)), 1, 3, 4
+0b7bf  PRINT @a0068(CINT(*si))
+L0b7cf:
+0b7e8  NEXT *si
+0b7ea  GOTO L0b75e
+L0b7ed:
+0b80f  COLOR 1, CINT(v1ce0), 1, CINT(v1ce4), 4
+0b825  IF v1d48 < 0 GOTO L0b82a
+0b827  GOTO L0b83a
+L0b82a:
+0b832  T$ = " "
+0b837  GOTO L0b847
+L0b83a:
+0b842  T$ = @v233e
+L0b847:
+0b85b  LOCATE 1, 10, 1, 24, 4
+0b864  PRINT; "AC"
+0b86d  PRINT; @T$
+0b87a  PRINTN; v1d48
+0b88c  IF @v1d4c <> @v233e GOTO L0b891
+0b88e  GOTO L0b8a3
+L0b891:
+0b895  PRINT; "by "
+0b89e  PRINT @v1d4c
+L0b8a3:
+0b8a9  loc12 = 11
+0b8c8  LOCATE 1, CINT(loc12), 1, 24, 4
+0b8da  IF @v1d50 <> @v233e GOTO L0b8df
+0b8dc  GOTO L0b900
+L0b8df:
+0b8e3  PRINT; " and "
+0b8ec  PRINT @v1d50
+0b8fb  loc12 = (loc12 + 1)
+L0b900:
+0b91a  LOCATE 1, CINT(loc12), 1, 24, 4
+0b92c  IF @v1d54 <> @v233e GOTO L0b931
+0b92e  GOTO L0b949
+L0b931:
+0b935  PRINT @v1d54
+0b944  loc12 = (loc12 + 1)
+L0b949:
+0b963  LOCATE 1, CINT(loc12), 1, 24, 4
+0b975  IF @v1d58 <> @v233e GOTO L0b97a
+0b977  GOTO L0b992
+L0b97a:
+0b97e  PRINT @v1d58
+0b98d  loc12 = (loc12 + 1)
+L0b992:
+0b9ac  LOCATE 1, CINT(loc12), 1, 24, 4
+0b9be  IF @v1d00 <> @v233e GOTO L0b9c3
+0b9c0  GOTO L0b9db
+L0b9c3:
+0b9c7  PRINT @v1d00
+0b9d6  loc12 = (loc12 + 1)
+L0b9db:
+0b9f5  LOCATE 1, CINT(loc12), 1, 24, 4
+0ba07  IF @v1d18 <> @v233e GOTO L0ba0c
+0ba09  GOTO L0ba24
+L0ba0c:
+0ba10  PRINT @v1d18
+0ba1f  loc12 = (loc12 + 1)
+L0ba24:
+0ba38  LOCATE 1, 4, 1, 58, 4
+0ba5f  COLOR 1, CINT(v1ce8), 1, CINT(v1ce4), 4
+0ba68  PRINT; "THAC0:"
+0ba8f  COLOR 1, CINT(v1ce0), 1, CINT(v1ce4), 4
+0ba9c  PRINTN v1d1c
+0bab3  T$ = STR$(v1cbc)
+0bac9  IF v1cbc = 0 GOTO L0bace
+0bacb  GOTO L0badb
+L0bace:
+0bad6  T$ = " None"
+L0badb:
+0baef  LOCATE 1, 5, 1, 58, 4
+0bb16  COLOR 1, CINT(v1ce8), 1, CINT(v1ce4), 4
+0bb1f  PRINT; "Henchmen:"
+0bb46  COLOR 1, CINT(v1ce0), 1, CINT(v1ce4), 4
+0bb4f  PRINT @T$
+0bb5d  *si = 1
+L0bb62:
+0bb7f  IF @a1ac8(CINT(*si)) <> @v233e GOTO L0bb84
+0bb81  GOTO L0bbd6
+L0bb84:
+0bba5  LOCATE 1, CINT((*si + 5)), 1, 61, 4
+0bbbe  PRINT @a1ac8(CINT(*si))
+0bbcf  *si = (*si + 1)
+0bbd3  GOTO L0bb62
+L0bbd6:
+0bbd6  SUBEXIT 
+0bbdb  RET 2
+L0bbde:
+0bbde  GOTO L0bc48
+0bbe4  SUBENTRY 
+0bbf4  loce = (optRec3 + 2)
+0bbfe  FOR *si = 1 TO loce STEP (RND(1) + 1)
+L0bc02:
+0bc15  loc12 = RND(1)
+L0bc25:
+0bc3e  NEXT *si
+0bc40  SUBEXIT 
+0bc45  RET 2
+L0bc48:
+0bc48  GOTO L0bdb6
+0bc4e  SUBENTRY 
+0bc5a  [bp + 6] = @v233e
+L0bc60:
+0bc6c  IF [bp + 6] = @v233e GOTO L0bc71
+0bc6e  GOTO L0bc9a
+L0bc71:
+0bc84  loce = RND(1)
+0bc92  [bp + 6] = FN60A2()
+0bc97  GOTO L0bc60
+L0bc9a:
+0bca5  IF LEN([bp + 6]) = 1 GOTO L0bcaa
+0bca7  GOTO L0bcad
+L0bcaa:
+0bcaa  GOTO L0bdae
+L0bcad:
+0bcc1  [bp + 6] = MID$([bp + 6], 2, 1)
+0bcd2  IF [bp + 6] = "H" GOTO L0bcd7
+0bcd4  GOTO L0bce3
+L0bcd7:
+0bcde  [bp + 6] = "8"
+L0bce3:
+0bcef  IF [bp + 6] = "P" GOTO L0bcf4
+0bcf1  GOTO L0bd00
+L0bcf4:
+0bcfb  [bp + 6] = "2"
+L0bd00:
+0bd0c  IF [bp + 6] = "K" GOTO L0bd11
+0bd0e  GOTO L0bd1d
+L0bd11:
+0bd18  [bp + 6] = "4"
+L0bd1d:
+0bd29  IF [bp + 6] = "M" GOTO L0bd2e
+0bd2b  GOTO L0bd3a
+L0bd2e:
+0bd35  [bp + 6] = "6"
+L0bd3a:
+0bd46  IF [bp + 6] = "G" GOTO L0bd4b
+0bd48  GOTO L0bd57
+L0bd4b:
+0bd52  [bp + 6] = "7"
+L0bd57:
+0bd63  IF [bp + 6] = "O" GOTO L0bd68
+0bd65  GOTO L0bd74
+L0bd68:
+0bd6f  [bp + 6] = "1"
+L0bd74:
+0bd80  IF [bp + 6] = "I" GOTO L0bd85
+0bd82  GOTO L0bd91
+L0bd85:
+0bd8c  [bp + 6] = "9"
+L0bd91:
+0bd9d  IF [bp + 6] = "Q" GOTO L0bda2
+0bd9f  GOTO L0bdae
+L0bda2:
+0bda9  [bp + 6] = "3"
+L0bdae:
+0bdae  SUBEXIT 
+0bdb3  RET 2
+L0bdb6:
+0bdb6  FN3E92 
+0bdbb  ; asm xor byte ptr [bx + si], al
+0bdbd  ; asm add byte ptr [bx + si], al
+0bdbf  ; asm xor byte ptr [bx + si], al
+0bdc1  ; asm add byte ptr [bx + si], al
+0bdc3  ; asm xor byte ptr [bx + si], al
+0bdc5  ; asm add byte ptr [bx + si], al
+0bdc7  ; asm xor byte ptr [bx + si], al
+0bdc9  ; asm add byte ptr [bx + si], al
+0bdcb  ; asm xor byte ptr [bx + si], al
+0bdcd  ; asm add byte ptr [bx + si], al
+0bdcf  ; asm xor byte ptr [bx + si], al
+0bdd1  ; asm add byte ptr [bx + si], al
+0bdd3  ; asm xor byte ptr [bx + si], al
+0bdd5  ; asm add byte ptr [bx + si], al
+0bdd7  ; asm xor byte ptr [bx + si], al
+0bdd9  ; asm add byte ptr [bx + si], al
+0bddb  ; asm xor byte ptr [bx + si], al
+0bddd  ; asm add byte ptr [bx + si], al
+0bddf  ; asm xor byte ptr [bx + si], al
+0bde1  ; asm add byte ptr [bx + si], al
+0bde3  ; asm xor byte ptr [bx + si], al
+0bde5  ; asm add byte ptr [bx + si], al
+0bde7  ; asm xor byte ptr [bx + si], al
+0bde9  ; asm add byte ptr [bx + si], al
+0bdeb  ; asm xor byte ptr [bx + si], al
+0bded  ; asm add byte ptr [bx + si], al
+0bdef  ; asm xor byte ptr [bx + si], al
+0bdf1  ; asm add byte ptr [bx + si], al
+0bdf3  ; asm xor byte ptr [bx + si], al
+0bdf5  ; asm add byte ptr [bx + si], al
+0bdf7  ; asm xor byte ptr [bx + si], al
+0bdf9  ; asm add byte ptr [bx + si], al
+0bdfb  ; asm xor byte ptr [bx + si], al
+0bdfd  ; asm add byte ptr [bx + si], al
+0bdff  ; asm xor byte ptr [bx + si], al
+0be01  ; asm add byte ptr [bx + si], al
+0be03  ; asm xor byte ptr [bx + si], al
+0be05  ; asm add byte ptr [bx + si], al
+0be07  ; asm xor byte ptr [bx + si], al
+0be09  ; asm add byte ptr [bx + si], al
+0be0b  ; asm xor byte ptr [bx + si], al
+0be0d  ; asm add byte ptr [bx + si], al
+0be0f  ; asm xor byte ptr [bx + si], al
+0be11  ; asm add byte ptr [bx + si], al
+0be13  ; asm xor byte ptr [bx + si], al
+0be15  ; asm add byte ptr [bx + si], al
+0be17  ; asm xor byte ptr [bx + si], al
+0be19  ; asm add byte ptr [bx + si], al
+0be1b  ; asm xor byte ptr [bx + si], al
+0be1d  ; asm add byte ptr [bx + si], al
+0be1f  ; asm xor byte ptr [bx + si], al
+0be21  ; asm add byte ptr [bx + si], al
+0be23  ; asm xor byte ptr [bx + si], al
+0be25  ; asm add byte ptr [bx + si], al
+0be27  ; asm xor byte ptr [bx + si], al
+0be29  ; asm add byte ptr [bx + si], al
+0be2b  ; asm pushaw 
+0be2c  ; asm add byte ptr [bx + si], al
+0be2e  ; asm add byte ptr [di], ch
+0be31  ; asm add byte ptr [bx + si], al
+0be33  ; asm insw word ptr es:[di], dx
+0be34  ; asm add byte ptr [bx + si], al
+0be36  ; asm add byte ptr [bp + si], bh
+0be39  ; asm add byte ptr [bx + si], al
+0be3b  ; asm xchg word ptr [bx + si], ax
+0be3d  ; asm add byte ptr [bx + si], al
+0be3f  ; asm xchg bx, ax
+0be40  ; asm add byte ptr [bx + si], al
+0be42  ; asm add byte ptr [bx], bl
+0be46  ; asm add byte ptr [bp + di], ch
+0be4a  ; asm add byte ptr [bx], dh
+0be4e  ; asm add bl, al
+0be50  ; asm add byte ptr [bx + si], al
+0be52  ; asm add bh, cl
+0be54  ; asm add byte ptr [bx + si], al
+0be56  ; asm add bl, bl
+0be58  ; asm add byte ptr [bx + si], al
+0be5a  ; asm add bh, ah
+0be5c  ; asm add byte ptr [bx + si], al
+0be5e  ; asm add bl, dh
+0be60  ; asm add byte ptr [bx + si], al
+0be62  ; asm add bh, bh
+0be64  ; asm add byte ptr [bx + si], al
+0be66  ; asm add byte ptr [bp + di], cl
+0be68  ; asm add word ptr [bx + si], ax
+0be6a  ; asm add byte ptr [bx], dl
+0be6c  ; asm add word ptr [bx + si], ax
+0be6e  ; asm add byte ptr [bp + di], ah
+0be70  ; asm add word ptr [bx + si], ax
+0be72  ; asm add byte ptr [bx], ch
+0be74  ; asm add word ptr [bx + si], ax
+0be76  ; asm add byte ptr [bp + di], bh
+0be78  ; asm add word ptr [bx + si], ax
+0be7a  ; asm add byte ptr [bx + 1], al
+0be7d  ; asm add byte ptr [bx + si], al
+0be80  ; asm add word ptr [bx + si], ax
+0be82  ; asm add byte ptr [bx + 1], bl
+0be85  ; asm add byte ptr [bx + si], al
+0be87  ; asm imul ax, word ptr [bx + di], 0
+0be8a  ; asm add byte ptr [bx + 1], dh
+0be8d  ; asm add byte ptr [bx + si], al
+0be8f  ; asm add word ptr [bx + di], 0
+0be92  ; asm add byte ptr [bx + 1], cl
+0be96  ; asm add byte ptr [bp + di + 1], bl
+0be9a  ; asm add byte ptr [bx + 1], ah
+0be9e  ; asm add byte ptr [bx + 1], ch
+0bea2  ; asm add byte ptr [bx + 1], dh
+0bea6  ; asm add dh, dl
+0bea8  ; asm add word ptr [bx + si], ax
+0beaa  ; asm add bh, bl
+0beac  ; asm add word ptr [bx + si], ax
+0beae  ; asm add al, ch
+0beb0  ; asm add word ptr [bx + si], ax
+0beb2  ; asm add byte ptr [si], dl
+0beb4  ; asm add al, byte ptr [bx + si]
+0beb6  ; asm add byte ptr [di], bl
+0beb8  ; asm add al, byte ptr [bx + si]
+0beba  ; asm add byte ptr [bx], ah
+0bebc  ; asm add al, byte ptr [bx + si]
+0bebe  ; asm add byte ptr [bx + si], dh
+0bec0  ; asm add al, byte ptr [bx + si]
+0bec2  ; asm add byte ptr [bx + si], bh
+0bec4  ; asm add al, byte ptr [bx + si]
+0bec6  ; asm add byte ptr [si + 2], dl
+0bec9  ; asm add byte ptr [bx + si], al
+0becb  IF ?flags js GOTO L0becf
+0becd  ; asm add byte ptr [bx + si], al
+L0becf:
+0becf  IF ?flags jns GOTO L0bed3
+0bed1  ; asm add byte ptr [bx + si], al
+L0bed3:
+0bed3  ; asm add byte ptr [bp + si], 0
+0bed6  ; asm add byte ptr [bp + di + 2], bh
+0beda  ; asm add bh, bl
+0bedc  ; asm add al, byte ptr [bx + si]
+0bede  ; asm add al, ah
+0bee0  ; asm add al, byte ptr [bx + si]
+0bee2  ; asm add al, ch
+0bee4  ; asm add al, byte ptr [bx + si]
+0bee6  ; asm add byte ptr [si], al
+0bee8  ; asm add ax, word ptr [bx + si]
+0beea  ; asm add byte ptr [bx + si], ch
+0beec  ; asm add ax, word ptr [bx + si]
+0beee  ; asm add byte ptr [bx + di], ch
+0bef0  ; asm add ax, word ptr [bx + si]
+0bef2  ; asm add byte ptr [bp + si], dh
+0bef4  ; asm add ax, word ptr [bx + si]
+0bef6  ; asm add byte ptr [bp + 3], cl
+0bef9  ; asm add byte ptr [bx + si], al
+0befb  IF ?flags < GOTO L0bf00
+0befd  ; asm add byte ptr [bx + si], al
+0beff  IF ?flags >= GOTO L0bf04
+0bf01  ; asm add byte ptr [bx + si], al
+0bf03  IF ?flags < GOTO L0bf08
+0bf05  ; asm add byte ptr [bx + si], al
+0bf07  ; asm mov ch, 3
+0bf09  ; asm add byte ptr [bx + si], al
+0bf0d  ; asm add byte ptr [bx + si], al
+0bf0f  ; asm fiadd dword ptr [bp + di]
+0bf11  ; asm add byte ptr [bx + si], al
+0bf13  ; asm loop 0xbf18
+0bf15  ; asm add byte ptr [bx + si], al
+0bf17  ; asm or al, byte ptr [si]
+0bf19  ; asm add byte ptr [bx + si], al
+0bf1b  ; asm add al, 0
+0bf1e  ; asm add byte ptr [bx], ch
+0bf20  ; asm add al, 0
+0bf22  ; asm add byte ptr [bx + si], dh
+0bf24  ; asm add al, 0
+0bf26  ; asm add byte ptr [bx + di], dh
+0bf28  ; asm add al, 0
+0bf2a  ; asm add byte ptr [bp + si], dh
+0bf2c  ; asm add al, 0
+0bf2e  ; asm add byte ptr [bp + di], dh
+0bf30  ; asm add al, 0
+0bf32  ; asm add byte ptr [si], dh
+0bf34  ; asm add al, 0
+0bf36  ; asm add byte ptr [di], dh
+0bf38  ; asm add al, 0
+0bf3a  ; asm add byte ptr [4], bh
+0bf3e  ; asm add byte ptr [si + 4], dl
+0bf41  ; asm add byte ptr [bx + si], al
+0bf43  ; asm pop sp
+0bf44  ; asm add al, 0
+0bf46  ; asm add byte ptr [bp + di + 4], bh
+0bf49  ; asm add byte ptr [bx + si], al
+0bf4b  IF ?flags <= GOTO L0bf51
+0bf4d  ; asm add byte ptr [bx + si], al
+0bf4f  ; asm mov al, byte ptr [si]
+L0bf51:
+0bf51  ; asm add byte ptr [bx + si], al
+0bf53  ; asm xchg bx, ax
+0bf54  ; asm add al, 0
+0bf56  ; asm add byte ptr [si + 4], bl
+0bf5a  ; asm add byte ptr [di + 4], ah
+0bf5e  ; asm add byte ptr [bp + si + 4], dh
+0bf62  ; asm add ah, al
+0bf64  ; asm add al, 0
+0bf66  ; asm add ch, dh
+0bf68  ; asm add al, 0
+0bf6a  ; asm add byte ptr [bx + si], al
+0bf6c  ; asm add ax, 0
+0bf6f  ; asm or byte ptr [di], al
+0bf71  ; asm add byte ptr [bx + si], al
+0bf73  ; asm and word ptr [di], ax
+0bf75  ; asm add byte ptr [bx + si], al
+0bf77  ; asm xor byte ptr [di], al
+0bf79  ; asm add byte ptr [bx + si], al
+0bf7b  ; asm imul ax, word ptr [di], 0
+0bf7f  IF ?flags <= GOTO L0bf86
+0bf81  ; asm add byte ptr [bx + si], al
+0bf83  IF ?flags jp GOTO L0bf8a
+0bf85  ; asm add byte ptr [bx + si], al
+L0bf8a:
+0bf8a  ; asm add byte ptr [bp + si + 5], dh
+0bf8e  ; asm add al, cl
+0bf90  ; asm add ax, 0
+0bf93  ; asm aam 5
+0bf95  ; asm add byte ptr [bx + si], al
+0bf99  ; asm add byte ptr [bx + si], al
+0bf9d  ; asm add byte ptr [bx + si], al
+0bfa1  ; asm add byte ptr [bx + si], al
+0bfa5  ; asm add byte ptr [bx + si], al
+0bfa7  ; asm pop ss
+0bfa9  ; asm add byte ptr [bx + si], al
+0bfab  ; asm sub ax, 6
+0bfae  ; asm add byte ptr [bx + di], bh
+0bfb1  ; asm add byte ptr [bx + si], al
+0bfb3  ; asm inc cx
+0bfb5  ; asm add byte ptr [bx + si], al
+0bfb7  ; asm inc sp
+0bfb9  ; asm add byte ptr [bx + si], al
+0bfbb  ; asm inc sp
+0bfbd  ; asm add byte ptr [bx + si], al
+0bfbf  ; asm imul ax, word ptr [0], 0x7c
+0bfc5  ; asm add byte ptr [bx + si], al
+0bfc7  ; asm xchg dx, ax
+0bfc9  ; asm add byte ptr [bx + si], al
+0bfcb  ; asm sahf 
+0bfcd  ; asm add byte ptr [bx + si], al
+0bfcf  ; asm cmpsb byte ptr [si], byte ptr es:[di]
+0bfd1  ; asm add byte ptr [bx + si], al
+0bfd3  ; asm test ax, 6
+0bfd6  ; asm add byte ptr [bx + di + 6], ch
+0bfda  ; asm add al, dl
+0bfdd  ; asm add byte ptr [bx + si], al
+0bfe3  ; asm call 0xbfec
+0bfe6  ; asm add ah, dh
+0bfe9  ; asm add byte ptr [bx + si], al
+0bfeb  ; asm cld 
+0bfed  ; asm add byte ptr [bx + si], al
+0bfef  ; asm inc word ptr [0]
+0bff3  ; asm adc al, byte ptr [bx]
+0bff5  ; asm add byte ptr [bx + si], al
+0bff7  ; asm sub al, byte ptr [bx]
+0bff9  ; asm add byte ptr [bx + si], al
+0bffb  ; asm xor ax, word ptr [bx]
+0bffd  ; asm add byte ptr [bx + si], al
+0c001  ; asm add byte ptr [bx + si], al
+0c003  ; asm dec ax
+0c005  ; asm add byte ptr [bx + si], al
+0c009  ; asm add byte ptr [bx + si], al
+0c00b  ; asm arpl word ptr [bx], ax
+0c00d  ; asm add byte ptr [bx + si], al
+0c00f  ; asm outsw dx, word ptr [si]
+0c011  ; asm add byte ptr [bx + si], al
+0c013  IF ?flags < GOTO L0c01c
+0c015  ; asm add byte ptr [bx + si], al
+0c017  ; asm test byte ptr [bx], al
+0c019  ; asm add byte ptr [bx + si], al
+0c01b  CALL_a300:7 ?cx
+0c021  ; asm add byte ptr [bx + si], al
+0c026  ; asm add byte ptr [si + 7], bh
+0c02a  ; asm add byte ptr [bx + 7], bh
+0c02e  ; asm add dl, al
+0c031  ; asm add byte ptr [bx + si], al
+0c035  ; asm add byte ptr [bx + si], al
+0c037  ; asm loope 0xc040
+0c039  ; asm add byte ptr [bx + si], al
+0c03b  ; asm in al, 7
+0c03d  ; asm add byte ptr [bx + si], al
+0c03f  ; asm cli 
+0c041  ; asm add byte ptr [bx + si], al
+0c043  ; asm add cx, word ptr [bx + si]
+0c045  ; asm add byte ptr [bx + si], al
+0c048  ; asm or byte ptr [bx + si], al
+0c04a  ; asm add byte ptr [8], al
+0c04e  ; asm add byte ptr [bp + di], dl
+0c050  ; asm or byte ptr [bx + si], al
+0c052  ; asm add byte ptr [bx], bl
+0c054  ; asm or byte ptr [bx + si], al
+0c056  ; asm add byte ptr [bp + si], ah
+0c058  ; asm or byte ptr [bx + si], al
+0c05a  ; asm add byte ptr [bp + si], ah
+0c05c  ; asm or byte ptr [bx + si], al
+0c05e  ; asm add byte ptr [bp + di], ch
+0c060  ; asm or byte ptr [bx + si], al
+0c062  ; asm add byte ptr [bx + di + 8], al
+0c065  ; asm add byte ptr [bx + si], al
+0c067  [bx + si]% = cs
+0c069  ; asm add byte ptr [bx + si], al
+0c06b  ; asm movsw word ptr es:[di], word ptr [si]
+0c06c  ; asm or byte ptr [bx + si], al
+0c06e  ; asm add cl, cl
+0c070  ; asm or byte ptr [bx + si], al
+0c072  ; asm add cl, cl
+0c074  ; asm or byte ptr [bx + si], al
+0c076  ; asm add ch, dh
+0c078  ; asm or byte ptr [bx + si], al
+0c07a  ; asm add byte ptr [si], bl
+0c07c  ; asm or word ptr [bx + si], ax
+0c07e  ; asm add byte ptr [bp + si], dh
+0c080  ; asm or word ptr [bx + si], ax
+0c082  ; asm add byte ptr [si + 9], dl
+0c085  ; asm add byte ptr [bx + si], al
+0c087  ; asm mov cl, byte ptr [bx + di]
+0c089  ; asm add byte ptr [bx + si], al
+0c08b  ; asm mov al, byte ptr [9]
+0c08e  ; asm add byte ptr [si + 9], ch
+0c092  ; asm add bh, dl
+0c094  ; asm or word ptr [bx + si], ax
+0c096  ; asm add ah, ch
+0c098  ; asm or word ptr [bx + si], ax
+0c09a  ; asm add byte ptr [bp + si], al
+0c09c  ; asm or al, byte ptr [bx + si]
+0c09e  ; asm add byte ptr [bx + 0xa], al
+0c0a1  ; asm add byte ptr [bx + si], al
+0c0a3  ; asm pop bp
+0c0a4  ; asm or al, byte ptr [bx + si]
+0c0a6  ; asm add byte ptr [bp + si + 0xa], ah
+0c0aa  ; asm add byte ptr [bp + di + 0xa], ch
+0c0ae  ; asm add byte ptr [si + 0xa], ch
+0c0b2  ; asm add byte ptr [bx + si + 0xa], bh
+0c0b6  ; asm add ah, al
+0c0b8  ; asm or al, byte ptr [bx + si]
+0c0ba  ; asm add byte ptr [bx], al
+0c0be  ; asm add byte ptr [bp + di], dl
+0c0c2  ; asm add byte ptr [si], ah
+0c0c6  ; asm add byte ptr [0xb], ah
+0c0ca  ; asm add byte ptr [si], bh
+0c0ce  ; asm add byte ptr [bx + si + 0xb], cl
+0c0d1  ; asm add byte ptr [bx + si], al
+0c0d3  ; asm pop si
+0c0d6  ; asm add byte ptr [bp + si + 0xb], ch
+0c0d9  ; asm add byte ptr [bx + si], al
+0c0db  ; asm push 0xb
+0c0dd  ; asm add byte ptr [bx + si], al
+0c0df  IF ?flags > GOTO L0c0ec
+0c0e1  ; asm add byte ptr [bx + si], al
+0c0e3  ; asm test byte ptr [bp + di], cl
+0c0e5  ; asm add byte ptr [bx + si], al
+0c0e7  ; asm cmpsb byte ptr [si], byte ptr es:[di]
+0c0ea  ; asm add byte ptr [bp + di + 0xb], dh
+0c0ee  ; asm add dh, dl
+0c0f2  ; asm add bh, ah
+0c0f6  ; asm add ch, bh
+0c0fa  ; asm add byte ptr [bx + si], al
+0c0fc  ; asm or al, 0
+0c0fe  ; asm add byte ptr [si], dl
+0c100  ; asm or al, 0
+0c102  ; asm add byte ptr [si + 0xc], cl
+0c105  ; asm add byte ptr [bx + si], al
+0c107  ; asm pop ax
+0c108  ; asm or al, 0
+0c10a  ; asm add byte ptr [bx + si + 0xc], bl
+0c10d  ; asm add byte ptr [bx + si], al
+0c10f  ; asm or al, 0
+0c112  ; asm add byte ptr [bx + di + 0xc], dh
+0c115  ; asm add byte ptr [bx + si], al
+0c117  ; asm cwde 
+0c118  ; asm or al, 0
+0c11a  ; asm add byte ptr [si + 0xc], ch
+0c11e  ; asm add ah, dh
+0c120  ; asm or al, 0
+0c122  ; asm add byte ptr [bp + di], cl
+0c129  ; asm add byte ptr [bx + si], al
+0c12b  ; asm pop ss
+0c12f  ; asm pop bp
+0c133  ; asm pushaw 
+0c137  IF ?flags <= GOTO L0c146
+0c139  ; asm add byte ptr [bx + si], al
+0c13b  IF ?flags jns GOTO L0c14a
+0c13d  ; asm add byte ptr [bx + si], al
+0c13f  ; asm test word ptr [di], cx
+0c141  ; asm add byte ptr [bx + si], al
+0c143  ; asm xchg dx, ax
+0c147  ; asm sahf 
+0c14b  ; asm ror word ptr [di], 0
+0c14e  ; asm add dh, cl
+0c153  ; asm fimul dword ptr [di]
+0c155  ; asm add byte ptr [bx + si], al
+0c157  ; asm std 
+0c15b  ; asm or cl, byte ptr [0]
+0c161  ; asm add byte ptr [bx + si], al
+0c163  IF ?flags > GOTO L0c173
+0c165  ; asm add byte ptr [bx + si], al
+0c167  IF ?flags > GOTO L0c177
+0c169  ; asm add byte ptr [bx + si], al
+0c16b  ; asm lds cx, ptr [0]
+L0c173:
+0c173  ; asm fisttp word ptr [0]
+L0c177:
+0c17a  ; asm add byte ptr [si], bh
+0c17c  ; asm sldt word ptr [bx + si]
+0c17f  ; asm aas 
+0c180  ; asm sldt word ptr [bx + si]
+0c183  ; asm dec sp
+0c184  ; asm sldt word ptr [bx + si]
+0c187  ; asm cmpsb byte ptr [si], byte ptr es:[di]
+0c188  ; asm sldt word ptr [bx + si]
+0c18b  ; asm mov dl, 0xf
+0c18d  ; asm add byte ptr [bx + si], al
+0c18f  ; asm mov dl, 0xf
+0c191  ; asm add byte ptr [bx + si], al
+0c196  ; asm add byte ptr [bx + di], ah
+0c198  ; asm adc byte ptr [bx + si], al
+0c19a  ; asm add byte ptr [si], ah
+0c19c  ; asm adc byte ptr [bx + si], al
+0c19e  ; asm add byte ptr [si + 0x10], ch
+0c1a1  ; asm add byte ptr [bx + si], al
+0c1a3  ; asm outsw dx, word ptr [si]
+0c1a4  ; asm adc byte ptr [bx + si], al
+0c1a6  ; asm add byte ptr [bp + di + 0x10], bh
+0c1a9  ; asm add byte ptr [bx + si], al
+0c1ab  [bx + si]% = dl
+0c1ad  ; asm add byte ptr [bx + si], al
+0c1af  ; asm xchg sp, ax
+0c1b0  ; asm adc byte ptr [bx + si], al
+0c1b2  ; asm add byte ptr [bx + 0x10], dh
+0c1b6  ; asm add ah, al
+0c1b8  ; asm adc byte ptr [bx + si], al
+0c1ba  ; asm add al, dl
+0c1bc  ; asm adc byte ptr [bx + si], al
+0c1be  ; asm add bl, dh
+0c1c0  ; asm adc byte ptr [bx + si], al
+0c1c2  ; asm add byte ptr [bx + si], al
+0c1c4  ; asm adc word ptr [bx + si], ax
+0c1c6  ; asm add byte ptr [si], cl
+0c1c8  ; asm adc word ptr [bx + si], ax
+0c1ca  ; asm add byte ptr [bx], ch
+0c1cc  ; asm adc word ptr [bx + si], ax
+0c1ce  ; asm add byte ptr [si], bh
+0c1d0  ; asm adc word ptr [bx + si], ax
+0c1d2  ; asm add byte ptr [bx + si + 0x11], cl
+0c1d5  ; asm add byte ptr [bx + si], al
+0c1d7  ; asm imul dx, word ptr [bx + di], 0
+0c1da  ; asm add byte ptr [bx + si + 0x11], bh
+0c1dd  ; asm add byte ptr [bx + si], al
+0c1df  ; asm test byte ptr [bx + di], dl
+0c1e1  ; asm add byte ptr [bx + si], al
+0c1e3  IF ?flags jcxz GOTO L0c1f6
+0c1e5  ; asm add byte ptr [bx + si], al
+0c1e7  ; asm cli 
+0c1e8  ; asm adc word ptr [bx + si], ax
+0c1ea  ; asm add byte ptr [0x12], al
+0c1ee  ; asm add byte ptr [0x12], al
+0c1f2  ; asm add byte ptr [di], ch
+0c1f4  ; asm adc al, byte ptr [bx + si]
+L0c1f6:
+0c1f6  ; asm add byte ptr [0x12], bh
+0c1fa  ; asm add byte ptr [bx + di + 0x12], al
+0c1fd  ; asm add byte ptr [bx + si], al
+0c200  ; asm adc al, byte ptr [bx + si]
+0c202  ; asm add byte ptr [bp + 0x12], ch
+0c205  ; asm add byte ptr [bx + si], al
+0c207  ; asm test word ptr [bp + si], dx
+0c209  ; asm add byte ptr [bx + si], al
+0c20b  ; asm lodsb al, byte ptr [si]
+0c20c  ; asm adc al, byte ptr [bx + si]
+0c20e  ; asm add byte ptr [bx + si + 0x12], bh
+0c212  ; asm add al, al
+0c214  ; asm adc al, byte ptr [bx + si]
+0c216  ; asm add dh, bl
+0c218  ; asm adc al, byte ptr [bx + si]
+0c21a  ; asm add byte ptr [bp + si], cl
+0c21c  ; asm adc ax, word ptr [bx + si]
+0c21e  ; asm add byte ptr [bp + si], dl
+0c220  ; asm adc ax, word ptr [bx + si]
+0c222  ; asm add byte ptr [bx + si + 0x13], dh
+0c225  ; asm add byte ptr [bx + si], al
+0c227  IF ?flags js GOTO L0c23c
+0c229  ; asm add byte ptr [bx + si], al
+0c22b  ; asm lahf 
+0c22c  ; asm adc ax, word ptr [bx + si]
+0c22e  ; asm add al, dl
+0c230  ; asm adc ax, word ptr [bx + si]
+0c232  ; asm add bl, dl
+0c234  ; asm adc ax, word ptr [bx + si]
+0c236  ; asm add dh, dl
+0c238  ; asm adc ax, word ptr [bx + si]
+0c23a  ; asm add byte ptr [bp + si], bl
+L0c23c:
+0c23c  ; asm adc al, 0
+0c23e  ; asm add byte ptr [bx], bl
+0c240  ; asm adc al, 0
+0c242  ; asm add byte ptr [bx], bl
+0c244  ; asm adc al, 0
+0c246  ; asm add byte ptr [bp + di], ch
+0c248  ; asm adc al, 0
+0c24a  ; asm add byte ptr [si], dh
+0c24c  ; asm adc al, 0
+0c24e  ; asm add byte ptr [di + 0x14], dl
+0c251  ; asm add byte ptr [bx + si], al
+0c253  IF ?flags jns GOTO L0c269
+0c255  ; asm add byte ptr [bx + si], al
+0c257  ; asm .byte 0x8f
+0c258  ; asm adc al, 0
+0c25a  ; asm add byte ptr [bp + di + 0x14], bl
+0c25e  ; asm add byte ptr [di + 0x14], bh
+0c262  ; asm add cl, cl
+0c264  ; asm adc al, 0
+0c266  ; asm add dl, dl
+0c268  ; asm adc al, 0
+0c26a  ; asm add al, bh
+0c26c  ; asm adc al, 0
+0c26e  ; asm add bl, bh
+0c270  ; asm adc al, 0
+0c272  ; asm add byte ptr [si], bl
+0c274  ; asm adc ax, 0
+0c277  ; asm inc ax
+0c278  ; asm adc ax, 0
+0c27b  ; asm pop sp
+0c27c  ; asm adc ax, 0
+0c27f  ; asm push 0x15
+0c282  ; asm add byte ptr [bx + si + 0x15], dh
+0c285  ; asm add byte ptr [bx + si], al
+0c287  *di% = ss
+0c289  ; asm add byte ptr [bx + si], al
+0c28b  ; asm mov al, 0x15
+0c28d  ; asm add byte ptr [bx + si], al
+0c28f  ; asm mov sp, 0x15
+0c292  ; asm add cl, cl
+0c294  ; asm adc ax, 0
+0c297  ; asm aad 0x15
+0c299  ; asm add byte ptr [bx + si], al
+0c29b  GOTO L0c2b2
+0c29d  ; asm add byte ptr [bx + si], al
+0c29f  ; asm not word ptr [di]
+0c2a1  ; asm add byte ptr [bx + si], al
+0c2a3  ; asm cli 
+0c2a4  ; asm adc ax, 0
+0c2a7  ; asm adc dx, word ptr [0]
+0c2ab  ; asm pop ds
+0c2ad  ; asm add byte ptr [bx + si], al
+0c2af  ; asm and dl, byte ptr [0]
+0c2b7  ; asm inc di
+0c2b9  ; asm add byte ptr [bx + si], al
+0c2bb  ; asm dec dx
+0c2bd  ; asm add byte ptr [bx + si], al
+0c2bf  ; asm arpl word ptr [0], dx
+0c2c3  ; asm outsw dx, word ptr [si]
+0c2c5  ; asm add byte ptr [bx + si], al
+0c2c7  IF dx < word ptr [0] GOTO L0c2df
+0c2c9  ; asm add byte ptr [bx + si], al
+0c2cb  IF dx <> word ptr [0] GOTO L0c2e3
+0c2cd  ; asm add byte ptr [bx + si], al
+0c2cf  IF dx <= word ptr [0] GOTO L0c2e7
+0c2d1  ; asm add byte ptr [bx + si], al
+0c2d3  ; asm xchg dx, ax
+0c2d5  ; asm add byte ptr [bx + si], al
+0c2d7  ; asm into 
+0c2d9  ; asm add byte ptr [bx + si], al
+0c2dd  ; asm add byte ptr [bx + si], al
+L0c2df:
+0c2df  ; asm .byte 0xfe
+0c2e1  ; asm add byte ptr [bx + si], al
+L0c2e3:
+0c2e4  ; asm pop ss
+0c2e5  ; asm add byte ptr [bx + si], al
+L0c2e7:
+0c2e7  ; asm sbb dl, byte ptr [bx]
+0c2e9  ; asm add byte ptr [bx + si], al
+0c2eb  ; asm inc ax
+0c2ec  ; asm pop ss
+0c2ed  ; asm add byte ptr [bx + si], al
+0c2ef  ; asm adc word ptr [bx], 0
+0c2f3  ; asm xchg dx, ax
+0c2f4  ; asm pop ss
+0c2f5  ; asm add byte ptr [bx + si], al
+0c2f7  ; asm scasb al, byte ptr es:[di]
+0c2f8  ; asm pop ss
+0c2f9  ; asm add byte ptr [bx + si], al
+0c2fb  ; asm les dx, ptr [bx]
+0c2fd  ; asm add byte ptr [bx + si], al
+0c2ff  ; asm .byte 0xc7
+0c300  ; asm pop ss
+0c301  ; asm add byte ptr [bx + si], al
+0c303  ; asm out dx, al
+0c304  ; asm pop ss
+0c305  ; asm add byte ptr [bx + si], al
+0c307  ; asm adc ax, 0x18
+0c30a  ; asm add byte ptr [si], bh
+0c30c  ; asm sbb byte ptr [bx + si], al
+0c30e  ; asm add byte ptr [bx], bh
+0c310  ; asm sbb byte ptr [bx + si], al
+0c312  ; asm add byte ptr [bx + si + 0x18], cl
+0c315  ; asm add byte ptr [bx + si], al
+0c317  [bx + si]% = bx
+0c319  ; asm add byte ptr [bx + si], al
+0c31b  ; asm lodsw ax, word ptr [si]
+0c31c  ; asm sbb byte ptr [bx + si], al
+0c31e  ; asm add byte ptr [bp + 0x18], dh
+0c322  ; asm add dl, al
+0c324  ; asm sbb byte ptr [bx + si], al
+0c326  ; asm add dl, cl
+0c328  ; asm sbb byte ptr [bx + si], al
+0c32a  ; asm add bl, ch
+0c32c  ; asm sbb byte ptr [bx + si], al
+0c32e  ; asm add byte ptr [bx], cl
+0c330  ; asm sbb word ptr [bx + si], ax
+0c332  ; asm add byte ptr [di], ah
+0c334  ; asm sbb word ptr [bx + si], ax
+0c336  ; asm add byte ptr [bx + di], dh
+0c338  ; asm sbb word ptr [bx + si], ax
+0c33a  ; asm add byte ptr [bp + di + 0x19], dl
+0c33d  ; asm add byte ptr [bx + si], al
+0c33f  ; asm pop di
+0c340  ; asm sbb word ptr [bx + si], ax
+0c342  ; asm add byte ptr [bx + si + 0x19], ch
+0c345  ; asm add byte ptr [bx + si], al
+0c347  ; asm mov ds, word ptr [bx + di]
+0c349  ; asm add byte ptr [bx + si], al
+0c34b  ; asm xchg cx, ax
+0c34c  ; asm sbb word ptr [bx + si], ax
+0c34e  ; asm add byte ptr [bp + si + 0x19], dh
+0c352  ; asm add dh, dl
+0c354  ; asm sbb word ptr [bx + si], ax
+0c356  ; asm add dl, ah
+0c358  ; asm sbb word ptr [bx + si], ax
+0c35a  ; asm add dh, bh
+0c35c  ; asm sbb word ptr [bx + si], ax
+0c35e  ; asm add byte ptr [bp + si], ah
+0c360  ; asm sbb al, byte ptr [bx + si]
+0c362  ; asm add byte ptr [bp + di], ch
+0c364  ; asm sbb al, byte ptr [bx + si]
+0c366  ; asm add byte ptr [si], ch
+0c368  ; asm sbb al, byte ptr [bx + si]
+0c36a  ; asm add byte ptr [si], dh
+0c36c  ; asm sbb al, byte ptr [bx + si]
+0c36e  ; asm add byte ptr [bp + 0x1a], dl
+0c371  ; asm add byte ptr [bx + si], al
+0c373  IF ?flags js GOTO L0c38f
+0c375  ; asm add byte ptr [bx + si], al
+0c377  ; asm test byte ptr [bp + si], bl
+0c379  ; asm add byte ptr [bx + si], al
+0c37c  ; asm sbb al, byte ptr [bx + si]
+0c37e  ; asm add byte ptr [si + 0x1a], bh
+0c382  ; asm add ah, al
+0c384  ; asm sbb al, byte ptr [bx + si]
+0c386  ; asm add ah, cl
+0c388  ; asm sbb al, byte ptr [bx + si]
+0c38a  ; asm add byte ptr [bx + si], dl
+0c38c  ; asm sbb ax, word ptr [bx + si]
+0c38e  ; asm add byte ptr [0x1b], ah
+0c392  ; asm add byte ptr [bp + si], dh
+0c394  ; asm sbb ax, word ptr [bx + si]
+0c396  ; asm add byte ptr [bx + si + 0x1b], cl
+0c399  ; asm add byte ptr [bx + si], al
+0c39b  ; asm push sp
+0c39c  ; asm sbb ax, word ptr [bx + si]
+0c39e  ; asm add byte ptr [bp + si + 0x1b], ch
+0c3a1  ; asm add byte ptr [bx + si], al
+0c3a3  IF ?flags <= GOTO L0c3c0
+0c3a5  ; asm add byte ptr [bx + si], al
+0c3a7  [bp + di]% = ds
+0c3a9  ; asm add byte ptr [bx + si], al
+0c3ab  ; asm cwde 
+0c3ac  ; asm sbb ax, word ptr [bx + si]
+0c3ae  ; asm add byte ptr [bp + 0x1b], ch
+0c3b2  ; asm add byte ptr [bp + si + 0x1b], bh
+0c3b6  ; asm add dh, al
+0c3b8  ; asm sbb ax, word ptr [bx + si]
+0c3ba  ; asm add dl, dl
+0c3bc  ; asm sbb ax, word ptr [bx + si]
+0c3be  ; asm add bh, bl
+L0c3c0:
+0c3c0  ; asm sbb ax, word ptr [bx + si]
+0c3c2  ; asm add dl, ah
+0c3c4  ; asm sbb ax, word ptr [bx + si]
+0c3c6  ; asm add dl, ah
+0c3c8  ; asm sbb ax, word ptr [bx + si]
+0c3ca  ; asm add byte ptr [di], al
+0c3cc  ; asm sbb al, 0
+0c3ce  ; asm add byte ptr [bx + si], cl
+0c3d0  ; asm sbb al, 0
+0c3d2  ; asm add byte ptr [bp + si + 0x1c], bh
+0c3d6  ; asm add bh, al
+0c3d8  ; asm sbb al, 0
+0c3da  ; asm add byte ptr [bp + 0x1d], bl
+0c3de  ; asm add byte ptr [bp + di + 0x1d], ch
+0c3e2  ; asm add byte ptr [si + 0x1e], cl
+0c3e5  ; asm add byte ptr [bx + si], al
+0c3e7  ; asm pop cx
+0c3e9  ; asm add byte ptr [bx + si], al
+0c3eb  ; asm cli 
+0c3ed  ; asm add byte ptr [bx + si], al
+0c3f0  ; asm pop ds
+0c3f1  ; asm add byte ptr [bx + si], al
+0c3f3  ; asm sbb word ptr [bx], bx
+0c3f5  ; asm add byte ptr [bx + si], al
+0c3f7  ; asm pop ds
+0c3f9  ; asm add byte ptr [bx + si], al
+0c3fb  ; asm lodsb al, byte ptr [si]
+0c3fc  ; asm pop ds
+0c3fd  ; asm add byte ptr [bx + si], al
+0c402  ; asm add bl, cl
+0c404  ; asm pop ds
+0c405  ; asm add byte ptr [bx + si], al
+0c409  ; asm add byte ptr [bx + si], al
+0c40d  ; asm add byte ptr [bx + si], al
+0c40f  ; asm in al, 0x1f
+0c411  ; asm add byte ptr [bx + si], al
+0c413  ; asm in al, dx
+0c414  ; asm pop ds
+0c415  ; asm add byte ptr [bx + si], al
+0c417  ; asm adc sp, word ptr [bx + si]
+0c419  ; asm add byte ptr [bx + si], al
+0c41b  ; asm and al, 0x20
+0c41d  ; asm add byte ptr [bx + si], al
+0c41f  ; asm dec ax
+0c420  ; asm and byte ptr [bx + si], al
+0c422  ; asm add byte ptr [bp + 0x20], bl
+0c425  ; asm add byte ptr [bx + si], al
+0c427  ; asm popaw 
+0c428  ; asm and byte ptr [bx + si], al
+0c42a  ; asm add byte ptr [bx + 0x20], dh
+0c42d  ; asm add byte ptr [bx + si], al
+0c42f  ; asm sahf 
+0c430  ; asm and byte ptr [bx + si], al
+0c432  ; asm add dl, cl
+0c434  ; asm and byte ptr [bx + si], al
+0c436  ; asm add ch, cl
+0c438  ; asm and byte ptr [bx + si], al
+0c43a  ; asm add dl, ch
+0c43c  ; asm and byte ptr [bx + si], al
+0c43e  ; asm add byte ptr [bp + di], al
+0c440  ; asm and word ptr [bx + si], ax
+0c442  ; asm add byte ptr [0x21], al
+0c446  ; asm add byte ptr [0x21], ah
+0c44a  ; asm add byte ptr [bp + di], dh
+0c44c  ; asm and word ptr [bx + si], ax
+0c44e  ; asm add byte ptr [0x21], dh
+0c452  ; asm add byte ptr [bx + di + 0x21], bl
+0c455  ; asm add byte ptr [bx + si], al
+0c457  ; asm and dword ptr [bx + si], eax
+0c45a  ; asm add byte ptr [bx + di + 0x21], ch
+0c45d  ; asm add byte ptr [bx + si], al
+0c45f  IF ? <= *bx GOTO L0c482
+0c461  ; asm add byte ptr [bx + si], al
+0c463  IF ? jns *bx GOTO L0c486
+0c465  ; asm add byte ptr [bx + si], al
+0c467  IF ? jns *bx GOTO L0c48a
+0c469  ; asm add byte ptr [bx + si], al
+0c46b  ; asm test word ptr [bx + di], sp
+0c46d  ; asm add byte ptr [bx + si], al
+0c472  ; asm add al, ah
+0c474  ; asm and word ptr [bx + si], ax
+0c476  ; asm add byte ptr [bx + si], al
+0c478  ; asm and al, byte ptr [bx + si]
+0c47a  ; asm add byte ptr [si], cl
+0c47c  ; asm and al, byte ptr [bx + si]
+0c47e  ; asm add byte ptr [bx + di], bl
+0c480  ; asm and al, byte ptr [bx + si]
+L0c482:
+0c482  ; asm add byte ptr [di], ah
+0c484  ; asm and al, byte ptr [bx + si]
+L0c486:
+0c486  ; asm add byte ptr [bp + si], ch
+0c488  ; asm and al, byte ptr [bx + si]
+L0c48a:
+0c48a  ; asm add byte ptr [0x22], dh
+0c48e  ; asm add byte ptr [bp + di + 0x22], al
+0c491  ; asm add byte ptr [bx + si], al
+0c493  ; asm push 0x22
+0c495  ; asm add byte ptr [bx + si], al
+0c497  ; asm outsw dx, word ptr [si]
+0c498  ; asm and al, byte ptr [bx + si]
+0c49a  ; asm add byte ptr [bp + di + 0x22], bh
+0c49d  ; asm add byte ptr [bx + si], al
+0c49f  [bp + si]% = ah
+0c4a1  ; asm add byte ptr [bx + si], al
+0c4a3  ; asm scasw ax, word ptr es:[di]
+0c4a4  ; asm and al, byte ptr [bx + si]
+0c4a6  ; asm add byte ptr [si + 0x22], dh
+0c4aa  ; asm add al, al
+0c4ac  ; asm and al, byte ptr [bx + si]
+0c4ae  ; asm add ch, cl
+0c4b0  ; asm and al, byte ptr [bx + si]
+0c4b2  ; asm add ah, dh
+0c4b4  ; asm and al, byte ptr [bx + si]
+0c4b6  ; asm add cl, bh
+0c4b8  ; asm and al, byte ptr [bx + si]
+0c4ba  ; asm add byte ptr [di], al
+0c4be  ; asm add byte ptr [bp + si], dl
+0c4c2  ; asm add byte ptr [bx + di], bh
+0c4c6  ; asm add byte ptr [di + 0x23], al
+0c4c9  ; asm add byte ptr [bx + si], al
+0c4cb  ; asm dec dx
+0c4ce  ; asm add byte ptr [bp + 0x23], dl
+0c4d1  ; asm add byte ptr [bx + si], al
+0c4d3  ; asm arpl word ptr [bp + di], sp
+0c4d5  ; asm add byte ptr [bx + si], al
+0c4d7  ; asm mov ah, byte ptr [bp + di]
+0c4d9  ; asm add byte ptr [bx + si], al
+0c4db  ; asm mov cl, 0x23
+0c4dd  ; asm add byte ptr [bx + si], al
+0c4df  ; asm mov dh, 0x23
+0c4e1  ; asm add byte ptr [bx + si], al
+0c4e3  RET 0x23
+0c4e6  ; asm add bh, cl
+0c4ea  ; asm add al, ah
+0c4ee  ; asm add cl, dh
+0c4f2  ; asm add dh, dh
+0c4f6  ; asm add bh, bh
+0c4fa  ; asm add byte ptr [bx + si], al
+0c4fc  ; asm and al, 0
+0c4fe  ; asm add byte ptr [bx + si], cl
+0c500  ; asm and al, 0
+0c502  ; asm add byte ptr [bx], ch
+0c504  ; asm and al, 0
+0c506  ; asm add byte ptr [di + 0x24], al
+0c509  ; asm add byte ptr [bx + si], al
+0c50c  ; asm and al, 0
+0c50e  ; asm add byte ptr [si + 0x24], dl
+0c511  ; asm add byte ptr [bx + si], al
+0c513  ; asm push 0x24
+0c515  ; asm add byte ptr [bx + si], al
+0c517  IF ?flags <= GOTO L0c53d
+0c519  ; asm add byte ptr [bx + si], al
+0c51b  ; asm popf 
+0c51c  ; asm and al, 0
+0c51e  ; asm add byte ptr [bp + di + 0x24], dh
+0c522  ; asm add byte ptr [bx + 0x24], bh
+0c526  ; asm add dl, al
+0c528  ; asm and al, 0
+0c52a  ; asm add al, bl
+0c52c  ; asm and al, 0
+0c52e  ; asm add ah, ah
+0c530  ; asm and al, 0
+0c532  ; asm add byte ptr [0x25], al
+0c536  ; asm add byte ptr [bx + si], ch
+0c53b  ; asm xor al, 0x25
+L0c53d:
+0c53d  ; asm add byte ptr [bx + si], al
+0c53f  ; asm inc ax
+0c543  ; asm insb byte ptr es:[di], dx
+0c547  IF ?flags js GOTO L0c56e
+0c549  ; asm add byte ptr [bx + si], al
+0c54b  ; asm test word ptr [di], sp
+0c54d  ; asm add byte ptr [bx + si], al
+0c551  ; asm add byte ptr [bx + si], al
+0c553  ; asm mov al, 0x25
+0c555  ; asm add byte ptr [bx + si], al
+0c557  ; asm pop sp
+0c558  ; asm add byte ptr es:[bx + si], al
+0c55b  IF ?flags < GOTO L0c583
+0c55d  ; asm add byte ptr [bx + si], al
+0c55f  ; asm xchg bp, ax
+0c560  ; asm add byte ptr es:[bx + si], al
+0c563  ; asm sbb sp, word ptr [bx]
+0c565  ; asm add byte ptr [bx + si], al
+0c567  ; asm sub byte ptr [bx], ah
+0c569  ; asm add byte ptr [bx + si], al
+0c56b  ; asm dec bx
+0c56c  ; asm daa 
+0c56d  ; asm add byte ptr [bx + si], al
+0c56f  ; asm pop bp
+0c570  ; asm daa 
+0c571  ; asm add byte ptr [bx + si], al
+0c573  ; asm push 0x27
+0c575  ; asm add byte ptr [bx + si], al
+0c577  IF ?flags > GOTO L0c5a0
+0c579  ; asm add byte ptr [bx + si], al
+0c57b  CALL_cb00:27 
+0c580  ; asm daa 
+0c581  ; asm add byte ptr [bx + si], al
+L0c583:
+0c583  ; asm into 
+0c584  ; asm daa 
+0c585  ; asm add byte ptr [bx + si], al
+0c587  ; asm daa 
+0c589  ; asm add byte ptr [bx + si], al
+0c58b  JMP word ptr [bx]
+0c58d  ; asm add byte ptr [bx + si], al
+0c58f  ; asm add ch, byte ptr [bx + si]
+0c591  ; asm add byte ptr [bx + si], al
+0c593  ; asm or bp, word ptr [bx + si]
+0c595  ; asm add byte ptr [bx + si], al
+0c597  ; asm or al, 0x28
+0c599  ; asm add byte ptr [bx + si], al
+0c59b  ; asm adc al, 0x28
+0c59d  ; asm add byte ptr [bx + si], al
+0c5a1  ; asm add byte ptr [bx + si], al
+0c5a4  ; asm sub byte ptr [bx + si], al
+0c5a6  ; asm add byte ptr [di + 0x28], bl
+0c5a9  ; asm add byte ptr [bx + si], al
+0c5ab  ; asm test byte ptr [bx + si], ch
+0c5ad  ; asm add byte ptr [bx + si], al
+0c5af  CALL_a600:28 ?cx
+0c5b4  ; asm sub byte ptr [bx + si], al
+0c5b6  ; asm add ch, cl
+0c5b8  ; asm sub byte ptr [bx + si], al
+0c5ba  ; asm add bl, ah
+0c5bc  ; asm sub byte ptr [bx + si], al
+0c5be  ; asm add bh, ch
+0c5c0  ; asm sub byte ptr [bx + si], al
+0c5c2  ; asm add byte ptr [0x29], dl
+0c5c6  ; asm add byte ptr [bx + si], bh
+0c5c8  ; asm sub word ptr [bx + si], ax
+0c5ca  ; asm add byte ptr [si + 0x29], al
+0c5cd  ; asm add byte ptr [bx + si], al
+0c5d0  ; asm sub word ptr [bx + si], ax
+0c5d2  ; asm add byte ptr [si + 0x29], bh
+0c5d5  ; asm add byte ptr [bx + si], al
+0c5d7  ; asm test byte ptr [bx + di], ch
+0c5d9  ; asm add byte ptr [bx + si], al
+0c5db  ; asm mov bp, 0x29
+0c5de  ; asm add cl, cl
+0c5e0  ; asm sub word ptr [bx + si], ax
+0c5e2  ; asm add bh, bl
+0c5e4  ; asm sub word ptr [bx + si], ax
+0c5e6  ; asm add bl, ch
+0c5e8  ; asm sub word ptr [bx + si], ax
+0c5ea  ; asm add byte ptr [bx + di], al
+0c5ec  ; asm sub al, byte ptr [bx + si]
+0c5ee  ; asm add byte ptr [di], cl
+0c5f0  ; asm sub al, byte ptr [bx + si]
+0c5f2  ; asm add byte ptr [bp + di], ah
+0c5f4  ; asm sub al, byte ptr [bx + si]
+0c5f6  ; asm add byte ptr [bx], ch
+0c5f8  ; asm sub al, byte ptr [bx + si]
+0c5fa  ; asm add byte ptr [bx], dh
+0c5fc  ; asm sub al, byte ptr [bx + si]
+0c5fe  ; asm add byte ptr [di + 0x2a], bh
+0c601  ; asm add byte ptr [bx + si], al
+0c603  ; asm mov ch, byte ptr [bp + si]
+0c605  ; asm add byte ptr [bx + si], al
+0c607  v002a% = ax
+0c60a  ; asm add byte ptr [bx + di], ch
+0c60c  ; asm sub ax, word ptr [bx + si]
+0c60e  ; asm add byte ptr [si], ch
+0c610  ; asm sub ax, word ptr [bx + si]
+0c612  ; asm add byte ptr [si + 0x2b], cl
+0c615  ; asm add byte ptr [bx + si], al
+0c617  ; asm sub ax, word ptr gs:[bx + si]
+0c61a  ; asm add byte ptr [bx + si + 0x2b], ch
+0c61d  ; asm add byte ptr [bx + si], al
+0c61f  IF bp = word ptr [bx + si] GOTO L0c64c
+0c621  ; asm add byte ptr [bx + si], al
+0c623  ; asm lodsw ax, word ptr [si]
+0c624  ; asm sub ax, word ptr [bx + si]
+0c626  ; asm add bh, cl
+0c628  ; asm sub ax, word ptr [bx + si]
+0c62a  ; asm add ch, ch
+0c62c  ; asm sub ax, word ptr [bx + si]
+0c62e  ; asm add dh, dh
+0c630  ; asm sub ax, word ptr [bx + si]
+0c632  ; asm add bh, dh
+0c634  ; asm sub ax, word ptr [bx + si]
+0c636  ; asm add bh, bh
+0c638  ; asm sub ax, word ptr [bx + si]
+0c63a  ; asm add byte ptr [bp + di], cl
+0c63c  ; asm sub al, 0
+0c63e  ; asm add byte ptr [bx + si], bl
+0c640  ; asm sub al, 0
+0c642  ; asm add byte ptr [bx], bh
+0c644  ; asm sub al, 0
+0c646  ; asm add byte ptr [bp + di + 0x2c], cl
+0c649  ; asm add byte ptr [bx + si], al
+L0c64c:
+0c64c  ; asm sub al, 0
+0c64e  ; asm add byte ptr [si + 0x2c], bl
+0c651  ; asm add byte ptr [bx + si], al
+0c653  ; asm sub al, 0
+0c656  ; asm add byte ptr [bp + 0x2c], ah
+0c659  ; asm add byte ptr [bx + si], al
+0c65b  ; asm outsb dx, byte ptr [si]
+0c65c  ; asm sub al, 0
+0c65e  ; asm add byte ptr [bp + si + 0x2c], bh
+0c661  ; asm add byte ptr [bx + si], al
+0c663  ; asm xchg word ptr [si], bp
+0c665  ; asm add byte ptr [bx + si], al
+0c667  ; asm xchg bx, ax
+0c668  ; asm sub al, 0
+0c66a  ; asm add byte ptr [bx + si + 0x2c], bl
+0c66e  ; asm add byte ptr [si + 0x2c], ah
+0c672  ; asm add byte ptr [bx + di + 0x2c], dh
+0c676  ; asm add dl, al
+0c678  ; asm sub al, 0
+0c67a  ; asm add bh, al
+0c67c  ; asm sub al, 0
+0c67e  ; asm add bl, dl
+0c680  ; asm sub al, 0
+0c682  ; asm add al, ah
+0c684  ; asm sub al, 0
+0c686  ; asm add ah, ch
+0c688  ; asm sub al, 0
+0c68a  ; asm add al, bh
+0c68c  ; asm sub al, 0
+0c68e  ; asm add byte ptr [si], al
+0c690  ; asm sub ax, 0
+0c693  ; asm adc byte ptr [di], ch
+0c695  ; asm add byte ptr [bx + si], al
+0c697  ; asm xor ch, byte ptr [di]
+0c699  ; asm add byte ptr [bx + si], al
+0c69b  ; asm dec cx
+0c69c  ; asm sub ax, 0
+0c69f  ; asm push bp
+0c6a0  ; asm sub ax, 0
+0c6a3  IF ?flags < GOTO L0c6d2
+0c6a5  ; asm add byte ptr [bx + si], al
+0c6a7  ; asm sub word ptr [di], 0
+0c6ad  ; asm add byte ptr [bx + si], al
+0c6af  CALL_ab00:2d 
+0c6b4  ; asm sub ax, 0
+0c6b7  ; asm mov bh, 0x2d
+0c6b9  ; asm add byte ptr [bx + si], al
+0c6bb  ; asm mov sp, 0x2d
+0c6be  ; asm add ch, al
+0c6c0  ; asm sub ax, 0
+0c6c3  ; asm .byte 0xc6
+0c6c4  ; asm sub ax, 0
+0c6c7  ; asm into 
+0c6c8  ; asm sub ax, 0
+0c6cb  ; asm fisubr dword ptr [di]
+0c6cd  ; asm add byte ptr [bx + si], al
+0c6cf  ; asm out 0x2d, ax
+0c6d1  ; asm add byte ptr [bx + si], al
+0c6d3  ; asm in al, dx
+0c6d4  ; asm sub ax, 0
+0c6d7  ; asm cmc 
+0c6d8  ; asm sub ax, 0
+0c6db  ; asm imul byte ptr [di]
+0c6dd  ; asm add byte ptr [bx + si], al
+0c6df  ; asm .byte 0xfe
+0c6e0  ; asm sub ax, 0
+0c6e6  ; asm add byte ptr [bp + di], bh
+0c6e8  ; asm add byte ptr cs:[bx + si], al
+0c6eb  ; asm inc di
+0c6ec  ; asm add byte ptr cs:[bx + si], al
+0c6ef  ; asm dec dx
+0c6f0  ; asm add byte ptr cs:[bx + si], al
+0c6f3  ; asm pushaw 
+0c6f4  ; asm add byte ptr cs:[bx + si], al
+0c6f7  ; asm insb byte ptr es:[di], dx
+0c6f8  ; asm add byte ptr cs:[bx + si], al
+0c6fb  ; asm xchg bx, ax
+0c6fc  ; asm add byte ptr cs:[bx + si], al
+0c6ff  ; asm test ax, 0x2e
+0c702  ; asm add byte ptr [di + 0x2e], dh
+0c706  ; asm add cl, al
+0c708  ; asm add byte ptr cs:[bx + si], al
+0c70b  ; asm int 0x2e
+0c70d  ; asm add byte ptr [bx + si], al
+0c70f  ; asm lock add byte ptr cs:[bx + si], al
+0c713  ; asm adc ch, byte ptr [bx]
+0c715  ; asm add byte ptr [bx + si], al
+0c717  ; asm xor al, 0x2f
+0c719  ; asm add byte ptr [bx + si], al
+0c71b  ; asm dec dx
+0c71c  ; asm das 
+0c71d  ; asm add byte ptr [bx + si], al
+0c720  ; asm das 
+0c721  ; asm add byte ptr [bx + si], al
+0c723  ; asm insb byte ptr es:[di], dx
+0c724  ; asm das 
+0c725  ; asm add byte ptr [bx + si], al
+0c727  ; asm mov gs, word ptr [bx]
+0c729  ; asm add byte ptr [bx + si], al
+0c72b  CALL_a600:2f ?si
+0c730  ; asm das 
+0c731  ; asm add byte ptr [bx + si], al
+0c733  ; asm shr byte ptr [bx], cl
+0c735  ; asm add byte ptr [bx + si], al
+0c737  ; asm fisubr dword ptr [bx]
+0c739  ; asm add byte ptr [bx + si], al
+0c73b  ; asm loop 0xc76c
+0c73d  ; asm add byte ptr [bx + si], al
+0c73f  ; asm sti 
+0c740  ; asm das 
+0c741  ; asm add byte ptr [bx + si], al
+0c743  ; asm sbb si, word ptr [bx + si]
+0c745  ; asm add byte ptr [bx + si], al
+0c747  ; asm sub byte ptr [bx + si], dh
+0c749  ; asm add byte ptr [bx + si], al
+0c74b  IF ?flags < GOTO L0c77d
+0c74d  ; asm add byte ptr [bx + si], al
+0c74f  ; asm xchg bp, ax
+0c750  ; asm xor byte ptr [bx + si], al
+0c752  ; asm add byte ptr [bx + 0x30], ah
+0c756  ; asm add byte ptr [si + 0x30], dh
+0c75a  ; asm add byte ptr [bx + 0x30], dh
+0c75e  ; asm add bl, al
+0c760  ; asm xor byte ptr [bx + si], al
+0c762  ; asm add ah, bh
+0c764  ; asm xor byte ptr [bx + si], al
+0c766  ; asm add byte ptr [0x31], bl
+0c76a  ; asm add byte ptr [0x31], dh
+0c76e  ; asm add byte ptr [bp + si + 0x31], al
+0c771  ; asm add byte ptr [bx + si], al
+0c773  ; asm dec di
+0c774  ; asm xor word ptr [bx + si], ax
+0c776  ; asm add byte ptr [bx + di + 0x31], dh
+0c779  ; asm add byte ptr [bx + si], al
+0c77b  IF ?flags >= GOTO L0c7ae
+L0c77d:
+0c77d  ; asm add byte ptr [bx + si], al
+0c77f  ; asm xor byte ptr [bx + di], 0
+0c782  ; asm add byte ptr [bp + di + 0x31], cl
+0c786  ; asm add byte ptr [si + 0x31], cl
+0c78a  ; asm add byte ptr [si + 0x31], dl
+0c78e  ; asm add byte ptr [bx + si + 0x31], ah
+0c792  ; asm add byte ptr [di + 0x31], ch
+0c796  ; asm add ah, dl
+0c798  ; asm xor word ptr [bx + si], ax
+0c79a  ; asm add cl, bl
+0c79c  ; asm xor word ptr [bx + si], ax
+0c79e  ; asm add ch, ah
+0c7a0  ; asm xor word ptr [bx + si], ax
+0c7a2  ; asm add dl, dh
+0c7a4  ; asm xor word ptr [bx + si], ax
+0c7a6  ; asm add byte ptr [bx + di], bl
+0c7a8  ; asm xor al, byte ptr [bx + si]
+0c7aa  ; asm add byte ptr [0x32], bl
+L0c7ae:
+0c7ae  ; asm add byte ptr [bx], ah
+0c7b0  ; asm xor al, byte ptr [bx + si]
+0c7b2  ; asm add byte ptr [bx + si], ch
+0c7b4  ; asm xor al, byte ptr [bx + si]
+0c7b6  ; asm add byte ptr [bx + si], dh
+0c7b8  ; asm xor al, byte ptr [bx + si]
+0c7ba  ; asm add byte ptr [bx + 0x32], dl
+0c7bd  ; asm add byte ptr [bx + si], al
+0c7bf  ; asm insw word ptr es:[di], dx
+0c7c0  ; asm xor al, byte ptr [bx + si]
+0c7c2  ; asm add byte ptr [bx + di + 0x32], bh
+0c7c5  ; asm add byte ptr [bx + si], al
+0c7c8  ; asm xor al, byte ptr [bx + si]
+0c7ca  ; asm add byte ptr [di + 0x32], bh
+0c7ce  ; asm add cl, cl
+0c7d0  ; asm xor al, byte ptr [bx + si]
+0c7d2  ; asm add ch, dl
+0c7d4  ; asm xor al, byte ptr [bx + si]
+0c7d6  ; asm add byte ptr [bx + di], al
+0c7d8  ; asm xor ax, word ptr [bx + si]
+0c7da  ; asm add byte ptr [bx + di], cl
+0c7dc  ; asm xor ax, word ptr [bx + si]
+0c7de  ; asm add byte ptr [bx + di], dl
+0c7e0  ; asm xor ax, word ptr [bx + si]
+0c7e2  ; asm add byte ptr [bx + di], dh
+0c7e4  ; asm xor ax, word ptr [bx + si]
+0c7e6  ; asm add byte ptr [bp + si + 0x33], cl
+0c7e9  ; asm add byte ptr [bx + si], al
+0c7eb  ; asm push 0x33
+0c7ed  ; asm add byte ptr [bx + si], al
+0c7ef  IF ?flags > GOTO L0c824
+0c7f1  ; asm add byte ptr [bx + si], al
+0c7f3  IF ?flags jp GOTO L0c828
+0c7f5  ; asm add byte ptr [bx + si], al
+0c7f7  ; asm mov sp, 0x33
+0c7fa  ; asm add byte ptr [bx], ah
+0c7fc  ; asm xor al, 0
+0c7fe  ; asm add byte ptr [si], dh
+0c800  ; asm xor al, 0
+0c802  ; asm add byte ptr [bx], dh
+0c804  ; asm xor al, 0
+0c806  ; asm add byte ptr [bp + di + 0x34], al
+0c809  ; asm add byte ptr [bx + si], al
+0c80b  IF ?flags < GOTO L0c841
+0c80d  ; asm add byte ptr [bx + si], al
+0c80f  ; asm sahf 
+0c810  ; asm xor al, 0
+0c812  ; asm add byte ptr [bx + si + 0x34], bh
+0c816  ; asm add ah, al
+0c818  ; asm xor al, 0
+0c81a  ; asm add cl, dl
+0c81c  ; asm xor al, 0
+0c81e  ; asm add dh, dl
+0c820  ; asm xor al, 0
+0c822  ; asm add dl, ah
+L0c824:
+0c824  ; asm xor al, 0
+0c826  ; asm add bh, ch
+L0c828:
+0c828  ; asm xor al, 0
+0c82a  ; asm add byte ptr [bp + di], bl
+0c82c  ; asm xor ax, 0
+0c82f  ; asm and byte ptr [di], dh
+0c831  ; asm add byte ptr [bx + si], al
+0c833  ; asm sub al, 0x35
+0c835  ; asm add byte ptr [bx + si], al
+0c839  ; asm add byte ptr [bx + si], al
+0c83b  ; asm xor ax, 0
+0c83f  IF *di jno si GOTO L0c876
+L0c841:
+0c841  ; asm add byte ptr [bx + si], al
+0c843  IF ?flags <= GOTO L0c87a
+0c845  ; asm add byte ptr [bx + si], al
+0c847  ; asm xor byte ptr [di], 0
+0c84a  ; asm add byte ptr [bx + 0x35], cl
+0c84e  ; asm add byte ptr [si + 0x35], dl
+0c852  ; asm add byte ptr [di + 0x35], bl
+0c856  ; asm add byte ptr [bp + 0x35], bl
+0c85a  ; asm add byte ptr [bp + 0x35], ah
+0c85e  ; asm add byte ptr [bp + di + 0xd9], bl
+0c862  ; asm add bl, ah
+0c864  ; asm xor ax, 0
+0c867  ; asm out dx, ax
+0c868  ; asm xor ax, 0
+0c86c  ; asm add byte ptr ss:[bx + si], al
+0c86f  ; asm sub al, 0x36
+0c871  ; asm add byte ptr [bx + si], al
+0c877  ; asm inc sp
+0c878  ; asm add byte ptr ss:[bx + si], al
+0c87c  ; asm add byte ptr ss:[bx + si], al
+0c87f  IF [0] < dh GOTO L0c8b7
+0c881  ; asm add byte ptr [bx + si], al
+0c883  ; asm xchg sp, ax
+0c884  ; asm add byte ptr ss:[bx + si], al
+0c887  ; asm sal byte ptr [0], 0xcc
+0c88c  ; asm add byte ptr ss:[bx + si], al
+0c892  ; asm add byte ptr [bx], ah
+0c894  ; asm aaa 
+0c895  ; asm add byte ptr [bx + si], al
+0c897  ; asm aas 
+0c898  ; asm aaa 
+0c899  ; asm add byte ptr [bx + si], al
+0c89b  ; asm aas 
+0c89c  ; asm aaa 
+0c89d  ; asm add byte ptr [bx + si], al
+0c89f  ; asm inc di
+0c8a0  ; asm aaa 
+0c8a1  ; asm add byte ptr [bx + si], al
+0c8a3  ; asm pushaw 
+0c8a4  ; asm aaa 
+0c8a5  ; asm add byte ptr [bx + si], al
+0c8aa  ; asm add bl, cl
+0c8ac  ; asm aaa 
+0c8ad  ; asm add byte ptr [bx + si], al
+0c8af  ; asm into 
+0c8b0  ; asm aaa 
+0c8b1  ; asm add byte ptr [bx + si], al
+0c8b3  ; asm out 0x37, ax
+0c8b5  ; asm add byte ptr [bx + si], al
+L0c8b7:
+0c8b7  ; asm ljmp 0xf600:0x37
+0c8bc  ; asm aaa 
+0c8bd  ; asm add byte ptr [bx + si], al
+0c8bf  ; asm add di, word ptr [bx + si]
+0c8c1  ; asm add byte ptr [bx + si], al
+0c8c3  ; asm or byte ptr [bx + si], bh
+0c8c5  ; asm add byte ptr [bx + si], al
+0c8c7  ; asm adc al, 0x38
+0c8c9  ; asm add byte ptr [bx + si], al
+0c8cb  ; asm and word ptr [bx + si], di
+0c8cd  ; asm add byte ptr [bx + si], al
+0c8cf  ; asm sub ax, 0x38
+0c8d2  ; asm add byte ptr [bp + si], dh
+0c8d6  ; asm add byte ptr [0x38], bh
+0c8da  ; asm add byte ptr [bp + di + 0x38], cl
+0c8dd  ; asm add byte ptr [bx + si], al
+0c8e2  ; asm add byte ptr [bp + di + 0x38], ah
+0c8e5  ; asm add byte ptr [bx + si], al
+0c8e7  ; asm push 0x38
+0c8ea  ; asm add byte ptr [si + 0x38], dh
+0c8ed  ; asm add byte ptr [bx + si], al
+0c8ef  ; asm lodsw ax, word ptr [si]
+0c8f2  ; asm add bh, cl
+0c8f6  ; asm add bl, ch
+0c8fa  ; asm add ah, dh
+0c8fe  ; asm add byte ptr [bx + di], al
+0c902  ; asm add byte ptr [di], cl
+0c906  ; asm add byte ptr [bx + di], bl
+0c90a  ; asm add byte ptr [di], ah
+0c90e  ; asm add byte ptr [bx + di], dh
+0c912  ; asm add byte ptr [di], bh
+0c916  ; asm add byte ptr [0x39], bh
+0c91a  ; asm add byte ptr [bp + 0x39], al
+0c91d  ; asm add byte ptr [bx + si], al
+0c91f  ; asm insw word ptr es:[di], dx
+0c922  ; asm add byte ptr [si + 0x39], dl
+0c926  ; asm add al, al
+0c92a  ; asm add dl, ah
+0c92e  ; asm add al, bh
+0c932  ; asm add byte ptr [di], al
+0c936  ; asm add byte ptr [bp + di], bl
+0c93a  ; asm add byte ptr [bx + si], ch
+0c93e  ; asm add byte ptr [0x3a], bh
+0c942  ; asm add byte ptr [bp + di + 0x3a], cl
+0c945  ; asm add byte ptr [bx + si], al
+0c947  ; asm popaw 
+0c94a  ; asm add byte ptr [bp + 0x3a], ch
+0c94d  ; asm add byte ptr [bx + si], al
+0c94f  ; asm xchg bp, ax
+0c952  ; asm add byte ptr [bx + di + 0x3a], ah
+0c956  ; asm add byte ptr [di + 0x3a], ch
+0c95a  ; asm add byte ptr [bx + di + 0x3a], bh
+0c95e  ; asm add byte ptr [bx + di + 0x3a], bh
+0c962  ; asm add cl, al
+0c966  ; asm add dl, bl
+0c96a  ; asm add ah, ch
+0c96e  ; asm add cl, bh
+0c972  ; asm add ah, bh
+0c976  ; asm add byte ptr [di], al
+0c97a  ; asm add byte ptr [bp + si], dl
+0c97e  ; asm add byte ptr [0x3b], bl
+0c982  ; asm add byte ptr [bp + si], ch
+0c986  ; asm add byte ptr [0x3b], dh
+0c98a  ; asm add byte ptr [bp + si + 0x3b], al
+0c98d  ; asm add byte ptr [bx + si], al
+0c98f  ; asm dec si
+0c992  ; asm add byte ptr [bx + 0x3b], cl
+0c995  ; asm add byte ptr [bx + si], al
+0c99a  ; asm add byte ptr [bx + 0x3b], bl
+0c99d  ; asm add byte ptr [bx + si], al
+0c99f  ; asm insb byte ptr es:[di], dx
+0c9a2  ; asm add byte ptr [bp + si + 0x3b], al
+0c9a6  ; asm add byte ptr [bx + 0x3b], cl
+0c9aa  ; asm add byte ptr [di + 0x3b], ah
+0c9ae  ; asm add byte ptr [bp + si + 0x3b], dh
+0c9b2  ; asm add dh, bl
+0c9b6  ; asm add byte ptr [bp + si], ch
+0c9ba  ; asm add byte ptr [si], bh
+0c9be  ; asm add byte ptr [bx + di + 0x3c], cl
+0c9c1  ; asm add byte ptr [bx + si], al
+0c9c3  ; asm dec sp
+0c9c6  ; asm add byte ptr [di + 0x3c], dl
+0c9c9  ; asm add byte ptr [bx + si], al
+0c9cb  ; asm bound di, dword ptr [si]
+0c9cd  ; asm add byte ptr [bx + si], al
+0c9cf  ; asm outsb dx, byte ptr [si]
+0c9d2  ; asm add byte ptr [bp + si + 0x3c], bh
+0c9d5  ; asm add byte ptr [bx + si], al
+0c9d7  ; asm xchg byte ptr [si], bh
+0c9d9  ; asm add byte ptr [bx + si], al
+0c9db  ; asm lodsw ax, word ptr [si]
+0c9de  ; asm add bh, cl
+0c9e2  ; asm add al, dl
+0c9e6  ; asm add al, bl
+0c9ea  ; asm add bh, bh
+0c9ee  ; asm add byte ptr [di], dl
+0c9f3  ; asm and word ptr [di], di
+0c9f5  ; asm add byte ptr [bx + si], al
+0c9f7  ; asm sub word ptr [di], di
+0c9f9  ; asm add byte ptr [bx + si], al
+0c9ff  ; asm pop cx
+0ca09  ; asm add byte ptr [bx + si], al
+0ca0b  CALL_9d00:3d ?di, ?di
+0ca13  ; asm cmpsb byte ptr [si], byte ptr es:[di]
+0ca17  ; asm cmpsw word ptr [si], word ptr es:[di]
+0ca1b  ; asm sar byte ptr [di], cl
+0ca1d  ; asm add byte ptr [bx + si], al
+0ca1f  *di = ?
+0ca21  ; asm add byte ptr [bx + si], al
+0ca23  ; asm add di, word ptr [0]
+0ca27  ; asm and al, 0x3e
+0ca29  ; asm add byte ptr [bx + si], al
+0ca2b  ; asm sub word ptr [0], di
+0ca2f  ; asm xor bh, byte ptr [0]
+0ca33  ; asm aas 
+0ca34  ; asm add byte ptr ds:[bx + si], al
+0ca37  ; asm dec bx
+0ca38  ; asm add byte ptr ds:[bx + si], al
+0ca3c  ; asm add byte ptr ds:[bx + si], al
+0ca3f  ; asm arpl word ptr [0], di
+0ca43  ; asm outsw dx, word ptr [si]
+0ca44  ; asm add byte ptr ds:[bx + si], al
+0ca47  ; asm xchg cx, ax
+0ca48  ; asm add byte ptr ds:[bx + si], al
+0ca4b  ; asm xchg dx, ax
+0ca4c  ; asm add byte ptr ds:[bx + si], al
+0ca4f  CALL_c100:3e ?di
+0ca54  ; asm add byte ptr ds:[bx + si], al
+0ca57  ; asm xlatb 
+0ca58  ; asm add byte ptr ds:[bx + si], al
+0ca5b  IF ax jcxz 0 GOTO L0ca9b
+0ca5d  ; asm add byte ptr [bx + si], al
+0ca5f  GOTO L0ca9f
+0ca61  ; asm add byte ptr [bx + si], al
+0ca64  ; asm aas 
+0ca65  ; asm add byte ptr [bx + si], al
+0ca67  ; asm adc word ptr [bx], di
+0ca69  ; asm add byte ptr [bx + si], al
+0ca6b  ; asm mov bp, 0x3f
+0ca6e  ; asm add bl, dl
+0ca70  ; asm aas 
+0ca71  ; asm add byte ptr [bx + si], al
+0ca73  ; asm pop cx
+0ca74  ; asm inc ax
+0ca75  ; asm add byte ptr [bx + si], al
+0ca77  ; asm inc eax
+0ca79  ; asm add byte ptr [bx + si], al
+0ca7b  ; asm xchg byte ptr [bx + si], al
+0ca7e  ; asm add byte ptr [bx + 0x40], bl
+0ca82  ; asm add byte ptr [di + 0x40], dh
+0ca86  ; asm add ah, cl
+0ca88  ; asm inc ax
+0ca89  ; asm add byte ptr [bx + si], al
+0ca8b  ; asm int3 
+0ca8c  ; asm inc ax
+0ca8d  ; asm add byte ptr [bx + si], al
+0ca8f  ; asm iret 
+0ca90  ; asm inc ax
+0ca91  ; asm add byte ptr [bx + si], al
+0ca96  ; asm add ch, ah
+0ca98  ; asm inc ax
+0ca99  ; asm add byte ptr [bx + si], al
+L0ca9b:
+0ca9b  ; asm int1 
+0ca9c  ; asm inc ax
+0ca9d  ; asm add byte ptr [bx + si], al
+L0ca9f:
+0ca9f  ; asm std 
+0caa0  ; asm inc ax
+0caa1  ; asm add byte ptr [bx + si], al
+0caa3  ; asm or word ptr [bx + di], ax
+0caa6  ; asm add byte ptr [bp + si], cl
+0caa8  ; asm inc cx
+0caa9  ; asm add byte ptr [bx + si], al
+0caab  ; asm adc al, byte ptr [bx + di]
+0caae  ; asm add byte ptr [0x41], bl
+0cab2  ; asm add byte ptr [bp + si], ch
+0cab4  ; asm inc cx
+0cab5  ; asm add byte ptr [bx + si], al
+0cab7  ; asm inc cx
+0cab9  ; asm add byte ptr [bx + si], al
+0cabb  ; asm inc cx
+0cabd  ; asm add byte ptr [bx + si], al
+0cabf  ; asm dec bx
+0cac0  ; asm inc cx
+0cac1  ; asm add byte ptr [bx + si], al
+0cac3  ; asm outsb dx, byte ptr [si]
+0cac4  ; asm inc cx
+0cac5  ; asm add byte ptr [bx + si], al
+0cac7  IF ?flags jnp GOTO L0cb0a
+0cac9  ; asm add byte ptr [bx + si], al
+0cacb  ; asm sahf 
+0cacc  ; asm inc cx
+0cacd  ; asm add byte ptr [bx + si], al
+0cacf  ; asm stosw word ptr es:[di], ax
+0cad0  ; asm inc cx
+0cad1  ; asm add byte ptr [bx + si], al
+0cad3  ; asm mov bh, 0x41
+0cad5  ; asm add byte ptr [bx + si], al
+0cada  ; asm add bl, al
+0cadc  ; asm inc cx
+0cadd  ; asm add byte ptr [bx + si], al
+0cadf  ; asm les ax, ptr [bx + di]
+0cae2  ; asm add ah, cl
+0cae4  ; asm inc cx
+0cae5  ; asm add byte ptr [bx + si], al
+0cae7  ; asm clc 
+0cae8  ; asm inc cx
+0cae9  ; asm add byte ptr [bx + si], al
+0caec  ; asm inc dx
+0caed  ; asm add byte ptr [bx + si], al
+0caef  ; asm sbb al, byte ptr [bp + si]
+0caf2  ; asm add byte ptr [bp + 0x42], al
+0caf5  ; asm add byte ptr [bx + si], al
+0caf7  ; asm pop sp
+0caf8  ; asm inc dx
+0caf9  ; asm add byte ptr [bx + si], al
+0cafb  ; asm push 0x42
+0cafe  ; asm add byte ptr [bp + di + 0x42], ch
+0cb01  ; asm add byte ptr [bx + si], al
+0cb03  ; asm add word ptr [bp + si], 0x8d00
+0cb08  ; asm inc dx
+0cb09  ; asm add byte ptr [bx + si], al
+0cb0e  ; asm add bh, cl
+0cb10  ; asm inc dx
+0cb11  ; asm add byte ptr [bx + si], al
+0cb16  ; asm add dh, bl
+0cb18  ; asm inc dx
+0cb19  ; asm add byte ptr [bx + si], al
+0cb1b  ; asm hlt 
+0cb1c  ; asm inc dx
+0cb1d  ; asm add byte ptr [bx + si], al
+0cb1f  ; asm add byte ptr [bp + di], al
+0cb22  ; asm add byte ptr [bx], ah
+0cb24  ; asm inc bx
+0cb25  ; asm add byte ptr [bx + si], al
+0cb27  ; asm dec si
+0cb28  ; asm inc bx
+0cb29  ; asm add byte ptr [bx + si], al
+0cb2b  ; asm pop dx
+0cb2c  ; asm inc bx
+0cb2d  ; asm add byte ptr [bx + si], al
+0cb2f  ; asm inc ebx
+0cb31  ; asm add byte ptr [bx + si], al
+0cb33  ; asm outsb dx, byte ptr [si]
+0cb34  ; asm inc bx
+0cb35  ; asm add byte ptr [bx + si], al
+0cb37  ; asm xchg word ptr [bp + di], ax
+0cb3a  ; asm add bl, bl
+0cb3c  ; asm inc bx
+0cb3d  ; asm add byte ptr [bx + si], al
+0cb3f  ; asm hlt 
+0cb40  ; asm inc bx
+0cb41  ; asm add byte ptr [bx + si], al
+0cb44  ; asm inc sp
+0cb45  ; asm add byte ptr [bx + si], al
+0cb47  ; asm dec ax
+0cb48  ; asm inc sp
+0cb49  ; asm add byte ptr [bx + si], al
+0cb4b  ; asm pop dx
+0cb4c  ; asm inc sp
+0cb4d  ; asm add byte ptr [bx + si], al
+0cb4f  ; asm pushf 
+0cb50  ; asm inc sp
+0cb51  ; asm add byte ptr [bx + si], al
+0cb53  ; asm lahf 
+0cb54  ; asm inc sp
+0cb55  ; asm add byte ptr [bx + si], al
+0cb57  ; asm stosw word ptr es:[di], ax
+0cb58  ; asm inc sp
+0cb59  ; asm add byte ptr [bx + si], al
+0cb5b  ; asm in al, 0x44
+0cb5d  ; asm add byte ptr [bx + si], al
+0cb60  ; asm inc bp
+0cb61  ; asm add byte ptr [bx + si], al
+0cb63  ; asm and byte ptr [di], al
+0cb66  ; asm add byte ptr [bx + di], ch
+0cb68  ; asm inc bp
+0cb69  ; asm add byte ptr [bx + si], al
+0cb6b  ; asm inc bp
+0cb6d  ; asm add byte ptr [bx + si], al
+0cb6f  ; asm inc dx
+0cb70  ; asm inc bp
+0cb71  ; asm add byte ptr [bx + si], al
+0cb73  ; asm inc bx
+0cb74  ; asm inc bp
+0cb75  ; asm add byte ptr [bx + si], al
+0cb77  ; asm dec bx
+0cb78  ; asm inc bp
+0cb79  ; asm add byte ptr [bx + si], al
+0cb7b  IF ?flags < GOTO L0cbc2
+0cb7d  ; asm add byte ptr [bx + si], al
+0cb80  ; asm inc bp
+0cb81  ; asm add byte ptr [bx + si], al
+0cb83  ; asm scasw ax, word ptr es:[di]
+0cb84  ; asm inc bp
+0cb85  ; asm add byte ptr [bx + si], al
+0cb8a  ; asm add bh, al
+0cb8c  ; asm inc bp
+0cb8d  ; asm add byte ptr [bx + si], al
+0cb8f  ; asm rol word ptr [di], cl
+0cb92  ; asm add ch, dh
+0cb94  ; asm inc bp
+0cb95  ; asm add byte ptr [bx + si], al
+0cb97  ; asm pop ss
+0cb98  ; asm inc si
+0cb99  ; asm add byte ptr [bx + si], al
+0cb9b  ; asm pop ds
+0cb9c  ; asm inc si
+0cb9d  ; asm add byte ptr [bx + si], al
+0cb9f  ; asm sub al, 0x46
+0cba1  ; asm add byte ptr [bx + si], al
+0cba3  ; asm dec di
+0cba4  ; asm inc si
+0cba5  ; asm add byte ptr [bx + si], al
+0cba7  ; asm pop sp
+0cba8  ; asm inc si
+0cba9  ; asm add byte ptr [bx + si], al
+0cbab  ; asm pop di
+0cbac  ; asm inc si
+0cbad  ; asm add byte ptr [bx + si], al
+0cbaf  ; asm push 0x46
+0cbb2  ; asm add byte ptr [di + 0x46], dh
+0cbb5  ; asm add byte ptr [bx + si], al
+0cbb7  ; asm add word ptr [bp], 0x8200
+0cbbc  ; asm inc si
+0cbbd  ; asm add byte ptr [bx + si], al
+0cbbf  ; asm mov al, byte ptr [bp]
+L0cbc2:
+0cbc2  ; asm add byte ptr [bx + di + 0x46], dh
+0cbc6  ; asm add ch, bl
+0cbc8  ; asm inc si
+0cbc9  ; asm add byte ptr [bx + si], al
+0cbcb  ; asm inc si
+0cbcd  ; asm add byte ptr [bx + si], al
+0cbcf  ; asm inc word ptr [bp]
+0cbd2  ; asm add byte ptr [bp + di], cl
+0cbd4  ; asm inc di
+0cbd5  ; asm add byte ptr [bx + si], al
+0cbd7  ; asm pop ss
+0cbd8  ; asm inc di
+0cbd9  ; asm add byte ptr [bx + si], al
+0cbdb  ; asm inc di
+0cbdd  ; asm add byte ptr [bx + si], al
+0cbdf  ; asm pushaw 
+0cbe0  ; asm inc di
+0cbe1  ; asm add byte ptr [bx + si], al
+0cbe3  ; asm push 0x47
+0cbe6  ; asm add byte ptr [di + 0x47], dh
+0cbe9  ; asm add byte ptr [bx + si], al
+0cbeb  IF ?flags js GOTO L0cc34
+0cbed  ; asm add byte ptr [bx + si], al
+0cbef  ; asm add word ptr [bx], 0x8e00
+0cbf4  ; asm inc di
+0cbf5  ; asm add byte ptr [bx + si], al
+0cbf7  CALL_9b00:47 
+0cbfc  ; asm inc di
+0cbfd  ; asm add byte ptr [bx + si], al
+0cbff  v0047% = ax
+0cc02  ; asm add dl, cl
+0cc04  ; asm inc di
+0cc05  ; asm add byte ptr [bx + si], al
+0cc07  ; asm test byte ptr [bx], 0
+0cc0b  ; asm or al, 0x48
+0cc0d  ; asm add byte ptr [bx + si], al
+0cc0f  ; asm sbb byte ptr [bx + si], cl
+0cc12  ; asm add byte ptr [bx], bh
+0cc14  ; asm dec ax
+0cc15  ; asm add byte ptr [bx + si], al
+0cc17  ; asm dec eax
+0cc19  ; asm add byte ptr [bx + si], al
+0cc1b  IF ?flags < GOTO L0cc65
+0cc1d  ; asm add byte ptr [bx + si], al
+0cc1f  IF ?flags <= GOTO L0cc69
+0cc21  ; asm add byte ptr [bx + si], al
+0cc23  ; asm xchg byte ptr [bx + si], cl
+0cc26  ; asm add byte ptr [bp + di + 0x48], dl
+0cc2a  ; asm add byte ptr [bp + 0x48], dl
+0cc2e  ; asm add byte ptr [bx + 0x48], bl
+0cc32  ; asm add byte ptr [si + 0x48], ch
+0cc36  ; asm add byte ptr [bx + si + 0x48], bh
+0cc3a  ; asm add byte ptr [bx + di + 0x48], bh
+0cc3e  ; asm add cl, al
+0cc40  ; asm dec ax
+0cc41  ; asm add byte ptr [bx + si], al
+0cc43  ; asm call 0xcc8e
+0cc46  ; asm add ah, dh
+0cc48  ; asm dec ax
+0cc49  ; asm add byte ptr [bx + si], al
+0cc4b  ; asm add byte ptr [bx + di], cl
+0cc4e  ; asm add byte ptr [si], cl
+0cc50  ; asm dec cx
+0cc51  ; asm add byte ptr [bx + si], al
+0cc53  ; asm sbb byte ptr [bx + di], cl
+0cc56  ; asm add byte ptr [bx + si], ah
+0cc58  ; asm dec cx
+0cc59  ; asm add byte ptr [bx + si], al
+0cc5b  ; asm sub ax, 0x49
+0cc5e  ; asm add byte ptr [bx + si], dh
+0cc60  ; asm dec cx
+0cc61  ; asm add byte ptr [bx + si], al
+0cc63  ; asm xor byte ptr [bx + di], cl
+0cc66  ; asm add byte ptr [bp + 0x49], al
+L0cc69:
+0cc69  ; asm add byte ptr [bx + si], al
+0cc6c  ; asm dec cx
+0cc6d  ; asm add byte ptr [bx + si], al
+0cc6f  ; asm push 0x49
+0cc72  ; asm add byte ptr [si + 0x49], dh
+0cc75  ; asm add byte ptr [bx + si], al
+0cc77  ; asm lodsw ax, word ptr [si]
+0cc78  ; asm dec cx
+0cc79  ; asm add byte ptr [bx + si], al
+0cc7b  ; asm iret 
+0cc7c  ; asm dec cx
+0cc7d  ; asm add byte ptr [bx + si], al
+0cc7f  ; asm fisttp dword ptr [bx + di]
+0cc82  ; asm add ah, ah
+0cc84  ; asm dec cx
+0cc85  ; asm add byte ptr [bx + si], al
+0cc8a  ; asm add byte ptr [si], bl
+0cc8c  ; asm dec dx
+0cc8d  ; asm add byte ptr [bx + si], al
+0cc8f  ; asm inc ax
+0cc90  ; asm dec dx
+0cc91  ; asm add byte ptr [bx + si], al
+0cc94  ; asm dec dx
+0cc95  ; asm add byte ptr [bx + si], al
+0cc97  [bp + si]% = cs
+0cc9a  ; asm add byte ptr [bp + 0x4a], bl
+0cc9e  ; asm add byte ptr [bp + di + 0x4a], ch
+0cca2  ; asm add byte ptr [bx + 0x4a], dh
+0cca6  ; asm add ah, ch
+0cca8  ; asm dec dx
+0cca9  ; asm add byte ptr [bx + si], al
+0ccab  ; asm clc 
+0ccac  ; asm dec dx
+0ccad  ; asm add byte ptr [bx + si], al
+0ccaf  ; asm clc 
+0ccb0  ; asm dec dx
+0ccb1  ; asm add byte ptr [bx + si], al
+0ccb3  ; asm add al, 0x4b
+0ccb5  ; asm add byte ptr [bx + si], al
+0ccba  ; asm add byte ptr [bx + si + 0x4b], al
+0ccbd  ; asm add byte ptr [bx + si], al
+0ccbf  ; asm pop bx
+0ccc0  ; asm dec bx
+0ccc1  ; asm add byte ptr [bx + si], al
+0ccc3  ; asm arpl word ptr [bp + di], cx
+0ccc6  ; asm add byte ptr [si + 0x4b], ch
+0ccc9  ; asm add byte ptr [bx + si], al
+0cccb  [bp + di]% = cl
+0ccce  ; asm add byte ptr [si + 0x4b], ch
+0ccd2  ; asm add bl, dl
+0ccd4  ; asm dec bx
+0ccd5  ; asm add byte ptr [bx + si], al
+0ccd7  ; asm call 0xcd25
+0ccda  ; asm add al, ch
+0ccdc  ; asm dec bx
+0ccdd  ; asm add byte ptr [bx + si], al
+0ccdf  ; asm cmc 
+0cce0  ; asm dec bx
+0cce1  ; asm add byte ptr [bx + si], al
+0cce3  ; asm pop ss
+0cce4  ; asm dec sp
+0cce5  ; asm add byte ptr [bx + si], al
+0cce7  ; asm sub cl, byte ptr [si]
+0ccea  ; asm add byte ptr [bp + di], bh
+0ccec  ; asm dec sp
+0cced  ; asm add byte ptr [bx + si], al
+0ccf0  ; asm dec sp
+0ccf1  ; asm add byte ptr [bx + si], al
+0ccf3  ; asm pop bp
+0ccf4  ; asm dec sp
+0ccf5  ; asm add byte ptr [bx + si], al
+0ccf7  IF ax jns 0x4b GOTO L0cd45
+0ccf9  ; asm add byte ptr [bx + si], al
+0ccfb  ; asm xchg bp, ax
+0ccfc  ; asm dec sp
+0ccfd  ; asm add byte ptr [bx + si], al
+0ccff  ; asm stosw word ptr es:[di], ax
+0cd00  ; asm dec sp
+0cd01  ; asm add byte ptr [bx + si], al
+0cd06  ; asm add byte ptr [bp + di + 0x4c], bh
+0cd0a  ; asm add dh, dl
+0cd0c  ; asm dec sp
+0cd0d  ; asm add byte ptr [bx + si], al
+0cd0f  ; asm salc 
+0cd10  ; asm dec sp
+0cd11  ; asm add byte ptr [bx + si], al
+0cd13  ; asm fimul dword ptr [si]
+0cd16  ; asm add dh, dh
+0cd18  ; asm dec sp
+0cd19  ; asm add byte ptr [bx + si], al
+0cd1b  ; asm stc 
+0cd1c  ; asm dec sp
+0cd1d  ; asm add byte ptr [bx + si], al
+0cd1f  ; asm sbb al, 0x4d
+0cd21  ; asm add byte ptr [bx + si], al
+0cd23  ; asm aaa 
+0cd24  ; asm dec bp
+0cd25  ; asm add byte ptr [bx + si], al
+0cd2a  ; asm add byte ptr [bp + si], bh
+0cd2c  ; asm dec bp
+0cd2d  ; asm add byte ptr [bx + si], al
+0cd32  ; asm add byte ptr [di], bh
+0cd34  ; asm dec bp
+0cd35  ; asm add byte ptr [bx + si], al
+0cd37  ; asm pop cx
+0cd38  ; asm dec bp
+0cd39  ; asm add byte ptr [bx + si], al
+0cd3b  IF 76 < 0x4d GOTO L0cd8a
+0cd3d  ; asm add byte ptr [bx + si], al
+0cd3f  ; asm enter 0x4d, 0
+0cd43  RET 
+0cd44  ; asm dec bp
+L0cd45:
+0cd45  ; asm add byte ptr [bx + si], al
+0cd47  ; asm out 0x4d, al
+0cd49  ; asm add byte ptr [bx + si], al
+0cd4b  ; asm add cl, byte ptr [bp]
+0cd4e  ; asm add byte ptr [bp + si], cl
+0cd50  ; asm dec si
+0cd51  ; asm add byte ptr [bx + si], al
+0cd53  ; asm pop si
+0cd54  ; asm dec si
+0cd55  ; asm add byte ptr [bx + si], al
+0cd57  ; asm or byte ptr [bp], 0
+0cd5b  ; asm sahf 
+0cd5c  ; asm dec si
+0cd5d  ; asm add byte ptr [bx + si], al
+0cd5f  ; asm scasw ax, word ptr es:[di]
+0cd60  ; asm dec si
+0cd61  ; asm add byte ptr [bx + si], al
+0cd63  ; asm salc 
+0cd64  ; asm dec si
+0cd65  ; asm add byte ptr [bx + si], al
+0cd67  ; asm fisttp word ptr [bp]
+0cd6a  ; asm add bh, bl
+0cd6c  ; asm dec si
+0cd6d  ; asm add byte ptr [bx + si], al
+0cd6f  ; asm pop ss
+0cd70  ; asm dec di
+0cd71  ; asm add byte ptr [bx + si], al
+0cd73  ; asm dec di
+0cd74  ; asm dec di
+0cd75  ; asm add byte ptr [bx + si], al
+0cd77  ; asm pop ax
+0cd78  ; asm dec di
+0cd79  ; asm add byte ptr [bx + si], al
+0cd7b  IF ?flags jns GOTO L0cdcc
+0cd7d  ; asm add byte ptr [bx + si], al
+0cd7f  ; asm mov cl, 0x4f
+0cd81  ; asm add byte ptr [bx + si], al
+0cd83  ; asm ror byte ptr [bx], cl
+0cd86  ; asm add byte ptr [bp + si], cl
+0cd89  ; asm add byte ptr [bx + si], al
+0cd8b  ; asm sub dx, word ptr [bx + si]
+0cd8e  ; asm add byte ptr [bp + di + 0x50], ah
+0cd91  ; asm add byte ptr [bx + si], al
+0cd93  ; asm test byte ptr [bx + si], dl
+0cd96  ; asm add byte ptr [si + 0x50], bh
+0cd9a  ; asm add bl, ah
+0cd9d  ; asm add byte ptr [bx + si], al
+0cd9f  ; asm sti 
+0cda1  ; asm add byte ptr [bx + si], al
+0cda3  ; asm and byte ptr [bx + di], dl
+0cda6  ; asm add byte ptr [bx + di + 0x51], ch
+0cdaa  ; asm add byte ptr [bp + 0x51], dh
+0cdae  ; asm add cl, bl
+0cdb1  ; asm add byte ptr [bx + si], al
+0cdb3  ; asm out 0x51, al
+0cdb5  ; asm add byte ptr [bx + si], al
+0cdb7  ; asm sbb al, 0x52
+0cdb9  ; asm add byte ptr [bx + si], al
+0cdbb  ; asm sub word ptr [bp + si], dx
+0cdbe  ; asm add byte ptr [di], dh
+0cdc1  ; asm add byte ptr [bx + si], al
+0cdc3  ; asm inc dx
+0cdc5  ; asm add byte ptr [bx + si], al
+0cdc7  ; asm outsb dx, byte ptr [si]
+0cdc9  ; asm add byte ptr [bx + si], al
+0cdcb  IF ?flags jp GOTO L0ce1f
+0cdcd  ; asm add byte ptr [bx + si], al
+0cdcf  ; asm xchg word ptr [bp + si], dx
+0cdd2  ; asm add byte ptr [bx + 0x52], bl
+0cdd6  ; asm add byte ptr [bx + 0x52], dh
+0cdda  ; asm add bl, ah
+0cddd  ; asm add byte ptr [bx + si], al
+0cddf  ; asm rcpps xmm0, xmmword ptr [bx + si]
+0cde2  ; asm add byte ptr [bx + si + 0x53], cl
+0cde5  ; asm add byte ptr [bx + si], al
+0cde7  ; asm pop si
+0cde9  ; asm add byte ptr [bx + si], al
+0cdeb  IF ?flags <> GOTO L0ce40
+0cded  ; asm add byte ptr [bx + si], al
+0cdef  IF ?flags js GOTO L0ce44
+0cdf1  ; asm add byte ptr [bx + si], al
+0cdf3  ; asm .byte 0x8f
+0cdf5  ; asm add byte ptr [bx + si], al
+0cdf7  ; asm les dx, ptr [bp + di]
+0cdfa  ; asm add dl, bl
+0cdfd  ; asm add byte ptr [bx + si], al
+0cdff  ; asm int1 
+0ce01  ; asm add byte ptr [bx + si], al
+0ce03  ; asm hlt 
+0ce05  ; asm add byte ptr [bx + si], al
+0ce07  ; asm or dx, word ptr [si]
+0ce0a  ; asm add byte ptr [bx + di], ah
+0ce0c  ; asm push sp
+0ce0d  ; asm add byte ptr [bx + si], al
+0ce0f  ; asm aaa 
+0ce10  ; asm push sp
+0ce11  ; asm add byte ptr [bx + si], al
+0ce13  ; asm inc sp
+0ce14  ; asm push sp
+0ce15  ; asm add byte ptr [bx + si], al
+0ce17  ; asm inc di
+0ce18  ; asm push sp
+0ce19  ; asm add byte ptr [bx + si], al
+0ce1b  ; asm push sp
+0ce1c  ; asm push sp
+0ce1d  ; asm add byte ptr [bx + si], al
+L0ce1f:
+0ce1f  ; asm pop sp
+0ce20  ; asm push sp
+0ce21  ; asm add byte ptr [bx + si], al
+0ce23  ; asm movsb byte ptr es:[di], byte ptr [si]
+0ce24  ; asm push sp
+0ce25  ; asm add byte ptr [bx + si], al
+0ce27  ; asm rcl byte ptr [si], 0
+0ce2b  ; asm or byte ptr [di], dl
+0ce2e  ; asm add byte ptr [si], ah
+0ce30  ; asm push bp
+0ce31  ; asm add byte ptr [bx + si], al
+0ce33  ; asm insb byte ptr es:[di], dx
+0ce34  ; asm push bp
+0ce35  ; asm add byte ptr [bx + si], al
+0ce37  *di% = dl
+0ce3a  ; asm add byte ptr [bx + 0x55], ch
+0ce3e  ; asm add al, ch
+L0ce40:
+0ce40  ; asm push bp
+0ce41  ; asm add byte ptr [bx + si], al
+0ce43  ; asm cmc 
+L0ce44:
+0ce44  ; asm push bp
+0ce45  ; asm add byte ptr [bx + si], al
+0ce47  ; asm add dl, byte ptr [bp]
+0ce4a  ; asm add byte ptr [bx], cl
+0ce4d  ; asm add byte ptr [bx + si], al
+0ce4f  ; asm sbb al, 0x56
+0ce51  ; asm add byte ptr [bx + si], al
+0ce53  ; asm sub byte ptr [bp], dl
+0ce56  ; asm add byte ptr [si], dh
+0ce59  ; asm add byte ptr [bx + si], al
+0ce5b  ; asm inc ax
+0ce5d  ; asm add byte ptr [bx + si], al
+0ce5f  ; asm dec sp
+0ce61  ; asm add byte ptr [bx + si], al
+0ce63  ; asm pop ax
+0ce65  ; asm add byte ptr [bx + si], al
+0ce69  ; asm add byte ptr [bx + si], al
+0ce6b  ; asm insb byte ptr es:[di], dx
+0ce6d  ; asm add byte ptr [bx + si], al
+0ce6f  [bp]% = dl
+0ce72  ; asm add byte ptr [si + 0x56], ch
+0ce76  ; asm add byte ptr [si + 0x56], dh
+0ce7a  ; asm add dh, dl
+0ce7d  ; asm add byte ptr [bx + si], al
+0ce7f  ; asm call 0xced8
+0ce82  ; asm add al, dh
+0ce85  ; asm add byte ptr [bx + si], al
+0ce87  ; asm clc 
+0ce89  ; asm add byte ptr [bx + si], al
+0ce8b  ; asm add byte ptr [bx], dl
+0ce8e  ; asm add byte ptr [si], ah
+0ce91  ; asm add byte ptr [bx + si], al
+0ce93  ; asm daa 
+0ce95  ; asm add byte ptr [bx + si], al
+0ce97  ; asm daa 
+0ce99  ; asm add byte ptr [bx + si], al
+0ce9e  ; asm add byte ptr [bx + si + 0x57], dl
+0cea1  ; asm add byte ptr [bx + si], al
+0cea3  ; asm bound dx, dword ptr [bx]
+0cea6  ; asm add byte ptr [di + 0x57], ah
+0cea9  ; asm add byte ptr [bx + si], al
+0ceab  ; asm adc byte ptr [bx], 0
+0ceaf  ; asm test ax, 0x57
+0ceb2  ; asm add bh, cl
+0ceb5  ; asm add byte ptr [bx + si], al
+0ceb9  ; asm add byte ptr [bx + si], al
+0cebb  ; asm cld 
+0cebd  ; asm add byte ptr [bx + si], al
+0cebf  ; asm add al, 0x58
+0cec1  ; asm add byte ptr [bx + si], al
+0cec6  ; asm add byte ptr [0x58], dl
+0ceca  ; asm add byte ptr [bp + si], ah
+0cecc  ; asm pop ax
+0cecd  ; asm add byte ptr [bx + si], al
+0cecf  ; asm and bx, word ptr [bx + si]
+0ced2  ; asm add byte ptr [bx + si + 0x58], al
+0ced5  ; asm add byte ptr [bx + si], al
+0ced7  ; asm dec sp
+0ced8  ; asm pop ax
+0ced9  ; asm add byte ptr [bx + si], al
+0cedb  IF *bx jo dx GOTO L0cf35
+0cedd  ; asm add byte ptr [bx + si], al
+0cedf  IF *bx jno dx GOTO L0cf39
+0cee1  ; asm add byte ptr [bx + si], al
+0cee3  IF *bx >= dx GOTO L0cf3d
+0cee5  ; asm add byte ptr [bx + si], al
+0cee7  [bx + si]% = bx
+0ceea  ; asm add byte ptr [di + 0x58], dl
+0ceee  ; asm add byte ptr [bx + di + 0x58], ah
+0cef2  ; asm add byte ptr [bx + si + 0x58], bh
+0cef6  ; asm add byte ptr [di + 0x58], bh
+0cefa  ; asm add ch, al
+0cefc  ; asm pop ax
+0cefd  ; asm add byte ptr [bx + si], al
+0ceff  ; asm into 
+0cf00  ; asm pop ax
+0cf01  ; asm add byte ptr [bx + si], al
+0cf03  ; asm iret 
+0cf04  ; asm pop ax
+0cf05  ; asm add byte ptr [bx + si], al
+0cf07  [bx + si] = ?
+0cf0a  ; asm add bh, ah
+0cf0c  ; asm pop ax
+0cf0d  ; asm add byte ptr [bx + si], al
+0cf0f  ; asm pop ax
+0cf11  ; asm add byte ptr [bx + si], al
+0cf13  ; asm lcall [bx + si]
+0cf16  ; asm add byte ptr [bp + di], cl
+0cf18  ; asm pop cx
+0cf19  ; asm add byte ptr [bx + si], al
+0cf1b  ; asm xor bl, byte ptr [bx + di]
+0cf1e  ; asm add byte ptr [bx], bh
+0cf20  ; asm pop cx
+0cf21  ; asm add byte ptr [bx + si], al
+0cf23  ; asm inc sp
+0cf24  ; asm pop cx
+0cf25  ; asm add byte ptr [bx + si], al
+0cf27  ; asm dec sp
+0cf28  ; asm pop cx
+0cf29  ; asm add byte ptr [bx + si], al
+0cf2b  ; asm push bp
+0cf2c  ; asm pop cx
+0cf2d  ; asm add byte ptr [bx + si], al
+0cf2f  ; asm popaw 
+0cf30  ; asm pop cx
+0cf31  ; asm add byte ptr [bx + si], al
+0cf33  ; asm insw word ptr es:[di], dx
+0cf34  ; asm pop cx
+L0cf35:
+0cf35  ; asm add byte ptr [bx + si], al
+0cf37  IF ?flags jns GOTO L0cf92
+L0cf39:
+0cf39  ; asm add byte ptr [bx + si], al
+0cf3b  ; asm test word ptr [bx + di], bx
+0cf3e  ; asm add byte ptr [bx + di + 0x59], dl
+0cf42  ; asm add byte ptr [bp + si + 0x59], dl
+0cf46  ; asm add byte ptr [bx + 0x59], bl
+0cf4a  ; asm add byte ptr [bp + di + 0x59], ch
+0cf4e  ; asm add byte ptr [bx + 0x59], dh
+0cf52  ; asm add byte ptr [bx + si], bl
+0cf54  ; asm pop dx
+0cf55  ; asm add byte ptr [bx + si], al
+0cf57  ; asm and al, 0x5a
+0cf59  ; asm add byte ptr [bx + si], al
+0cf5b  ; asm xor byte ptr [bp + si], bl
+0cf5e  ; asm add byte ptr [di], bh
+0cf60  ; asm pop dx
+0cf61  ; asm add byte ptr [bx + si], al
+0cf63  IF ?flags <= GOTO L0cfbf
+0cf65  ; asm add byte ptr [bx + si], al
+0cf67  ; asm sbb byte ptr [bp + si], 0
+0cf6b  ; asm mov ds, word ptr [bp + si]
+0cf6e  ; asm add byte ptr [bp + di + 0x5a], bl
+0cf72  ; asm add byte ptr [bx + si + 0x5a], ah
+0cf76  ; asm add byte ptr [bx + si + 0x5a], ch
+0cf7a  ; asm add byte ptr [bx + di + 0x5a], dh
+0cf7e  ; asm add byte ptr [bp + si + 0x5a], dh
+0cf82  ; asm add byte ptr [bp + 0x5a], bh
+0cf86  ; asm add bl, bl
+0cf88  ; asm pop dx
+0cf89  ; asm add byte ptr [bx + si], al
+0cf8b  ; asm out 0x5a, ax
+0cf8d  ; asm add byte ptr [bx + si], al
+0cf8f  ; asm pop dx
+0cf91  ; asm add byte ptr [bx + si], al
+0cf93  ; asm lcall [bp + si]
+0cf96  ; asm add byte ptr [bp + di], cl
+0cf98  ; asm pop bx
+0cf99  ; asm add byte ptr [bx + si], al
+0cf9b  ; asm pop ss
+0cf9c  ; asm pop bx
+0cf9d  ; asm add byte ptr [bx + si], al
+0cf9f  ; asm pop bx
+0cfa1  ; asm add byte ptr [bx + si], al
+0cfa3  ; asm xor bx, word ptr [bp + di]
+0cfa6  ; asm add byte ptr [bp + di], dh
+0cfa8  ; asm pop bx
+0cfa9  ; asm add byte ptr [bx + si], al
+0cfab  ; asm dec cx
+0cfac  ; asm pop bx
+0cfad  ; asm add byte ptr [bx + si], al
+0cfaf  ; asm dec si
+0cfb0  ; asm pop bx
+0cfb1  ; asm add byte ptr [bx + si], al
+0cfb3  IF ?flags jo GOTO L0d010
+0cfb5  ; asm add byte ptr [bx + si], al
+0cfb7  ; asm test ax, 0x5b
+0cfba  ; asm add byte ptr [bx + 0x5b], bh
+0cfbe  ; asm add ah, cl
+0cfc0  ; asm pop bx
+0cfc1  ; asm add byte ptr [bx + si], al
+0cfc3  ; asm loop 0xd020
+0cfc5  ; asm add byte ptr [bx + si], al
+0cfc8  ; asm pop sp
+0cfc9  ; asm add byte ptr [bx + si], al
+0cfcb  ; asm or al, 0x5c
+0cfcd  ; asm add byte ptr [bx + si], al
+0cfcf  ; asm adc ax, 0x5c
+0cfd2  ; asm add byte ptr [0x5c], dl
+0cfd6  ; asm add byte ptr [bp + si], ah
+0cfd8  ; asm pop sp
+0cfd9  ; asm add byte ptr [bx + si], al
+0cfdb  ; asm pop sp
+0cfdd  ; asm add byte ptr [bx + si], al
+0cfe2  ; asm add byte ptr [bp + 0x5c], al
+0cfe5  ; asm add byte ptr [bx + si], al
+0cfe8  ; asm pop sp
+0cfe9  ; asm add byte ptr [bx + si], al
+0cfeb  ; asm pop di
+0cfec  ; asm pop sp
+0cfed  ; asm add byte ptr [bx + si], al
+0cfef  ; asm pop sp
+0cff1  ; asm add byte ptr [bx + si], al
+0cff3  ; asm insw word ptr es:[di], dx
+0cff4  ; asm pop sp
+0cff5  ; asm add byte ptr [bx + si], al
+0cff7  IF bl <= byte ptr [si] GOTO L0d055
+0cff9  ; asm add byte ptr [bx + si], al
+0cffb  ; asm sbb byte ptr [si], 0
+0cfff  ; asm sbb word ptr [si], 0
+0d003  ; asm mov al, byte ptr [0x5c]
+0d006  ; asm add byte ptr [si + 0x5c], ch
+0d00a  ; asm add al, dl
+0d00c  ; asm pop sp
+0d00d  ; asm add byte ptr [bx + si], al
+0d00f  ; asm rcr word ptr [si], 1
+0d012  ; asm add ch, bl
+0d014  ; asm pop sp
+0d015  ; asm add byte ptr [bx + si], al
+0d017  GOTO L0d076
+0d01a  ; asm add ch, dh
+0d01c  ; asm pop sp
+0d01d  ; asm add byte ptr [bx + si], al
+0d01f  ; asm add word ptr [di], bx
+0d022  ; asm add byte ptr [bx + si], bl
+0d024  ; asm pop bp
+0d025  ; asm add byte ptr [bx + si], al
+0d027  ; asm sbb ax, 0x5d
+0d02a  ; asm add byte ptr [0x5d], ah
+0d02e  ; asm add byte ptr [0x5d], ch
+0d032  ; asm add byte ptr [bp + si], bh
+0d034  ; asm pop bp
+0d035  ; asm add byte ptr [bx + si], al
+0d03a  ; asm add byte ptr [bx + si + 0x5d], bl
+0d03d  ; asm add byte ptr [bx + si], al
+0d03f  ; asm pop bp
+0d041  ; asm add byte ptr [bx + si], al
+0d043  *di% = bl
+0d046  ; asm add byte ptr [bx + di + 0x5d], cl
+0d04a  ; asm add byte ptr [di + 0x5d], dl
+0d04e  ; asm add byte ptr [bx + di + 0x5d], ah
+0d052  ; asm add byte ptr [di + 0x5d], ch
+0d056  ; asm add byte ptr [bx + di + 0x5d], bh
+0d05a  ; asm add al, dl
+0d05c  ; asm pop bp
+0d05d  ; asm add byte ptr [bx + si], al
+0d05f  ; asm aad 0x5d
+0d061  ; asm add byte ptr [bx + si], al
+0d063  ; asm ficomp word ptr [di]
+0d066  ; asm add dh, ah
+0d068  ; asm pop bp
+0d069  ; asm add byte ptr [bx + si], al
+0d06b  ; asm pop bp
+0d06d  ; asm add byte ptr [bx + si], al
+0d06f  ; asm pop bp
+0d071  ; asm add byte ptr [bx + si], al
+0d073  ; asm adc byte ptr [bp], bl
+L0d076:
+0d076  ; asm add byte ptr [si], bl
+0d078  ; asm pop si
+0d079  ; asm add byte ptr [bx + si], al
+0d07b  ; asm inc ax
+0d07c  ; asm pop si
+0d07d  ; asm add byte ptr [bx + si], al
+0d07f  ; asm inc cx
+0d080  ; asm pop si
+0d081  ; asm add byte ptr [bx + si], al
+0d083  ; asm dec bp
+0d084  ; asm pop si
+0d085  ; asm add byte ptr [bx + si], al
+0d087  ; asm pop cx
+0d088  ; asm pop si
+0d089  ; asm add byte ptr [bx + si], al
+0d08b  ; asm pop si
+0d08d  ; asm add byte ptr [bx + si], al
+0d08f  IF ?flags jno GOTO L0d0ef
+0d091  ; asm add byte ptr [bx + si], al
+0d093  [bp]% = bl
+0d096  ; asm add byte ptr [di + 0x5e], cl
+0d09a  ; asm add byte ptr [bp + 0x5e], dl
+0d09e  ; asm add byte ptr [bp + 0x5e], bl
+0d0a2  ; asm add byte ptr [bp + si + 0x5e], ch
+0d0a6  ; asm add byte ptr [bp + di + 0x5e], ch
+0d0aa  ; asm add al, cl
+0d0ac  ; asm pop si
+0d0ad  ; asm add byte ptr [bx + si], al
+0d0af  ; asm aam 0x5e
+0d0b1  ; asm add byte ptr [bx + si], al
+0d0b3  ; asm clc 
+0d0b4  ; asm pop si
+0d0b5  ; asm add byte ptr [bx + si], al
+0d0b7  ; asm stc 
+0d0b8  ; asm pop si
+0d0b9  ; asm add byte ptr [bx + si], al
+0d0be  ; asm add byte ptr [bx + di], dl
+0d0c0  ; asm pop di
+0d0c1  ; asm add byte ptr [bx + si], al
+0d0c3  ; asm sbb ax, 0x5f
+0d0c6  ; asm add byte ptr [bx + di], ch
+0d0c8  ; asm pop di
+0d0c9  ; asm add byte ptr [bx + si], al
+0d0cb  ; asm xor ax, 0x5f
+0d0ce  ; asm add byte ptr [bx + di + 0x5f], al
+0d0d1  ; asm add byte ptr [bx + si], al
+0d0d3  ; asm pop ax
+0d0d4  ; asm pop di
+0d0d5  ; asm add byte ptr [bx + si], al
+0d0d7  ; asm pop bp
+0d0d8  ; asm pop di
+0d0d9  ; asm add byte ptr [bx + si], al
+0d0db  ; asm pop edi
+0d0dd  ; asm add byte ptr [bx + si], al
+0d0df  IF ?flags < GOTO L0d140
+0d0e1  ; asm add byte ptr [bx + si], al
+0d0e3  ; asm .byte 0x8f
+0d0e4  ; asm pop di
+0d0e5  ; asm add byte ptr [bx + si], al
+0d0e8  ; asm pop di
+0d0e9  ; asm add byte ptr [bx + si], al
+0d0eb  ; asm pushf 
+0d0ec  ; asm pop di
+0d0ed  ; asm add byte ptr [bx + si], al
+L0d0ef:
+0d0ef  RET 
+0d0f0  ; asm pop di
+0d0f1  ; asm add byte ptr [bx + si], al
+0d0f3  ; asm iret 
+0d0f4  ; asm pop di
+0d0f5  ; asm add byte ptr [bx + si], al
+0d0f7  *bx = ?
+0d0fa  ; asm add bh, ah
+0d0fc  ; asm pop di
+0d0fd  ; asm add byte ptr [bx + si], al
+0d0ff  ; asm pop di
+0d101  ; asm add byte ptr [bx + si], al
+0d103  ; asm or ah, byte ptr [bx + si]
+0d106  ; asm add byte ptr [bx], cl
+0d108  ; asm pushaw 
+0d109  ; asm add byte ptr [bx + si], al
+0d10b  ; asm sbb byte ptr [bx + si], ah
+0d10e  ; asm add byte ptr [bx + si], ah
+0d110  ; asm pushaw 
+0d111  ; asm add byte ptr [bx + si], al
+0d113  ; asm sub al, 0x60
+0d115  ; asm add byte ptr [bx + si], al
+0d117  ; asm sub ax, 0x60
+0d11a  ; asm add byte ptr [bp + si + 0x60], cl
+0d11d  ; asm add byte ptr [bx + si], al
+0d120  ; asm pushaw 
+0d121  ; asm add byte ptr [bx + si], al
+0d123  IF ?flags jp GOTO L0d185
+0d125  ; asm add byte ptr [bx + si], al
+0d127  IF ?flags jnp GOTO L0d189
+0d129  ; asm add byte ptr [bx + si], al
+0d12b  v0060% = al
+0d12e  ; asm add byte ptr [bp + 0x60], ch
+0d132  ; asm add byte ptr [bp + si + 0x60], bh
+0d136  ; asm add dh, al
+0d138  ; asm pushaw 
+0d139  ; asm add byte ptr [bx + si], al
+0d13b  ; asm shl byte ptr [bx + si], cl
+0d13e  ; asm add cl, ch
+L0d140:
+0d140  ; asm pushaw 
+0d141  ; asm add byte ptr [bx + si], al
+0d143  ; asm out dx, al
+0d144  ; asm pushaw 
+0d145  ; asm add byte ptr [bx + si], al
+0d147  ; asm out dx, al
+0d148  ; asm pushaw 
+0d149  ; asm add byte ptr [bx + si], al
+0d14b  ; asm cli 
+0d14c  ; asm pushaw 
+0d14d  ; asm add byte ptr [bx + si], al
+0d14f  ; asm adc byte ptr [bx + di], ah
+0d152  ; asm add byte ptr [bx + si], ch
+0d154  ; asm popaw 
+0d155  ; asm add byte ptr [bx + si], al
+0d157  ; asm popaw 
+0d159  ; asm add byte ptr [bx + si], al
+0d15b  ; asm dec dx
+0d15c  ; asm popaw 
+0d15d  ; asm add byte ptr [bx + si], al
+0d160  ; asm popaw 
+0d161  ; asm add byte ptr [bx + si], al
+0d163  IF ?flags jno GOTO L0d1c6
+0d165  ; asm add byte ptr [bx + si], al
+0d167  IF ?flags >= GOTO L0d1ca
+0d169  ; asm add byte ptr [bx + si], al
+0d16b  ; asm scasb al, byte ptr es:[di]
+0d16c  ; asm popaw 
+0d16d  ; asm add byte ptr [bx + si], al
+0d16f  ; asm mul word ptr [bx + di]
+0d172  ; asm add byte ptr [bp + di], al
+0d174  ; asm bound ax, dword ptr [bx + si]
+0d176  ; asm add byte ptr [0x62], al
+0d17a  ; asm add byte ptr [bx + si], bl
+0d17c  ; asm bound ax, dword ptr [bx + si]
+0d17e  ; asm add byte ptr [bx], ch
+0d180  ; asm bound ax, dword ptr [bx + si]
+0d182  ; asm add byte ptr [bx + 0x62], ch
+L0d185:
+0d185  ; asm add byte ptr [bx + si], al
+0d187  ; asm shl word ptr [bp + si], cl
+0d18a  ; asm add cl, ch
+0d18c  ; asm bound ax, dword ptr [bx + si]
+0d18e  ; asm add byte ptr [bx + si], al
+0d190  ; asm arpl word ptr [bx + si], ax
+0d192  ; asm add byte ptr [0x63], dl
+0d196  ; asm add byte ptr [di], ch
+0d198  ; asm arpl word ptr [bx + si], ax
+0d19a  ; asm add byte ptr [di], ch
+0d19c  ; asm arpl word ptr [bx + si], ax
+0d19e  ; asm add byte ptr [bp + si], dh
+0d1a0  ; asm arpl word ptr [bx + si], ax
+0d1a2  ; asm add byte ptr [0x63], bh
+0d1a6  ; asm add byte ptr [bx + 0x63], al
+0d1a9  ; asm add byte ptr [bx + si], al
+0d1ab  ; asm dec ax
+0d1ac  ; asm arpl word ptr [bx + si], ax
+0d1ae  ; asm add byte ptr [si + 0x63], bl
+0d1b1  ; asm add byte ptr [bx + si], al
+0d1b3  ; asm push 0x63
+0d1b6  ; asm add byte ptr [si + 0x63], cl
+0d1ba  ; asm add al, dl
+0d1bc  ; asm arpl word ptr [bx + si], ax
+0d1be  ; asm add ah, bl
+0d1c0  ; asm arpl word ptr [bx + si], ax
+0d1c2  ; asm add al, bh
+0d1c4  ; asm arpl word ptr [bx + si], ax
+L0d1c6:
+0d1c6  ; asm add byte ptr [0x64], cl
+L0d1ca:
+0d1ca  ; asm add byte ptr [bp + si], bl
+0d1cc  ; asm add byte ptr fs:[bx + si], al
+0d1cf  ; asm add byte ptr fs:[bx + si], al
+0d1d4  ; asm add byte ptr fs:[bx + si], al
+0d1d7  *si% = sp
+0d1da  ; asm add byte ptr [di + 0x64], dl
+0d1de  ; asm add bl, ah
+0d1e0  ; asm add byte ptr fs:[bx + si], al
+0d1e3  ; asm pcmpgtw mm0, qword ptr [bx + si]
+0d1e6  ; asm add byte ptr [bx + si + 0x65], cl
+0d1e9  ; asm add byte ptr [bx + si], al
+0d1eb  IF ?flags = GOTO L0d252
+0d1ed  ; asm add byte ptr [bx + si], al
+0d1ef  ; asm xchg cx, ax
+0d1f0  ; asm add byte ptr gs:[bx + si], al
+0d1f3  ; asm cmpsw word ptr [si], word ptr es:[di]
+0d1f4  ; asm add byte ptr gs:[bx + si], al
+0d1f7  ; asm mov bl, 0x65
+0d1f9  ; asm add byte ptr [bx + si], al
+0d1fb  ; asm leave 
+0d1fc  ; asm add byte ptr gs:[bx + si], al
+0d1ff  ; asm lock add byte ptr gs:[bx + si], al
+0d204  ; asm add byte ptr [bx + si], al
+0d207  ; asm inc cx
+0d208  ; asm add byte ptr [bx + si], al
+0d20b  ; asm inc si
+0d20c  ; asm add byte ptr [bx + si], al
+0d20f  ; asm inc si
+0d210  ; asm add byte ptr [bx + si], al
+0d214  ; asm add byte ptr [bx + si], al
+0d217  ; asm pushaw 
+0d218  ; asm add byte ptr [bx + si], al
+0d21b  ; asm insw word ptr es:[di], dx
+0d21c  ; asm add byte ptr [bx + si], al
+0d21f  IF ?flags jp GOTO L0d287
+0d221  ; asm add byte ptr [bx + si], al
+0d223  [bp]% = fs
+0d226  ; asm add byte ptr [bx + 0x66], cl
+0d22a  ; asm add byte ptr [si + 0x66], ch
+0d22e  ; asm add byte ptr [bx + 0x66], ch
+0d232  ; asm add bh, cl
+0d234  ; asm add byte ptr [bx + si], al
+0d237  ; asm shl byte ptr [bp], cl
+0d23a  ; asm add ch, dh
+0d23c  ; asm add byte ptr [bx + si], al
+0d23f  ; asm clc 
+0d240  ; asm add byte ptr [bx + si], al
+0d243  ; asm add byte ptr ds:[eax], al
+0d247  IF ?flags <= GOTO L0d2b0
+0d249  ; asm add byte ptr [bx + si], al
+0d24b  IF ?flags jns GOTO L0d2b4
+0d24d  ; asm add byte ptr [bx + si], al
+0d24f  ; asm xchg byte ptr [bx], ah
+L0d252:
+0d252  ; asm add dl, cl
+0d254  ; asm add byte ptr [eax], al
+0d257  ; asm loopne 0xd2c0
+0d259  ; asm add byte ptr [bx + si], al
+0d25b  ; asm sbb byte ptr [bx + si], ch
+0d25e  ; asm add byte ptr [bp + di], bl
+0d260  ; asm push 0
+0d263  ; asm sub byte ptr [bx + si], ch
+0d266  ; asm add byte ptr [bp + di + 0x68], dl
+0d269  ; asm add byte ptr [bx + si], al
+0d26b  ; asm push 0
+0d26f  IF ?flags < GOTO L0d2d9
+0d271  ; asm add byte ptr [bx + si], al
+0d273  ; asm mov ch, byte ptr [bx + si]
+0d276  ; asm add byte ptr [bx + 0x68], dl
+0d27a  ; asm add byte ptr [bp + si + 0x68], bl
+0d27e  ; asm add byte ptr [bx + 0x68], ah
+0d282  ; asm add byte ptr [bp + si + 0x68], ch
+0d286  ; asm add byte ptr [bx + 0x68], dh
+0d28a  ; asm add bh, cl
+0d28c  ; asm push 0
+0d28f  ; asm out 0x68, al
+0d291  ; asm add byte ptr [bx + si], al
+0d293  GOTO L0d2fe
+0d296  ; asm add byte ptr [bx + si], al
+0d298  ; asm imul ax, word ptr [bx + si], 0x300
+0d29c  ; asm imul ax, word ptr [bx + si], 0x1a00
+0d2a0  ; asm imul ax, word ptr [bx + si], 0x2c00
+0d2a4  ; asm imul ax, word ptr [bx + si], 0x3900
+0d2a8  ; asm imul ax, word ptr [bx + si], 0x5000
+0d2ac  ; asm imul ax, word ptr [bx + si], 0x5900
+L0d2b0:
+0d2b0  ; asm imul ax, word ptr [bx + si], 0x6200
+L0d2b4:
+0d2b4  ; asm imul ax, word ptr [bx + si], 0x7600
+0d2b8  ; asm imul ax, word ptr [bx + si], 0xb300
+0d2bc  ; asm imul ax, word ptr [bx + si], 0xd700
+0d2c0  ; asm imul ax, word ptr [bx + si], 0xd800
+0d2c4  ; asm imul ax, word ptr [bx + si], 0xd900
+0d2c8  ; asm imul ax, word ptr [bx + si], 0xda00
+0d2cc  ; asm imul ax, word ptr [bx + si], 0xdb00
+0d2d0  ; asm imul ax, word ptr [bx + si], 0xf100
+0d2d4  ; asm imul ax, word ptr [bx + si], 0xf400
+0d2d8  ; asm imul ax, word ptr [bx + si], 0xf400
+0d2dc  ; asm imul ax, word ptr [bx + si], 0xfd00
+0d2e0  ; asm imul ax, word ptr [bx + si], 0x900
+0d2e4  ; asm push 0
+0d2e6  ; asm add byte ptr [bx + si], ah
+0d2e8  ; asm push 0
+0d2ea  ; asm add byte ptr [bx + di + 0x6a], ch
+0d2ed  ; asm add byte ptr [bx + si], al
+0d2ef  ; asm insb byte ptr es:[di], dx
+0d2f0  ; asm push 0
+0d2f2  ; asm add byte ptr [di + 0x6a], ch
+0d2f5  ; asm add byte ptr [bx + si], al
+0d2f7  IF ?flags <= GOTO L0d363
+0d2f9  ; asm add byte ptr [bx + si], al
+0d2fb  ; asm mov ch, byte ptr [bp + si]
+L0d2fe:
+0d2fe  ; asm add byte ptr [bp + si + 0x6a], bh
+0d302  ; asm add dh, bl
+0d304  ; asm push 0
+0d306  ; asm add bh, bl
+0d308  ; asm push 0
+0d30a  ; asm add al, ah
+0d30c  ; asm push 0
+0d30e  ; asm add byte ptr [bx + si], al
+0d310  ; asm imul ax, word ptr [bx + si], 0
+0d313  ; asm or al, 0x6b
+0d315  ; asm add byte ptr [bx + si], al
+0d317  ; asm sbb byte ptr [bp + di], ch
+0d31a  ; asm add byte ptr [si], ah
+0d31c  ; asm imul ax, word ptr [bx + si], 0
+0d31f  ; asm sub ax, 0x6b
+0d322  ; asm add byte ptr [bp + si + 0x6b], al
+0d325  ; asm add byte ptr [bx + si], al
+0d327  ; asm imul ax, word ptr [eax], 0
+0d32b  ; asm mov bp, word ptr [bp + di]
+0d32e  ; asm add byte ptr [si + 0x6b], cl
+0d332  ; asm add byte ptr [di + 0x6b], cl
+0d336  ; asm add byte ptr [bp + 0x6b], cl
+0d33a  ; asm add byte ptr [bx + 0x6b], cl
+0d33e  ; asm add byte ptr [bx + si + 0x6b], dl
+0d342  ; asm add byte ptr [bx + di + 0x6b], dl
+0d346  ; asm add byte ptr [bx + di + 0x6b], dh
+0d34a  ; asm add byte ptr [bp + 0x6b], bh
+0d34e  ; asm add dl, cl
+0d350  ; asm imul ax, word ptr [bx + si], 0
+0d353  ; asm shr word ptr [bp + di], cl
+0d356  ; asm add al, ch
+0d358  ; asm imul ax, word ptr [bx + si], 0
+0d35b  ; asm add byte ptr [si], ch
+0d35e  ; asm add byte ptr [si], ah
+0d360  ; asm insb byte ptr es:[di], dx
+0d361  ; asm add byte ptr [bx + si], al
+L0d363:
+0d366  ; asm add byte ptr [0x6c], ch
+0d36a  ; asm add byte ptr [bp + si + 0x6c], al
+0d36d  ; asm add byte ptr [bx + si], al
+0d36f  ; asm insb byte ptr es:[di], dx
+0d371  ; asm add byte ptr [bx + si], al
+0d373  ; asm mov ch, byte ptr [si]
+0d376  ; asm add byte ptr [bp + di + 0x6c], cl
+0d37a  ; asm add byte ptr [si + 0x6c], cl
+0d37e  ; asm add byte ptr [di + 0x6c], dl
+0d382  ; asm add byte ptr [bp + si + 0x6c], ch
+0d386  ; asm add dh, cl
+0d388  ; asm insb byte ptr es:[di], dx
+0d389  ; asm add byte ptr [bx + si], al
+0d38b  ; asm repne insb byte ptr es:[di], dx
+0d38d  ; asm add byte ptr [bx + si], al
+0d38f  ; asm rep insb byte ptr es:[di], dx
+0d391  ; asm add byte ptr [bx + si], al
+0d393  ; asm hlt 
+0d394  ; asm insb byte ptr es:[di], dx
+0d395  ; asm add byte ptr [bx + si], al
+0d397  ; asm hlt 
+0d398  ; asm insb byte ptr es:[di], dx
+0d399  ; asm add byte ptr [bx + si], al
+0d39b  ; asm cld 
+0d39c  ; asm insb byte ptr es:[di], dx
+0d39d  ; asm add byte ptr [bx + si], al
+0d39f  ; asm sbb byte ptr [di], ch
+0d3a2  ; asm add byte ptr [si], bh
+0d3a4  ; asm insw word ptr es:[di], dx
+0d3a5  ; asm add byte ptr [bx + si], al
+0d3a7  ; asm dec ax
+0d3a8  ; asm insw word ptr es:[di], dx
+0d3a9  ; asm add byte ptr [bx + si], al
+0d3ab  ; asm push sp
+0d3ac  ; asm insw word ptr es:[di], dx
+0d3ad  ; asm add byte ptr [bx + si], al
+0d3af  ; asm insw word ptr es:[di], dx
+0d3b1  ; asm add byte ptr [bx + si], al
+0d3b3  ; asm outsb dx, byte ptr [si]
+0d3b4  ; asm insw word ptr es:[di], dx
+0d3b5  ; asm add byte ptr [bx + si], al
+0d3b7  ; asm xchg sp, ax
+0d3b8  ; asm insw word ptr es:[di], dx
+0d3b9  ; asm add byte ptr [bx + si], al
+0d3bb  ; asm mov al, 0x6d
+0d3bd  ; asm add byte ptr [bx + si], al
+0d3bf  ; asm aam 0x6d
+0d3c1  ; asm add byte ptr [bx + si], al
+0d3c3  ; asm ljmp 0xf600:0x6d
+0d3c8  ; asm insw word ptr es:[di], dx
+0d3c9  ; asm add byte ptr [bx + si], al
+0d3cb  ; asm or al, 0x6e
+0d3cd  ; asm add byte ptr [bx + si], al
+0d3cf  ; asm sbb byte ptr [bp], ch
+0d3d2  ; asm add byte ptr [si], ah
+0d3d4  ; asm outsb dx, byte ptr [si]
+0d3d5  ; asm add byte ptr [bx + si], al
+0d3d7  ; asm and al, 0x6e
+0d3d9  ; asm add byte ptr [bx + si], al
+0d3db  ; asm xor ch, byte ptr [bp]
+0d3de  ; asm add byte ptr [0x6e], bh
+0d3e2  ; asm add byte ptr [bp + si + 0x6e], cl
+0d3e5  ; asm add byte ptr [bx + si], al
+0d3e8  ; asm outsb dx, byte ptr [si]
+0d3e9  ; asm add byte ptr [bx + si], al
+0d3eb  ; asm arpl word ptr [bp], bp
+0d3ee  ; asm add byte ptr [bx + 0x6e], ch
+0d3f1  ; asm add byte ptr [bx + si], al
+0d3f3  ; asm scasw ax, word ptr es:[di]
+0d3f4  ; asm outsb dx, byte ptr [si]
+0d3f5  ; asm add byte ptr [bx + si], al
+0d3f7  ; asm fldcw word ptr [bp]
+0d3fa  ; asm add ah, bh
+0d3fc  ; asm outsb dx, byte ptr [si]
+0d3fd  ; asm add byte ptr [bx + si], al
+0d400  ; asm outsw dx, word ptr [si]
+0d401  ; asm add byte ptr [bx + si], al
+0d403  ; asm xor al, 0x6f
+0d405  ; asm add byte ptr [bx + si], al
+0d407  ; asm aaa 
+0d408  ; asm outsw dx, word ptr [si]
+0d409  ; asm add byte ptr [bx + si], al
+0d40b  ; asm pushaw 
+0d40c  ; asm outsw dx, word ptr [si]
+0d40d  ; asm add byte ptr [bx + si], al
+0d40f  IF ?flags <= GOTO L0d480
+0d411  ; asm add byte ptr [bx + si], al
+0d413  IF ?flags jns GOTO L0d484
+0d415  ; asm add byte ptr [bx + si], al
+0d417  ; asm xchg sp, ax
+0d418  ; asm outsw dx, word ptr [si]
+0d419  ; asm add byte ptr [bx + si], al
+0d41b  ; asm movsw word ptr es:[di], word ptr [si]
+0d41c  ; asm outsw dx, word ptr [si]
+0d41d  ; asm add byte ptr [bx + si], al
+0d41f  ; asm lodsw ax, word ptr [si]
+0d420  ; asm outsw dx, word ptr [si]
+0d421  ; asm add byte ptr [bx + si], al
+0d423  ; asm .byte 0xfe
+0d424  ; asm outsw dx, word ptr [si]
+0d425  ; asm add byte ptr [bx + si], al
+0d427  ; asm or dh, byte ptr [bx + si]
+0d42a  ; asm add byte ptr [bp + di], bl
+0d42c  IF ?flags jo GOTO L0d42e
+L0d42e:
+0d42e  ; asm add byte ptr [bx], ah
+0d430  IF ?flags jo GOTO L0d432
+L0d432:
+0d432  ; asm add byte ptr [bx + si], bh
+0d434  IF ?flags jo GOTO L0d436
+L0d436:
+0d436  ; asm add byte ptr [bp + 0x70], cl
+0d439  ; asm add byte ptr [bx + si], al
+0d43b  IF ?flags jp GOTO L0d4ad
+0d43d  ; asm add byte ptr [bx + si], al
+0d440  IF ?flags jo GOTO L0d442
+L0d442:
+0d442  ; asm add byte ptr [di + 0x70], bl
+0d446  ; asm add byte ptr [bp + di + 0x70], dh
+0d44a  ; asm add al, al
+0d44c  IF ?flags jo GOTO L0d44e
+L0d44e:
+0d44e  ; asm add dh, dl
+0d450  IF ?flags jo GOTO L0d452
+L0d452:
+0d452  ; asm add ch, ch
+0d454  IF ?flags jo GOTO L0d456
+L0d456:
+0d456  ; asm add bh, bh
+0d458  IF ?flags jo GOTO L0d45a
+L0d45a:
+0d45a  ; asm add byte ptr [si], cl
+0d45c  IF ?flags jno GOTO L0d45e
+L0d45e:
+0d45e  ; asm add byte ptr [bx + si + 0x71], al
+0d462  ; asm add byte ptr [bp + di + 0x71], al
+0d466  ; asm add byte ptr [bp + di + 0x71], al
+0d46a  ; asm add byte ptr [bx + si + 0x71], dl
+0d46e  ; asm add byte ptr [bp + si + 0x71], ah
+0d472  ; asm add dl, bl
+0d474  IF ?flags jno GOTO L0d476
+L0d476:
+0d476  ; asm add ah, bl
+0d478  IF ?flags jno GOTO L0d47a
+L0d47a:
+0d47a  ; asm add al, ch
+0d47c  IF ?flags jno GOTO L0d47e
+L0d47e:
+0d47e  ; asm add byte ptr [bx], cl
+L0d480:
+0d480  IF ?flags < GOTO L0d482
+L0d482:
+0d482  ; asm add byte ptr [bx + si], ah
+L0d484:
+0d484  IF ?flags < GOTO L0d486
+L0d486:
+0d486  ; asm add byte ptr [bp + si], ah
+0d488  IF ?flags < GOTO L0d48a
+L0d48a:
+0d48a  ; asm add byte ptr [bx], ch
+0d48c  IF ?flags < GOTO L0d48e
+L0d48e:
+0d48e  ; asm add byte ptr [bp + si + 0x72], dl
+0d491  ; asm add byte ptr [bx + si], al
+0d493  IF ?flags = GOTO L0d507
+0d495  ; asm add byte ptr [bx + si], al
+0d497  ; asm xchg byte ptr [bp + si], dh
+0d49a  ; asm add byte ptr [bx + si + 0x72], ch
+0d49e  ; asm add cl, ah
+0d4a0  IF ?flags < GOTO L0d4a2
+L0d4a2:
+0d4a2  ; asm add byte ptr [bp + di], al
+0d4a4  IF ?flags >= GOTO L0d4a6
+L0d4a6:
+0d4a6  ; asm add byte ptr [di], dh
+0d4a8  IF ?flags >= GOTO L0d4aa
+L0d4aa:
+0d4aa  ; asm add byte ptr [bp + si + 0x73], ch
+L0d4ad:
+0d4ad  ; asm add byte ptr [bx + si], al
+0d4af  IF ?flags > GOTO L0d524
+0d4b1  ; asm add byte ptr [bx + si], al
+0d4b3  ; asm lodsb al, byte ptr [si]
+0d4b4  IF ?flags >= GOTO L0d4b6
+L0d4b6:
+0d4b6  ; asm add byte ptr [bx + di + 0x73], bh
+0d4ba  ; asm add bh, cl
+0d4bc  IF ?flags >= GOTO L0d4be
+L0d4be:
+0d4be  ; asm add dh, ah
+0d4c0  IF ?flags >= GOTO L0d4c2
+L0d4c2:
+0d4c2  ; asm add al, bh
+0d4c4  IF ?flags >= GOTO L0d4c6
+L0d4c6:
+0d4c6  ; asm add byte ptr [di], al
+0d4c8  IF ?flags = GOTO L0d4ca
+L0d4ca:
+0d4ca  ; asm add byte ptr [bp + si], cl
+0d4cc  IF ?flags = GOTO L0d4ce
+L0d4ce:
+0d4ce  ; asm add byte ptr [bp + si], cl
+0d4d0  IF ?flags = GOTO L0d4d2
+L0d4d2:
+0d4d2  ; asm add byte ptr [bp + di + 0x74], al
+0d4d5  ; asm add byte ptr [bx + si], al
+0d4d7  ; asm inc si
+0d4d8  IF ?flags = GOTO L0d4da
+L0d4da:
+0d4da  ; asm add byte ptr [si + 0x74], cl
+0d4de  ; asm add byte ptr [di + 0x74], bl
+0d4e2  ; asm add al, al
+0d4e4  IF ?flags = GOTO L0d4e6
+L0d4e6:
+0d4e6  ; asm add cl, dl
+0d4e8  IF ?flags = GOTO L0d4ea
+L0d4ea:
+0d4ea  ; asm add al, bh
+0d4ec  IF ?flags = GOTO L0d4ee
+L0d4ee:
+0d4ee  ; asm add al, bh
+0d4f0  IF ?flags = GOTO L0d4f2
+L0d4f2:
+0d4f2  ; asm add al, bh
+0d4f4  IF ?flags = GOTO L0d4f6
+L0d4f6:
+0d4f6  ; asm add byte ptr [di], al
+0d4f8  IF ?flags <> GOTO L0d4fa
+L0d4fa:
+0d4fa  ; asm add byte ptr [bp + si], dl
+0d4fc  IF ?flags <> GOTO L0d4fe
+L0d4fe:
+0d4fe  ; asm add byte ptr [bx + 0x75], cl
+0d501  ; asm add byte ptr [bx + si], al
+0d503  IF ?flags <> GOTO L0d506
+L0d506:
+0d506  ; asm add byte ptr [bx + di + 0x75], dh
+0d509  ; asm add byte ptr [bx + si], al
+0d50b  *di% = si
+0d50e  ; asm add byte ptr [di + 0x75], dl
+0d512  ; asm add byte ptr [bp + di + 0x75], ch
+0d516  ; asm add byte ptr [bx + 0x75], dh
+0d51a  ; asm add cl, cl
+0d51c  IF ?flags <> GOTO L0d51e
+L0d51e:
+0d51e  ; asm add ch, dl
+0d520  IF ?flags <> GOTO L0d522
+L0d522:
+0d522  ; asm add cl, ah
+L0d524:
+0d524  IF ?flags <> GOTO L0d526
+L0d526:
+0d526  ; asm add ch, ch
+0d528  IF ?flags <> GOTO L0d52a
+L0d52a:
+0d52a  ; asm add al, dh
+0d52c  IF ?flags <> GOTO L0d52e
+L0d52e:
+0d52e  ; asm add byte ptr [di], cl
+0d530  IF ?flags <= GOTO L0d532
+L0d532:
+0d532  ; asm add byte ptr [bx + di], bl
+0d534  IF ?flags <= GOTO L0d536
+L0d536:
+0d536  ; asm add byte ptr [di], ah
+0d538  IF ?flags <= GOTO L0d53a
+L0d53a:
+0d53a  ; asm add byte ptr [bx + si], ch
+0d53c  IF ?flags <= GOTO L0d53e
+L0d53e:
+0d53e  ; asm add byte ptr [di + 0x76], al
+0d541  ; asm add byte ptr [bx + si], al
+0d544  IF ?flags <= GOTO L0d546
+L0d546:
+0d546  ; asm add byte ptr [bp + 0x76], al
+0d54a  ; asm add byte ptr [bp + si + 0x76], dl
+0d54e  ; asm add byte ptr [bp + si + 0x76], dh
+0d552  ; asm add byte ptr [di + 0x76], dh
+0d556  ; asm add byte ptr [0x77], al
+0d55a  ; asm add byte ptr [bx + di], cl
+0d55c  IF ?flags > GOTO L0d55e
+L0d55e:
+0d55e  ; asm add byte ptr [di], dl
+0d560  IF ?flags > GOTO L0d562
+L0d562:
+0d562  ; asm add byte ptr [bp + si], dh
+0d564  IF ?flags > GOTO L0d566
+L0d566:
+0d566  ; asm add byte ptr [bx + di + 0x77], bl
+0d569  ; asm add byte ptr [bx + si], al
+0d56b  IF ?flags = GOTO L0d5e4
+0d56d  ; asm add byte ptr [bx + si], al
+0d56f  ; asm test word ptr [bx], si
+0d572  ; asm add byte ptr [bp + 0x77], cl
+0d576  ; asm add byte ptr [bx + 0x77], cl
+0d57a  ; asm add byte ptr [bx + si + 0x77], dl
+0d57e  ; asm add byte ptr [bp + si + 0x77], ch
+0d582  ; asm add bl, al
+0d584  IF ?flags > GOTO L0d586
+L0d586:
+0d586  ; asm add bh, ah
+0d588  IF ?flags > GOTO L0d58a
+L0d58a:
+0d58a  ; asm add byte ptr [bp + di], dl
+0d58c  IF ?flags js GOTO L0d58e
+L0d58e:
+0d58e  ; asm add byte ptr [0x78], dl
+0d592  ; asm add byte ptr [bx], bl
+0d594  IF ?flags js GOTO L0d596
+L0d596:
+0d596  ; asm add byte ptr [bx + si], ah
+0d598  IF ?flags js GOTO L0d59a
+L0d59a:
+0d59a  ; asm add byte ptr [bp + si + 0x78], cl
+0d59d  ; asm add byte ptr [bx + si], al
+0d59f  ; asm arpl word ptr [bx + si], di
+0d5a2  ; asm add byte ptr [bx + 0x78], al
+0d5a6  ; asm add byte ptr [bp + si + 0x78], cl
+0d5aa  ; asm add byte ptr [bp + si + 0x78], ch
+0d5ae  ; asm add al, al
+0d5b0  IF ?flags js GOTO L0d5b2
+L0d5b2:
+0d5b2  ; asm add ah, cl
+0d5b4  IF ?flags js GOTO L0d5b6
+L0d5b6:
+0d5b6  ; asm add dl, ah
+0d5b8  IF ?flags js GOTO L0d5ba
+L0d5ba:
+0d5ba  ; asm add dh, ch
+0d5bc  IF ?flags js GOTO L0d5be
+L0d5be:
+0d5be  ; asm add bl, bh
+0d5c0  IF ?flags js GOTO L0d5c2
+L0d5c2:
+0d5c2  ; asm add byte ptr [bx], al
+0d5c4  IF ?flags jns GOTO L0d5c6
+L0d5c6:
+0d5c6  ; asm add byte ptr [bp + si], cl
+0d5c8  IF ?flags jns GOTO L0d5ca
+L0d5ca:
+0d5ca  ; asm add byte ptr [bp + 0x79], al
+0d5cd  ; asm add byte ptr [bx + si], al
+0d5cf  ; asm pop si
+0d5d0  IF ?flags jns GOTO L0d5d2
+L0d5d2:
+0d5d2  ; asm add byte ptr [bp + si + 0x79], ch
+0d5d5  ; asm add byte ptr [bx + si], al
+0d5de  ; asm add byte ptr [si + 0x79], bh
+0d5e2  ; asm add ch, al
+L0d5e4:
+0d5e4  IF ?flags jns GOTO L0d5e6
+L0d5e6:
+0d5e6  ; asm add dh, al
+0d5e8  IF ?flags jns GOTO L0d5ea
+L0d5ea:
+0d5ea  ; asm add dl, bl
+0d5ec  IF ?flags jns GOTO L0d5ee
+L0d5ee:
+0d5ee  ; asm add dh, ah
+0d5f0  IF ?flags jns GOTO L0d5f2
+L0d5f2:
+0d5f2  ; asm add byte ptr [bp + si], cl
+0d5f4  IF ?flags jp GOTO L0d5f6
+L0d5f6:
+0d5f6  ; asm add byte ptr [di], cl
+0d5f8  IF ?flags jp GOTO L0d5fa
+L0d5fa:
+0d5fa  ; asm add byte ptr [0x7a], dl
+0d5fe  ; asm add byte ptr [bx], dl
+0d600  IF ?flags jp GOTO L0d602
+L0d602:
+0d602  ; asm add byte ptr [bx + di], bh
+0d604  IF ?flags jp GOTO L0d606
+L0d606:
+0d606  ; asm add byte ptr [bp + 0x7a], cl
+0d609  ; asm add byte ptr [bx + si], al
+0d60b  IF ?flags jp GOTO L0d60e
+L0d60e:
+0d60e  ; asm add byte ptr [bp + di + 0x7a], cl
+0d612  ; asm add byte ptr [bp + 0x7a], cl
+0d616  ; asm add byte ptr [bx + 0x7a], bl
+0d61a  ; asm add byte ptr [di + 0x7a], dh
+0d61e  ; asm add cl, al
+0d620  IF ?flags jp GOTO L0d622
+L0d622:
+0d622  ; asm add dl, dl
+0d624  IF ?flags jp GOTO L0d626
+L0d626:
+0d626  ; asm add bl, ah
+0d628  IF ?flags jp GOTO L0d62a
+L0d62a:
+0d62a  ; asm add byte ptr [si], ch
+0d62c  IF ?flags jnp GOTO L0d62e
+L0d62e:
+0d62e  ; asm add byte ptr [bx + si], bh
+0d630  IF ?flags jnp GOTO L0d632
+L0d632:
+0d632  ; asm add byte ptr [bx + di + 0x7b], al
+0d635  ; asm add byte ptr [bx + si], al
+0d637  ; asm insb byte ptr es:[di], dx
+0d638  IF ?flags jnp GOTO L0d63a
+L0d63a:
+0d63a  ; asm add byte ptr [di + 0x7b], al
+0d63e  ; asm add byte ptr [bx + di + 0x7b], ch
+0d642  ; asm add dl, bl
+0d644  IF ?flags jnp GOTO L0d646
+L0d646:
+0d646  ; asm add bh, ah
+0d648  IF ?flags jnp GOTO L0d64a
+L0d64a:
+0d64a  ; asm add dl, ch
+0d64c  IF ?flags jnp GOTO L0d64e
+L0d64e:
+0d64e  ; asm add dl, ch
+0d650  IF ?flags jnp GOTO L0d652
+L0d652:
+0d652  ; asm add byte ptr [bx + si], al
+0d654  IF ?flags < GOTO L0d656
+L0d656:
+0d656  ; asm add byte ptr [bp + di + 0x7c], al
+0d659  ; asm add byte ptr [bx + si], al
+0d65b  ; asm pop cx
+0d65c  IF ?flags < GOTO L0d65e
+L0d65e:
+0d65e  ; asm add byte ptr [bp + di + 0x7c], ch
+0d661  ; asm add byte ptr [bx + si], al
+0d663  IF ?flags > GOTO L0d6e1
+0d665  ; asm add byte ptr [bx + si], al
+0d667  *si% = bh
+0d66a  ; asm add byte ptr [bp + 0x7c], bl
+0d66e  ; asm add byte ptr [bp + si + 0x7c], ch
+0d672  ; asm add byte ptr [bp + si + 0x7c], ch
+0d676  ; asm add byte ptr [bx + 0x7c], dh
+0d67a  ; asm add byte ptr [di], bl
+0d67c  IF ?flags >= GOTO L0d67e
+L0d67e:
+0d67e  ; asm add byte ptr [bp + di], dh
+0d680  IF ?flags >= GOTO L0d682
+L0d682:
+0d682  ; asm add byte ptr [bx], bh
+0d684  IF ?flags >= GOTO L0d686
+L0d686:
+0d686  ; asm add byte ptr [si + 0x7d], bl
+0d689  ; asm add byte ptr [bx + si], al
+0d68b  ; asm push 0x7d
+0d68e  ; asm add byte ptr [di + 0x7d], bl
+0d692  ; asm add byte ptr [bx + di + 0x7d], ch
+0d696  ; asm add byte ptr [bx + 0x7d], bh
+0d69a  ; asm add bl, cl
+0d69c  IF ?flags >= GOTO L0d69e
+L0d69e:
+0d69e  ; asm add cl, ah
+0d6a0  IF ?flags >= GOTO L0d6a2
+L0d6a2:
+0d6a2  ; asm add dh, ch
+0d6a4  IF ?flags >= GOTO L0d6a6
+L0d6a6:
+0d6a6  ; asm add cl, dh
+0d6a8  IF ?flags >= GOTO L0d6aa
+L0d6aa:
+0d6aa  ; asm add byte ptr [bx], al
+0d6ac  IF ?flags <= GOTO L0d6ae
+L0d6ae:
+0d6ae  ; asm add byte ptr [si], ah
+0d6b0  IF ?flags <= GOTO L0d6b2
+L0d6b2:
+0d6b2  ; asm add byte ptr [bx + di], dh
+0d6b4  IF ?flags <= GOTO L0d6b6
+L0d6b6:
+0d6b6  ; asm add byte ptr [si], dh
+0d6b8  IF ?flags <= GOTO L0d6ba
+L0d6ba:
+0d6ba  ; asm add byte ptr [bx + di + 0x7e], al
+0d6bd  ; asm add byte ptr [bx + si], al
+0d6bf  ; asm inc sp
+0d6c0  IF ?flags <= GOTO L0d6c2
+L0d6c2:
+0d6c2  ; asm add byte ptr [si + 0x7e], al
+0d6c5  ; asm add byte ptr [bx + si], al
+0d6c7  ; asm pop dx
+0d6c8  IF ?flags <= GOTO L0d6ca
+L0d6ca:
+0d6ca  ; asm add byte ptr [di + 0x7e], bl
+0d6cd  ; asm add byte ptr [bx + si], al
+0d6cf  IF ?flags jp GOTO L0d74f
+0d6d1  ; asm add byte ptr [bx + si], al
+0d6d3  IF ?flags >= GOTO L0d753
+0d6d5  ; asm add byte ptr [bx + si], al
+0d6d7  ; asm .byte 0x8f
+0d6d8  IF ?flags <= GOTO L0d6da
+L0d6da:
+0d6da  ; asm add byte ptr [bp + si + 0x7e], dl
+0d6de  ; asm add byte ptr [di], al
+0d6e0  IF ?flags > GOTO L0d6e2
+L0d6e2:
+0d6e2  ; asm add byte ptr [bx + si], cl
+0d6e4  IF ?flags > GOTO L0d6e6
+L0d6e6:
+0d6e6  ; asm add byte ptr [di], ah
+0d6e8  IF ?flags > GOTO L0d6ea
+L0d6ea:
+0d6ea  ; asm add byte ptr [bx + si], ch
+0d6ec  IF ?flags > GOTO L0d6ee
+L0d6ee:
+0d6ee  ; asm add byte ptr [bx + si + 0x7f], cl
+0d6f1  ; asm add byte ptr [bx + si], al
+0d6f3  ; asm dec bx
+0d6f4  IF ?flags > GOTO L0d6f6
+L0d6f6:
+0d6f6  ; asm add byte ptr [bp + di + 0x7f], ch
+0d6f9  ; asm add byte ptr [bx + si], al
+0d6fb  ; asm outsb dx, byte ptr [si]
+0d6fc  IF ?flags > GOTO L0d6fe
+L0d6fe:
+0d6fe  ; asm add byte ptr [bp + 0x7f], cl
+0d702  ; asm add byte ptr [bx + di + 0x7f], dl
+0d706  ; asm add byte ptr [bx + di + 0x7f], dh
+0d70a  ; asm add byte ptr [si + 0x7f], dh
+0d70e  ; asm add ah, dl
+0d710  IF ?flags > GOTO L0d712
+L0d712:
+0d712  ; asm add bh, dl
+0d714  IF ?flags > GOTO L0d716
+L0d716:
+0d716  ; asm add dl, bl
+0d718  IF ?flags > GOTO L0d71a
+L0d71a:
+0d71a  ; asm add ch, bh
+0d71c  IF ?flags > GOTO L0d71e
+L0d71e:
+0d71e  ; asm add byte ptr [bx + si], al
+0d720  ; asm add byte ptr [bx + si], 0
+0d724  ; asm add byte ptr [bx + si], 0
+0d727  ; asm inc dx
+0d728  ; asm add byte ptr [bx + si], 0
+0d72b  ; asm pop ax
+0d72c  ; asm add byte ptr [bx + si], 0
+0d72f  [bx + si]% = al
+0d733  ; asm xchg cx, ax
+0d734  ; asm add byte ptr [bx + si], 0
+0d737  ; asm xchg sp, ax
+0d738  ; asm add byte ptr [bx + si], 0
+0d73b  ; asm xchg bp, ax
+0d73c  ; asm add byte ptr [bx + si], 0
+0d73f  ; asm xchg si, ax
+0d740  ; asm add byte ptr [bx + si], 0
+0d743  ; asm lahf 
+0d744  ; asm add byte ptr [bx + si], 0
+0d747  v0080% = al
+0d74a  ; asm add byte ptr [bp + di + 0x80], ah
+0d74e  ; asm add byte ptr [si + 0x80], ch
+0d752  ; asm add byte ptr [bx + 0x80], ch
+0d756  ; asm add byte ptr [bx + si + 0x80], dh
+0d75a  ; asm add byte ptr [bx + di + 0x80], bh
+0d75e  ; asm add byte ptr [si + 0x80], bh
+0d762  ; asm add byte ptr [di + 0x80], bh
+0d766  ; asm add dh, al
+0d768  ; asm add byte ptr [bx + si], 0
+0d76b  ; asm leave 
+0d76c  ; asm add byte ptr [bx + si], 0
+0d76f  RET 0x80
+0d772  ; asm add bl, dl
+0d774  ; asm add byte ptr [bx + si], 0
+0d777  ; asm salc 
+0d778  ; asm add byte ptr [bx + si], 0
+0d77b  ; asm xlatb 
+0d77c  ; asm add byte ptr [bx + si], 0
+0d77f  ; asm loopne 0xd701
+0d781  ; asm add byte ptr [bx + si], al
+L0d783:
+0d783  ; asm loope 0xd705
+0d785  ; asm add byte ptr [bx + si], al
+0d787  ; asm add al, 0x81
+0d789  ; asm add byte ptr [bx + si], al
+0d78e  ; asm add byte ptr [bx + si], dl
+0d790  ; asm add word ptr [bx + si], 0x1900
+0d794  ; asm add word ptr [bx + si], 0x1c00
+0d798  ; asm add word ptr [bx + si], 0x1d00
+0d79c  ; asm add word ptr [bx + si], 0x2600
+0d7a0  ; asm add word ptr [bx + si], 0x2900
+0d7a4  ; asm add word ptr [bx + si], 0x2a00
+0d7a8  ; asm add word ptr [bx + si], 0x3300
+L0d7ac:
+0d7ac  ; asm add word ptr [bx + si], 0x3600
+0d7b0  ; asm add word ptr [bx + si], 0x3700
+0d7b4  ; asm add word ptr [bx + si], 0x4000
+0d7b8  ; asm add word ptr [bx + si], 0x4300
+0d7bc  ; asm add word ptr [bx + si], 0x4400
+0d7c0  ; asm add word ptr [bx + si], 0x4500
+0d7c4  ; asm add word ptr [bx + si], 0x4e00
+0d7c8  ; asm add word ptr [bx + si], 0x5100
+0d7cc  ; asm add word ptr [bx + si], 0x5200
+0d7d0  ; asm add word ptr [bx + si], 0x5e00
+0d7d4  ; asm add word ptr [bx + si], 0x8800
+0d7d8  ; asm add word ptr [bx + si], 0x9500
+0d7dc  ; asm add word ptr [bx + si], 0xb900
+0d7e0  ; asm add word ptr [bx + si], 0xb900
+0d7e4  ; asm add word ptr [bx + si], 0xd500
+0d7e8  ; asm add word ptr [bx + si], 0xf000
+0d7ec  ; asm add word ptr [bx + si], 0xfc00
+0d7f0  ; asm add word ptr [bx + si], 0x1800
+0d7f4  ; asm add byte ptr [bx + si], 0
+0d7f7  ; asm xor ax, word ptr [bp + si]
+0d7fb  ; asm add byte ptr [eax], 0
+0d7ff  IF ?flags >= GOTO L0d783
+0d801  ; asm add byte ptr [bx + si], al
+0d803  [bp + si]% = ax
+0d807  ; asm int3 
+0d808  ; asm add byte ptr [bx + si], 0
+0d80b  ; asm int3 
+0d80c  ; asm add byte ptr [bx + si], 0
+0d80f  ; asm loop 0xd793
+0d811  ; asm add byte ptr [bx + si], al
+0d816  ; asm add byte ptr [di], ah
+0d818  ; asm add word ptr [bx + si], 0
+0d81b  ; asm xor al, byte ptr [bp + di]
+0d820  ; asm add word ptr [bx + si], 0
+0d823  ; asm push bp
+0d824  ; asm add word ptr [bx + si], 0
+0d827  IF ?flags jo GOTO L0d7ac
+0d829  ; asm add byte ptr [bx + si], al
+0d82b  ; asm xchg byte ptr [bp + di], al
+0d82f  ; asm xchg dx, ax
+0d830  ; asm add word ptr [bx + si], 0
+0d834  ; asm add word ptr [bx + si], 0
+0d837  ; asm cmpsw word ptr [si], word ptr es:[di]
+0d838  ; asm add word ptr [bx + si], 0
+0d83b  ; asm test al, 0x83
+0d83d  ; asm add byte ptr [bx + si], al
+0d83f  ; asm test ax, 0x83
+0d842  ; asm add ah, bl
+0d844  ; asm add word ptr [bx + si], 0
+0d847  ; asm add word ptr [bx + si], 0
+0d84c  ; asm test byte ptr [bx + si], al
+0d84e  ; asm add byte ptr [bp + si], dh
+0d850  ; asm test byte ptr [bx + si], al
+0d852  ; asm add byte ptr [bx], bh
+0d854  ; asm test byte ptr [bx + si], al
+0d856  ; asm add byte ptr [bp + di - 0x7c], ah
+0d859  ; asm add byte ptr [bx + si], al
+0d85b  ; asm xchg byte ptr [si], al
+0d85f  *si% = (?0x83 AND ?)
+0d863  ; asm pushf 
+0d864  ; asm test byte ptr [bx + si], al
+0d866  ; asm add byte ptr [bx + di + 0x84], ch
+0d86a  ; asm add byte ptr [si + 0x84], ch
+0d86e  ; asm add byte ptr [bx + si + 0x84], bh
+0d872  ; asm add byte ptr [bx + di + 0x84], bh
+0d876  ; asm add ah, ch
+0d878  ; asm test byte ptr [bx + si], al
+0d87a  ; asm add byte ptr [bp + si], al
+0d87c  ; asm test word ptr [bx + si], ax
+0d87e  ; asm add byte ptr [0x85], ch
+0d882  ; asm add byte ptr [bp + si - 0x7b], al
+0d885  ; asm add byte ptr [bx + si], al
+0d887  ; asm dec di
+0d888  ; asm test word ptr [bx + si], ax
+0d88a  ; asm add byte ptr [bp + di - 0x7b], dh
+0d88d  ; asm add byte ptr [bx + si], al
+0d88f  ; asm xchg sp, ax
+0d890  ; asm test word ptr [bx + si], ax
+0d892  ; asm add byte ptr [si + 0x85], dl
+0d896  ; asm add byte ptr [bx + si + 0x85], dh
+0d89a  ; asm add ch, dl
+0d89c  ; asm test word ptr [bx + si], ax
+0d89e  ; asm add ch, dl
+0d8a0  ; asm test word ptr [bx + si], ax
+0d8a2  ; asm add dl, ah
+0d8a4  ; asm test word ptr [bx + si], ax
+0d8a6  ; asm add byte ptr [bp + si], al
+0d8a8  ; asm xchg byte ptr [bx + si], al
+0d8aa  ; asm add byte ptr [di], al
+0d8ac  ; asm xchg byte ptr [bx + si], al
+0d8ae  ; asm add byte ptr [bx + si], ah
+0d8b0  ; asm xchg byte ptr [bx + si], al
+0d8b2  ; asm add byte ptr [0x86], dh
+0d8b6  ; asm add byte ptr [bp + si - 0x7a], al
+0d8b9  ; asm add byte ptr [bx + si], al
+0d8bb  ; asm dec bx
+0d8bc  ; asm xchg byte ptr [bx + si], al
+0d8be  ; asm add byte ptr [bx - 0x7a], dl
+0d8c1  ; asm add byte ptr [bx + si], al
+0d8c3  ; asm pop ax
+0d8c4  ; asm xchg byte ptr [bx + si], al
+0d8c6  ; asm add byte ptr [bx + di - 0x7a], bl
+0d8c9  ; asm add byte ptr [bx + si], al
+0d8cb  ; asm pop dx
+0d8cc  ; asm xchg byte ptr [bx + si], al
+0d8ce  ; asm add byte ptr [di + 0x86], dl
+0d8d2  ; asm add byte ptr [bp + di + 0x86], ch
+0d8d6  ; asm add bh, dl
+0d8d8  ; asm xchg byte ptr [bx + si], al
+0d8da  ; asm add ah, ch
+0d8dc  ; asm xchg byte ptr [bx + si], al
+0d8de  ; asm add cl, bh
+0d8e0  ; asm xchg byte ptr [bx + si], al
+0d8e2  ; asm add byte ptr [di], bl
+0d8e4  ; asm xchg word ptr [bx + si], ax
+0d8e6  ; asm add byte ptr [bx + di], ch
+0d8e8  ; asm xchg word ptr [bx + si], ax
+0d8ea  ; asm add byte ptr [bx + di - 0x79], cl
+0d8ed  ; asm add byte ptr [bx + si], al
+0d8f0  ; asm xchg word ptr [bx + si], ax
+0d8f2  ; asm add byte ptr [bx - 0x79], ah
+0d8f5  ; asm add byte ptr [bx + si], al
+0d8f7  ; asm mov es, word ptr [bx]
+0d8fc  ; asm xchg word ptr [bx + si], ax
+0d8fe  ; asm add byte ptr [bx + 0x87], ah
+0d902  ; asm add bh, ch
+0d904  ; asm xchg word ptr [bx + si], ax
+0d906  ; asm add ah, bh
+0d908  ; asm xchg word ptr [bx + si], ax
+0d90a  ; asm add byte ptr [bx + si], cl
+0d90c  [bx + si]% = al
+0d90e  ; asm add byte ptr [bx + si - 0x78], dl
+0d911  ; asm add byte ptr [bx + si], al
+0d913  ; asm pop bp
+0d914  [bx + si]% = al
+0d916  ; asm add byte ptr [bx + di - 0x78], ch
+0d919  ; asm add byte ptr [bx + si], al
+0d91b  ; asm mov cl, 0x88
+0d91d  ; asm add byte ptr [bx + si], al
+0d91f  [bx + si]% = al
+0d922  ; asm add bh, bh
+0d924  [bx + si]% = al
+0d926  ; asm add byte ptr [bx + si - 0x77], dl
+0d929  ; asm add byte ptr [bx + si], al
+0d92b  ; asm pop sp
+0d92c  [bx + si]% = (?0x83 AND ?)
+0d92e  ; asm add byte ptr [si - 0x77], bl
+0d931  ; asm add byte ptr [bx + si], al
+0d933  ; asm or word ptr [bx + di], 0xff8c
+0d938  [bx + si]% = (?0x83 AND ?)
+0d93a  ; asm add byte ptr [bx + si + 0x89], bl
+0d93e  ; asm add byte ptr [bp + si + 0x89], bh
+0d942  ; asm add dh, cl
+0d944  [bx + si]% = (?0x83 AND ?)
+0d946  ; asm add bl, bl
+0d948  [bx + si]% = (?0x83 AND ?)
+0d94a  ; asm add bh, bh
+0d94c  [bx + si]% = (?0x83 AND ?)
+0d94e  ; asm add byte ptr [bx + si - 0x76], dl
+0d951  ; asm add byte ptr [bx + si], al
+0d953  ; asm pop sp
+0d954  ; asm mov al, byte ptr [bx + si]
+0d956  ; asm add byte ptr [si - 0x76], bl
+0d959  ; asm add byte ptr [bx + si], al
+0d95b  ; asm or word ptr [bp + si], 0xff8c
+0d960  ; asm mov al, byte ptr [bx + si]
+L0d962:
+0d962  ; asm add byte ptr [bx + 0x8a], ch
+L0d966:
+0d966  ; asm add byte ptr [bx + si + 0x8a], bh
+0d96a  ; asm add bl, bl
+0d96c  ; asm mov al, byte ptr [bx + si]
+0d96e  ; asm add ah, ah
+0d970  ; asm mov al, byte ptr [bx + si]
+0d972  ; asm add byte ptr [bx + si], al
+0d976  ; asm add byte ptr [bx + di], cl
+0d97a  ; asm add byte ptr [di], dl
+0d97e  ; asm add byte ptr [bx - 0x75], dl
+0d981  ; asm add byte ptr [bx + si], al
+0d983  ; asm insw word ptr es:[di], dx
+0d986  ; asm add byte ptr [bx + di + 0x8b], bl
+0d98a  ; asm add byte ptr [bp + 0x8b], ch
+0d98e  ; asm add byte ptr [bp + di + 0x8b], bh
+0d992  ; asm add bh, bl
+0d996  ; asm add byte ptr [bx + si], dh
+0d998  [bx + si]% = es
+0d99a  ; asm add byte ptr [si], bh
+0d99c  [bx + si]% = es
+0d99e  ; asm add byte ptr [si], bh
+0d9a0  [bx + si]% = es
+0d9a2  ; asm add byte ptr [bx + si - 0x74], al
+0d9a5  ; asm add byte ptr [bx + si], al
+0d9a7  ; asm xchg byte ptr [si], cl
+0d9ab  *si% = cx
+0d9af  ; asm xchg dx, ax
+0d9b0  [bx + si]% = es
+0d9b2  ; asm add byte ptr [bp + 0x8c], bl
+0d9b6  ; asm add cl, dl
+0d9b8  [bx + si]% = es
+0d9ba  ; asm add bh, ah
+0d9bc  [bx + si]% = es
+0d9be  ; asm add byte ptr [bp + di], dl
+0d9c2  ; asm add byte ptr [bx + si], ch
+0d9c6  ; asm add byte ptr [di], dh
+0d9ca  ; asm add byte ptr [bx + di - 0x73], bl
+0d9cd  ; asm add byte ptr [bx + si], al
+0d9cf  IF ?flags jp GOTO L0d95e
+0d9d1  ; asm add byte ptr [bx + si], al
+0d9d3  IF ?flags jp GOTO L0d962
+0d9d5  ; asm add byte ptr [bx + si], al
+0d9d7  IF ?flags jp GOTO L0d966
+0d9d9  ; asm add byte ptr [bx + si], al
+0d9db  ; asm xchg byte ptr [di], cl
+0d9df  ; asm xchg dx, ax
+0d9e2  ; asm add byte ptr [bp + 0x8d], bl
+0d9e6  ; asm add byte ptr [bp + si + 0x8d], ch
+0d9ea  ; asm add byte ptr [bp + 0x8d], dh
+0d9ee  ; asm add dl, al
+0d9f2  ; asm add dh, cl
+0d9f6  ; asm add dl, bl
+0d9fa  ; asm add byte ptr [di], bl
+0d9fc  ; asm mov es, word ptr [bx + si]
+0d9fe  ; asm add byte ptr [0x8e], ah
+0da02  ; asm add byte ptr [bx], ah
+0da04  ; asm mov es, word ptr [bx + si]
+0da06  ; asm add byte ptr [bx + si], ch
+0da08  ; asm mov es, word ptr [bx + si]
+0da0a  ; asm add byte ptr [bx + di], ch
+0da0c  ; asm mov es, word ptr [bx + si]
+0da0e  ; asm add byte ptr [bp + si], ch
+0da10  ; asm mov es, word ptr [bx + si]
+0da12  ; asm add byte ptr [0x8e], dh
+0da16  ; asm add byte ptr [bx + si - 0x72], cl
+0da19  ; asm add byte ptr [bx + si], al
+0da1b  ; asm push sp
+0da1c  ; asm mov es, word ptr [bx + si]
+0da1e  ; asm add byte ptr [bp + si - 0x72], ch
+0da21  ; asm add byte ptr [bx + si], al
+0da23  IF ?flags <= GOTO L0d9b3
+0da25  ; asm add byte ptr [bx + si], al
+0da27  ; asm mov cl, byte ptr [bp]
+0da2b  ; asm ljmp 0x1100:0x8e
+0da30  ; asm pop word ptr [bx + si]
+0da32  ; asm add byte ptr [bx], ah
+0da34  ; asm pop word ptr [bx + si]
+0da36  ; asm add byte ptr [bp + si - 0x71], al
+0da39  ; asm add byte ptr [bx + si], al
+0da3b  ; asm pop bp
+0da3c  ; asm pop word ptr [bx + si]
+0da3e  ; asm add byte ptr [bx + si - 0x71], bh
+0da41  ; asm add byte ptr [bx + si], al
+0da43  ; asm lodsb al, byte ptr [si]
+0da44  ; asm pop word ptr [bx + si]
+0da46  ; asm add byte ptr [di + 0x8f], bh
+0da4a  ; asm add dh, cl
+0da4c  ; asm pop word ptr [bx + si]
+0da4e  ; asm add dh, cl
+0da50  ; asm pop word ptr [bx + si]
+0da52  ; asm add al, ah
+0da54  ; asm pop word ptr [bx + si]
+0da56  ; asm add ah, ch
+0da58  ; asm pop word ptr [bx + si]
+0da5a  ; asm add al, bh
+0da5c  ; asm pop word ptr [bx + si]
+0da5e  ; asm add al, bh
+0da60  ; asm pop word ptr [bx + si]
+0da62  ; asm add byte ptr [si], al
+0da65  ; asm add byte ptr [bx + si], al
+0da67  ; asm adc byte ptr [bx + si], dl
+0da6b  ; asm sbb al, 0x90
+0da6d  ; asm add byte ptr [bx + si], al
+0da6f  ; asm sub byte ptr [bx + si], dl
+0da73  ; asm xor al, 0x90
+0da75  ; asm add byte ptr [bx + si], al
+0da77  IF ?flags > GOTO L0da09
+0da79  ; asm add byte ptr [bx + si], al
+0da7b  ; asm adc byte ptr [bx + si], 0x9d
+0da81  ; asm add byte ptr [bx + si], al
+0da83  ; asm mov bl, 0x90
+0da85  ; asm add byte ptr [bx + si], al
+0da8a  ; asm add al, bh
+0da8d  ; asm add byte ptr [bx + si], al
+0da8f  ; asm add al, 0x91
+0da91  ; asm add byte ptr [bx + si], al
+0da96  ; asm add byte ptr [di], cl
+0da98  ; asm xchg cx, ax
+0da99  ; asm add byte ptr [bx + si], al
+0da9e  ; asm add byte ptr [di - 0x6f], cl
+0daa1  ; asm add byte ptr [bx + si], al
+0daa4  ; asm xchg cx, ax
+0daa5  ; asm add byte ptr [bx + si], al
+0daa7  IF ?flags >= GOTO L0da3a
+0daa9  ; asm add byte ptr [bx + si], al
+0daab  [bx + di]% = dx
+0daaf  ; asm xchg bp, ax
+0dab0  ; asm xchg cx, ax
+0dab1  ; asm add byte ptr [bx + si], al
+0dab3  ; asm xchg si, ax
+0dab4  ; asm xchg cx, ax
+0dab5  ; asm add byte ptr [bx + si], al
+0dab7  ; asm xchg di, ax
+0dab8  ; asm xchg cx, ax
+0dab9  ; asm add byte ptr [bx + si], al
+0dabb  ; asm lahf 
+0dabc  ; asm xchg cx, ax
+0dabd  ; asm add byte ptr [bx + si], al
+0dabf  ; asm lahf 
+0dac0  ; asm xchg cx, ax
+0dac1  ; asm add byte ptr [bx + si], al
+0dac6  ; asm add al, cl
+0dac8  ; asm xchg cx, ax
+0dac9  ; asm add byte ptr [bx + si], al
+0dacb  ; asm in ax, 0x91
+0dacd  ; asm add byte ptr [bx + si], al
+0dacf  ; asm sti 
+0dad0  ; asm xchg cx, ax
+0dad1  ; asm add byte ptr [bx + si], al
+0dad4  ; asm xchg dx, ax
+0dad5  ; asm add byte ptr [bx + si], al
+0dad7  ; asm or byte ptr [bp + si], dl
+0dadb  ; asm adc byte ptr [bp + si], dl
+0dadf  ; asm adc byte ptr [bp + si], dl
+0dae4  ; asm xchg dx, ax
+0dae5  ; asm add byte ptr [bx + si], al
+0dae7  ; asm pop sp
+0dae8  ; asm xchg dx, ax
+0dae9  ; asm add byte ptr [bx + si], al
+0daeb  IF ?flags jns GOTO L0da7f
+0daed  ; asm add byte ptr [bx + si], al
+0daef  ; asm .byte 0x8f
+0daf0  ; asm xchg dx, ax
+0daf1  ; asm add byte ptr [bx + si], al
+0daf4  ; asm xchg dx, ax
+0daf5  ; asm add byte ptr [bx + si], al
+0daf7  ; asm lodsw ax, word ptr [si]
+0daf8  ; asm xchg dx, ax
+L0daf9:
+0daf9  ; asm add byte ptr [bx + si], al
+0dafb  RET 0x92
+0dafe  ; asm add al, ah
+0db00  ; asm xchg dx, ax
+0db01  ; asm add byte ptr [bx + si], al
+0db03  ; asm in al, dx
+0db04  ; asm xchg dx, ax
+0db05  ; asm add byte ptr [bx + si], al
+0db07  ; asm in ax, dx
+0db08  ; asm xchg dx, ax
+0db09  ; asm add byte ptr [bx + si], al
+0db0b  ; asm cmc 
+0db0c  ; asm xchg dx, ax
+0db0d  ; asm add byte ptr [bx + si], al
+0db0f  ; asm cmc 
+0db10  ; asm xchg dx, ax
+0db11  ; asm add byte ptr [bx + si], al
+0db13  ; asm clc 
+0db14  ; asm xchg dx, ax
+0db15  ; asm add byte ptr [bx + si], al
+0db17  ; asm clc 
+0db18  ; asm xchg dx, ax
+0db19  ; asm add byte ptr [bx + si], al
+0db1b  ; asm or al, 0x93
+0db1d  ; asm add byte ptr [bx + si], al
+0db1f  ; asm dec ax
+0db20  ; asm xchg bx, ax
+0db21  ; asm add byte ptr [bx + si], al
+0db23  ; asm insb byte ptr es:[di], dx
+0db24  ; asm xchg bx, ax
+0db25  ; asm add byte ptr [bx + si], al
+0db27  ; asm adc byte ptr [bp + di], 0x8e
+0db2c  ; asm xchg bx, ax
+0db2d  ; asm add byte ptr [bx + si], al
+0db2f  ; asm movsb byte ptr es:[di], byte ptr [si]
+0db30  ; asm xchg bx, ax
+0db31  ; asm add byte ptr [bx + si], al
+0db33  ; asm mov al, 0x93
+0db35  ; asm add byte ptr [bx + si], al
+0db37  ; asm .byte 0xc6
+0db38  ; asm xchg bx, ax
+0db39  ; asm add byte ptr [bx + si], al
+0db3b  ; asm rcl byte ptr [bp + di], cl
+0db3f  ; asm call 0xdbd5
+0db42  ; asm add ah, dh
+0db44  ; asm xchg bx, ax
+0db45  ; asm add byte ptr [bx + si], al
+0db47  ; asm or dl, byte ptr [si]
+0db4c  ; asm xchg sp, ax
+0db4d  ; asm add byte ptr [bx + si], al
+0db4f  ; asm sbb dx, word ptr [si]
+0db53  ; asm sbb dx, word ptr [si]
+0db57  ; asm daa 
+0db58  ; asm xchg sp, ax
+0db59  ; asm add byte ptr [bx + si], al
+0db5b  ; asm inc di
+0db5c  ; asm xchg sp, ax
+0db5d  ; asm add byte ptr [bx + si], al
+0db5f  ; asm xchg sp, ax
+0db61  ; asm add byte ptr [bx + si], al
+0db63  IF ?flags jp GOTO L0daf9
+0db65  ; asm add byte ptr [bx + si], al
+0db67  ; asm xchg byte ptr [si], dl
+0db6e  ; asm add al, dl
+0db70  ; asm xchg sp, ax
+0db71  ; asm add byte ptr [bx + si], al
+0db7b  ; asm cld 
+0db7c  ; asm xchg sp, ax
+0db7d  ; asm add byte ptr [bx + si], al
+0db7f  ; asm sbb word ptr [di], dx
+0db83  ; asm das 
+0db84  ; asm xchg bp, ax
+0db85  ; asm add byte ptr [bx + si], al
+0db8b  ; asm outsw dx, word ptr [si]
+0db8c  ; asm xchg bp, ax
+0db8d  ; asm add byte ptr [bx + si], al
+0db8f  ; asm test word ptr [di], dx
+0db93  ; asm xchg cx, ax
+0db94  ; asm xchg bp, ax
+0db95  ; asm add byte ptr [bx + si], al
+0db97  ; asm xchg cx, ax
+0db98  ; asm xchg bp, ax
+0db99  ; asm add byte ptr [bx + si], al
+0db9b  ; asm mov cl, 0x95
+0db9d  ; asm add byte ptr [bx + si], al
+0db9f  ; asm into 
+0dba0  ; asm xchg bp, ax
+0dba1  ; asm add byte ptr [bx + si], al
+0dba3  ; asm in al, 0x95
+0dba5  ; asm add byte ptr [bx + si], al
+0dba7  ; asm .byte 0xf0
+0dba8  ; asm xchg bp, ax
+0dba9  ; asm add byte ptr [bx + si], al
+0dbab  ; asm and al, 0x96
+0dbad  ; asm add byte ptr [bx + si], al
+0dbb3  ; asm inc si
+0dbb4  ; asm xchg si, ax
+0dbb5  ; asm add byte ptr [bx + si], al
+0dbb7  ; asm inc si
+0dbb8  ; asm xchg si, ax
+0dbb9  ; asm add byte ptr [bx + si], al
+0dbbb  ; asm arpl word ptr [bp], dx
+0dbbf  ; asm adc byte ptr [bp], 0x96
+0dbc4  ; asm xchg si, ax
+0dbc5  ; asm add byte ptr [bx + si], al
+0dbc7  v0096% = al
+0dbca  ; asm add dh, dl
+0dbcc  ; asm xchg si, ax
+0dbcd  ; asm add byte ptr [bx + si], al
+0dbcf  ; asm in al, dx
+0dbd0  ; asm xchg si, ax
+0dbd1  ; asm add byte ptr [bx + si], al
+0dbd3  ; asm clc 
+0dbd4  ; asm xchg si, ax
+0dbd5  ; asm add byte ptr [bx + si], al
+0dbd7  ; asm clc 
+0dbd8  ; asm xchg si, ax
+0dbd9  ; asm add byte ptr [bx + si], al
+0dbdb  ; asm add word ptr [bx], dx
+0dbdf  ; asm add word ptr [bx], dx
+0dbe3  ; asm add dl, byte ptr [bx]
+0dbe7  ; asm add dx, word ptr [bx]
+0dbeb  ; asm add al, 0x97
+0dbed  ; asm add byte ptr [bx + si], al
+0dbf2  ; asm add byte ptr [0x97], al
+0dbf6  ; asm add byte ptr [bx], al
+0dbf8  ; asm xchg di, ax
+0dbf9  ; asm add byte ptr [bx + si], al
+0dbfb  ; asm or byte ptr [bx], dl
+0dbff  ; asm sbb dl, byte ptr [bx]
+0dc03  ; asm xor byte ptr [bx], dl
+0dc07  ; asm dec ax
+0dc08  ; asm xchg di, ax
+0dc09  ; asm add byte ptr [bx + si], al
+0dc0b  ; asm adc word ptr [bx], 0x9781
+0dc11  ; asm add byte ptr [bx + si], al
+0dc13  ; asm mov dl, byte ptr [bx]
+0dc17  ; asm sahf 
+0dc18  ; asm xchg di, ax
+0dc19  ; asm add byte ptr [bx + si], al
+0dc1b  ; asm rcl word ptr [bx]
+0dc1f  ; asm cmc 
+0dc20  ; asm xchg di, ax
+0dc21  ; asm add byte ptr [bx + si], al
+0dc23  ; asm or al, 0x98
+0dc25  ; asm add byte ptr [bx + si], al
+0dc27  ; asm or al, 0x98
+0dc29  ; asm add byte ptr [bx + si], al
+0dc2b  ; asm adc al, 0x98
+0dc2d  ; asm add byte ptr [bx + si], al
+0dc2f  ; asm xor ax, 0x98
+0dc32  ; asm add byte ptr [bx + di - 0x68], al
+0dc35  ; asm add byte ptr [bx + si], al
+0dc37  ; asm insb byte ptr es:[di], dx
+0dc38  ; asm cwde 
+0dc39  ; asm add byte ptr [bx + si], al
+0dc3b  ; asm movsw word ptr es:[di], word ptr [si]
+0dc3c  ; asm cwde 
+0dc3d  ; asm add byte ptr [bx + si], al
+0dc3f  ; asm rcr word ptr [bx + si], 0xfa
+0dc44  ; asm cwde 
+0dc45  ; asm add byte ptr [bx + si], al
+0dc49  ; asm add byte ptr [bx + si], al
+0dc4b  ; asm dec di
+0dc4d  ; asm add byte ptr [bx + si], al
+0dc4f  ; asm imul bx, word ptr [bx + di], 0x6b
+0dc55  ; asm add byte ptr [bx + si], al
+0dc57  ; asm xchg dx, ax
+0dc59  ; asm add byte ptr [bx + si], al
+0dc5d  ; asm add byte ptr [bx + si], al
+0dc5f  ; asm add bl, byte ptr [bp + si]
+0dc64  CALL_9a5e:0 
+0dc69  ; asm add byte ptr [bx + si], al
+0dc6b  CALL SUB_0_9a870000()
+0dc73  ; asm xchg bx, ax
+0dc74  CALL_9abe:0 
+0dc79  ; asm add byte ptr [bx + si], al
+0dc7b  RET 0x9a
+0dc7e  ; asm add cl, dh
+0dc80  CALL_9af1:0 
+0dc85  ; asm add byte ptr [bx + si], al
+0dc87  ; asm int1 
+0dc88  CALL_9b02:0 
+0dc8d  ; asm add byte ptr [bx + si], al
+0dc91  ; asm add byte ptr [bx + si], al
+0dc93  ; asm adc word ptr [bp + di], bx
+0dc97  ; asm adc word ptr [bp + di], bx
+0dc9d  ; asm add byte ptr [bx + si], al
+0dc9f  ; asm xor bl, byte ptr [bp + di]
+0dca5  ; asm add byte ptr [bx + si], al
+0dca7  ; asm bound bx, dword ptr [bp + di]
+0dcab  ; asm mov ds, word ptr [bp + di]
+0dcaf  ; asm xchg bx, ax
+0dcb1  ; asm add byte ptr [bx + si], al
+0dcb3  ; asm xchg bx, ax
+0dcb5  ; asm add byte ptr [bx + si], al
+0dcb7  ; asm movsb byte ptr es:[di], byte ptr [si]
+0dcb9  ; asm add byte ptr [bx + si], al
+0dcbb  RET 
+0dcbd  ; asm add byte ptr [bx + si], al
+0dcbf  ; asm iret 
+0dcc1  ; asm add byte ptr [bx + si], al
+0dcc3  ; asm neg byte ptr [bp + di]
+0dcc7  ; asm daa 
+0dcc8  ; asm pushf 
+0dcc9  ; asm add byte ptr [bx + si], al
+0dccb  ; asm inc bp
+0dccc  ; asm pushf 
+0dccd  ; asm add byte ptr [bx + si], al
+0dccf  ; asm dec dx
+0dcd0  ; asm pushf 
+0dcd1  ; asm add byte ptr [bx + si], al
+0dcd3  ; asm dec dx
+0dcd4  ; asm pushf 
+0dcd5  ; asm add byte ptr [bx + si], al
+0dcd8  ; asm pushf 
+0dcd9  ; asm add byte ptr [bx + si], al
+0dcdb  ; asm sbb byte ptr [si], 0xa9
+0dce0  ; asm pushf 
+0dce1  ; asm add byte ptr [bx + si], al
+0dce3  ; asm mov dh, 0x9c
+0dce5  ; asm add byte ptr [bx + si], al
+0dce7  RET 0x9c
+0dcea  ; asm add bl, cl
+0dcec  ; asm pushf 
+0dced  ; asm add byte ptr [bx + si], al
+0dcef  ; asm xlatb 
+0dcf0  ; asm pushf 
+0dcf1  ; asm add byte ptr [bx + si], al
+0dcf3  ; asm in al, 0x9c
+0dcf5  ; asm add byte ptr [bx + si], al
+0dcf7  ; asm .byte 0xf0
+0dcf8  ; asm pushf 
+0dcf9  ; asm add byte ptr [bx + si], al
+0dcfb  ; asm stc 
+0dcfc  ; asm pushf 
+0dcfd  ; asm add byte ptr [bx + si], al
+0dd02  ; asm add byte ptr [bp + si], dl
+0dd04  ; asm popf 
+0dd05  ; asm add byte ptr [bx + si], al
+0dd08  ; asm popf 
+0dd09  ; asm add byte ptr [bx + si], al
+0dd0b  ; asm daa 
+0dd0c  ; asm popf 
+0dd0d  ; asm add byte ptr [bx + si], al
+L0dd0f:
+0dd0f  ; asm xor bx, word ptr [di]
+L0dd13:
+0dd13  ; asm inc ax
+0dd14  ; asm popf 
+0dd15  ; asm add byte ptr [bx + si], al
+L0dd17:
+0dd17  ; asm dec sp
+0dd18  ; asm popf 
+0dd19  ; asm add byte ptr [bx + si], al
+0dd1b  ; asm push bp
+0dd1c  ; asm popf 
+0dd1d  ; asm add byte ptr [bx + si], al
+0dd1f  ; asm popaw 
+0dd20  ; asm popf 
+0dd21  ; asm add byte ptr [bx + si], al
+0dd23  ; asm outsb dx, byte ptr [si]
+0dd24  ; asm popf 
+0dd25  ; asm add byte ptr [bx + si], al
+0dd27  IF ?flags jp GOTO L0dcc6
+0dd29  ; asm add byte ptr [bx + si], al
+0dd2b  ; asm sbb word ptr [di], -0x71
+0dd30  ; asm popf 
+0dd31  ; asm add byte ptr [bx + si], al
+0dd33  ; asm pushf 
+0dd34  ; asm popf 
+0dd35  ; asm add byte ptr [bx + si], al
+0dd37  ; asm test al, 0x9d
+0dd39  ; asm add byte ptr [bx + si], al
+0dd3b  ; asm mov cl, 0x9d
+0dd3d  ; asm add byte ptr [bx + si], al
+0dd3f  ; asm mov bp, 0x9d
+0dd42  ; asm add dl, cl
+0dd44  ; asm popf 
+0dd45  ; asm add byte ptr [bx + si], al
+0dd47  ; asm salc 
+0dd48  ; asm popf 
+0dd49  ; asm add byte ptr [bx + si], al
+0dd4b  *di = ?
+0dd4f  GOTO L0dcee
+0dd51  ; asm add byte ptr [bx + si], al
+0dd53  ; asm clc 
+0dd54  ; asm popf 
+0dd55  ; asm add byte ptr [bx + si], al
+0dd57  ; asm add al, 0x9e
+0dd59  ; asm add byte ptr [bx + si], al
+0dd5e  ; asm add byte ptr [bx + di], bl
+0dd60  ; asm sahf 
+0dd61  ; asm add byte ptr [bx + si], al
+0dd63  ; asm das 
+0dd64  ; asm sahf 
+0dd65  ; asm add byte ptr [bx + si], al
+0dd67  ; asm dec sp
+0dd68  ; asm sahf 
+0dd69  ; asm add byte ptr [bx + si], al
+0dd6b  ; asm outsb dx, byte ptr [si]
+0dd6c  ; asm sahf 
+0dd6d  ; asm add byte ptr [bx + si], al
+0dd6f  IF ?flags > GOTO L0dd0f
+L0dd71:
+0dd71  ; asm add byte ptr [bx + si], al
+0dd73  IF ?flags < GOTO L0dd13
+0dd75  ; asm add byte ptr [bx + si], al
+0dd77  IF ?flags < GOTO L0dd17
+0dd79  ; asm add byte ptr [bx + si], al
+0dd7b  [bp]% = bx
+0dd7f  ; asm xchg bp, ax
+0dd80  ; asm sahf 
+0dd81  ; asm add byte ptr [bx + si], al
+0dd83  ; asm sahf 
+0dd84  ; asm sahf 
+0dd85  ; asm add byte ptr [bx + si], al
+0dd87  ; asm cmpsb byte ptr [si], byte ptr es:[di]
+0dd88  ; asm sahf 
+0dd89  ; asm add byte ptr [bx + si], al
+0dd8b  ; asm out dx, ax
+0dd8c  ; asm sahf 
+0dd8d  ; asm add byte ptr [bx + si], al
+0dd8f  ; asm or bx, word ptr [bx]
+0dd93  ; asm xor bl, byte ptr [bx]
+0dd97  ; asm pop cx
+0dd98  ; asm lahf 
+0dd99  ; asm add byte ptr [bx + si], al
+0dd9b  ; asm outsw dx, word ptr [si]
+0dd9c  ; asm lahf 
+0dd9d  ; asm add byte ptr [bx + si], al
+0dda0  ; asm lahf 
+0dda1  ; asm add byte ptr [bx + si], al
+0dda3  ; asm lds bx, ptr [bx]
+0dda7  ; asm into 
+0dda8  ; asm lahf 
+0dda9  ; asm add byte ptr [bx + si], al
+0ddab  ; asm aaa 
+0ddac  ; asm mov al, byte ptr [0]
+0ddaf  ; asm insb byte ptr es:[di], dx
+0ddb0  ; asm mov al, byte ptr [0]
+0ddb3  ; asm xchg bx, ax
+0ddb4  ; asm mov al, byte ptr [0]
+0ddb7  ; asm test ax, 0xa0
+0ddba  ; asm add dl, al
+0ddbc  ; asm mov al, byte ptr [0]
+0ddbf  RET 
+0ddc0  ; asm mov al, byte ptr [0]
+0ddc3  ; asm shl byte ptr [bx + si], 1
+0ddc7  ; asm shl byte ptr [bx + si], 1
+0ddcb  ; asm out 0xa0, al
+0ddcd  ; asm add byte ptr [bx + si], al
+L0ddcf:
+0ddcf  GOTO L0dd71
+0ddd1  ; asm add byte ptr [bx + si], al
+L0ddd3:
+0ddd3  ; asm pop ss
+0dddb  ; asm pushaw 
+L0dddf:
+0dddf  ; asm insw word ptr es:[di], dx
+0dde3  ; asm and byte ptr [bx + di], 0x98
+0ddeb  ; asm cmpsw word ptr [si], word ptr es:[di]
+0ddf2  ; asm add ch, al
+L0ddf4:
+0ddf7  ; asm into 
+0ddfb  ; asm shl word ptr [bx + di], cl
+0ddff  ; asm loopne 0xdda2
+0de01  ; asm add byte ptr [bx + si], al
+0de03  ; asm cmc 
+0de07  ; asm or sp, word ptr [bp + si]
+0de0b  ; asm pop ss
+0de0c  [0]% = al
+0de0f  ; asm and sp, word ptr [bp + si]
+0de13  ; asm and sp, word ptr [bp + si]
+0de17  ; asm sub sp, word ptr [bp + si]
+0de1d  ; asm add byte ptr [bx + si], al
+0de1f  ; asm inc sp
+0de20  [0]% = al
+0de24  [0]% = al
+0de27  ; asm arpl word ptr [bp + si], sp
+0de2b  IF al = 0xa2 GOTO L0ddcf
+0de2d  ; asm add byte ptr [bx + si], al
+0de2f  IF al < 0xa2 GOTO L0ddd3
+0de31  ; asm add byte ptr [bx + si], al
+0de33  ; asm stosw word ptr es:[di], ax
+0de34  [0]% = al
+0de37  ; asm iret 
+0de38  [0]% = al
+0de3b  GOTO L0dddf
+0de3d  ; asm add byte ptr [bx + si], al
+0de3f  ; asm out dx, al
+0de40  [0]% = al
+0de43  ; asm pop bp
+0de44  [0]% = [0]%
+0de47  ; asm outsb dx, byte ptr [si]
+0de48  [0]% = [0]%
+0de4b  IF al <= 0xa2 GOTO L0ddf0
+0de4d  ; asm add byte ptr [bx + si], al
+0de4f  IF al <= 0xa2 GOTO L0ddf4
+0de51  ; asm add byte ptr [bx + si], al
+0de53  ; asm mov dh, 0xa3
+0de55  ; asm add byte ptr [bx + si], al
+0de57  ; asm fisub dword ptr [bp + di]
+0de5b  GOTO L0de00
+0de5d  ; asm add byte ptr [bx + si], al
+0de60  ; asm movsb byte ptr es:[di], byte ptr [si]
+0de61  ; asm add byte ptr [bx + si], al
+0de63  ; asm or ah, byte ptr [si]
+0de6a  ; asm add byte ptr [bx + di], bl
+0de6c  ; asm movsb byte ptr es:[di], byte ptr [si]
+0de6d  ; asm add byte ptr [bx + si], al
+0de6f  ; asm and ah, byte ptr [si]
+0de73  ; asm daa 
+0de74  ; asm movsb byte ptr es:[di], byte ptr [si]
+0de75  ; asm add byte ptr [bx + si], al
+0de77  ; asm daa 
+0de78  ; asm movsb byte ptr es:[di], byte ptr [si]
+0de79  ; asm add byte ptr [bx + si], al
+0de7f  ; asm inc ax
+0de80  ; asm movsb byte ptr es:[di], byte ptr [si]
+0de81  ; asm add byte ptr [bx + si], al
+0de83  ; asm dec bp
+0de84  ; asm movsb byte ptr es:[di], byte ptr [si]
+0de85  ; asm add byte ptr [bx + si], al
+0de87  ; asm pop di
+0de88  ; asm movsb byte ptr es:[di], byte ptr [si]
+0de89  ; asm add byte ptr [bx + si], al
+0de8b  ; asm and byte ptr [si], 0x85
+0de90  ; asm movsb byte ptr es:[di], byte ptr [si]
+0de91  ; asm add byte ptr [bx + si], al
+0de96  ; asm add byte ptr [bp + si + 0xa4], ch
+0de9a  ; asm add dh, bh
+0de9c  ; asm movsb byte ptr es:[di], byte ptr [si]
+0de9d  ; asm add byte ptr [bx + si], al
+L0de9f:
+0de9f  ; asm and ah, byte ptr [di]
+L0dea3:
+0dea6  ; asm add byte ptr [bp + si], bh
+0dea8  ; asm movsw word ptr es:[di], word ptr [si]
+0dea9  ; asm add byte ptr [bx + si], al
+0deab  ; asm pop bx
+0deac  ; asm movsw word ptr es:[di], word ptr [si]
+0dead  ; asm add byte ptr [bx + si], al
+0deaf  ; asm pop si
+0deb0  ; asm movsw word ptr es:[di], word ptr [si]
+0deb1  ; asm add byte ptr [bx + si], al
+0deb3  ; asm insw word ptr es:[di], dx
+0deb4  ; asm movsw word ptr es:[di], word ptr [si]
+0deb5  ; asm add byte ptr [bx + si], al
+0deb7  ; asm test al, 0xa5
+0deb9  ; asm add byte ptr [bx + si], al
+0debb  ; asm stosw word ptr es:[di], ax
+0debc  ; asm movsw word ptr es:[di], word ptr [si]
+0debd  ; asm add byte ptr [bx + si], al
+0debf  ; asm shl word ptr [di], 0xc4
+0dec4  ; asm movsw word ptr es:[di], word ptr [si]
+0dec5  ; asm add byte ptr [bx + si], al
+0dec7  ; asm aad 0xa5
+0dec9  ; asm add byte ptr [bx + si], al
+0decf  ; asm .byte 0xdb
+0ded0  ; asm movsw word ptr es:[di], word ptr [si]
+0ded1  ; asm add byte ptr [bx + si], al
+0ded3  ; asm adc byte ptr [bp], ah
+0ded7  ; asm xor byte ptr [bp], ah
+0dedd  ; asm add byte ptr [bx + si], al
+0dedf  ; asm inc bp
+0dee0  ; asm cmpsb byte ptr [si], byte ptr es:[di]
+0dee1  ; asm add byte ptr [bx + si], al
+0dee3  ; asm dec dx
+0dee4  ; asm cmpsb byte ptr [si], byte ptr es:[di]
+0dee5  ; asm add byte ptr [bx + si], al
+0dee7  ; asm dec bp
+0dee8  ; asm cmpsb byte ptr [si], byte ptr es:[di]
+0dee9  ; asm add byte ptr [bx + si], al
+0deeb  ; asm dec bp
+L0deec:
+0deec  ; asm cmpsb byte ptr [si], byte ptr es:[di]
+0deed  ; asm add byte ptr [bx + si], al
+0deef  ; asm pop si
+0def0  ; asm cmpsb byte ptr [si], byte ptr es:[di]
+0def1  ; asm add byte ptr [bx + si], al
+0def3  ; asm cmpsb byte ptr [si], byte ptr es:[di]
+0def5  ; asm add byte ptr [bx + si], al
+0def7  IF ?flags js GOTO L0de9f
+0def9  ; asm add byte ptr [bx + si], al
+0defb  IF ?flags jp GOTO L0dea3
+0defd  ; asm add byte ptr [bx + si], al
+0deff  ; asm mov sp, word ptr [bp]
+0df03  ; asm mov fs, word ptr [bp]
+0df07  CALL_ab00:a6 
+0df0c  ; asm cmpsb byte ptr [si], byte ptr es:[di]
+0df0d  ; asm add byte ptr [bx + si], al
+0df0f  ; asm shl word ptr [bp], 0xca
+0df14  ; asm cmpsb byte ptr [si], byte ptr es:[di]
+0df15  ; asm add byte ptr [bx + si], al
+0df17  ; asm salc 
+0df18  ; asm cmpsb byte ptr [si], byte ptr es:[di]
+0df19  ; asm add byte ptr [bx + si], al
+0df1b  ; asm .byte 0xdb
+0df1c  ; asm cmpsb byte ptr [si], byte ptr es:[di]
+0df1d  ; asm add byte ptr [bx + si], al
+0df1f  ; asm .byte 0xf0
+0df20  ; asm cmpsb byte ptr [si], byte ptr es:[di]
+0df21  ; asm add byte ptr [bx + si], al
+0df23  ; asm std 
+0df24  ; asm cmpsb byte ptr [si], byte ptr es:[di]
+0df25  ; asm add byte ptr [bx + si], al
+0df28  ; asm cmpsw word ptr [si], word ptr es:[di]
+0df29  ; asm add byte ptr [bx + si], al
+0df2b  ; asm sub byte ptr [bx], ah
+0df2f  ; asm sub ax, 0xa7
+0df32  ; asm add byte ptr [di], ch
+0df34  ; asm cmpsw word ptr [si], word ptr es:[di]
+0df35  ; asm add byte ptr [bx + si], al
+0df37  ; asm aaa 
+0df38  ; asm cmpsw word ptr [si], word ptr es:[di]
+0df39  ; asm add byte ptr [bx + si], al
+0df3b  ; asm dec sp
+0df3c  ; asm cmpsw word ptr [si], word ptr es:[di]
+0df3d  ; asm add byte ptr [bx + si], al
+0df3f  ; asm bound sp, dword ptr [bx]
+0df43  IF ?flags jno GOTO L0deec
+0df45  ; asm add byte ptr [bx + si], al
+0df47  ; asm xchg byte ptr [bx], ah
+0df4b  ; asm pushf 
+0df4c  ; asm cmpsw word ptr [si], word ptr es:[di]
+0df4d  ; asm add byte ptr [bx + si], al
+0df4f  ; asm test al, 0xa7
+0df51  ; asm add byte ptr [bx + si], al
+0df53  ; asm mov bh, 0xa7
+0df55  ; asm add byte ptr [bx + si], al
+0df57  ; asm int3 
+0df58  ; asm cmpsw word ptr [si], word ptr es:[di]
+0df59  ; asm add byte ptr [bx + si], al
+0df5b  ; asm loop 0xdf04
+0df5d  ; asm add byte ptr [bx + si], al
+0df5f  ; asm out dx, al
+0df60  ; asm cmpsw word ptr [si], word ptr es:[di]
+0df61  ; asm add byte ptr [bx + si], al
+0df63  ; asm std 
+0df64  ; asm cmpsw word ptr [si], word ptr es:[di]
+0df65  ; asm add byte ptr [bx + si], al
+0df67  ; asm adc ch, byte ptr [bx + si]
+0df6b  ; asm sub byte ptr [bx + si], ch
+0df6f  ; asm xor al, 0xa8
+0df71  ; asm add byte ptr [bx + si], al
+0df7b  ; asm inc bx
+0df7c  ; asm test al, 0
+0df7e  ; asm add byte ptr [bx + si - 0x58], bl
+0df81  ; asm add byte ptr [bx + si], al
+0df83  ; asm outsb dx, byte ptr [si]
+0df84  ; asm test al, 0
+0df86  ; asm add byte ptr [si + 0xa8], cl
+0df8a  ; asm add byte ptr [bp + di + 0xa8], bl
+0df8e  ; asm add byte ptr [bx + di + 0xa8], bh
+0df92  ; asm add al, cl
+0df94  ; asm test al, 0
+0df96  ; asm add dh, ah
+0df98  ; asm test al, 0
+0df9a  ; asm add ch, dh
+0df9c  ; asm test al, 0
+0df9e  ; asm add dl, bh
+0dfa0  ; asm test al, 0
+0dfa2  ; asm add bh, bh
+0dfa4  ; asm test al, 0
+0dfa6  ; asm add byte ptr [bp + si], cl
+0dfa8  ; asm test ax, 0
+0dfab  ; asm adc bp, word ptr [bx + di]
+0dfaf  ; asm sbb bp, word ptr [bx + di]
+0dfb3  ; asm dec si
+0dfb4  ; asm test ax, 0
+0dfb7  ; asm test ax, 0
+0dfbb  ; asm sub byte ptr [bx + di], 0x9b
+0dfc0  ; asm test ax, 0
+0dfc3  ; asm movsb byte ptr es:[di], byte ptr [si]
+0dfc4  ; asm test ax, 0
+0dfc7  ; asm mov bp, 0xa9
+0dfca  ; asm add dh, al
+0dfcc  ; asm test ax, 0
+0dfd3  ; asm call 0xe07f
+0dfd6  ; asm add byte ptr [bx + di], al
+0dfd8  ; asm stosb byte ptr es:[di], al
+0dfd9  ; asm add byte ptr [bx + si], al
+0dfdb  ; asm or ch, byte ptr [bp + si]
+0dfdf  ; asm pop ss
+L0dfe0:
+0dfe0  ; asm stosb byte ptr es:[di], al
+0dfe1  ; asm add byte ptr [bx + si], al
+0dfe3  ; asm sub ch, byte ptr [bp + si]
+0dfe7  ; asm aas 
+0dfe8  ; asm stosb byte ptr es:[di], al
+0dfe9  ; asm add byte ptr [bx + si], al
+0dfeb  ; asm inc dx
+0dfec  ; asm stosb byte ptr es:[di], al
+0dfed  ; asm add byte ptr [bx + si], al
+0dfef  ; asm push sp
+0dff0  ; asm stosb byte ptr es:[di], al
+0dff1  ; asm add byte ptr [bx + si], al
+0dff3  ; asm insb byte ptr es:[di], dx
+0dff4  ; asm stosb byte ptr es:[di], al
+0dff5  ; asm add byte ptr [bx + si], al
+0dff7  IF ?flags <> GOTO L0dfa3
+0dff9  ; asm add byte ptr [bx + si], al
+0dffb  IF ?flags jp GOTO L0dfa7
+0dffd  ; asm add byte ptr [bx + si], al
+0dfff  ; asm mov bp, word ptr [bp + si]
+0e003  ; asm xchg si, ax
+0e004  ; asm stosb byte ptr es:[di], al
+0e005  ; asm add byte ptr [bx + si], al
+0e007  ; asm mov bp, 0xaa
+0e00a  ; asm add dh, al
+0e00c  ; asm stosb byte ptr es:[di], al
+0e00d  ; asm add byte ptr [bx + si], al
+0e00f  ; asm salc 
+0e010  ; asm stosb byte ptr es:[di], al
+0e011  ; asm add byte ptr [bx + si], al
+0e017  ; asm call 0xe0c4
+0e01a  ; asm add byte ptr [0xab], al
+0e01e  ; asm add byte ptr [bx], cl
+0e020  ; asm stosw word ptr es:[di], ax
+0e021  ; asm add byte ptr [bx + si], al
+0e023  ; asm xor byte ptr [bp + di], ch
+0e02b  ; asm pushaw 
+0e02c  ; asm stosw word ptr es:[di], ax
+0e02d  ; asm add byte ptr [bx + si], al
+0e02f  IF [bp + di] <= bp GOTO L0dfdc
+0e031  ; asm add byte ptr [bx + si], al
+0e033  IF [bp + di] > bp GOTO L0dfe0
+0e035  ; asm add byte ptr [bx + si], al
+0e037  ; asm xchg word ptr [bp + di], bp
+0e03b  ; asm xchg dx, ax
+0e03c  ; asm stosw word ptr es:[di], ax
+0e03d  ; asm add byte ptr [bx + si], al
+0e042  ; asm add al, ah
+0e044  ; asm stosw word ptr es:[di], ax
+0e045  ; asm add byte ptr [bx + si], al
+0e047  @FORAT L0e0f5
+0e04a  ; asm add byte ptr [bx + si], dl
+0e04c  ; asm lodsb al, byte ptr [si]
+0e04d  ; asm add byte ptr [bx + si], al
+0e04f  ; asm lodsb al, byte ptr es:[si]
+0e051  ; asm add byte ptr [bx + si], al
+0e053  ; asm das 
+0e054  ; asm lodsb al, byte ptr [si]
+0e055  ; asm add byte ptr [bx + si], al
+L0e057:
+0e057  ; asm push -0x54
+0e059  ; asm add byte ptr [bx + si], al
+L0e05b:
+0e05b  ; asm xchg si, ax
+0e05c  ; asm lodsb al, byte ptr [si]
+0e05d  ; asm add byte ptr [bx + si], al
+0e05f  ; asm mov bh, 0xac
+0e061  ; asm add byte ptr [bx + si], al
+0e063  ; asm leave 
+0e064  ; asm lodsb al, byte ptr [si]
+0e065  ; asm add byte ptr [bx + si], al
+0e067  ; asm salc 
+0e068  ; asm lodsb al, byte ptr [si]
+0e069  ; asm add byte ptr [bx + si], al
+0e06b  ; asm in al, dx
+0e06c  ; asm lodsb al, byte ptr [si]
+0e06d  ; asm add byte ptr [bx + si], al
+0e06f  ; asm add bp, word ptr [di]
+0e073  ; asm sbb word ptr [di], bp
+0e077  ; asm xor byte ptr [di], ch
+0e07b  ; asm inc si
+0e07c  ; asm lodsw ax, word ptr [si]
+0e07d  ; asm add byte ptr [bx + si], al
+0e07f  ; asm pop bp
+0e080  ; asm lodsw ax, word ptr [si]
+0e081  ; asm add byte ptr [bx + si], al
+0e083  IF ?flags >= GOTO L0e032
+0e085  ; asm add byte ptr [bx + si], al
+0e087  ; asm test word ptr [di], bp
+0e08b  ; asm sahf 
+0e08c  ; asm lodsw ax, word ptr [si]
+0e08d  ; asm add byte ptr [bx + si], al
+0e08f  RET 
+0e090  ; asm lodsw ax, word ptr [si]
+0e091  ; asm add byte ptr [bx + si], al
+0e093  ; asm in ax, 0xad
+0e095  ; asm add byte ptr [bx + si], al
+0e097  ; asm adc word ptr [bp], bp
+0e09b  ; asm daa 
+0e09c  ; asm scasb al, byte ptr es:[di]
+0e09d  ; asm add byte ptr [bx + si], al
+0e09f  ; asm bound bp, dword ptr [bp]
+0e0a3  ; asm push -0x52
+0e0a5  ; asm add byte ptr [bx + si], al
+0e0a7  IF ?flags <> GOTO L0e057
+0e0a9  ; asm add byte ptr [bx + si], al
+0e0ab  IF ?flags > GOTO L0e05b
+0e0ad  ; asm add byte ptr [bx + si], al
+0e0af  ; asm xchg sp, ax
+0e0b0  ; asm scasb al, byte ptr es:[di]
+0e0b1  ; asm add byte ptr [bx + si], al
+0e0b3  ; asm stosb byte ptr es:[di], al
+0e0b4  ; asm scasb al, byte ptr es:[di]
+0e0b5  ; asm add byte ptr [bx + si], al
+0e0b7  ; asm mov dl, 0xae
+0e0b9  ; asm add byte ptr [bx + si], al
+0e0bb  ; asm mov bp, 0xae
+0e0be  ; asm add dh, al
+0e0c0  ; asm scasb al, byte ptr es:[di]
+0e0c1  ; asm add byte ptr [bx + si], al
+0e0c3  ; asm in ax, dx
+0e0c4  ; asm scasb al, byte ptr es:[di]
+0e0c5  ; asm add byte ptr [bx + si], al
+0e0c7  ; asm or ch, byte ptr [bx]
+0e0cb  ; asm xor word ptr [bx], bp
+0e0cf  ; asm dec si
+0e0d0  ; asm scasw ax, word ptr es:[di]
+0e0d1  ; asm add byte ptr [bx + si], al
+0e0d3  IF ?flags js GOTO L0e084
+0e0d5  ; asm add byte ptr [bx + si], al
+0e0d7  ; asm sub byte ptr [bx], 0x8b
+0e0dc  ; asm scasw ax, word ptr es:[di]
+0e0dd  ; asm add byte ptr [bx + si], al
+0e0df  ; asm xchg bx, ax
+0e0e0  ; asm scasw ax, word ptr es:[di]
+0e0e1  ; asm add byte ptr [bx + si], al
+0e0e3  ; asm lahf 
+0e0e4  ; asm scasw ax, word ptr es:[di]
+0e0e5  ; asm add byte ptr [bx + si], al
+0e0e7  ; asm scasb al, byte ptr es:[di]
+0e0e8  ; asm scasw ax, word ptr es:[di]
+0e0e9  ; asm add byte ptr [bx + si], al
+0e0eb  ; asm shr byte ptr [bx], 0xcc
+0e0f0  ; asm scasw ax, word ptr es:[di]
+0e0f1  ; asm add byte ptr [bx + si], al
+0e0f3  ; asm iret 
+0e0f4  ; asm scasw ax, word ptr es:[di]
+L0e0f5:
+0e0f5  ; asm add byte ptr [bx + si], al
+0e0f7  ; asm fisubr word ptr [bx]
+0e0fb  ; asm repe scasw ax, word ptr es:[di]
+0e0fd  ; asm add byte ptr [bx + si], al
+0e0ff  ; asm add dh, byte ptr [bx + si]
+0e103  ; asm pop ss
+0e104  ; asm mov al, 0
+L0e106:
+0e106  ; asm add byte ptr [0xb0], ah
+0e10a  ; asm add byte ptr [bp + di], bh
+0e10c  ; asm mov al, 0
+0e10e  ; asm add byte ptr [bp + si - 0x50], cl
+0e111  ; asm add byte ptr [bx + si], al
+0e113  ; asm pop di
+0e114  ; asm mov al, 0
+0e116  ; asm add byte ptr [bp - 0x50], ch
+0e119  ; asm add byte ptr [bx + si], al
+0e11b  ; asm xor word ptr [bx + si], 0xff92
+0e120  ; asm mov al, 0
+0e122  ; asm add byte ptr [bx + 0xb0], ah
+0e126  ; asm add byte ptr [bp + 0xb0], dh
+0e12a  ; asm add bl, cl
+0e12c  ; asm mov al, 0
+0e12e  ; asm add dl, bl
+0e130  ; asm mov al, 0
+0e132  ; asm add bh, ch
+0e134  ; asm mov al, 0
+0e136  ; asm add dh, bh
+0e138  ; asm mov al, 0
+0e13a  ; asm add byte ptr [bp + di], dl
+0e13c  ; asm mov cl, 0
+0e13e  ; asm add byte ptr [bp + si], ah
+0e140  ; asm mov cl, 0
+0e142  ; asm add byte ptr [bx], dh
+0e144  ; asm mov cl, 0
+0e146  ; asm add byte ptr [bp - 0x4f], al
+0e149  ; asm add byte ptr [bx + si], al
+0e14b  ; asm pop bx
+0e14c  ; asm mov cl, 0
+0e14e  ; asm add byte ptr [bp + si - 0x4f], ch
+0e151  ; asm add byte ptr [bx + si], al
+0e153  IF ?flags > GOTO L0e106
+0e155  ; asm add byte ptr [bx + si], al
+0e157  ; asm .byte 0x8e
+0e158  ; asm mov cl, 0
+0e15a  ; asm add byte ptr [bp + di + 0xb1], ah
+0e15e  ; asm add byte ptr [bp + si + 0xb1], dh
+0e162  ; asm add bh, al
+0e164  ; asm mov cl, 0
+0e166  ; asm add dh, dl
+0e168  ; asm mov cl, 0
+0e16a  ; asm add bl, ch
+0e16c  ; asm mov cl, 0
+0e16e  ; asm add ah, dh
+0e170  ; asm mov cl, 0
+0e172  ; asm add byte ptr [bx], cl
+0e174  ; asm mov dl, 0
+0e176  ; asm add byte ptr [di], dh
+0e178  ; asm mov dl, 0
+0e17a  ; asm add byte ptr [si - 0x4e], cl
+0e17d  ; asm add byte ptr [bx + si], al
+0e17f  ; asm mov dl, 0
+0e182  ; asm add byte ptr [di + 0xb2], cl
+0e186  ; asm add byte ptr [bx + 0xb2], dh
+0e18a  ; asm add dh, al
+0e18c  ; asm mov dl, 0
+0e18e  ; asm add bl, bl
+0e190  ; asm mov dl, 0
+0e192  ; asm add dl, ch
+0e194  ; asm mov dl, 0
+0e196  ; asm add bh, bh
+0e198  ; asm mov dl, 0
+0e19a  ; asm add byte ptr [bx], al
+0e19c  ; asm mov bl, 0
+0e19e  ; asm add byte ptr [bp + si], dl
+0e1a0  ; asm mov bl, 0
+0e1a2  ; asm add byte ptr [bx + di], bh
+0e1a4  ; asm mov bl, 0
+0e1a6  ; asm add byte ptr [bx - 0x4d], cl
+0e1a9  ; asm add byte ptr [bx + si], al
+0e1ab  ; asm push 0xb3
+L0e1ae:
+0e1ae  ; asm add byte ptr [bx + 0xb3], cl
+0e1b2  ; asm add byte ptr [bx + si + 0xb3], bl
+0e1b6  ; asm add byte ptr [bx + di + 0xb3], dh
+0e1ba  ; asm add al, bl
+0e1bc  ; asm mov bl, 0
+0e1be  ; asm add bh, dh
+0e1c0  ; asm mov bl, 0
+0e1c2  ; asm add byte ptr [0xb4], bl
+0e1c6  ; asm add byte ptr [0xb4], bl
+0e1ca  ; asm add byte ptr [0xb4], ah
+0e1ce  ; asm add byte ptr [si - 0x4c], cl
+0e1d1  ; asm add byte ptr [bx + si], al
+0e1d3  IF ?flags >= GOTO L0e189
+0e1d5  ; asm add byte ptr [bx + si], al
+0e1d7  ; asm movsw word ptr es:[di], word ptr [si]
+0e1d8  ; asm mov ah, 0
+0e1da  ; asm add ah, cl
+0e1dc  ; asm mov ah, 0
+0e1de  ; asm add cl, bh
+0e1e0  ; asm mov ah, 0
+0e1e2  ; asm add byte ptr [bx + si], dl
+0e1e4  ; asm mov ch, 0
+0e1e6  ; asm add byte ptr [bx + di], bl
+0e1e8  ; asm mov ch, 0
+0e1ea  ; asm add byte ptr [bp + di - 0x4b], al
+0e1ed  ; asm add byte ptr [bx + si], al
+0e1ef  ; asm pop dx
+0e1f0  ; asm mov ch, 0
+0e1f2  ; asm add byte ptr [si - 0x4b], ch
+0e1f5  ; asm add byte ptr [bx + si], al
+0e1f7  IF ?flags jns GOTO L0e1ae
+0e1f9  ; asm add byte ptr [bx + si], al
+0e1fb  ; asm xchg dx, ax
+0e1fc  ; asm mov ch, 0
+0e1fe  ; asm add byte ptr [si + 0xb5], ah
+0e202  ; asm add byte ptr [di + 0xb5], bh
+0e206  ; asm add dh, al
+0e208  ; asm mov ch, 0
+0e20a  ; asm add bh, bl
+0e20c  ; asm mov ch, 0
+0e20e  ; asm add al, ch
+0e210  ; asm mov ch, 0
+0e212  ; asm add byte ptr [bx + di], al
+0e214  ; asm mov dh, 0
+0e216  ; asm add byte ptr [si - 0x4a], cl
+0e219  ; asm add byte ptr [bx + si], al
+0e21b  ; asm mov dh, 0
+0e21e  ; asm add byte ptr [bp - 0x4a], ch
+0e221  ; asm add byte ptr [bx + si], al
+0e223  ; asm xchg word ptr [bp], si
+0e228  ; asm mov dh, 0
+0e22a  ; asm add byte ptr [bx + di + 0xb6], ch
+0e22e  ; asm add byte ptr [bp + si + 0xb6], dh
+0e232  ; asm add bl, cl
+0e234  ; asm mov dh, 0
+0e236  ; asm add ch, bl
+0e238  ; asm mov dh, 0
+0e23a  ; asm add dh, dh
+0e23c  ; asm mov dh, 0
+0e23e  ; asm add byte ptr [bx + si], ah
+0e240  ; asm mov bh, 0
+0e242  ; asm add byte ptr [bx + di], bh
+0e244  ; asm mov bh, 0
+0e246  ; asm add byte ptr [bp + di - 0x49], cl
+0e249  ; asm add byte ptr [bx + si], al
+0e24b  ; asm pop si
+0e24c  ; asm mov bh, 0
+0e24e  ; asm add byte ptr [di + 0xb7], al
+0e252  ; asm add byte ptr [bp + di + 0xb7], ch
+0e256  ; asm add ah, al
+0e258  ; asm mov bh, 0
+0e25a  ; asm add ch, ch
+0e25c  ; asm mov bh, 0
+0e25e  ; asm add byte ptr [si], dl
+0e263  ; asm sub bh, byte ptr [bx + si]
+0e267  ; asm aaa 
+0e26f  ; asm inc di
+0e273  ; asm pushaw 
+0e277  IF bh > byte ptr [bx + si] GOTO L0e231
+0e279  ; asm add byte ptr [bx + si], al
+0e27b  ; asm xchg cx, ax
+0e27f  v00b8% = 0
+0e282  ; asm add byte ptr [bp + 0xb8], ch
+0e286  ; asm add ch, cl
+0e28b  [bx + si] = ?
+0e28f  ; asm int1 
+0e293  ; asm add byte ptr [bx + di], bh
+0e297  ; asm pop ds
+0e29b  ; asm xor word ptr [bx + di], di
+0e2a3  ; asm dec cx
+0e2a7  ; asm push 0xb9
+0e2aa  ; asm add byte ptr [bp + si - 0x47], bh
+0e2ad  ; asm add byte ptr [bx + si], al
+0e2b7  ; asm mov cl, 0xb9
+0e2b9  ; asm add byte ptr [bx + si], al
+0e2bb  RET 
+0e2bf  ; asm int3 
+0e2c3  [bx + di] = ?
+0e2c7  ; asm cli 
+0e2cb  ; asm or al, 0xba
+0e2cd  ; asm add byte ptr [bx + si], al
+0e2cf  ; asm adc ax, 0xba
+0e2d2  ; asm add byte ptr [si], ah
+0e2da  ; asm add byte ptr [si - 0x46], ah
+0e2dd  ; asm add byte ptr [bx + si], al
+0e2df  ; asm insw word ptr es:[di], dx
+0e2e3  ; asm xchg sp, ax
+0e2ea  ; asm add byte ptr [bx + si + 0xba], bh
+0e2ee  ; asm add dh, cl
+0e2f3  [bp + si] = ?
+0e2f7  ; asm hlt 
+0e2fb  ; asm sbb di, word ptr [bp + di]
+0e2ff  ; asm and al, 0xbb
+L0e301:
+0e301  ; asm add byte ptr [bx + si], al
+0e303  ; asm dec bx
+0e307  ; asm push sp
+0e30b  ; asm popaw 
+0e30f  ; asm test byte ptr [bp + di], bh
+0e313  ; asm stosb byte ptr es:[di], al
+0e317  RET 
+0e31b  ; asm sar word ptr [bp + di], cl
+0e31f  ; asm salc 
+0e323  ; asm fidivr word ptr [bp + di]
+0e327  GOTO L0e3e5
+0e32a  ; asm add byte ptr [bp + si], al
+0e32c  ; asm mov sp, 0
+0e32f  ; asm sbb bh, byte ptr [si]
+0e333  ; asm inc ax
+0e334  ; asm mov sp, 0
+0e337  ; asm dec ax
+0e338  ; asm mov sp, 0
+0e33c  ; asm mov sp, 0
+0e33f  ; asm pop di
+0e340  ; asm mov sp, 0
+0e343  IF ?flags jno GOTO L0e301
+0e345  ; asm add byte ptr [bx + si], al
+0e347  *si% = di
+0e34b  ; asm xchg di, ax
+0e34c  ; asm mov sp, 0
+0e34f  CALL_aa00:bc 0
+0e354  ; asm mov sp, 0
+0e357  ; asm lodsw ax, word ptr [si]
+0e358  ; asm mov sp, 0
+0e35b  ; asm .byte 0xc6
+0e35c  ; asm mov sp, 0
+0e35f  ; asm xlatb 
+0e360  ; asm mov sp, 0
+0e363  IF ?flags jcxz GOTO L0e321
+0e365  ; asm add byte ptr [bx + si], al
+0e367  ; asm hlt 
+0e368  ; asm mov sp, 0
+0e36b  ; asm add byte ptr [di], bh
+0e36f  ; asm adc word ptr [di], di
+0e373  ; asm sbb ax, 0xbd
+0e376  ; asm add byte ptr [0xbd], ch
+0e37a  ; asm add byte ptr [bp + si], bh
+0e37c  ; asm mov bp, 0
+0e37f  ; asm dec bx
+0e380  ; asm mov bp, 0
+0e384  ; asm mov bp, 0
+0e387  ; asm push 0xbd
+0e38a  ; asm add byte ptr [si - 0x43], dh
+0e38d  ; asm add byte ptr [bx + si], al
+0e38f  ; asm test word ptr [di], di
+0e393  ; asm xchg cx, ax
+0e394  ; asm mov bp, 0
+0e397  v00bd% = al
+0e39a  ; asm add byte ptr [bp + 0xbd], ch
+0e39e  ; asm add byte ptr [bx + si], al
+0e3a0  ; asm add byte ptr [bx + si], al
+0e3a2  ; asm add byte ptr [bx + si], al
+0e3a4  ; asm add byte ptr [bx + si], al
+0e3a6  ; asm add byte ptr [bx + si], al
+0e3a8  ; asm add byte ptr [bx + si], al
+0e3aa  ; asm add byte ptr [bx + si], al
+0e3ac  ; asm add byte ptr [bx + si], al
+0e3ae  ; asm add byte ptr [bx + si], al

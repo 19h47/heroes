@@ -1,0 +1,104 @@
+/* The IBM VGA 9×16 text-mode font, from The Ultimate Oldschool PC Font Pack by VileR (int10h.org),
+   CC BY-SA 4.0, see fonts/LICENSE.TXT. One em is the 16-pixel cell height, a cell is .5625em wide. */
+@font-face {
+	font-family: "Web437 IBM VGA 9x16";
+	src: url("../fonts/Web437_IBM_VGA_9x16.woff") format("woff");
+	font-display: block;
+}
+
+/* DOS palette. --text, --back and --frame are the HEROES.CLR colours, set by app.js (shipped: 7, 0, 12). */
+:root {
+	--text: #aaaaaa;
+	--back: #000000;
+	--frame: #ff5555;
+	--font: "Web437 IBM VGA 9x16", "Lucida Console", ui-monospace, Menlo, Consolas, monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	background: var(--back);
+	color: var(--text);
+	font: 16px/1.5 var(--font);
+}
+
+.bar {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: .5rem 1.5rem;
+	padding: .4rem 1rem;
+}
+.bar.top { justify-content: space-between; }
+.bar h1 { margin: 0; font-size: 1rem; font-weight: normal; }
+.bar p { margin: 0; }
+.badge { background: var(--frame); color: var(--back); padding: 0 .4rem; }
+
+.bar.bottom { position: sticky; bottom: 0; justify-content: center; background: var(--back); }
+.bar.bottom button {
+	font: inherit;
+	color: inherit;
+	background: none;
+	border: 0;
+	cursor: pointer;
+	padding: .2rem .3rem;
+}
+kbd { font: inherit; color: var(--frame); }
+/* Hover, focus and the pressed "Full sheet" button show in reverse video. */
+.bar.bottom button:hover, .bar.bottom button:focus-visible, .bar.bottom button[aria-pressed="true"] {
+	background: var(--text);
+	color: var(--back);
+	outline: none;
+}
+.bar.bottom button:hover kbd, .bar.bottom button:focus-visible kbd, .bar.bottom button[aria-pressed="true"] kbd { color: inherit; }
+
+main { padding: 1.5rem 1rem 3rem; display: grid; justify-items: center; align-content: start; gap: 1.5rem; }
+
+/* 80×25 text mode: the cells carry their own VGA colours. */
+.screen {
+	margin: 0;
+	padding: .5rem;
+	background: var(--back);
+	/* 80 cells of .5625em fill the width. From 16px up the size goes in steps of 8px (16, 24), which keep
+	   the pixels of the font square on 1× and 2× displays. */
+	--fit: calc((100vw - 4rem) / 45);
+	font: clamp(7px, var(--fit), 24px)/1 var(--font);
+	font-size: max(7px, min(var(--fit), 16px), min(round(down, var(--fit), 8px), 24px));
+	white-space: pre;
+	cursor: pointer;
+	user-select: none;
+	max-width: 100%;
+	overflow-x: auto;
+}
+.screen.dos { color: #aaaaaa; background: #000; width: 80ch; height: 25lh; }
+.screen span { display: inline; }
+
+.printout { display: none; }
+.printout .wide { display: inline-block; transform: scaleX(2); transform-origin: left; }
+
+.hro {
+	width: fit-content;
+	max-width: 100%;
+	margin: 0 auto;
+	overflow-x: auto;
+	border: 3px double var(--frame);
+	padding: 1rem 1.5rem;
+	font: inherit;
+	line-height: 1.35;
+	color: var(--text);
+}
+
+@media (max-width: 700px) {
+	.hro { padding: .6rem; font-size: .75rem; }
+}
+
+/* "P" with printer output prints the LPT1 stream, not the page. */
+@media print {
+	body { background: #fff; color: #000; display: block; }
+	.bar, main { display: none !important; }
+	.printout { display: block; margin: 0; font: 10pt/1.2 "Courier New", monospace; color: #000; }
+}
